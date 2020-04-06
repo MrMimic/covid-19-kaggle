@@ -140,7 +140,7 @@ def insert_article(args: List[Tuple[int, pd.Series, str, str]]) -> None:
             json_data = read_file(json_file[0])
             body = get_body(json_data=json_data)
             folder = data.full_text_file
-        except FileNotFoundError:
+        except (FileNotFoundError, KeyError):
             body = None
             folder = None
     else:
