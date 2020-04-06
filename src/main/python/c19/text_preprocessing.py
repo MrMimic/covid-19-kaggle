@@ -8,7 +8,6 @@ import time
 from typing import Any, List, Tuple
 
 from c19.database_utilities import get_all_articles_doi, insert_row
-from c19.embedding import Embedding
 from nltk.corpus import stopwords
 from nltk.stem.snowball import SnowballStemmer
 from nltk.tokenize import RegexpTokenizer, sent_tokenize
@@ -125,7 +124,7 @@ def pre_process_articles(args: List[Any]) -> None:
                     continue
 
 
-def pre_process_and_vectorize_texts(embedding_model: Embedding,
+def pre_process_and_vectorize_texts(embedding_model: Any,
                                     db_path: str = "articles_database.sqlite",
                                     load_file: bool = True,
                                     stem_words: bool = False,
