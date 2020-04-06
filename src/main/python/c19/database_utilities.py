@@ -132,10 +132,6 @@ def insert_article(args: List[Tuple[int, pd.Series, str, str]]) -> None:
             if data.sha in str(file_path)
         ]
 
-        json_file = os.path.join(os.sep, "kaggle", "input",
-                                 "CORD-19-research-challenge",
-                                 data.full_text_file, data.full_text_file,
-                                 f"{}.json")
         try:
             json_data = read_file(json_file[0])
             body = get_body(json_data=json_data)
