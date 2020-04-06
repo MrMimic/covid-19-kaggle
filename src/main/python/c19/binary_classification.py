@@ -32,6 +32,8 @@ class BinaryClassifier():
             embedding_dimension (int): Embedding size for the number of neuron in HL.
         """
         if os.path.isfile(model_path):
+            self.embedding_model = embedding_model
+
             self.model_path = model_path
             self.load()
 
@@ -57,7 +59,8 @@ class BinaryClassifier():
         """
         # Index 0 cause only one sentences per line
         self.X = [
-            self.embedding_model.compute_sentence_vector(preprocess_text(sentence)[0][0])
+            self.embedding_model.compute_sentence_vector(
+                preprocess_text(sentence)[0][0])
             for sentence in self.stat_sentences + self.other_sentences
         ]
         self.y = [1 for sentence in self.stat_sentences
