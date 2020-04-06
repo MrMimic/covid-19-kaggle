@@ -8,10 +8,10 @@ from typing import Any, Dict, List
 
 import numpy as np
 
+from c19.text_preprocessing import preprocess_text
 from gensim.models import KeyedVectors, Word2Vec
 from gensim.models.keyedvectors import KeyedVectors
 from nltk.corpus import stopwords
-from text_preprocessing import preprocess_text
 
 
 class Embedding():

@@ -1,18 +1,19 @@
 #!/usr/bin/env python3
 
 import json
-import re
-import time
 import os
+import re
 import sqlite3
+import time
 from typing import Any, List, Tuple
-from pathos.multiprocessing import ProcessingPool as picklable_pool
-from database_utilities import insert_row
+
+from c19.database_utilities import get_all_articles_doi, insert_row
+from c19.embedding import Embedding
 from nltk.corpus import stopwords
 from nltk.stem.snowball import SnowballStemmer
 from nltk.tokenize import RegexpTokenizer, sent_tokenize
-from embedding import Embedding
-from database_utilities import get_all_articles_doi
+from pathos.multiprocessing import ProcessingPool as picklable_pool
+
 
 def preprocess_text(text: str,
                     stem_words: bool = False,

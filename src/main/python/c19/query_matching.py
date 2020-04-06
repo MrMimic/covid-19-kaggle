@@ -9,9 +9,9 @@ from typing import Any, List, Tuple
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 
-from database_utilities import get_sentences
-from embedding import Embedding
-from text_preprocessing import preprocess_text
+from c19.database_utilities import get_sentences
+from c19.embedding import Embedding
+from c19.text_preprocessing import preprocess_text
 
 
 def vectorize_query(embedding_model: Embedding, query: str) -> List[float]:
@@ -122,8 +122,8 @@ def get_db_sentences_vectors(
 
 
 def get_query_distances_and_vectors(
-    query: str, sentences_vectors: List[List[float]], embedding_model: Embedding
-) -> List[Tuple[float, List[float]]]:
+        query: str, sentences_vectors: List[List[float]],
+        embedding_model: Embedding) -> List[Tuple[float, List[float]]]:
     """
     Compute the cosine distance between the query and all sentences found in the DB.
 
