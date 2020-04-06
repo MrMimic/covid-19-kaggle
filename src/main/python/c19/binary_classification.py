@@ -35,6 +35,8 @@ class BinaryClassifier():
             self.model_path = model_path
             self.load()
 
+            self.model_found = True
+
         else:
             self.model_path = model_path
 
@@ -45,6 +47,8 @@ class BinaryClassifier():
             self.embedding_dimension = embedding_dimension
             self.embedding_model = embedding_model
             self.prepare_model()
+
+            self.model_found = False
 
     def prepare_data(self) -> None:
         """
@@ -81,17 +85,20 @@ class BinaryClassifier():
             solver="adam",
             random_state=42)
 
-    def train(self) -> None:
+    def train_or_load(self) -> None:
         """
         Train the instanciated model.
         """
-        tic = time.time()
-        self.model.fit(self.X_train, self.y_train)
-        self.test()
-        self.save()
-        toc = time.time()
-        self.training_time = round((toc - tic) / 60, 2)
-        self.print_training_report()
+        if self.model_found is False:
+            tic = time.time()
+            self.model.fit(self.X_train, self.y_train)
+            self.test()
+            self.save()
+            toc = time.time()
+            self.training_time = round((toc - tic) / 60, 2)
+            self.print_training_report(model_source="trained")
+        else:
+            self.print_training_report(model_source="loaded")
 
     def save(self) -> None:
         """
@@ -117,7 +124,7 @@ class BinaryClassifier():
         toc = time.time()
         self.testing_time = round((toc - tic) / 60, 2)
 
-    def print_training_report(self) -> None:
+    def print_training_report(self, model_source: str = "trained") -> None:
         """
         Print a report about the training.
         """
@@ -145,7 +152,7 @@ class BinaryClassifier():
             },
             index=[""]).head()
 
-        print(f"Model trained: {self.model_path}.")
+        print(f"Model {model_source}: {self.model_path}.")
         print(f"{model_df}\n")
         print(f"Training time: {self.training_time} minutes.")
         print(f"Testing time: {self.testing_time} minutes.\n")
