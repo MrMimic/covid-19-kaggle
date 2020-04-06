@@ -139,7 +139,7 @@ def pre_process_and_vectorize_texts(embedding_model: Any,
         stem_words (bool, optional): Stem words during preprocessing. Defaults to False.
         remove_num (bool, optional):Remove numerical values during preprocessing. Defaults to False.
     """
-    if first_launch is True:
+    if first_launch is False:
         assert os.path.isfile(db_path)
         print(f"DB {db_path} will be used instead.")
 

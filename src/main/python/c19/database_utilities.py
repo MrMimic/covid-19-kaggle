@@ -64,6 +64,8 @@ def get_articles_to_insert(articles_df: pd.DataFrame) -> List[Any]:
     """
     Create a list of articles to be inserted.
 
+    TODO: Add language_detection function here.
+
     Args:
         articles_df (pd.DataFrame): The metadata dataframe (sliced or not).
 
