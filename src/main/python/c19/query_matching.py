@@ -28,6 +28,7 @@ def vectorize_query(embedding_model: Embedding, query: str) -> List[float]:
     pp_query, query_raw = preprocess_text(query,
                                           stem_words=False,
                                           remove_num=False)
+    del query_raw
     query_vector = embedding_model.compute_sentence_vector(pp_query[0])
     return query_vector
 
@@ -158,6 +159,7 @@ def get_query_distances_and_vectors(
 
 def get_k_closest_sentences(distances_and_vectors: List[Tuple[float,
                                                               List[float]]],
+                            db_path: str = "articles_database.sqlite",
                             k: int = 10) -> List[Any]:
     """
     Sort the results from get_query_distances_and_vectors() to extract the top k sentences.
@@ -183,7 +185,7 @@ def get_k_closest_sentences(distances_and_vectors: List[Tuple[float,
 
     # Retrieve closest sentences
     closest_sentences = [
-        query_db_for_sentence(vector=vec_str, db_path=DB_FILE_NAME)
+        query_db_for_sentence(vector=vec_str, db_path=db_path)
         for vec_str in closest_vectors_str
     ]
 

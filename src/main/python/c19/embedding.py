@@ -4,12 +4,12 @@ import json
 import os
 import sqlite3
 import time
-from typing import Any, Dict, List
+from typing import List
 
 import numpy as np
 
 from c19.text_preprocessing import preprocess_text
-from gensim.models import KeyedVectors, Word2Vec
+from gensim.models import Word2Vec
 from gensim.models.keyedvectors import KeyedVectors
 from nltk.corpus import stopwords
 
@@ -78,6 +78,7 @@ class Embedding():
                 try:
                     # Prevent to keep useless words (otherwise pre-proc return nothing)
                     word, word_raw = preprocess_text(line.split()[0])
+                    del word_raw
                     vector = [
                         float(dimension) for dimension in line.split()[1:None]
                     ]
