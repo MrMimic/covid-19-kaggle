@@ -12,6 +12,7 @@ from nltk.corpus import stopwords
 from nltk.stem.snowball import SnowballStemmer
 from nltk.tokenize import RegexpTokenizer, sent_tokenize
 from pathos.multiprocessing import ProcessingPool as picklable_pool
+from retry import retry
 
 
 def preprocess_text(text: str,
@@ -66,9 +67,11 @@ def preprocess_text(text: str,
     return sentences, sentences_raw
 
 
+@retry(sqlite3.OperationalError, tries=5, delay=2)
 def pre_process_articles(args: List[Any]) -> None:
     """
     Apply preprocessing to articles and store result into the SQLite DB.
+    Retry if the select fail due to a locked database.
 
     Args:
         args (List[Any]): The article data to be pre-processed. See below variable attribution.
