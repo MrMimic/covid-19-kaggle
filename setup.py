@@ -14,26 +14,23 @@ requirements = [
     "gensim>=3.6.0"
 ]
 
-classifiers=[
+classifiers = [
     "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
-    "Programming Language :: Python :: 3.7",
-    "Operating System :: OS Independent",
-    "Topic :: Covid 19 :: NLP",
+    "Programming Language :: Python :: 3.6.9",
+    "Operating System :: OS Independent", "Topic :: Covid 19 :: NLP",
     "Topic :: Utilities"
 ]
 
-setup(
-    name="c19-kaggle",
-    version="0.0.1",
-    author="Atos Kaggle Crew",
-    author_email="emeric.dynomant@gmail.com",
-    description="Utilities lib for the following Kaggle notebook.",
-    long_description=README,
-    long_description_content_type="text/markdown",
-    url="https://github.com/MrMimic/covid-19-kaggle",
-    packages=find_packages(where="src/main/python/"),
-    package_dir={"": "src/main/python/"},
-    python_requires=">=3.7",
-    install_requires=requirements,
-    classifiers=classifiers
-)
+setup(name="c19-kaggle",
+      version="0.0.1",
+      author="Atos Kaggle Crew",
+      author_email="emeric.dynomant@gmail.com",
+      description="Utilities lib for the following Kaggle notebook.",
+      long_description=README,
+      long_description_content_type="text/markdown",
+      url="https://github.com/MrMimic/covid-19-kaggle",
+      packages=find_packages(where="src/main/python/"),
+      package_dir={"": "src/main/python/"},
+      python_requires=">=3.6.9",
+      install_requires=requirements,
+      classifiers=classifiers)
