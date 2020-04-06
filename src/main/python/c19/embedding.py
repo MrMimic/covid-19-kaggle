@@ -6,7 +6,10 @@ import sqlite3
 import time
 from typing import List
 
+import joblib
 import numpy as np
+from sklearn.feature_extraction.text import TfidfTransformer
+from sklearn.feature_extraction.text import CountVectorizer
 
 from c19.text_preprocessing import preprocess_text
 from gensim.models import Word2Vec
@@ -144,19 +147,21 @@ class W2V():
         )):
         self.db_path = db_path
 
-    def get_sentences(self) -> None:
+    def get_sentences(self) -> List[str]:
         """
         Return all pre-processed sentences from a previous version of the base.
         """
         connection = sqlite3.connect(self.db_path)
         cursor = connection.cursor()
         cursor.execute("SELECT sentence FROM sentences")
-        self.sentences = [
-            json.loads(sentence[0]) for sentence in cursor.fetchall()
+        sentences = [
+            " ".join(json.loads(sentence[0])) for sentence in cursor.fetchall()
         ]
         cursor.close()
         connection.close()
-        print(f"Training Word2Vec on {len(self.sentences)} sentences.")
+        print(f"Training Word2Vec and TF-IDF on {len(sentences)} sentences.")
+
+        return sentences
 
     def train(self, file_path: str = None) -> None:
         """
@@ -166,10 +171,26 @@ class W2V():
         Args:
             file_path (str, optional): File path to save vectors. Defaults to None.
         """
-        self.get_sentences()
+        tfidf_model_path = "tfidf_on_kaggle_corpus.pkl"
+        if file_path is not None:
+            tfidf_model_path = os.path.join(os.path.dirname(file_path), tfidf_model_path)
 
+        # Get sentences as List of str
+        sentences = self.get_sentences()
+
+        # Train TFIDF
         tic = time.time()
-        self.model = Word2Vec(self.sentences,
+        tfidf = TfIdf(sentences)
+        joblib.dump(tfidf, tfidf_model_path)
+        toc = time.time()
+        print(f"Training TF-IDF took: {round((toc-tic) / 60, 3)} minutes.")
+
+        # Split sentences into List of List of words
+        sentences = [sentence.split() for sentence in sentences]
+
+        # Train Word2Vec
+        tic = time.time()
+        self.model = Word2Vec(sentences,
                               sg=1,
                               hs=1,
                               sample=1e-5,
@@ -181,12 +202,11 @@ class W2V():
                               workers=os.cpu_count(),
                               iter=10)
         toc = time.time()
-
-        print(f"Training took: {round((toc-tic) / 60, 3)} minutes.")
+        print(f"Training Word2Vec took: {round((toc-tic) / 60, 3)} minutes.")
 
         if file_path is None:
-            model_path = f"word2vec_on_kaggle_corpus_dim_{self.model.vector_size}_min_count_{self.model.min_count}_vocab_{len(self.model.wv.vocab)}.bin"
-        self.model.wv.save_word2vec_format(model_path, binary=True)
+            w2v_model_path = f"word2vec_on_kaggle_corpus_dim_{self.model.vector_size}_min_count_{self.model.min_count}_vocab_{len(self.model.wv.vocab)}.bin"
+        self.model.wv.save_word2vec_format(w2v_model_path, binary=True)
 
     def load(self, file_path: str) -> None:
         """
@@ -198,3 +218,21 @@ class W2V():
         self.model = KeyedVectors.load_word2vec_format(file_path, binary=True)
 
         print(f"Loaded model containing {len(self.model.wv.vocab)} words.")
+
+
+class TfIdf():
+    def __init__(self, sentences):
+
+        self.counter = CountVectorizer()
+        self.count_vector = self.counter.fit_transform(sentences)
+
+        self.tfidf = TfidfTransformer(smooth_idf=True, use_idf=True)
+        self.tfidf.fit_transform(self.count_vector)
+
+    def get_score(self, word: str) -> float:
+        try:
+            index = self.counter.get_feature_names().index(word)
+            score = self.tfidf.idf_[index]
+        except ValueError:  # If word was not in the TF-IDF
+            score = 1
+        return score
