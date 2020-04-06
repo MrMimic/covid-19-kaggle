@@ -126,20 +126,20 @@ def pre_process_articles(args: List[Any]) -> None:
 
 def pre_process_and_vectorize_texts(embedding_model: Any,
                                     db_path: str = "articles_database.sqlite",
-                                    load_file: bool = True,
+                                    first_launch: bool = False,
                                     stem_words: bool = False,
-                                    remove_num: bool = False) -> None:
+                                    : bool = False) -> None:
     """
     Main function allowing to pre-process every article which have been stored in the DB.
 
     Args:
         embedding_model (Embedding): The embedding model to be used to vectorize sentences.
         db_path (str, optional): Path to the newly created DB. Defaults to "articles_database.sqlite".
-        load_file (bool, optional): Debug option preventing to create a new file. Defaults to True.
+        first_launch (bool, optional): Debug option preventing to create a new file. Defaults to False.
         stem_words (bool, optional): Stem words during preprocessing. Defaults to False.
         remove_num (bool, optional):Remove numerical values during preprocessing. Defaults to False.
     """
-    if load_file is True:
+    if first_launch is True:
         assert os.path.isfile(db_path)
         print(f"DB {db_path} will be used instead.")
 

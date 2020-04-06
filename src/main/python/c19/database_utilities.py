@@ -173,7 +173,7 @@ def create_db_and_load_articles(db_path: str = "articles_database.sqlite",
                                 metadata_df_path: str = os.path.join(
                                     os.sep, "content", "kaggle_data",
                                     "metadata.csv"),
-                                load_file: bool = True) -> None:
+                                first_launch: bool = True) -> None:
     """
     Main function to create the DB at first launch.
     Load metadata.csv, try to get body texts and insert everything without pre-processing.
@@ -184,7 +184,7 @@ def create_db_and_load_articles(db_path: str = "articles_database.sqlite",
         load_file (bool, optional): Debug option to prevent to create a new file. Defaults to True.
     """
 
-    if load_file is True:
+    if first_launch is False:
         assert os.path.isfile(db_path)
         print(f"DB {db_path} will be used instead.")
 
