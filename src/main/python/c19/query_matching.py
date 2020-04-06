@@ -110,14 +110,18 @@ def get_db_sentences_vectors(
     Returns:
         [List[List[float]]]: All found sentences vectors.
     """
+    tic = time.time()
     sentences = get_sentences(db_path)
     sentences_vectors = [[float(x) for x in json.loads(sentence_vector[4])]
                          for sentence_vector in sentences]
     sentences_vectors = [
         vector for vector in sentences_vectors if np.nansum(vector) != 0
     ]
+    toc = time.time()
 
-    print(f"Queries will be matched versus {len(sentences_vectors)} vectors.")
+    print(
+        f"Queries will be matched versus {len(sentences_vectors)} vectors ({round((toc-tic) / 60, 2)} min to load)."
+    )
     return sentences_vectors
 
 
