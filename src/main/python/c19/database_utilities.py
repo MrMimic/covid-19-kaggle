@@ -207,6 +207,7 @@ def create_db_and_load_articles(db_path: str = "articles_database.sqlite",
         # Parallelize articles insertion
         with mp.Pool(os.cpu_count()) as pool:
             pool.map(insert_article, articles_to_be_inserted)
+        del articles_to_be_inserted
 
         toc = time.time()
         print(

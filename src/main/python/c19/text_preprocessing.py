@@ -154,6 +154,7 @@ def pre_process_and_vectorize_texts(embedding_model: Any,
                for id_ in get_all_articles_doi(db_path=db_path)]
         with picklable_pool(os.cpu_count()) as pool:
             pool.map(pre_process_articles, ids)
+        del ids
 
         # Only to count pp sentences
         connection = sqlite3.connect(db_path)

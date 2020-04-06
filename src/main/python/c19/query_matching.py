@@ -151,6 +151,8 @@ def get_query_distances_and_vectors(
     with mp.Pool(os.cpu_count()) as pool:
         distances_and_vectors = pool.map(compute_cosine_distance,
                                          mapping_arguments)
+    del mapping_arguments
+
     toc = time.time()
     print(f"Took {round((toc-tic) / 60, 2)} min to process the query.")
 
