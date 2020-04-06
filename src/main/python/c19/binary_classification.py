@@ -6,7 +6,7 @@ from typing import List
 import numpy as np
 
 import pandas as pd
-from sklearn.externals import joblib
+import joblib
 from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import train_test_split
 from sklearn.neural_network import MLPClassifier

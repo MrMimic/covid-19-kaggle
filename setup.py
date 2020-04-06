@@ -10,6 +10,7 @@ requirements = [
     "textblob>=0.15.3",
     "pandas>=1.0.3",
     "numpy>=1.18.2",
+    "joblib>=0.14.1",
     "python-dateutil>=2.8.1",
     "scikit-learn>=0.22.2",
     "gensim>=3.6.0"
