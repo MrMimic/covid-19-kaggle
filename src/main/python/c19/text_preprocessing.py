@@ -128,7 +128,7 @@ def pre_process_and_vectorize_texts(embedding_model: Any,
                                     db_path: str = "articles_database.sqlite",
                                     first_launch: bool = False,
                                     stem_words: bool = False,
-                                    : bool = False) -> None:
+                                    remove_num: bool = False) -> None:
     """
     Main function allowing to pre-process every article which have been stored in the DB.
 
