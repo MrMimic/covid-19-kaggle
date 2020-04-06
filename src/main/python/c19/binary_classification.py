@@ -31,26 +31,22 @@ class BinaryClassifier():
             embedding_model (Embedding): The embedding model to get sentences as vectors.
             embedding_dimension (int): Embedding size for the number of neuron in HL.
         """
-        if os.path.isfile(model_path):
-            self.embedding_model = embedding_model
+        self.embedding_model = embedding_model
+        self.model_path = model_path
 
-            self.model_path = model_path
+        if os.path.isfile(model_path):
+            self.model_found = True
             self.load()
 
-            self.model_found = True
-
         else:
-            self.model_path = model_path
+            self.model_found = False
 
             self.stat_sentences = stat_sentences
             self.other_sentences = other_sentences
             self.prepare_data()
 
             self.embedding_dimension = embedding_dimension
-            self.embedding_model = embedding_model
             self.prepare_model()
-
-            self.model_found = False
 
     def prepare_data(self) -> None:
         """
