@@ -140,21 +140,22 @@ class BinaryClassifier():
             },
             index=[""]).T.head()
 
-        str_acc = round(self.accuracy * 100, 3)
-
-        cm_df = pd.DataFrame(
-            {
-                "TP": [self.tp],
-                "TN": [self.tn],
-                "FP": [self.fp],
-                "FN": [self.fn]
-            },
-            index=[""]).head()
-
         print(f"Model {model_source}: {self.model_path}.")
         print(f"{model_df}\n")
-        print(f"Training time: {self.training_time} minutes.")
-        print(f"Testing time: {self.testing_time} minutes.\n")
-        print(f"Accuracy: {str_acc} %.")
-        print(f"Confusion matrix:\n")
-        print(f"{cm_df}\n")
+
+        if model_source == "trained":
+            str_acc = round(self.accuracy * 100, 3)
+
+            cm_df = pd.DataFrame(
+                {
+                    "TP": [self.tp],
+                    "TN": [self.tn],
+                    "FP": [self.fp],
+                    "FN": [self.fn]
+                },
+                index=[""]).head()
+            print(f"Training time: {self.training_time} minutes.")
+            print(f"Testing time: {self.testing_time} minutes.\n")
+            print(f"Accuracy: {str_acc} %.")
+            print(f"Confusion matrix:\n")
+            print(f"{cm_df}\n")
