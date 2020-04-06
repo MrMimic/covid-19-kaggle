@@ -21,7 +21,7 @@ classifiers = [
     "Topic :: Utilities"
 ]
 
-setup(name="c19-kaggle",
+setup(name="c19",
       version="0.0.1",
       author="Atos Kaggle Crew",
       author_email="emeric.dynomant@gmail.com",
