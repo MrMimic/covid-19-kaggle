@@ -175,7 +175,7 @@ def create_db_and_load_articles(db_path: str = "articles_database.sqlite",
                                 metadata_df_path: str = os.path.join(
                                     os.sep, "content", "kaggle_data",
                                     "metadata.csv"),
-                                first_launch: bool = True) -> None:
+                                first_launch: bool = False) -> None:
     """
     Main function to create the DB at first launch.
     Load metadata.csv, try to get body texts and insert everything without pre-processing.
