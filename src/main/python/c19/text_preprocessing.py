@@ -109,8 +109,7 @@ def pre_process_articles(args: List[Any]) -> None:
                         article_id,
                         section,
                         raw_sentence,  # Raw sentence
-                        json.dumps(pp_sentence
-                                   ),  # Store list of tokens as loadable str
+                        json.dumps(pp_sentence),  # Store list of tokens as loadable str
                         json.dumps([
                             str(x)
                             for x in embedding_model.compute_sentence_vector(

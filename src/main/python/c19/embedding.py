@@ -17,10 +17,40 @@ from gensim.models.keyedvectors import KeyedVectors
 from nltk.corpus import stopwords
 
 
+class TfIdf():
+    """
+    Simple TFIDF class.
+    """
+    def __init__(self, sentences):
+        self.counter = CountVectorizer()
+        self.count_vector = self.counter.fit_transform(sentences)
+
+        self.tfidf = TfidfTransformer(smooth_idf=True, use_idf=True)
+        self.tfidf.fit_transform(self.count_vector)
+
+    def get_score(self, word: str) -> float:
+        """
+        Return the TFIDF score of a word.
+
+        Args:
+            word (str): The word.
+
+        Returns:
+            float: The score.
+        """
+        try:
+            index = self.counter.get_feature_names().index(word)
+            score = self.tfidf.idf_[index]
+        except (ValueError, IndexError):  # If word was not in the TF-IDF
+            score = 1
+        return score
+
+
 class Embedding():
     def __init__(self,
                  model_type: str,
                  vectors_path: str,
+                 tfidf: TfIdf,
                  embeddings_dimension: int = 50,
                  sentence_embedding_method: str = "mowe"):
         """
@@ -31,13 +61,13 @@ class Embedding():
         self.sentence_embedding_method = sentence_embedding_method
         self.model_type = model_type
 
+        self.tfidf = tfidf
+
         self.stop_words = set(stopwords.words("english"))
 
         self.vectors = {}
 
-        if self.model_type == "glove":
-            self.build_glove_vectors()
-        elif "word2vec" in self.model_type:
+        if "word2vec" in self.model_type:
             self.build_word2vec_vectors()
         else:
             raise Exception(f"Unknown embedding model type: {model_type}")
@@ -45,6 +75,7 @@ class Embedding():
     def build_word2vec_vectors(self) -> None:
         """
         Load word2vec vectors into the self.vectors object.
+        Weight each vector object by the TFIDF score of the coresponding token.
         """
         tic = time.time()
 
@@ -59,7 +90,9 @@ class Embedding():
                 try:
                     if word[0][0] not in self.stop_words and len(
                             word[0][0]) > 2:
-                        self.vectors[word[0][0]] = list(model[token])
+                        self.vectors[word[0][0]] = self.get_weighted_vector(
+                            vector=list(model[token]),
+                            coefficient=self.tfidf.get_score(word[0][0]))
                 except (
                         KeyError, IndexError
                 ):  # The word is not in the model or not return by the pre-proc
@@ -68,31 +101,6 @@ class Embedding():
         toc = time.time()
         print(
             f"Took {round((toc-tic) / 60, 2)} min to load {len(self.vectors.keys())} Word2Vec vectors (embedding dim: {self.embeddings_dimension})."
-        )
-
-    def build_glove_vectors(self) -> None:
-        """
-        Load GloVe vectors into the self.vectors object.
-        """
-        tic = time.time()
-
-        with open(self.vectors_path, "r") as handler:
-            for line in handler.readlines():
-                try:
-                    # Prevent to keep useless words (otherwise pre-proc return nothing)
-                    word, word_raw = preprocess_text(line.split()[0])
-                    del word_raw
-                    vector = [
-                        float(dimension) for dimension in line.split()[1:None]
-                    ]
-                    assert len(vector) == self.embeddings_dimension
-                    self.vectors[word[0][0]] = vector
-                except IndexError:  # When the preprocessing does not return a word (useless word)
-                    continue
-
-        toc = time.time()
-        print(
-            f"Took {round((toc-tic) / 60, 2)} min to load {len(self.vectors.keys())} GloVe vectors (embedding dim: {self.embeddings_dimension})."
         )
 
     def compute_sentence_vector(
@@ -129,6 +137,20 @@ class Embedding():
             )
         return sentence_embedding
 
+    def get_weighted_vector(self, vector: List[float],
+                            coefficient: float) -> List[float]:
+        """
+        Apply a coefficient on all items of a vector.
+
+        Args:
+            vector (List[float]): Vector to be weighted.
+            coefficient (float): The weight.
+
+        Returns:
+            List[float]: [description]
+        """
+        return list(map(lambda x: x * coefficient, vector))
+
 
 class W2V():
     """
@@ -155,7 +177,8 @@ class W2V():
         cursor = connection.cursor()
         cursor.execute("SELECT sentence FROM sentences")
         sentences = [
-            " ".join(json.loads(sentence[0])) for sentence in cursor.fetchall()
+            " ".join(json.loads(sentence[0]))
+            for sentence in cursor.fetchall()
         ]
         cursor.close()
         connection.close()
@@ -173,7 +196,8 @@ class W2V():
         """
         tfidf_model_path = "tfidf_on_kaggle_corpus.pkl"
         if file_path is not None:
-            tfidf_model_path = os.path.join(os.path.dirname(file_path), tfidf_model_path)
+            tfidf_model_path = os.path.join(os.path.dirname(file_path),
+                                            tfidf_model_path)
 
         # Get sentences as List of str
         sentences = self.get_sentences()
@@ -218,21 +242,3 @@ class W2V():
         self.model = KeyedVectors.load_word2vec_format(file_path, binary=True)
 
         print(f"Loaded model containing {len(self.model.wv.vocab)} words.")
-
-
-class TfIdf():
-    def __init__(self, sentences):
-
-        self.counter = CountVectorizer()
-        self.count_vector = self.counter.fit_transform(sentences)
-
-        self.tfidf = TfidfTransformer(smooth_idf=True, use_idf=True)
-        self.tfidf.fit_transform(self.count_vector)
-
-    def get_score(self, word: str) -> float:
-        try:
-            index = self.counter.get_feature_names().index(word)
-            score = self.tfidf.idf_[index]
-        except ValueError:  # If word was not in the TF-IDF
-            score = 1
-        return score
