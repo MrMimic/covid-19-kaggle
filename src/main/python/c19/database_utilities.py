@@ -4,6 +4,7 @@ import multiprocessing as mp
 import os
 import sqlite3
 import time
+from pathlib import Path
 from typing import Any, List, Tuple
 
 import pandas as pd
@@ -110,25 +111,33 @@ def insert_row(list_to_insert: List[Any],
     connection.close()
 
 
-def insert_article(args: List[Tuple[int, pd.Series, str]]) -> None:
+def insert_article(args: List[Tuple[int, pd.Series, str, str]]) -> None:
     """
     Parse and insert a single article into the SQLite DB. Parallelised method.
-    args = [(index, df_line), db_path]
+    args = [(index, df_line), db_path, data_path]
 
     Args:
         args (List[Tuple[int, pd.Series, str]]): Index, article and path to the DB.
     """
     data = args[0][1]
     db_path = args[1]
+    kaggle_data_path = args[2]
 
     # Get body
     if data.has_pdf_parse is True:
+
+        json_file = [
+            file_path for file_path in Path(
+                os.path.join(kaggle_data_path, data.full_text_file)).glob('**/*.json')
+            if data.sha in str(file_path)
+        ]
+
         json_file = os.path.join(os.sep, "kaggle", "input",
                                  "CORD-19-research-challenge",
                                  data.full_text_file, data.full_text_file,
-                                 f"{data.sha}.json")
+                                 f"{}.json")
         try:
-            json_data = read_file(json_file)
+            json_data = read_file(json_file[0])
             body = get_body(json_data=json_data)
             folder = data.full_text_file
         except FileNotFoundError:
@@ -173,8 +182,12 @@ def get_all_articles_doi(
 
 def create_db_and_load_articles(db_path: str = "articles_database.sqlite",
                                 metadata_df_path: str = os.path.join(
-                                    os.sep, "content", "kaggle_data",
+                                    os.sep, "kaggle", "input",
+                                    "CORD-19-research-challenge",
                                     "metadata.csv"),
+                                kaggle_data_path: str = os.path.join(
+                                    os.sep, "kaggle", "input",
+                                    "CORD-19-research-challenge"),
                                 first_launch: bool = False) -> None:
     """
     Main function to create the DB at first launch.
@@ -183,6 +196,7 @@ def create_db_and_load_articles(db_path: str = "articles_database.sqlite",
     Args:
         db_path (str, optional): Path to the SQLite file. Defaults to "articles_database.sqlite".
         metadata_df_path (str, optional): Path to metadata DF. Defaults to os.path.join(os.sep, "content", "kaggle_data","metadata.csv").
+        kaggle_data_path (str, optional): Path to the folder containing Kaggle JSON files.
         load_file (bool, optional): Debug option to prevent to create a new file. Defaults to True.
     """
 
@@ -199,7 +213,7 @@ def create_db_and_load_articles(db_path: str = "articles_database.sqlite",
         metadata_df.drop_duplicates(subset=["doi"], keep="last", inplace=True)
         # Load usefull information to be stored: id, title, body, abstract, date, sha, folder
         articles_to_be_inserted = [
-            (article, db_path)
+            (article, db_path, kaggle_data_path)
             for article in get_articles_to_insert(metadata_df)
         ]
         # Create a new SQLite DB file
