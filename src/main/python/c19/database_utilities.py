@@ -127,6 +127,13 @@ def get_article_text(args: List[Tuple[int, pd.Series, str, str]]) -> None:
     if data.has_pdf_parse is True and load_body is True:
         json_file = os.path.join(kaggle_data_path, data.full_text_file,
                                  data.full_text_file, "pdf_json", f"{data.sha}.json")
+        try:
+            json_data = read_file(json_file)
+            body = get_body(json_data=json_data)
+            folder = data.full_text_file
+        except (FileNotFoundError, KeyError, IndexError):
+            body = None
+            folder = None
     elif data.has_pmc_xml_parse is True and load_body is True:
         json_file = os.path.join(kaggle_data_path, data.full_text_file,
                                     data.full_text_file, "pmc_json",
