@@ -139,7 +139,7 @@ def pre_process_and_vectorize_texts(embedding_model: Any,
 
         # Get all previously inserted IDS as well as a pointer on embedding method
         ids = [(id_, embedding_model, db_path, stem_words, remove_num)
-               for id_ in get_all_articles_data(db_path=db_path)][0:1000]
+               for id_ in get_all_articles_data(db_path=db_path)]
         print(f"{len(ids)} files to pre-process.")
 
         tic = time.time()
