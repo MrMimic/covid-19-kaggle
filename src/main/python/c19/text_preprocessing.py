@@ -1,18 +1,20 @@
 #!/usr/bin/env python3
 
 import json
+import multiprocessing as mp
 import os
 import re
 import sqlite3
 import time
 from typing import Any, List, Tuple
 
-from c19.database_utilities import get_all_articles_doi, insert_row
+import tqdm
 from nltk.corpus import stopwords
 from nltk.stem.snowball import SnowballStemmer
 from nltk.tokenize import RegexpTokenizer, sent_tokenize
-from pathos.multiprocessing import ProcessingPool as picklable_pool
 from retry import retry
+
+from c19.database_utilities import get_all_articles_doi, insert_row
 
 
 def preprocess_text(text: str,
@@ -104,7 +106,10 @@ def pre_process_articles(args: List[Any]) -> None:
                 article[section], stem_words=stem_words, remove_num=remove_num)
             for pp_sentence, raw_sentence in zip(pp_sentences, sentences_raw):
                 if embedding_model is not None:
-                    vector = json.dumps((*map(str, embedding_model.compute_sentence_vector(pp_sentence)),))
+                    vector = json.dumps((*map(
+                        str,
+                        embedding_model.compute_sentence_vector(pp_sentence)),
+                                         ))
                 else:
                     vector = ""
                 try:
@@ -117,13 +122,12 @@ def pre_process_articles(args: List[Any]) -> None:
                                    ),  # Store list of tokens as loadable str
                         vector
                     ]
-                    print(row_to_insert)
-                    # try:
-                    #     insert_row(list_to_insert=row_to_insert,
-                    #                table_name="sentences",
-                    #                db_path=db_path)
-                    # except sqlite3.OperationalError:  # Even the retry() decorator failed
-                    #     continue
+                    try:
+                        insert_row(list_to_insert=row_to_insert,
+                                   table_name="sentences",
+                                   db_path=db_path)
+                    except sqlite3.OperationalError:  # Even the retry() decorator failed
+                        continue
                 except TypeError:  # When all words are not in the model
                     continue
 
@@ -152,13 +156,14 @@ def pre_process_and_vectorize_texts(embedding_model: Any,
 
         # Get all previously inserted IDS as well as a pointer on embedding method
         ids = [(id_, embedding_model, db_path, stem_words, remove_num)
-               for id_ in get_all_articles_doi(db_path=db_path)][0:5]
+               for id_ in get_all_articles_doi(db_path=db_path)]
 
-        print(ids)
-
-        with picklable_pool(os.cpu_count()) as pool:
-            pool.map(pre_process_articles, ids)
-        del ids
+        # with picklable_pool(os.cpu_count()) as pool:
+        with mp.Pool(os.cpu_count()) as pool:
+            with tqdm.tqdm(total=len(ids)) as pbar:
+                for i, _ in enumerate(
+                        pool.imap_unordered(pre_process_articles, ids)):
+                    pbar.update()
 
         # Only to count pp sentences
         connection = sqlite3.connect(db_path)
@@ -172,3 +177,5 @@ def pre_process_and_vectorize_texts(embedding_model: Any,
         print(
             f"Took {round((toc-tic) / 60, 2)} min to pre-process {len(ids)} articles with {len(sentences)} sentences (SQLite DB: {db_path})."
         )
+
+        del ids

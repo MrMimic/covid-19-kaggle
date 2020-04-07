@@ -49,6 +49,17 @@ class TfIdf():
         return score
 
 
+def get_pre_trained_vectors(file_path: str) -> None:
+    """
+    Download pre-trained vectors from github.
+
+    Args:
+        file_path (str): Path to local file to be written.
+    """
+    url = "https://github.com/MrMimic/covid-19-kaggle/raw/master/resources/global_df_w2v_tfidf.parquet"
+    data = urllib.request.urlretrieve(url, file_path)
+
+
 class Embedding():
     def __init__(self,
                  parquet_embedding_path: str,
@@ -67,16 +78,6 @@ class Embedding():
         self.vectors = {}
 
         self.load_word2vec_vectors()
-
-    def get_pre_trained_vectors(self, file_path: str) -> None:
-        """
-        Download pre-trained vectors from github.
-
-        Args:
-            file_path (str): Path to local file to be written.
-        """
-        url = "https://github.com/MrMimic/covid-19-kaggle/raw/master/resources/global_df_w2v_tfidf.parquet"
-        data = urllib.request.urlretrieve(url, file_path)
 
     def load_word2vec_vectors(self) -> None:
         """

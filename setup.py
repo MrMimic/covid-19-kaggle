@@ -5,7 +5,7 @@ with open("README.md", "r") as readme_file:
 
 requirements = [
     "retry>=0.9.2",
-    "pathos>=0.2.5",
+    "tqdm>=4.45.0",
     "nltk>=3.2.5",
     "textblob>=0.15.3",
     "pandas>=1.0.3",
@@ -15,6 +15,7 @@ requirements = [
     "scikit-learn>=0.22.2",
     "pyarrow>=0.16.0",
     "gensim>=3.6.0"
+    "click>=7.1.1"
 ]
 
 classifiers = [
