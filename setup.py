@@ -13,6 +13,7 @@ requirements = [
     "joblib>=0.14.1",
     "python-dateutil>=2.8.1",
     "scikit-learn>=0.22.2",
+    "pyarrow>=0.16.0",
     "gensim>=3.6.0"
 ]
 

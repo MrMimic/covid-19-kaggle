@@ -38,8 +38,8 @@ def preprocess_text(text: str,
         """ Remove stopwords from a given list of words. """
         return [word for word in sentence if word not in stop_words]
 
-    def stem_words(sentence: List[str],
-                   stem_function: Any = stemmer) -> List[str]:
+    def do_stemming(sentence: List[str],
+                    stem_function: Any = stemmer) -> List[str]:
         """ Get words root for every member of an input list. """
         return [stem_function.stem(word) for word in sentence]
 
@@ -58,7 +58,7 @@ def preprocess_text(text: str,
     sentences = [filter_stopwords(sentence) for sentence in sentences]
     if stem_words is True:
         # Stem words
-        sentences = [stem_words(sentence) for sentence in sentences]
+        sentences = [do_stemming(sentence) for sentence in sentences]
     if remove_num is True:
         sentences = [remove_numeric_words(sentence) for sentence in sentences]
     # Filter empty sentences and one-letters words

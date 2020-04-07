@@ -4,17 +4,18 @@ import json
 import os
 import sqlite3
 import time
-from typing import List
+from typing import List, Any
 
 import joblib
 import numpy as np
-from sklearn.feature_extraction.text import TfidfTransformer
-from sklearn.feature_extraction.text import CountVectorizer
-
-from c19.text_preprocessing import preprocess_text
+import pandas as pd
 from gensim.models import Word2Vec
 from gensim.models.keyedvectors import KeyedVectors
 from nltk.corpus import stopwords
+from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
+
+from c19.text_preprocessing import preprocess_text
+from c19.file_processing import read_parquet
 
 
 class TfIdf():
@@ -22,7 +23,8 @@ class TfIdf():
     Simple TFIDF class.
     """
     def __init__(self, sentences):
-        self.counter = CountVectorizer()
+        # Not word appearing in > 95% of docs, and less than 10 times in total
+        self.counter = CountVectorizer(max_df=0.95, min_df=10)
         self.count_vector = self.counter.fit_transform(sentences)
 
         self.tfidf = TfidfTransformer(smooth_idf=True, use_idf=True)
@@ -48,56 +50,38 @@ class TfIdf():
 
 class Embedding():
     def __init__(self,
-                 model_type: str,
-                 vectors_path: str,
-                 tfidf: TfIdf,
+                 parquet_embedding_path: str,
                  embeddings_dimension: int = 50,
-                 sentence_embedding_method: str = "mowe"):
+                 sentence_embedding_method: str = "mowe",
+                 weight_vectors: bool = False):
         """
         The goal here is to create a self.vectors: {word: vector} regardless the model type (glove, word2vec, etc).
+        Everything is loaded from a parquet file containing previously trained data.
         """
-        self.vectors_path = vectors_path
+        self.parquet_embedding_path = parquet_embedding_path
+        self.weight_vectors = weight_vectors
         self.embeddings_dimension = embeddings_dimension
         self.sentence_embedding_method = sentence_embedding_method
-        self.model_type = model_type
-
-        self.tfidf = tfidf
-
         self.stop_words = set(stopwords.words("english"))
-
         self.vectors = {}
 
-        if "word2vec" in self.model_type:
-            self.build_word2vec_vectors()
-        else:
-            raise Exception(f"Unknown embedding model type: {model_type}")
+        self.load_word2vec_vectors()
 
-    def build_word2vec_vectors(self) -> None:
+    def load_word2vec_vectors(self) -> None:
         """
         Load word2vec vectors into the self.vectors object.
         Weight each vector object by the TFIDF score of the coresponding token.
         """
         tic = time.time()
 
-        model = KeyedVectors.load_word2vec_format(self.vectors_path,
-                                                  binary=True)
+        data_frame = read_parquet(self.parquet_embedding_path)
+        for word, data in data_frame.iterrows():
+            if self.weight_vectors is True:
+                self.vectors[word] = self.get_weighted_vector(vector=data.vector, coefficient=data.tfidf)
+            else:
+                self.vectors[word] = data.vector
+        del data_frame
 
-        for token in model.vocab:
-            # Prevent to keep useless words (otherwise pre-proc return nothing)
-            word, word_raw = preprocess_text(token)
-            del word_raw
-            if word:
-                try:
-                    if word[0][0] not in self.stop_words and len(
-                            word[0][0]) > 2:
-                        self.vectors[word[0][0]] = self.get_weighted_vector(
-                            vector=list(model[token]),
-                            coefficient=self.tfidf.get_score(word[0][0]))
-                except (
-                        KeyError, IndexError
-                ):  # The word is not in the model or not return by the pre-proc
-                    continue
-        del model
         toc = time.time()
         print(
             f"Took {round((toc-tic) / 60, 2)} min to load {len(self.vectors.keys())} Word2Vec vectors (embedding dim: {self.embeddings_dimension})."
@@ -121,11 +105,7 @@ class Embedding():
             List[float]: The sentence vector.
         """
         words_vector = [
-            self.vectors[word] if word in self.vectors.keys() else list(
-                list(np.full([
-                    1,
-                    self.embeddings_dimension,
-                ], np.nan))[0]) for word in sentence
+            self.vectors[word] if word in self.vectors.keys() else self.get_empty_vector() for word in sentence
         ]
         if self.sentence_embedding_method == "mowe":
             sentence_embedding = np.nanmean(words_vector, axis=0)
@@ -150,6 +130,15 @@ class Embedding():
             List[float]: [description]
         """
         return list(map(lambda x: x * coefficient, vector))
+
+    def get_empty_vector(self) -> Any:
+        """
+        Return an empty vector of size self.embedding_dim.
+
+        Returns:
+            List[np.nan]: List of np.nan.
+        """
+        return list(list(np.full([1, self.embeddings_dimension, ], np.nan))[0])
 
 
 class W2V():
@@ -194,7 +183,7 @@ class W2V():
         Args:
             file_path (str, optional): File path to save vectors. Defaults to None.
         """
-        tfidf_model_path = "tfidf_on_kaggle_corpus.pkl"
+        tfidf_model_path = "tfidf_on_kaggle_corpus_v3.pkl"
         if file_path is not None:
             tfidf_model_path = os.path.join(os.path.dirname(file_path),
                                             tfidf_model_path)
@@ -219,7 +208,7 @@ class W2V():
                               hs=1,
                               sample=1e-5,
                               negative=10,
-                              min_count=5,
+                              min_count=10,
                               size=100,
                               window=7,
                               seed=42,
@@ -230,7 +219,7 @@ class W2V():
         print(f"Training Word2Vec took: {round((toc-tic) / 60, 3)} minutes.")
 
         if file_path is None:
-            w2v_model_path = f"word2vec_on_kaggle_corpus.bin"
+            w2v_model_path = f"word2vec_on_kaggle_corpus_v3.bin"
         self.model.wv.save_word2vec_format(w2v_model_path, binary=True)
 
     def load(self, file_path: str) -> None:
