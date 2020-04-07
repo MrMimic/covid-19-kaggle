@@ -136,7 +136,7 @@ def insert_article(args: List[Tuple[int, pd.Series, str, str]]) -> None:
             json_data = read_file(json_file[0])
             body = get_body(json_data=json_data)
             folder = data.full_text_file
-        except (FileNotFoundError, KeyError):
+        except (FileNotFoundError, KeyError, IndexError):
             body = None
             folder = None
     else:
@@ -217,12 +217,12 @@ def create_db_and_load_articles(db_path: str = "articles_database.sqlite",
         # Parallelize articles insertion
         with mp.Pool(os.cpu_count()) as pool:
             pool.map(insert_article, articles_to_be_inserted)
-        del articles_to_be_inserted
 
         toc = time.time()
         print(
             f"Took {round((toc-tic) / 60, 2)} min to insert {len(articles_to_be_inserted)} articles (SQLite DB: {db_path})."
         )
+        del articles_to_be_inserted
 
 
 def get_sentences(db_path: str) -> List[Any]:

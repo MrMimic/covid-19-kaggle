@@ -111,6 +111,18 @@ class BinaryClassifier():
         """
         self.model = joblib.load(self.model_path)
 
+    def transform(self, vector: List[float]) -> int:
+        """
+        Return 1 is sentence is a statistical conclusion. Else 0.
+
+        Args:
+            vector (List[float]): A vectorized sentence.
+
+        Returns:
+            int: The class ID.
+        """
+        return self.model.predict([vector])
+
     def test(self) -> None:
         """
         Test the model and compute confusion matrix.

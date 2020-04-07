@@ -81,6 +81,7 @@ def pre_process_articles(args: List[Any]) -> None:
     db_path: str = args[2]
     stem_words: bool = args[3]
     remove_num: bool = args[4]
+    sections_to_extract: List[str] = args[5]
 
     connection = sqlite3.connect(db_path)
     cursor = connection.cursor()
@@ -98,23 +99,28 @@ def pre_process_articles(args: List[Any]) -> None:
         connection.close()
         return None
 
-    for section in ["title", "abstract", "body"]:
+    for section in sections_to_extract:
         if article[section] is not None:
             pp_sentences, sentences_raw = preprocess_text(
                 article[section], stem_words=stem_words, remove_num=remove_num)
             for pp_sentence, raw_sentence in zip(pp_sentences, sentences_raw):
+                if embedding_model is not None:
+                    vector = json.dumps([
+                            str(x)
+                            for x in embedding_model.compute_sentence_vector(
+                                pp_sentence)
+                        ])
+                else:
+                    vector = ""
                 try:
                     # paper, section, sentence, vector
                     row_to_insert = [
                         article_id,
                         section,
                         raw_sentence,  # Raw sentence
-                        json.dumps(pp_sentence),  # Store list of tokens as loadable str
-                        json.dumps([
-                            str(x)
-                            for x in embedding_model.compute_sentence_vector(
-                                pp_sentence)
-                        ])  # Embeded vector
+                        json.dumps(pp_sentence
+                                   ),  # Store list of tokens as loadable str
+                        vector
                     ]
                     try:
                         insert_row(list_to_insert=row_to_insert,
@@ -130,7 +136,8 @@ def pre_process_and_vectorize_texts(embedding_model: Any,
                                     db_path: str = "articles_database.sqlite",
                                     first_launch: bool = False,
                                     stem_words: bool = False,
-                                    remove_num: bool = False) -> None:
+                                    remove_num: bool = False,
+                                    sections_to_extract: List[str]= ["title", "abstract", "body"]) -> None:
     """
     Main function allowing to pre-process every article which have been stored in the DB.
 
@@ -149,7 +156,8 @@ def pre_process_and_vectorize_texts(embedding_model: Any,
         tic = time.time()
 
         # Get all previously inserted IDS as well as a pointer on embedding method
-        ids = [(id_, embedding_model, db_path, stem_words, remove_num)
+        ids = [(id_, embedding_model, db_path, stem_words, remove_num,
+                sections_to_extract)
                for id_ in get_all_articles_doi(db_path=db_path)]
         with picklable_pool(os.cpu_count()) as pool:
             pool.map(pre_process_articles, ids)

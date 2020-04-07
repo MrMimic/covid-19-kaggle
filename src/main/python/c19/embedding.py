@@ -219,17 +219,18 @@ class W2V():
                               hs=1,
                               sample=1e-5,
                               negative=10,
-                              min_count=3,
-                              size=200,
+                              min_count=5,
+                              size=100,
                               window=7,
                               seed=42,
                               workers=os.cpu_count(),
                               iter=10)
         toc = time.time()
+        del sentences
         print(f"Training Word2Vec took: {round((toc-tic) / 60, 3)} minutes.")
 
         if file_path is None:
-            w2v_model_path = f"word2vec_on_kaggle_corpus_dim_{self.model.vector_size}_min_count_{self.model.min_count}_vocab_{len(self.model.wv.vocab)}.bin"
+            w2v_model_path = f"word2vec_on_kaggle_corpus.bin"
         self.model.wv.save_word2vec_format(w2v_model_path, binary=True)
 
     def load(self, file_path: str) -> None:
