@@ -81,7 +81,6 @@ def pre_process_articles(args: List[Any]) -> None:
     db_path: str = args[2]
     stem_words: bool = args[3]
     remove_num: bool = args[4]
-    sections_to_extract: List[str] = args[5]
 
     connection = sqlite3.connect(db_path)
     cursor = connection.cursor()
@@ -99,7 +98,7 @@ def pre_process_articles(args: List[Any]) -> None:
         connection.close()
         return None
 
-    for section in sections_to_extract:
+    for section in ["title", "abstract", "body"]:
         if article[section] is not None:
             pp_sentences, sentences_raw = preprocess_text(
                 article[section], stem_words=stem_words, remove_num=remove_num)
@@ -136,8 +135,7 @@ def pre_process_and_vectorize_texts(embedding_model: Any,
                                     db_path: str = "articles_database.sqlite",
                                     first_launch: bool = False,
                                     stem_words: bool = False,
-                                    remove_num: bool = False,
-                                    sections_to_extract: List[str]= ["title", "abstract", "body"]) -> None:
+                                    remove_num: bool = False) -> None:
     """
     Main function allowing to pre-process every article which have been stored in the DB.
 
@@ -156,8 +154,7 @@ def pre_process_and_vectorize_texts(embedding_model: Any,
         tic = time.time()
 
         # Get all previously inserted IDS as well as a pointer on embedding method
-        ids = [(id_, embedding_model, db_path, stem_words, remove_num,
-                sections_to_extract)
+        ids = [(id_, embedding_model, db_path, stem_words, remove_num)
                for id_ in get_all_articles_doi(db_path=db_path)]
         with picklable_pool(os.cpu_count()) as pool:
             pool.map(pre_process_articles, ids)

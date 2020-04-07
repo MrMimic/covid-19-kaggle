@@ -122,9 +122,10 @@ def insert_article(args: List[Tuple[int, pd.Series, str, str]]) -> None:
     data = args[0][1]
     db_path = args[1]
     kaggle_data_path = args[2]
+    load_body = args[3]
 
     # Get body
-    if data.has_pdf_parse is True:
+    if data.has_pdf_parse is True and load_body is True:
 
         json_file = [
             file_path for file_path in Path(
@@ -184,7 +185,8 @@ def create_db_and_load_articles(db_path: str = "articles_database.sqlite",
                                 kaggle_data_path: str = os.path.join(
                                     os.sep, "kaggle", "input",
                                     "CORD-19-research-challenge"),
-                                first_launch: bool = False) -> None:
+                                first_launch: bool = False,
+                                load_body: bool = False) -> None:
     """
     Main function to create the DB at first launch.
     Load metadata.csv, try to get body texts and insert everything without pre-processing.
@@ -209,7 +211,7 @@ def create_db_and_load_articles(db_path: str = "articles_database.sqlite",
         metadata_df.drop_duplicates(subset=["doi"], keep="last", inplace=True)
         # Load usefull information to be stored: id, title, body, abstract, date, sha, folder
         articles_to_be_inserted = [
-            (article, db_path, kaggle_data_path)
+            (article, db_path, kaggle_data_path, load_body)
             for article in get_articles_to_insert(metadata_df)
         ]
         # Create a new SQLite DB file
