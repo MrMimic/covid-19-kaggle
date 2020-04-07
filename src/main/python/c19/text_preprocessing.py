@@ -152,7 +152,10 @@ def pre_process_and_vectorize_texts(embedding_model: Any,
 
         # Get all previously inserted IDS as well as a pointer on embedding method
         ids = [(id_, embedding_model, db_path, stem_words, remove_num)
-               for id_ in get_all_articles_doi(db_path=db_path)]
+               for id_ in get_all_articles_doi(db_path=db_path)][0:5]
+
+        print(ids)
+
         with picklable_pool(os.cpu_count()) as pool:
             pool.map(pre_process_articles, ids)
         del ids

@@ -172,7 +172,7 @@ def get_all_articles_doi(
     ids = cursor.fetchall()
     cursor.close()
     connection.close()
-    ids_cleaneds = [id_[0] for id_ in ids if len(id_) == 1]
+    ids_cleaneds = [id_[0] for id_ in ids if len(id_) == 1 and id_[0] is not None]
 
     return ids_cleaneds
 
