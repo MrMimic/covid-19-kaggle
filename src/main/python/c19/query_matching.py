@@ -6,8 +6,10 @@ import os
 import sqlite3
 import time
 from typing import Any, List, Tuple
+from operator import itemgetter
 
 import numpy as np
+import tqdm
 from sklearn.metrics.pairwise import cosine_similarity
 
 from c19.database_utilities import get_sentences
@@ -28,7 +30,7 @@ def vectorize_query(embedding_model: Embedding, query: str) -> List[float]:
     """
     pp_query, query_raw = preprocess_text(query,
                                           stem_words=False,
-                                          remove_num=False)
+                                          remove_num=True)
     del query_raw
     query_vector = embedding_model.compute_sentence_vector(pp_query[0])
     return query_vector
@@ -149,13 +151,17 @@ def get_query_distances_and_vectors(
                          for sentence_vector in sentences_vectors]
 
     # Execute
-    with mp.Pool(os.cpu_count()) as pool:
-        distances_and_vectors = pool.map(compute_cosine_distance,
-                                         mapping_arguments)
-    del mapping_arguments
-
+    tic = time.time()
+    pool = mp.Pool(processes=os.cpu_count())
+    distances_and_vectors = list(
+        tqdm.tqdm(pool.imap_unordered(compute_cosine_distance, mapping_arguments),
+                  total=len(mapping_arguments),
+                  desc="DISTANCE COMPUTING: "))
     toc = time.time()
-    print(f"Took {round((toc-tic) / 60, 2)} min to process the query.")
+    print(
+        f"Took {round((toc-tic) / 60, 2)} to match the query versus {len(mapping_arguments)} sentences."
+    )
+    del mapping_arguments
 
     return distances_and_vectors
 
