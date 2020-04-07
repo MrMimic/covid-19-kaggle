@@ -4,7 +4,8 @@ import json
 import os
 import sqlite3
 import time
-from typing import List, Any
+import urllib.request
+from typing import Any, List
 
 import joblib
 import numpy as np
@@ -14,8 +15,8 @@ from gensim.models.keyedvectors import KeyedVectors
 from nltk.corpus import stopwords
 from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
 
-from c19.text_preprocessing import preprocess_text
 from c19.file_processing import read_parquet
+from c19.text_preprocessing import preprocess_text
 
 
 class TfIdf():
@@ -66,6 +67,16 @@ class Embedding():
         self.vectors = {}
 
         self.load_word2vec_vectors()
+
+    def get_pre_trained_vectors(self, file_path: str) -> None:
+        """
+        Download pre-trained vectors from github.
+
+        Args:
+            file_path (str): Path to local file to be written.
+        """
+        url = "https://github.com/MrMimic/covid-19-kaggle/raw/master/resources/global_df_w2v_tfidf.parquet"
+        data = urllib.request.urlretrieve(url, file_path)
 
     def load_word2vec_vectors(self) -> None:
         """
