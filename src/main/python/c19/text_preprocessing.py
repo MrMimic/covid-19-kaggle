@@ -104,11 +104,7 @@ def pre_process_articles(args: List[Any]) -> None:
                 article[section], stem_words=stem_words, remove_num=remove_num)
             for pp_sentence, raw_sentence in zip(pp_sentences, sentences_raw):
                 if embedding_model is not None:
-                    vector = json.dumps([
-                            str(x)
-                            for x in embedding_model.compute_sentence_vector(
-                                pp_sentence)
-                        ])
+                    vector = json.dumps((*map(str, embedding_model.compute_sentence_vector(pp_sentence)),))
                 else:
                     vector = ""
                 try:
@@ -121,12 +117,13 @@ def pre_process_articles(args: List[Any]) -> None:
                                    ),  # Store list of tokens as loadable str
                         vector
                     ]
-                    try:
-                        insert_row(list_to_insert=row_to_insert,
-                                   table_name="sentences",
-                                   db_path=db_path)
-                    except sqlite3.OperationalError:  # Even the retry() decorator failed
-                        continue
+                    print(row_to_insert)
+                    # try:
+                    #     insert_row(list_to_insert=row_to_insert,
+                    #                table_name="sentences",
+                    #                db_path=db_path)
+                    # except sqlite3.OperationalError:  # Even the retry() decorator failed
+                    #     continue
                 except TypeError:  # When all words are not in the model
                     continue
 
