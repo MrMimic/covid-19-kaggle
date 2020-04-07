@@ -149,7 +149,7 @@ def pre_process_and_vectorize_texts(embedding_model: Any,
                       desc="PRE-PROCESSING: "))
         toc = time.time()
         print(
-            f"Took {round((toc-tic) / 60, 2)} min to pre-process {len(ids)} articles."
+            f"Took {round((toc-tic) / 60, 2)} min to pre-process {len(ids)} articles sentences."
         )
         time.sleep(0.5)
 

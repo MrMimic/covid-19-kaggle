@@ -112,7 +112,7 @@ def insert_rows(list_to_insert: List[Any],
     connection.close()
 
 
-def insert_article(args: List[Tuple[int, pd.Series, str, str]]) -> None:
+def get_article_text(args: List[Tuple[int, pd.Series, str, str]]) -> None:
     """
     Parse and insert a single article into the SQLite DB. Parallelised method.
     args = [(index, df_line), db_path, data_path]
@@ -224,13 +224,13 @@ def create_db_and_load_articles(db_path: str = "articles_database.sqlite",
         tic = time.time()
         pool = mp.Pool(processes=os.cpu_count())
         rows_to_insert = list(
-            tqdm.tqdm(pool.imap_unordered(insert_article,
+            tqdm.tqdm(pool.imap_unordered(get_article_text,
                                           articles_to_be_inserted),
                       total=len(articles_to_be_inserted),
                       desc="PRE-PROCESSING: "))
         toc = time.time()
         print(
-            f"Took {round((toc-tic) / 60, 2)} min to pre-process {len(articles_to_be_inserted)} articles."
+            f"Took {round((toc-tic) / 60, 2)} min to prepare {len(articles_to_be_inserted)} articles for insertion."
         )
         del articles_to_be_inserted
         time.sleep(0.5)
