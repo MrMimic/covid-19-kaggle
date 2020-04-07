@@ -4,7 +4,6 @@ import multiprocessing as mp
 import os
 import sqlite3
 import time
-from pathlib import Path
 from typing import Any, List, Tuple
 
 import pandas as pd

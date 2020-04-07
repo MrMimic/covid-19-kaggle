@@ -116,15 +116,16 @@ def get_db_sentences_vectors(
     """
     tic = time.time()
     sentences = get_sentences(db_path)
-    sentences_vectors = [[float(x) for x in json.loads(sentence_vector[4])]
-                         for sentence_vector in sentences]
-    sentences_vectors = [
-        vector for vector in sentences_vectors if np.nansum(vector) != 0
-    ]
+    print(len(sentences))
+    print(sentences[0])
+    print(sentences[0][4])
+    # sentences_vectors = [[float(x) for x in json.loads(sentence_vector[4])] for sentence_vector in sentences if sentence_vector[4] is not None]
+    # sentences_vectors = [vector for vector in sentences_vectors if np.nansum(vector) != 0]
     toc = time.time()
+    sentences_vectors = []
 
     print(
-        f"Queries will be matched versus {len(sentences_vectors)} vectors ({round((toc-tic) / 60, 2)} min to load)."
+        f"Queries will be matched versus {len(sentences_vectors)} vectors ({round((toc-tic) / 60, 2)} minutes to load)."
     )
     return sentences_vectors
 
@@ -159,7 +160,7 @@ def get_query_distances_and_vectors(
                   desc="DISTANCE COMPUTING: "))
     toc = time.time()
     print(
-        f"Took {round((toc-tic) / 60, 2)} to match the query versus {len(mapping_arguments)} sentences."
+        f"Took {round((toc-tic) / 60, 2)} minutes to match the query versus {len(mapping_arguments)} sentences."
     )
     del mapping_arguments
 
