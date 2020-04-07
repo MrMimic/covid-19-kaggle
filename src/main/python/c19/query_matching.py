@@ -5,8 +5,8 @@ import multiprocessing as mp
 import os
 import sqlite3
 import time
-from typing import Any, List, Tuple
 from operator import itemgetter
+from typing import Any, List, Tuple
 
 import numpy as np
 import tqdm
@@ -51,152 +51,70 @@ def get_article(db_path: str, paper_doi) -> List[Any]:
     cursor = connection.cursor()
     command = "SELECT * FROM articles WHERE paper_doi='%s'" % paper_doi
     cursor.execute(command)
-    data = cursor.fetchall()
+    data = cursor.fetchone()
     cursor.close()
     connection.close()
 
     return data
 
 
-def compute_cosine_distance(args: Any) -> float:
-    """
-    Compute cosine distance between two embeded sentences (query and article sentences eg).
-
-    Args:
-        args (Any): A tuple (vector_1, vector_2)
-
-    Returns:
-        float: The cosine distance and the sentence vector.
-    """
-    sentence_vector = args[1]
-    query_vector = args[0]
-    distance = 1 - cosine_similarity([query_vector], [sentence_vector])[0][0]
-
-    return (distance, sentence_vector)
-
-
-def query_db_for_sentence(db_path: str, vector: str) -> Any:
-    """
-    Get a full sentence (not pre-processed) from a vector for a better display.
-
-    Args:
-        db_path (str): Path to the SQLite DB.
-        vector (str): The vector to be retrieved.
-
-    Returns:
-        [Any]: The columns values of the matching sentence.
-    """
-    connection = sqlite3.connect(db_path)
-    cursor = connection.cursor()
-    command = "SELECT * FROM sentences WHERE vector='%s'" % vector
-    cursor.execute(command)
-    data = cursor.fetchall()
-    cursor.close()
-    connection.close()
-
-    data = list(set(data))
-
-    if len(data) > 1:
-        print(f"ERROR: two sentences with vector {vector} have been found.")
-        data = None
-
-    return data
-
-
-def get_db_sentences_vectors(
+def get_sentences_data(
         db_path: str = "articles_database.sqlite") -> List[List[float]]:
     """
-    Get sentences vectors to be matched with queries (stay in RAM, thus computed once).
+    Get sentences data to be matched with queries (stay in RAM, thus computed once).
 
     Args:
         db_path (str, optional): Path to the DB. Defaults to "articles_database.sqlite".
 
     Returns:
-        [List[List[float]]]: All found sentences vectors.
+        [List[List[float]]]: All found sentences data.
     """
     tic = time.time()
+    loaded_sentences = []
     sentences = get_sentences(db_path)
-    print(len(sentences))
-    print(sentences[0])
-    print(sentences[0][4])
-    # sentences_vectors = [[float(x) for x in json.loads(sentence_vector[4])] for sentence_vector in sentences if sentence_vector[4] is not None]
-    # sentences_vectors = [vector for vector in sentences_vectors if np.nansum(vector) != 0]
+    for sentence in sentences:
+        if sentence[4] is not None:  # If vector
+            sentence = list(sentence)
+            sentence[4] = [float(x) for x in json.loads(sentence[4])]
+            if np.nansum(
+                    sentence[4]) != 0:  # If at least one word has been embeded
+                loaded_sentences.append(sentence)
+
     toc = time.time()
-    sentences_vectors = []
-
     print(
-        f"Queries will be matched versus {len(sentences_vectors)} vectors ({round((toc-tic) / 60, 2)} minutes to load)."
+        f"Queries will be match versus {len(sentences)} sentences ({round((toc-tic) / 60, 2)} minutes to load)."
     )
-    return sentences_vectors
+    return loaded_sentences
 
 
-def get_query_distances_and_vectors(
-        query: str, sentences_vectors: List[List[float]],
-        embedding_model: Embedding) -> List[Tuple[float, List[float]]]:
+def get_k_closest_sentences(query: str,
+                            sentences: List[Any],
+                            embedding_model: Embedding,
+                            k: int = 10) -> Any:
     """
     Compute the cosine distance between the query and all sentences found in the DB.
 
     Args:
         query (str): The query as a sentence.
-        sentences_vectors ([List[List[float]]]): Pre-processed sentences vectors from the DB.
+        sentences ([List[Any]): Pre-processed sentences data from the DB.
         embedding_model (Embedding): The embedding model to be used to vectorise the query.
 
     Returns:
-        List[Tuple[float, List[float]]]: A list of tuples [(score, target_vector_1), (score, target_vector_2), ...]
+        Any: A list of tuples [(score, target_vector_1), (score, target_vector_2), ...]
     """
     tic = time.time()
 
     # Vectorize it and format as arguments to be mapped by mp.Pool
     query_vector = list(vectorize_query(embedding_model, query))
-    mapping_arguments = [(query_vector, sentence_vector)
-                         for sentence_vector in sentences_vectors]
-
-    # Execute
-    tic = time.time()
-    pool = mp.Pool(processes=os.cpu_count())
-    distances_and_vectors = list(
-        tqdm.tqdm(pool.imap_unordered(compute_cosine_distance, mapping_arguments),
-                  total=len(mapping_arguments),
-                  desc="DISTANCE COMPUTING: "))
+    # Cosine sim of 1 means same vector, -1 opposite
+    distances = cosine_similarity([query_vector],
+                                  [sentence[4] for sentence in sentences])[0]
+    for sentence, distance in zip(sentences, distances):
+        sentence.append(distance)
+    del distances
+    # Now, index 5 contains distance
+    sentences = sorted(sentences, key=itemgetter(5), reverse=True)[0:k]
     toc = time.time()
-    print(
-        f"Took {round((toc-tic) / 60, 2)} minutes to match the query versus {len(mapping_arguments)} sentences."
-    )
-    del mapping_arguments
+    print(f"Took {round((toc-tic) / 60, 2)} minutes to process the query.")
 
-    return distances_and_vectors
-
-
-def get_k_closest_sentences(distances_and_vectors: List[Tuple[float,
-                                                              List[float]]],
-                            db_path: str = "articles_database.sqlite",
-                            k: int = 10) -> List[Any]:
-    """
-    Sort the results from get_query_distances_and_vectors() to extract the top k sentences.
-
-    Args:
-        distances_and_vectors (List[Tuple[float,List[float]]]): The list of tuples
-        [(score, target_vector_1), (score, target_vector_2), ...]
-        k (int, optional): Number of top sentences to extract. Defaults to 10.
-
-    Returns:
-        List[Any]: [description]
-    """
-    # Get results
-    distances = [item[0] for item in distances_and_vectors]
-    vectors = [item[1] for item in distances_and_vectors]
-
-    # Find  k closest
-    closest_sentence_indexes = np.argpartition(np.array(distances), k)[:k]
-    closest_vectors = [vectors[idx] for idx in closest_sentence_indexes]
-    closest_vectors_str = [
-        json.dumps([str(x) for x in vec]) for vec in closest_vectors
-    ]
-
-    # Retrieve closest sentences
-    closest_sentences = [
-        query_db_for_sentence(vector=vec_str, db_path=db_path)
-        for vec_str in closest_vectors_str
-    ]
-
-    return closest_sentences
+    return sentences
