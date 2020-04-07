@@ -118,8 +118,7 @@ def pre_process_articles(args: List[Any]) -> None:
                         article_id,
                         section,
                         raw_sentence,  # Raw sentence
-                        json.dumps(pp_sentence
-                                   ),  # Store list of tokens as loadable str
+                        json.dumps(pp_sentence),  # Store list of tokens as loadable str
                         vector
                     ]
                     try:
@@ -158,7 +157,6 @@ def pre_process_and_vectorize_texts(embedding_model: Any,
         ids = [(id_, embedding_model, db_path, stem_words, remove_num)
                for id_ in get_all_articles_doi(db_path=db_path)]
 
-        # with picklable_pool(os.cpu_count()) as pool:
         with mp.Pool(os.cpu_count()) as pool:
             with tqdm.tqdm(total=len(ids)) as pbar:
                 for i, _ in enumerate(

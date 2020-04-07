@@ -4,6 +4,7 @@ import multiprocessing as mp
 import os
 import sqlite3
 import time
+import tqdm
 from pathlib import Path
 from typing import Any, List, Tuple
 
@@ -123,7 +124,6 @@ def insert_article(args: List[Tuple[int, pd.Series, str, str]]) -> None:
     db_path = args[1]
     kaggle_data_path = args[2]
     load_body = args[3]
-
     # Get body
     if data.has_pdf_parse is True and load_body is True:
 
@@ -143,15 +143,13 @@ def insert_article(args: List[Tuple[int, pd.Series, str, str]]) -> None:
     else:
         body = None
         folder = None
-
+    # Get date
     try:
         date = parser.parse(data.publish_time)
     except Exception:  # Better to get no date than a string of whatever
         date = None
-
-    raw_data = [
-        data.doi, data.title, body, data.abstract, date, data.sha, folder
-    ]
+    # Insert
+    raw_data = [data.doi, data.title, body, data.abstract, date, data.sha, folder]
     insert_row(list_to_insert=raw_data, db_path=db_path)
 
 
@@ -218,7 +216,10 @@ def create_db_and_load_articles(db_path: str = "articles_database.sqlite",
         instanciate_sql_db(db_path=db_path)
         # Parallelize articles insertion
         with mp.Pool(os.cpu_count()) as pool:
-            pool.map(insert_article, articles_to_be_inserted)
+            with tqdm.tqdm(total=len(articles_to_be_inserted)) as pbar:
+                for i, _ in enumerate(
+                        pool.imap_unordered(insert_article, articles_to_be_inserted)):
+                    pbar.update()
 
         toc = time.time()
         print(
