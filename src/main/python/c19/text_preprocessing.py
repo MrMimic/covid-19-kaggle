@@ -14,7 +14,7 @@ from nltk.stem.snowball import SnowballStemmer
 from nltk.tokenize import RegexpTokenizer, sent_tokenize
 from retry import retry
 
-from c19.database_utilities import get_all_articles_doi, insert_row
+from c19.database_utilities import get_all_articles_data, insert_row
 
 
 def preprocess_text(text: str,
@@ -78,64 +78,48 @@ def pre_process_articles(args: List[Any]) -> None:
     Args:
         args (List[Any]): The article data to be pre-processed. See below variable attribution.
     """
-    article_id: str = args[0]
+    article_id: str = args[0][0]
+    article_title: str = args[0][1]
+    article_abstract: str = args[0][2]
+    article_body: str = args[0][3]
+
     embedding_model = args[1]
     db_path: str = args[2]
     stem_words: bool = args[3]
     remove_num: bool = args[4]
 
-    connection = sqlite3.connect(db_path)
-    cursor = connection.cursor()
-    cursor.execute("SELECT * FROM articles WHERE paper_doi = ?", [article_id])
-    # Get dict {column: value}
-    try:
-        article = {
-            [col for col in head if col is not None][0]: value
-            for head, value in zip(cursor.description, cursor.fetchone())
-        }
-        cursor.close()
-        connection.close()
-    except TypeError:  # When the DB doest not return a result
-        cursor.close()
-        connection.close()
-        return None
+    article_rows = []
 
-    for section in ["title", "abstract", "body"]:
-        if article[section] is not None:
-            pp_sentences, sentences_raw = preprocess_text(
-                article[section], stem_words=stem_words, remove_num=remove_num)
+    for section, data in zip(["title", "abstract", "body"], [article_title, article_abstract, article_body]):
+        if data is not None:
+            pp_sentences, sentences_raw = preprocess_text(data, stem_words=stem_words, remove_num=remove_num)
             for pp_sentence, raw_sentence in zip(pp_sentences, sentences_raw):
-                if embedding_model is not None:
-                    vector = json.dumps((*map(
-                        str,
-                        embedding_model.compute_sentence_vector(pp_sentence)),
-                                         ))
-                else:
-                    vector = ""
-                try:
-                    # paper, section, sentence, vector
-                    row_to_insert = [
-                        article_id,
-                        section,
-                        raw_sentence,  # Raw sentence
-                        json.dumps(pp_sentence),  # Store list of tokens as loadable str
-                        vector
-                    ]
+                if pp_sentence != []:
+                    if embedding_model is not None:
+                        vector = json.dumps((*map(str, embedding_model.compute_sentence_vector(pp_sentence)), ))
+                    else:
+                        vector = None
                     try:
-                        insert_row(list_to_insert=row_to_insert,
-                                   table_name="sentences",
-                                   db_path=db_path)
-                    except sqlite3.OperationalError:  # Even the retry() decorator failed
+                        # paper, section, raw sentence, sentence, vector
+                        row_to_insert = [
+                            article_id,
+                            section,
+                            raw_sentence,
+                            json.dumps(pp_sentence),
+                            vector
+                        ]
+                        article_rows.append(row_to_insert)
+                    except TypeError:  # When all words are not in the model
                         continue
-                except TypeError:  # When all words are not in the model
-                    continue
+    return article_rows
 
 
 def pre_process_and_vectorize_texts(embedding_model: Any,
                                     db_path: str = "articles_database.sqlite",
                                     first_launch: bool = False,
                                     stem_words: bool = False,
-                                    remove_num: bool = False) -> None:
+                                    remove_num: bool = False,
+                                    multi_processes: bool = True) -> None:
     """
     Main function allowing to pre-process every article which have been stored in the DB.
 
@@ -144,36 +128,52 @@ def pre_process_and_vectorize_texts(embedding_model: Any,
         db_path (str, optional): Path to the newly created DB. Defaults to "articles_database.sqlite".
         first_launch (bool, optional): Debug option preventing to create a new file. Defaults to False.
         stem_words (bool, optional): Stem words during preprocessing. Defaults to False.
-        remove_num (bool, optional):Remove numerical values during preprocessing. Defaults to False.
+        remove_num (bool, optional): Remove numerical values during preprocessing. Defaults to False.
+        multi_processes (bool, optional): Apply multiprocessing. Defaults to False.
     """
     if first_launch is False:
         assert os.path.isfile(db_path)
         print(f"DB {db_path} will be used instead.")
 
     else:
-        tic = time.time()
 
         # Get all previously inserted IDS as well as a pointer on embedding method
         ids = [(id_, embedding_model, db_path, stem_words, remove_num)
-               for id_ in get_all_articles_doi(db_path=db_path)]
+               for id_ in get_all_articles_data(db_path=db_path)][0:1000]
+        print(f"{len(ids)} files to pre-process.")
 
-        with mp.Pool(os.cpu_count()) as pool:
+        tic = time.time()
+        if multi_processes is True:
+            pool = mp.Pool(processes=8)
+            rows_to_insert = list(tqdm.tqdm(pool.imap_unordered(pre_process_articles, ids), total=len(ids), desc="PRE-PROCESSING: "))
+        else:
             with tqdm.tqdm(total=len(ids)) as pbar:
-                for i, _ in enumerate(
-                        pool.imap_unordered(pre_process_articles, ids)):
+                rows_to_insert = []
+                for id_ in ids:
+                    rows_to_insert.append(pre_process_articles(id_))
                     pbar.update()
+        toc = time.time()
+        print(
+            f"Took {round((toc-tic) / 60, 2)} min to pre-process {len(ids)} articles."
+        )
+        time.sleep(0.5)
 
-        # Only to count pp sentences
-        connection = sqlite3.connect(db_path)
-        cursor = connection.cursor()
-        cursor.execute("SELECT paper_doi FROM sentences")
-        sentences = cursor.fetchall()
-        cursor.close()
-        connection.close()
+
+        tic = time.time()
+        inserted_sentences = 0
+        with tqdm.tqdm(total=len(rows_to_insert), desc="INSERTION: ") as pbar:
+            for article_sentences in rows_to_insert:
+                # for row in article:
+                # try:
+                insert_row(list_to_insert=article_sentences,
+                           table_name="sentences",
+                           db_path=db_path)
+                # except sqlite3.OperationalError:  # Even the retry() decorator failed
+                # continue
+                inserted_sentences += len(article_sentences)
+                pbar.update()
 
         toc = time.time()
         print(
-            f"Took {round((toc-tic) / 60, 2)} min to pre-process {len(ids)} articles with {len(sentences)} sentences (SQLite DB: {db_path})."
+            f"Took {round((toc-tic) / 60, 2)} min to insert {inserted_sentences} sentences (SQLite DB: {db_path})."
         )
-
-        del ids

@@ -105,8 +105,10 @@ def insert_row(list_to_insert: List[Any],
 
     connection = sqlite3.connect(db_path)
     cursor = connection.cursor()
-    cursor.execute(command,
-                   list_to_insert)  # This line will be retried if fails
+    if table_name == "articles":
+        cursor.execute(command, list_to_insert)  # This line will be retried if fails
+    else:
+        cursor.executemany(command, list_to_insert)
     cursor.close()
     connection.commit()
     connection.close()
@@ -153,24 +155,26 @@ def insert_article(args: List[Tuple[int, pd.Series, str, str]]) -> None:
     insert_row(list_to_insert=raw_data, db_path=db_path)
 
 
-def get_all_articles_doi(
+def get_all_articles_data(
         db_path: str = "articles_database.sqlite") -> List[str]:
     """
-    Return all articles DOIs stored in the article table.
+    Return all articles data stored in the article table.
 
     Args:
         db_path (str, optional): Path to the SQLite DB. Defaults to "articles_database.sqlite".
 
     Returns:
-        List[str]: List of found DOIs.
+        List[str]: List of article data.
     """
     connection = sqlite3.connect(db_path)
     cursor = connection.cursor()
-    cursor.execute("SELECT paper_doi FROM articles")
+    cursor.execute("SELECT paper_doi, title, abstract, body FROM articles")
     ids = cursor.fetchall()
     cursor.close()
     connection.close()
-    ids_cleaneds = [id_[0] for id_ in ids if len(id_) == 1 and id_[0] is not None]
+
+    # ids_cleaneds = [id_ for id_ in ids if len(id_) == 1 and id_[0] is not None]
+    ids_cleaneds = ids
 
     return ids_cleaneds
 
