@@ -4,15 +4,15 @@ import multiprocessing as mp
 import os
 import sqlite3
 import time
-import tqdm
 from pathlib import Path
 from typing import Any, List, Tuple
 
 import pandas as pd
+import tqdm
 from dateutil import parser
+from retry import retry
 
 from c19.file_processing import get_body, read_file
-from retry import retry
 
 
 def instanciate_sql_db(db_path: str = "articles_database.sqlite") -> None:
@@ -81,9 +81,9 @@ def get_articles_to_insert(articles_df: pd.DataFrame) -> List[Any]:
 
 
 @retry(sqlite3.OperationalError, tries=5, delay=2)
-def insert_row(list_to_insert: List[Any],
-               table_name: str = "articles",
-               db_path: str = "articles_database.sqlite") -> None:
+def insert_rows(list_to_insert: List[Any],
+                table_name: str = "articles",
+                db_path: str = "articles_database.sqlite") -> None:
     """
     Insert row into the SQLite database. Retry 5 times if database is locked
     by concurring accesses.
@@ -105,10 +105,8 @@ def insert_row(list_to_insert: List[Any],
 
     connection = sqlite3.connect(db_path)
     cursor = connection.cursor()
-    if table_name == "articles":
-        cursor.execute(command, list_to_insert)  # This line will be retried if fails
-    else:
-        cursor.executemany(command, list_to_insert)
+    cursor.executemany(command,
+                       list_to_insert)  # This line will be retried if fails
     cursor.close()
     connection.commit()
     connection.close()
@@ -123,16 +121,15 @@ def insert_article(args: List[Tuple[int, pd.Series, str, str]]) -> None:
         args (List[Tuple[int, pd.Series, str]]): Index, article and path to the DB.
     """
     data = args[0][1]
-    db_path = args[1]
-    kaggle_data_path = args[2]
-    load_body = args[3]
+    kaggle_data_path = args[1]
+    load_body = args[2]
     # Get body
     if data.has_pdf_parse is True and load_body is True:
 
         json_file = [
             file_path for file_path in Path(
-                os.path.join(kaggle_data_path, data.full_text_file)).glob('**/*.json')
-            if data.sha in str(file_path)
+                os.path.join(kaggle_data_path, data.full_text_file)).glob(
+                    '**/*.json') if data.sha in str(file_path)
         ]
 
         try:
@@ -151,8 +148,10 @@ def insert_article(args: List[Tuple[int, pd.Series, str, str]]) -> None:
     except Exception:  # Better to get no date than a string of whatever
         date = None
     # Insert
-    raw_data = [data.doi, data.title, body, data.abstract, date, data.sha, folder]
-    insert_row(list_to_insert=raw_data, db_path=db_path)
+    raw_data = [
+        data.doi, data.title, body, data.abstract, date, data.sha, folder
+    ]
+    return raw_data
 
 
 def get_all_articles_data(
@@ -213,23 +212,36 @@ def create_db_and_load_articles(db_path: str = "articles_database.sqlite",
         metadata_df.drop_duplicates(subset=["doi"], keep="last", inplace=True)
         # Load usefull information to be stored: id, title, body, abstract, date, sha, folder
         articles_to_be_inserted = [
-            (article, db_path, kaggle_data_path, load_body)
+            (article, kaggle_data_path, load_body)
             for article in get_articles_to_insert(metadata_df)
         ]
+        print(f"{len(articles_to_be_inserted)} articles to be inserted.")
+
         # Create a new SQLite DB file
         instanciate_sql_db(db_path=db_path)
-        # Parallelize articles insertion
-        with mp.Pool(os.cpu_count()) as pool:
-            with tqdm.tqdm(total=len(articles_to_be_inserted)) as pbar:
-                for i, _ in enumerate(
-                        pool.imap_unordered(insert_article, articles_to_be_inserted)):
-                    pbar.update()
 
+        # Parallelize articles pre_processing
+        tic = time.time()
+        pool = mp.Pool(processes=os.cpu_count())
+        rows_to_insert = list(
+            tqdm.tqdm(pool.imap_unordered(insert_article,
+                                          articles_to_be_inserted),
+                      total=len(articles_to_be_inserted),
+                      desc="PRE-PROCESSING: "))
         toc = time.time()
         print(
-            f"Took {round((toc-tic) / 60, 2)} min to insert {len(articles_to_be_inserted)} articles (SQLite DB: {db_path})."
+            f"Took {round((toc-tic) / 60, 2)} min to pre-process {len(articles_to_be_inserted)} articles."
         )
         del articles_to_be_inserted
+        time.sleep(0.5)
+
+        # And finaly insert
+        tic = time.time()
+        insert_rows(list_to_insert=rows_to_insert, db_path=db_path)
+        toc = time.time()
+        print(
+            f"Took {round((toc-tic) / 60, 2)} min to insert {len(rows_to_insert)} articles (SQLite DB: {db_path})."
+        )
 
 
 def get_sentences(db_path: str) -> List[Any]:

@@ -9,14 +9,12 @@ from typing import Any, List
 
 import joblib
 import numpy as np
-import pandas as pd
 from gensim.models import Word2Vec
 from gensim.models.keyedvectors import KeyedVectors
 from nltk.corpus import stopwords
 from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
 
 from c19.file_processing import read_parquet
-from c19.text_preprocessing import preprocess_text
 
 
 class TfIdf():
@@ -89,7 +87,8 @@ class Embedding():
         data_frame = read_parquet(self.parquet_embedding_path)
         for word, data in data_frame.iterrows():
             if self.weight_vectors is True:
-                self.vectors[word] = self.get_weighted_vector(vector=data.vector, coefficient=data.tfidf)
+                self.vectors[word] = self.get_weighted_vector(
+                    vector=data.vector, coefficient=data.tfidf)
             else:
                 self.vectors[word] = data.vector
         del data_frame
@@ -117,7 +116,9 @@ class Embedding():
             List[float]: The sentence vector.
         """
         words_vector = [
-            self.vectors[word] if word in self.vectors.keys() else self.get_empty_vector() for word in sentence
+            self.vectors[word]
+            if word in self.vectors.keys() else self.get_empty_vector()
+            for word in sentence
         ]
         if self.sentence_embedding_method == "mowe":
             sentence_embedding = np.nanmean(words_vector, axis=0)
@@ -150,7 +151,11 @@ class Embedding():
         Returns:
             List[np.nan]: List of np.nan.
         """
-        return list(list(np.full([1, self.embeddings_dimension, ], np.nan))[0])
+        return list(
+            list(np.full([
+                1,
+                self.embeddings_dimension,
+            ], np.nan))[0])
 
 
 class W2V():
