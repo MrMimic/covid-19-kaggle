@@ -1,9 +1,6 @@
-#!/usr/bin/env python
-# coding: utf-8
 
-# In[ ]:
-
-
+from typing import List, Dict
+from math import sqrt
 
 
 def nearest_to_centroid(cluster: List[List], k: int)-> List[List]:
@@ -29,10 +26,10 @@ def nearest_to_centroid(cluster: List[List], k: int)-> List[List]:
     dist={}
     index=0
     for vec in cluster:
-        dist[index]= math.sqrt(sum([(a - b) ** 2 for a, b in zip(centroid, vec)]))
+        dist[index]= sqrt(sum([(a - b) ** 2 for a, b in zip(centroid, vec)]))
         index+=1
     dist = {k: v for k, v in sorted(dist.items(), key=lambda item: item[1])}
-    nearest_vec=[cluster1[i] for i in list(dist.keys())[0:k]]    
+    nearest_vec=[cluster[i] for i in list(dist.keys())[0:k]]    
     return nearest_vec
 
 
@@ -54,4 +51,14 @@ def average_anwers(clusters: Dict[str, List[List]], k: int)-> Dict[str, List[lis
         average_sentences[cl]= nearest_to_centroid(clusters[cl],k)
         
     return average_sentences 
+
+"""Exemple of output of average_anwers function"""
+dict1={'cluster1':  [[1,2,3],  [1,5,3],[2,1,6], [0,1,6]], 'cluster2': [[1,2,3], [1,5,3],[2,1,6], [1,5,3]]}
+
+"""we want to have the two most nearest vector to the centroid of each of the clusters of dict1 """
+average_anwers(dict1,2)
+
+""" output"""
+"""{'cluster1': [[1, 2, 3], [2, 1, 6]], 'cluster2': [[1, 2, 3], [1, 5, 3]]}"""
+
 
