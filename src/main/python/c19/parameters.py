@@ -20,7 +20,7 @@ class Embedding:
     str: The path to load the pre-trained vectors. If not found, will be downloaded.
     """
 
-    dimension: int = 100
+    dimensions: int = 100
     """
     int: The number of dimension of the pre-trained vectors.
     """
@@ -99,10 +99,15 @@ class Parameters:
 
     query: Query = Query()
 
+    first_launch: bool = True
+
     def __post_init__(self):
         """
         Parameters validation.
         """
+        assert isinstance(
+            self.first_launch, bool
+        ), f"An boolean is requiered to decide if new things have to be trained or not: {self.first_launch}"
         # Embedding
         assert os.path.exists(
             os.path.dirname(os.path.realpath(self.embedding.local_path))
@@ -143,4 +148,3 @@ class Parameters:
         assert isinstance(
             self.query.max_cluster, int
         ), f"An interger is requiered to determine maximal number of sentences clusters: {self.query.max_cluster}"
-
