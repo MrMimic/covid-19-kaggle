@@ -8,11 +8,12 @@ import sqlite3
 import time
 from typing import Any, List, Tuple
 from random import shuffle
+from nltk import word_tokenize
 
 import tqdm
 from nltk.corpus import stopwords
 from nltk.stem.snowball import SnowballStemmer
-from nltk.tokenize import RegexpTokenizer, sent_tokenize
+from nltk.tokenize import sent_tokenize
 from retry import retry
 
 from c19.database_utilities import get_all_articles_data, insert_rows
@@ -32,7 +33,6 @@ def preprocess_text(text: str,
     Returns:
         Tuple[List[str], List[str]]: Two lists: raw and pre-processed sentences.
     """
-    word = RegexpTokenizer(r"\w+")
     stop_words_nltk = set(stopwords.words("english"))
     stemmer = SnowballStemmer("english")
 
@@ -56,7 +56,7 @@ def preprocess_text(text: str,
     # Lower
     sentences = [sentence.lower() for sentence in sentences_raw]
     # Split sentences into words and remove punctuation
-    sentences = [word.tokenize(sentence) for sentence in sentences]
+    sentences = [word_tokenize(sentence) for sentence in sentences]
     # Remove stopwords
     sentences = [filter_stopwords(sentence) for sentence in sentences]
     if stem_words is True:
@@ -88,6 +88,10 @@ def pre_process_batch_of_articles(args: List[Any]) -> None:
 
     articles_rows = []
 
+    # All abstract starts with this word
+    words_to_filter = ["abstract"]
+    covid_synonyms = ["covid-19", "covid-2019", "covid 19", "covid 2019"]
+
     for article in args[0]:
 
         article_id: str = article[0]
@@ -99,19 +103,25 @@ def pre_process_batch_of_articles(args: List[Any]) -> None:
             ["title", "abstract", "body"],
             [article_title, article_abstract, article_body]):
             if data is not None:
-                pp_sentences, sentences_raw = preprocess_text(
-                    data, stem_words=stem_words, remove_num=remove_num)
+
+                # Replace synonyms
+
+
+                pp_sentences, sentences_raw = preprocess_text(data, stem_words=stem_words, remove_num=remove_num)
                 if len(pp_sentences) > 0:
                     # HDD issue: let's randomly select max_body_sentences sentences.
-                    if section == "body":
+                    if section == "body" and len(pp_sentences) > max_body_sentences:
                         temp_list = list(zip(pp_sentences, sentences_raw))
                         shuffle(temp_list)
                         pp_sentences, sentences_raw = zip(
                             *temp_list[0:max_body_sentences])
                         del temp_list
-                    for pp_sentence, raw_sentence in zip(pp_sentences,
-                                                        sentences_raw):
-                        if pp_sentence != []:
+                    for pp_sentence, raw_sentence in zip(pp_sentences, sentences_raw):
+                        # Only keep is sentence has at least 4 words.
+                        if len(pp_sentence) > 4:
+                            # Filter some words
+                            if pp_sentence[0] in words_to_filter:
+                                pp_sentence.pop(0)
                             if embedding_model is not None:
                                 vector = json.dumps((*map(
                                     str,
@@ -119,14 +129,11 @@ def pre_process_batch_of_articles(args: List[Any]) -> None:
                                         pp_sentence)), ))
                             else:
                                 vector = None
-                            try:
-                                row_to_insert = [
-                                    article_id, section, raw_sentence,
-                                    json.dumps(pp_sentence), vector
-                                ]
-                                articles_rows.append(row_to_insert)
-                            except TypeError:  # When all words are not in the model
-                                continue
+                            row_to_insert = [
+                                article_id, section, raw_sentence,
+                                json.dumps(pp_sentence), vector
+                            ]
+                            articles_rows.append(row_to_insert)
     return articles_rows
 
 
