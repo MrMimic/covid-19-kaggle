@@ -1,53 +1,138 @@
 {
     "What is known about transmission, incubation, and environmental stability?": {
-        "Range of incubation periods for the disease in humans (and how this varies across age and health status) and how long individuals are contagious, even after recovery.": "",
-        "Prevalence of asymptomatic shedding and transmission (e.g., particularly children).": "",
-        "Seasonality of transmission.": "",
-        "Physical science of the coronavirus (e.g., charge distribution, adhesion to hydrophilic/phobic surfaces, environmental survival to inform decontamination efforts for affected areas and provide information about viral shedding).": "",
-        "Persistence and stability on a multitude of substrates and sources (e.g., nasal discharge, sputum, urine, fecal matter, blood).": "",
-        "Persistence of virus on surfaces of different materials (e,g., copper, stainless steel, plastic).": "",
-        "Natural history of the virus and shedding of it from an infected person": "",
-        "Implementation of diagnostics and products to improve clinical processes": "",
-        "Disease models, including animal models for infection, disease and transmission": "",
-        "Tools and studies to monitor phenotypic change and potential adaptation of the virus": "",
-        "Immune response and immunity": "",
-        "Effectiveness of movement control strategies to prevent secondary transmission in health care and community settings": "",
-        "Effectiveness of personal protective equipment (PPE) and its usefulness to reduce risk of transmission in health care and community settings": "",
-        "Role of the environment in transmission": ""
+        "Range of incubation periods for the disease in humans (and how this varies across age and health status) and how long individuals are contagious, even after recovery.": [
+            "What is the covid-19 incubation period for humans and its variations across age and health status?",
+            "How long are individual with covid-19 contagious?"],
+        "Prevalence of asymptomatic shedding and transmission (e.g., particularly children).": [
+            "Prevalence of asymptomatic shedding and transmission in children of covid-19"],
+        "Seasonality of transmission.": [
+            "How seasonnal is the transmission of the covid-19?"],
+        "Physical science of the coronavirus (e.g., charge distribution, adhesion to hydrophilic/phobic surfaces, environmental survival to inform decontamination efforts for affected areas and provide information about viral shedding).": [
+            "Physical science of the coronavirus (charge distribution, adhesion to hydrophilic/phobic surfaces, environmental survival)"
+        ],
+        "Persistence and stability on a multitude of substrates and sources (e.g., nasal discharge, sputum, urine, fecal matter, blood).": [
+            "Persistence and stability of the coronavirus on substrates and sources (nasal discharge, sputum, urine, fecal matter, blood)"
+        ],
+        "Persistence of virus on surfaces of different materials (e,g., copper, stainless steel, plastic).": [
+            "Persistence of coronavirus on surfaces of different materials (copper, stainless steel, plastic)"
+        ],
+        "Natural history of the virus and shedding of it from an infected person": [
+            "Natural history of the coronavirus and shedding",
+            "How is shedded the coronavirus by an infected person?"
+        ],
+        "Implementation of diagnostics and products to improve clinical processes": [
+            "Implementation of diagnostics and products to fight the coronavirus"
+        ],
+        "Disease models, including animal models for infection, disease and transmission": [
+            "Disease and animal models for infection, disease and transmission study of the coronavirus"
+        ],
+        "Tools and studies to monitor phenotypic change and potential adaptation of the virus": [
+            "How to monitor phenotypic change and potential adaptation of the coronavirus"
+        ],
+        "Immune response and immunity": [
+            "Immune response and immunity to the coronavirus"
+        ],
+        "Effectiveness of movement control strategies to prevent secondary transmission in health care and community settings": [
+            "How movement control strategies are effective to prevent covid-19 infections?"
+        ],
+        "Effectiveness of personal protective equipment (PPE) and its usefulness to reduce risk of transmission in health care and community settings": [
+            "How  personal protective equipment (PPE) is effective to prevent covid-19 infections?"
+        ],
+        "Role of the environment in transmission": ["Role of the environment in transmission of the coronavirus"
+        ]
     },
     "What do we know about COVID-19 risk factors?": {
-        "Data on potential risks factors Smoking, pre-existing pulmonary disease": "",
-        "Data on potential risks factors Co-infections (determine whether co-existing respiratory/viral infections make the virus more transmissible or virulent) and other co-morbidities": "",
-        "Data on potential risks factors Neonates and pregnant women": "",
-        "Data on potential Socio-economic and behavioral factors to understand the economic impact of the virus and whether there were differences": "",
-        "Transmission dynamics of the virus, including the basic reproductive number, incubation period, serial interval, modes of transmission and environmental factors": "",
-        "Severity of disease, including risk of fatality among symptomatic hospitalized patients, and high-risk patient groups": "",
-        "Susceptibility of populations": "",
-        "Public health mitigation measures that could be effective for control": ""
+        "Data on potential risks factors: Smoking, pre-existing pulmonary disease": [
+            "Are smoking or pre-existing pulmonary disease (lung) risk factors for developing covid-19?"
+        ],
+        "Data on potential risks factors: Co-infections (determine whether co-existing respiratory/viral infections make the virus more transmissible or virulent) and other co-morbidities": [
+            "Do co-existing respiratory or viral infections make the coronavirus more transmissible or virulent?"
+        ],
+        "Data on potential risks factors: Neonates and pregnant women": [
+            "How neonates and pregnant women are susceptible of developing covid-19?"
+        ],
+        "Data on potential Socio-economic and behavioral factors to understand the economic impact of the virus and whether there were differences": [
+            "What is the economic impact of the covid-19 pandemic paticularly regarding socio-economic and behavioral factors?"
+        ],
+        "Transmission dynamics of the virus, including the basic reproductive number, incubation period, serial interval, modes of transmission and environmental factors": [
+            "Basic reproductive number, incubation period, serial interval, modes of transmission and environmental factors of the coronavirus",
+            "How coronavirus is transmitted?"
+        ],
+        "Severity of disease, including risk of fatality among symptomatic hospitalized patients, and high-risk patient groups": [
+            "risk of fatality among symptomatic hospitalized patients for covid-19",
+            "What is the severity of covid-19",
+            "Is there any high-risk patient groups regarding covid-19?"
+        ],
+        "Susceptibility of populations": [
+            "How susceptibility to coronavirus differ for different populations?"
+        ],
+        "Public health mitigation measures that could be effective for control": [
+            "What public health mitigation measures could be effective for covid-19 control?"
+        ]
     },
     "What do we know about virus genetics, origin, and evolution?": {
-        "Real-time tracking of whole genomes and a mechanism for coordinating the rapid dissemination of that information to inform the development of diagnostics and therapeutics and to track variations of the virus over time.": "",
-        "Access to geographic and temporal diverse sample sets to understand geographic distribution and genomic differences, and determine whether there is more than one strain in circulation. Multi-lateral agreements such as the Nagoya Protocol could be leveraged.": "",
-        "Evidence that livestock could be infected (e.g., field surveillance, genetic sequencing, receptor binding) and serve as a reservoir after the epidemic appears to be over.": "",
-        "Evidence of whether farmers are infected, and whether farmers could have played a role in the origin.": "",
-        "Surveillance of mixed wildlife- livestock farms for SARS-CoV-2 and other coronaviruses in Southeast Asia.": "",
-        "Experimental infections to test host range for this pathogen.": "",
-        "Animal host(s) and any evidence of continued spill-over to humans": "",
-        "Socioeconomic and behavioral risk factors for this spill-over": "",
-        "Sustainable risk reduction strategies": ""
+        "Real-time tracking of whole genomes and a mechanism for coordinating the rapid dissemination of that information to inform the development of diagnostics and therapeutics and to track variations of the virus over time.": [
+            ""
+        ],
+        "Access to geographic and temporal diverse sample sets to understand geographic distribution and genomic differences, and determine whether there is more than one strain in circulation. Multi-lateral agreements such as the Nagoya Protocol could be leveraged.": [
+            ""
+        ],
+        "Evidence that livestock could be infected (e.g., field surveillance, genetic sequencing, receptor binding) and serve as a reservoir after the epidemic appears to be over.": [
+            ""
+        ],
+        "Evidence of whether farmers are infected, and whether farmers could have played a role in the origin.": [
+            ""
+        ],
+        "Surveillance of mixed wildlife- livestock farms for SARS-CoV-2 and other coronaviruses in Southeast Asia.": [
+            ""
+        ],
+        "Experimental infections to test host range for this pathogen.": [
+            ""
+        ],
+        "Animal host(s) and any evidence of continued spill-over to humans": [
+            ""
+        ],
+        "Socioeconomic and behavioral risk factors for this spill-over": [
+            ""
+        ],
+        "Sustainable risk reduction strategies": [
+            ""
+        ]
     },
     "What do we know about vaccines and therapeutics?": {
-        "Effectiveness of drugs being developed and tried to treat COVID-19 patients.": "",
-        "Clinical and bench trials to investigate less common viral inhibitors against COVID-19 such as naproxen, clarithromycin, and minocyclinethat that may exert effects on viral replication.": "",
-        "Methods evaluating potential complication of Antibody-Dependent Enhancement (ADE) in vaccine recipients.": "",
-        "Exploration of use of best animal models and their predictive value for a human vaccine.": "",
-        "Capabilities to discover a therapeutic (not vaccine) for the disease, and clinical effectiveness studies to discover therapeutics, to include antiviral agents.": "",
-        "Alternative models to aid decision makers in determining how to prioritize and distribute scarce, newly proven therapeutics as production ramps up. This could include identifying approaches for expanding production capacity to ensure equitable and timely distribution to populations in need.": "",
-        "Efforts targeted at a universal coronavirus vaccine.": "",
-        "Efforts to develop animal models and standardize challenge studies": "",
-        "Efforts to develop prophylaxis clinical studies and prioritize in healthcare workers": "",
-        "Approaches to evaluate risk for enhanced disease after vaccination": "",
-        "Assays to evaluate vaccine immune response and process development for vaccines, alongside suitable animal models [in conjunction with therapeutics]": ""
+        "Effectiveness of drugs being developed and tried to treat COVID-19 patients.": [
+            ""
+        ],
+        "Clinical and bench trials to investigate less common viral inhibitors against COVID-19 such as naproxen, clarithromycin, and minocyclinethat that may exert effects on viral replication.": [
+            ""
+        ],
+        "Methods evaluating potential complication of Antibody-Dependent Enhancement (ADE) in vaccine recipients.": [
+            ""
+        ],
+        "Exploration of use of best animal models and their predictive value for a human vaccine.": [
+            ""
+        ],
+        "Capabilities to discover a therapeutic (not vaccine) for the disease, and clinical effectiveness studies to discover therapeutics, to include antiviral agents.": [
+            ""
+        ],
+        "Alternative models to aid decision makers in determining how to prioritize and distribute scarce, newly proven therapeutics as production ramps up. This could include identifying approaches for expanding production capacity to ensure equitable and timely distribution to populations in need.": [
+            ""
+        ],
+        "Efforts targeted at a universal coronavirus vaccine.": [
+            ""
+        ],
+        "Efforts to develop animal models and standardize challenge studies": [
+            ""
+        ],
+        "Efforts to develop prophylaxis clinical studies and prioritize in healthcare workers": [
+            ""
+        ],
+        "Approaches to evaluate risk for enhanced disease after vaccination": [
+            ""
+        ],
+        "Assays to evaluate vaccine immune response and process development for vaccines, alongside suitable animal models [in conjunction with therapeutics]": [
+            ""
+        ]
     },
     "What has been published about medical care?": {
         "Resources to support skilled nursing facilities and long term care facilities.": "",
