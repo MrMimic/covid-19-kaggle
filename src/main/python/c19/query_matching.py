@@ -16,7 +16,6 @@ from c19.database_utilities import get_sentences
 from c19.embedding import Embedding
 from c19.text_preprocessing import preprocess_text
 
-
 from dateutil import parser
 
 
@@ -145,7 +144,8 @@ def get_k_closest_sentences(query: str,
     # Vectorize it and format as arguments to be mapped by mp.Pool
     query_vector = list(vectorize_query(embedding_model, query))
     # Cosine sim of 1 means same vector, -1 opposite
-    distances = cosine_similarity([query_vector], [sentence[4] for sentence in sentences])[0]
+    distances = cosine_similarity([query_vector],
+                                  [sentence[4] for sentence in sentences])[0]
     for sentence, distance in zip(sentences, distances):
         sentence.append(distance)
     del distances

@@ -14,8 +14,9 @@ requirements = [
     "python-dateutil>=2.8.1",
     "scikit-learn>=0.22.2",
     # "pyarrow>=0.16.0",  # Pyarrow is already installed on colab, shouldn't get two versions
-    "gensim>=3.6.0"
-    "dataclasses>=0.7"
+    "gensim>=3.6.0",
+    "dataclasses>=0.7",
+    "language-detector>=5.0.2"
 ]
 
 classifiers = [

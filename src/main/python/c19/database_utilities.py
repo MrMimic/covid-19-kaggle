@@ -12,6 +12,7 @@ from dateutil import parser
 from retry import retry
 
 from c19.file_processing import get_body, read_file
+from c19.language_detection import update_languages
 
 
 def instanciate_sql_db(db_path: str = "articles_database.sqlite") -> None:
@@ -210,6 +211,9 @@ def create_db_and_load_articles(db_path: str = "articles_database.sqlite",
         metadata_df = pd.read_csv(os.path.join(kaggle_data_path, "metadata.csv"), low_memory=False)
         # The DOI isn't unique, then let's keep the last version of a duplicated paper
         metadata_df.drop_duplicates(subset=["doi"], keep="last", inplace=True)
+        # For the moment, we only trained english embedding. See you on 04/16.
+        metadata_df = update_languages(metadata_df)
+        metadata_df = metadata_df[metadata_df.lang == "En"]
         # Load usefull information to be stored: id, title, body, abstract, date, sha, folder
         articles_to_be_inserted = [
             (article, kaggle_data_path, load_body)

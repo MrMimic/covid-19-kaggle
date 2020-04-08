@@ -79,15 +79,11 @@ class Embedding():
         Returns:
             List[float]: The sentence vector.
         """
-        words_vector = [
-            self.vectors[word]
-            if word in self.vectors.keys() else self.get_empty_vector()
-            for word in sentence
-        ]
-        if self.sentence_embedding_method == "mowe":
-            sentence_embedding = np.nanmean(words_vector, axis=0)
-        elif self.sentence_embedding_method == "sowe":
-            sentence_embedding = np.nansum(words_vector, axis=0)
+        words_vector = [self.vectors[word] for word in sentence if word in self.vectors.keys()]
+        if self.sentence_embedding_method == "mowe" and len(words_vector) > 0:
+            sentence_embedding = np.mean(words_vector, axis=0)
+        elif self.sentence_embedding_method == "sowe" and len(words_vector) > 0:
+            sentence_embedding = np.sum(words_vector, axis=0)
         else:
             raise Exception(
                 f"No such sentence embedding method: {sentence_embedding_method}"
@@ -107,16 +103,3 @@ class Embedding():
             List[float]: [description]
         """
         return list(map(lambda x: x * coefficient, vector))
-
-    def get_empty_vector(self) -> Any:
-        """
-        Return an empty vector of size self.embedding_dim.
-
-        Returns:
-            List[np.nan]: List of np.nan.
-        """
-        return list(
-            list(np.full([
-                1,
-                self.embeddings_dimension,
-            ], np.nan))[0])

@@ -1,24 +1,27 @@
 #!/usr/bin/env python3
 
-from textblob import TextBlob
+import pandas as pd
+from language_detector import detect_language
 
 
-def get_lang(text: str) -> str:
+def update_languages(df: pd.DataFrame) -> pd.DataFrame:
     """
-    Detects language of text: must contain minimum 3 characters.
+    Update the language columns of the DF with the language of article.
 
     Args:
-        text (str): The text from which language should be detected.
-
-    Raises:
-        ValueError: The provided string is not long enough.
+        df (pd.DataFrame): The dataframe, with a columns "title".
 
     Returns:
-        str: [description]
+        pd.DataFrame: DF with a new column "lang".
     """
-    if len(text) >= 3:
-        blob = TextBlob(text)
-        return blob.detect_language()
-    else:
-        raise ValueError(
-            "A minimum of 3 characters are needed for language detection!")
+    languages = []
+    for index, row in df.iterrows():
+        try:
+            lang = detect_language(row.title)[0:2]
+        except Exception:
+            lang = None
+        languages.append(lang)
+    df['lang'] = languages
+    del languages
+
+    return df
