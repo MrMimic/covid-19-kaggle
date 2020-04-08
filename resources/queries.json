@@ -72,10 +72,14 @@
     },
     "What do we know about virus genetics, origin, and evolution?": {
         "Real-time tracking of whole genomes and a mechanism for coordinating the rapid dissemination of that information to inform the development of diagnostics and therapeutics and to track variations of the virus over time.": [
-            ""
+            "Real-time tracking of whole genomes of coronaviruses",
+            "Mechanism for coordinating the rapid dissemination of that information to inform the development of diagnostics and therapeutics",
+            "How to track variations of the corinaviruses over time? And for other viruses?"
         ],
         "Access to geographic and temporal diverse sample sets to understand geographic distribution and genomic differences, and determine whether there is more than one strain in circulation. Multi-lateral agreements such as the Nagoya Protocol could be leveraged.": [
-            ""
+            "Which data can help to understand geographic distribution and genomic differences",
+            "Is there more than one strain in circulation?",
+            "How are Multi-lateral agreements such as the Nagoya Protocol effective?"
         ],
         "Evidence that livestock could be infected (e.g., field surveillance, genetic sequencing, receptor binding) and serve as a reservoir after the epidemic appears to be over.": [
             ""
