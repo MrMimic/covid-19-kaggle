@@ -184,10 +184,6 @@ def get_all_articles_data(
 
 
 def create_db_and_load_articles(db_path: str = "articles_database.sqlite",
-                                metadata_df_path: str = os.path.join(
-                                    os.sep, "kaggle", "input",
-                                    "CORD-19-research-challenge",
-                                    "metadata.csv"),
                                 kaggle_data_path: str = os.path.join(
                                     os.sep, "kaggle", "input",
                                     "CORD-19-research-challenge"),
@@ -199,7 +195,6 @@ def create_db_and_load_articles(db_path: str = "articles_database.sqlite",
 
     Args:
         db_path (str, optional): Path to the SQLite file. Defaults to "articles_database.sqlite".
-        metadata_df_path (str, optional): Path to metadata DF. Defaults to os.path.join(os.sep, "content", "kaggle_data","metadata.csv").
         kaggle_data_path (str, optional): Path to the folder containing Kaggle JSON files.
         load_file (bool, optional): Debug option to prevent to create a new file. Defaults to True.
     """
@@ -212,7 +207,7 @@ def create_db_and_load_articles(db_path: str = "articles_database.sqlite",
         tic = time.time()
 
         # The metadata.csv file will be used to fetch available files
-        metadata_df = pd.read_csv(metadata_df_path, low_memory=False)
+        metadata_df = pd.read_csv(os.path.join(kaggle_data_path, "metadata.csv"), low_memory=False)
         # The DOI isn't unique, then let's keep the last version of a duplicated paper
         metadata_df.drop_duplicates(subset=["doi"], keep="last", inplace=True)
         # Load usefull information to be stored: id, title, body, abstract, date, sha, folder

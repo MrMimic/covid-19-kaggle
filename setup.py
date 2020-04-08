@@ -15,7 +15,7 @@ requirements = [
     "scikit-learn>=0.22.2",
     "pyarrow>=0.16.0",
     "gensim>=3.6.0"
-    "click>=7.1.1"
+    "dataclasses>=0.7"
 ]
 
 classifiers = [

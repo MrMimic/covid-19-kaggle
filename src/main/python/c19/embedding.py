@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 
+import os
 import time
 import urllib.request
 from typing import Any, List
 
 import numpy as np
-
 from c19.file_processing import read_parquet
 
 
@@ -31,6 +31,9 @@ class Embedding():
         Everything is loaded from a parquet file containing previously trained data.
         """
         self.parquet_embedding_path = parquet_embedding_path
+        if os.path.isfile(self.parquet_embedding_path) is False:
+            get_pre_trained_vectors(self.parquet_embedding_path)
+
         self.weight_vectors = weight_vectors
         self.embeddings_dimension = embeddings_dimension
         self.sentence_embedding_method = sentence_embedding_method
