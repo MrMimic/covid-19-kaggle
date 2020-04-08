@@ -13,7 +13,7 @@ requirements = [
     "joblib>=0.14.1",
     "python-dateutil>=2.8.1",
     "scikit-learn>=0.22.2",
-    # "pyarrow>=0.16.0",
+    # "pyarrow>=0.16.0",  # Pyarrow is already installed on colab, shouldn't get two versions
     "gensim>=3.6.0"
     "dataclasses>=0.7"
 ]
@@ -35,6 +35,6 @@ setup(name="c19",
       url="https://github.com/MrMimic/covid-19-kaggle",
       packages=find_packages(where="src/main/python/"),
       package_dir={"": "src/main/python/"},
-      python_requires=">=3.6.9",
+      python_requires=">=3.6",
       install_requires=requirements,
       classifiers=classifiers)
