@@ -108,10 +108,6 @@ class Parameters:
         assert isinstance(
             self.first_launch, bool
         ), f"An boolean is requiered to decide if new things have to be trained or not: {self.first_launch}"
-        # Embedding
-        assert os.path.exists(
-            os.path.dirname(os.path.realpath(self.embedding.local_path))
-        ), f"The path for the pre-trained vectors does not exists: {self.embedding.local_path}"
         assert isinstance(
             self.embedding.dimension, int
         ), f"An interger is requiered for embedding dimension: {self.embedding.dimension}"
@@ -121,10 +117,6 @@ class Parameters:
         assert isinstance(
             self.embedding.weight_with_tfidf, bool
         ), f"An boolean is requiered to decide if word should be weighted or not: {self.embedding.weight_with_tfidf}"
-        # Database
-        assert os.path.exists(
-            os.path.dirname(os.path.realpath(self.database.local_path))
-        ), f"The path for the article database does not exists: {self.database.local_path}"
         # Preprocessing
         assert isinstance(
             self.preprocessing.load_text_body, bool
