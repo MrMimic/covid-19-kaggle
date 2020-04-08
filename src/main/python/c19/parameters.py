@@ -20,7 +20,7 @@ class Embedding:
     str: The path to load the pre-trained vectors. If not found, will be downloaded.
     """
 
-    dimensions: int = 100
+    dimension: int = 100
     """
     int: The number of dimension of the pre-trained vectors.
     """
@@ -114,7 +114,7 @@ class Parameters:
         ), f"The path for the pre-trained vectors does not exists: {self.embedding.local_path}"
         assert isinstance(
             self.embedding.dimension, int
-        ), f"An interger is requiered for embedding dimensions: {self.embedding.dimension}"
+        ), f"An interger is requiered for embedding dimension: {self.embedding.dimension}"
         assert self.embedding.word_aggregation_method in [
             "mowe", "sowe"
         ], f"Word aggregation method should be either 'mowe' or 'sowe'"
