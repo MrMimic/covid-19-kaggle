@@ -84,6 +84,7 @@ def pre_process_batch_of_articles(args: List[Any]) -> None:
     embedding_model = args[1]
     stem_words: bool = args[2]
     remove_num: bool = args[3]
+    max_body_sentences: int = args[4]
 
     articles_rows = []
 
@@ -101,12 +102,12 @@ def pre_process_batch_of_articles(args: List[Any]) -> None:
                 pp_sentences, sentences_raw = preprocess_text(
                     data, stem_words=stem_words, remove_num=remove_num)
                 if len(pp_sentences) > 0:
-                    # Let's randomly select 20 body sentences at the moment (DB is huge).
-                    # TODO: Param ?
+                    # HDD issue: let's randomly select max_body_sentences sentences.
                     if section == "body":
                         temp_list = list(zip(pp_sentences, sentences_raw))
                         shuffle(temp_list)
-                        pp_sentences, sentences_raw = zip(*temp_list[0:20])
+                        pp_sentences, sentences_raw = zip(
+                            *temp_list[0:max_body_sentences])
                         del temp_list
                     for pp_sentence, raw_sentence in zip(pp_sentences,
                                                         sentences_raw):
@@ -152,7 +153,8 @@ def pre_process_and_vectorize_texts(embedding_model: Any,
                                     first_launch: bool = False,
                                     stem_words: bool = False,
                                     remove_num: bool = False,
-                                    batch_size: int = 1000) -> None:
+                                    batch_size: int = 1000,
+                                    max_body_sentences: int = 10) -> None:
     """
     Main function allowing to pre-process every article which have been stored in the DB.
 
@@ -173,8 +175,7 @@ def pre_process_and_vectorize_texts(embedding_model: Any,
             article for article in get_all_articles_data(db_path=db_path)
         ]
         batches = split_into_chunks(articles, chunks_size=batch_size)
-        arguments = [(batch, embedding_model, stem_words, remove_num)
-                     for batch in batches]
+        arguments = [(batch, embedding_model, stem_words, remove_num, max_body_sentences) for batch in batches]
         print(
             f"{len(articles)} files to pre-process ({len(batches)} batches of {len(batches[0])} articles)."
         )

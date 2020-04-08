@@ -68,6 +68,16 @@ class PreProcessing:
     bool: Should remove numeric tokens during pre-processing.
     """
 
+    batch_size: int = 1000
+    """
+    int: The number of close sentences to be tajen in account when computing clustering.
+    """
+
+    max_body_sentences: int = 10
+    """
+    int: The number of close sentences to be tajen in account when computing clustering.
+    """
+
 
 @dataclass
 class Query:
@@ -85,6 +95,11 @@ class Query:
     max_cluster: int = 10
     """
     int: The maximal number of clusters os sentence to design.
+    """
+
+    number_of_clusters: int = 3
+    """
+    int: The number of wanted clusters (ie, opinion). If 0, auto-estimation.
     """
 
 
