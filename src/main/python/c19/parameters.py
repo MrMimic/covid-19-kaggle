@@ -125,9 +125,6 @@ class Parameters:
         assert os.path.exists(
             os.path.dirname(os.path.realpath(self.database.local_path))
         ), f"The path for the article database does not exists: {self.database.local_path}"
-        assert os.path.exists(
-            self.database.local_path
-        ), f"The path for the article database does not exists: {self.database.local_path}"
         # Preprocessing
         assert isinstance(
             self.preprocessing.load_text_body, bool
