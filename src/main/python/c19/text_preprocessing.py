@@ -90,9 +90,10 @@ def pre_process_batch_of_articles(args: List[Any]) -> None:
 
     # All abstract starts with this word
     words_to_filter = ["abstract"]
-    covid_synonyms = [
-        "covid19", "covid-2019", "covid 19", "covid 2019", "covid2019"
-    ]
+    # This is several variations of the same word
+    covid_regex = re.compile(r"([Cc][Oo][Vv][Ii][Dd][- ]?[12][90](19)?)")
+    coronavirus_regex = re.compile(
+        r"[Cc][Oo][Rr][Oo][Nn][Aa] [Vv][Ii][Rr][Uu][Ss]")
 
     for article in args[0]:
 
@@ -106,9 +107,8 @@ def pre_process_batch_of_articles(args: List[Any]) -> None:
             [article_title, article_abstract, article_body]):
             if data is not None:
                 # Replace synonyms
-                if "covid" in data:
-                    for synonym in covid_synonyms:
-                        data = data.replace(s, "covid-19")
+                data = re.sub(covid_regex, "COVID-19", data)
+                data = re.sub(coronavirus_regex, "Coronavirus", data)
                 pp_sentences, sentences_raw = preprocess_text(data, stem_words=stem_words, remove_num=remove_num)
                 if len(pp_sentences) > 0:
                     # HDD issue: let's randomly select max_body_sentences sentences.
