@@ -4,23 +4,9 @@ The idea is to create an SQLite DB containing both articles and pre-processed se
 It will contain two tables 'articles' and 'sentences'.
 """
 
-import sys
-sys.path.append("src/main/python/c19")
-import warnings
-
-import nltk
-
 # Load c19 custom library
 from c19 import (binary_classification, database_utilities, embedding,
                  parameters, text_preprocessing)
-
-
-# Some dependencies warnings are ugly
-warnings.filterwarnings("ignore")
-
-# We need stopwords and tokeniser
-nltk.download('stopwords')
-nltk.download('punkt')
 
 
 def main():

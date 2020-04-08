@@ -5,16 +5,8 @@ One query is processed in +/- 1min on 8 vCPUs.
 It return a list of Sentence() object
 """
 
-import sys
-sys.path.append("src/main/python/c19")
-import warnings
-
-
 # Load c19 custom library
 from c19 import embedding, query_matching, parameters
-
-# Some dependencies warnings are ugly
-warnings.filterwarnings("ignore")
 
 
 def main(query):
