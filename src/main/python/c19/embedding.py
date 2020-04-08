@@ -80,14 +80,17 @@ class Embedding():
             List[float]: The sentence vector.
         """
         words_vector = [self.vectors[word] for word in sentence if word in self.vectors.keys()]
-        if self.sentence_embedding_method == "mowe" and len(words_vector) > 0:
-            sentence_embedding = np.mean(words_vector, axis=0)
-        elif self.sentence_embedding_method == "sowe" and len(words_vector) > 0:
-            sentence_embedding = np.sum(words_vector, axis=0)
+        if len(words_vector) > 0:
+            if self.sentence_embedding_method == "mowe":
+                sentence_embedding = np.mean(words_vector, axis=0)
+            elif self.sentence_embedding_method == "sowe":
+                sentence_embedding = np.sum(words_vector, axis=0)
+            else:
+                raise Exception(
+                    f"No such sentence embedding method: {sentence_embedding_method}"
+                )
         else:
-            raise Exception(
-                f"No such sentence embedding method: {sentence_embedding_method}"
-            )
+            sentence_embedding = None
         return sentence_embedding
 
     def get_weighted_vector(self, vector: List[float],

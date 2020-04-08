@@ -58,7 +58,7 @@ class PreProcessing:
     bool: Load the body text of article in addition to the abstract and title.
     """
 
-    stem_words: bool = True
+    stem_words: bool = False
     """
     bool: Should stem words during pre-processing.
     """

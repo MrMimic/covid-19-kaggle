@@ -65,9 +65,6 @@ def instanciate_sql_db(db_path: str = "articles_database.sqlite") -> None:
 def get_articles_to_insert(articles_df: pd.DataFrame) -> List[Any]:
     """
     Create a list of articles to be inserted.
-
-    TODO: Add language_detection function here.
-
     Args:
         articles_df (pd.DataFrame): The metadata dataframe (sliced or not).
 
@@ -219,7 +216,7 @@ def create_db_and_load_articles(db_path: str = "articles_database.sqlite",
             (article, kaggle_data_path, load_body)
             for article in get_articles_to_insert(metadata_df)
         ]
-        print(f"{len(articles_to_be_inserted)} articles to be inserted.")
+        print(f"{len(articles_to_be_inserted)} articles to be prepared.")
 
         # Create a new SQLite DB file
         instanciate_sql_db(db_path=db_path)
