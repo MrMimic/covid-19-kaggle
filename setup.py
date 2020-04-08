@@ -8,6 +8,7 @@ requirements = [
     "tqdm>=4.45.0",
     "nltk>=3.2.5",
     "textblob>=0.15.3",
+    "langdetect>=1.0.8",
     "pandas>=1.0.3",
     "numpy>=1.18.2",
     "joblib>=0.14.1",
