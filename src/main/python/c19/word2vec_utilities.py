@@ -17,7 +17,7 @@ class TfIdf():
     """
     Simple TFIDF class.
     """
-    def __init__(self, max_df: int = 0.95, min_df: int = 1):
+    def __init__(self, max_df: int = 0.95, min_df: int = 20):
         self.max_df = max_df
         self.min_df = min_df
 
