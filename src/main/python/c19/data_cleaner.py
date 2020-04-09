@@ -109,7 +109,7 @@ def get_ramps(inp, incremental_remove=False):
             current_ramp = []
 
     del tmp
-    
+
     #filter by ramp length
     filtered_ramps = [r for r in ramps if len(r)>MIN_RAMP_LEN]
 
@@ -142,6 +142,8 @@ def get_ramps(inp, incremental_remove=False):
 
 
 def filter_lines_count(text_to_filter):
+    if len(text_to_filter)==0:
+        return ''
     #Extract integers and theres address
     str_values = re.findall("\d+", text_to_filter)
 
@@ -173,6 +175,8 @@ def filter_lines_count(text_to_filter):
     if DEBUG:
         _show(filtered_numbers,4)
 
+    if len(filtered_numbers)==0:
+        return text_to_filter
     #filter ramps
     ramps = get_ramps(filtered_numbers)
 
