@@ -108,7 +108,8 @@ def get_ramps(inp, incremental_remove=False):
             ramps.append(current_ramp)
             current_ramp = []
 
-
+    del tmp
+    
     #filter by ramp length
     filtered_ramps = [r for r in ramps if len(r)>MIN_RAMP_LEN]
 
@@ -190,8 +191,7 @@ def filter_lines_count(text_to_filter):
     else:
         to_clean = []
 
-    print("Removing %s line numbers"%len(to_clean))
-    print()
+    
         
     offset = 1
 
