@@ -13,6 +13,7 @@ from retry import retry
 
 from c19.file_processing import get_body, read_file
 from c19.language_detection import update_languages
+from c19.data_cleaner import filter_lines_count
 
 
 def instanciate_sql_db(db_path: str = "articles_database.sqlite") -> None:
@@ -149,10 +150,11 @@ def get_article_text(args: List[Tuple[int, pd.Series, str, str]]) -> None:
     try:
         date = parser.parse(data.publish_time)
     except Exception:  # Better to get no date than a string of whatever
-        date = None
+        date = None 
+
     # Insert
     raw_data = [
-        data.doi, data.title, body, data.abstract, date, data.sha, folder
+        data.doi, data.title, body, filter_lines_count(data.abstract), date, data.sha, folder
     ]
     return raw_data
 
