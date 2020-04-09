@@ -192,6 +192,7 @@ def pre_process_and_vectorize_texts(embedding_model: Any,
             f"{len(articles)} files to pre-process ({len(batches)} batches of {len(batches[0])} articles)."
         )
         del articles
+        del batches
 
         # Pre-process articles
         tic = time.time()
@@ -220,6 +221,8 @@ def pre_process_and_vectorize_texts(embedding_model: Any,
             inserted_sentences += len(article_sentences)
         toc = time.time()
         del batches_to_insert
+        time.sleep(0.5)
+
         print(
             f"Took {round((toc-tic) / 60, 2)} min to insert {inserted_sentences} sentences (SQLite DB: {db_path})."
         )
