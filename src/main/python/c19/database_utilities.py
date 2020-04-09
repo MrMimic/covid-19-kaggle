@@ -111,7 +111,7 @@ def insert_rows(list_to_insert: List[Any],
 
 
 def get_article_text(args: List[Tuple[int, pd.Series, str, str]], 
-        enable_data_cleaner:bool=False) -> None:
+        enable_data_cleaner:bool) -> None:
     """
     Parse and insert a single article into the SQLite DB. Parallelised method.
     args = [(index, df_line), db_path, data_path]
