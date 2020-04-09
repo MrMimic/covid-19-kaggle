@@ -163,7 +163,8 @@ def get_article_text(args: List[Tuple[int, pd.Series, str, bool]]) -> None:
         except Exception as e:
             abstract = data.abstract
             #print("error cleaning abstract", e)
-
+    else:
+        abstract = data.abstract
     # Insert
     raw_data = [
         data.doi, data.title, body, abstract, date, data.sha, folder
