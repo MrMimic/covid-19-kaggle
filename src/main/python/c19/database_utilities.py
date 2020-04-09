@@ -152,6 +152,7 @@ def get_article_text(args: List[Tuple[int, pd.Series, str, str]]) -> None:
     except Exception:  # Better to get no date than a string of whatever
         date = None 
 
+    #Filter abstract text
     try:
         if isinstance(data.abstract, str):
             abstract = filter_lines_count(data.abstract)
@@ -159,7 +160,8 @@ def get_article_text(args: List[Tuple[int, pd.Series, str, str]]) -> None:
             abstract = data.abstract
     except Exception as e:
         abstract = data.abstract
-        print("error cleaning abstract", e)
+        #print("error cleaning abstract", e)
+
     # Insert
     raw_data = [
         data.doi, data.title, body, abstract, date, data.sha, folder
