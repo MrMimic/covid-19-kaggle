@@ -1,13 +1,13 @@
 # Kaggle: COVID-19 Challenge
 
-This library provides tools aiming to find different opinions in the scientific litterature regarding the user query.
+**This library provides tools aiming to find different opinions in the scientific litterature regarding the user query.**
 
 The Kaggle notebook can be find [here](https://www.kaggle.com/mrmimic/risk-factors-analysis-by-opinion-finding).
 
 **Birielfy**:
 
 - It loads all articles into an SQLite DB.
-- Sentences a pre-processed.
+- Sentences are pre-processed.
 - Word2vec and TF-IDF are trained.
 - Sentences are vectorised.
 - The query is pre-processed and vectorised.
