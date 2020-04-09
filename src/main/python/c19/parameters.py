@@ -82,9 +82,19 @@ class PreProcessing:
 @dataclass
 class Query:
 
-    top_k_sentences: int = 50
+    top_k_sentences_number: int = 500
     """
-    int: The number of close sentences to be tajen in account when computing clustering.
+    int: The number of close sentences to be taken in account when computing clustering.
+    """
+
+    top_k_sentences_distance: float = 0.8
+    """
+    float: The score threshold to filter sentences having distance < arg.
+    """
+
+    filtering_method: str = "distance"
+    """
+    str: The filter method to be used for clustering ('distance' or 'number').
     """
 
     min_cluster: int = 1
@@ -143,9 +153,6 @@ class Parameters:
             self.preprocessing.remove_numeric, bool
         ), f"An boolean is requiered to decide if numeric values should be removed or not: {self.preprocessing.remove_numeric}"
         # Query
-        assert isinstance(
-            self.query.top_k_sentences, int
-        ), f"An interger is requiered to determine top-k sentences: {self.query.top_k_sentences}"
         assert isinstance(
             self.query.min_cluster, int
         ), f"An interger is requiered to determine minimal number of sentences clusters: {self.query.min_cluster}"

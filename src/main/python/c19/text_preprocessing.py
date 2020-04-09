@@ -125,10 +125,13 @@ def pre_process_batch_of_articles(args: List[Any]) -> None:
                             if pp_sentence[0] in words_to_filter:
                                 pp_sentence.pop(0)
                             if embedding_model is not None:
-                                vector = json.dumps((*map(
-                                    str,
-                                    embedding_model.compute_sentence_vector(
-                                        pp_sentence)), ))
+                                try:
+                                    vector = json.dumps((*map(
+                                        str,
+                                        embedding_model.compute_sentence_vector(
+                                            pp_sentence)), ))
+                                except TypeError:
+                                    vector = None
                             else:
                                 vector = None
                             row_to_insert = [
