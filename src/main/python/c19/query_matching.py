@@ -148,6 +148,6 @@ def clusterise_sentences(k_closest_sentences_df: pd.DataFrame,
     ]
 
     toc = time.time()
-    print(f"Took {round((toc-tic) / 60, 2)} minutes to clusterise closest sentences.")
+    print(f"Took {round((toc-tic), 2)} seconds to clusterise closest sentences.")
 
     return k_closest_sentences_df
