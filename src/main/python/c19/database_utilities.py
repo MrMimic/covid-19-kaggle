@@ -151,7 +151,8 @@ def get_article_text(args: List[Tuple[int, pd.Series, str, str]]) -> None:
         date = parser.parse(data.publish_time)
     except Exception:  # Better to get no date than a string of whatever
         date = None 
-        
+
+    print(data.abstract)
     # Insert
     raw_data = [
         data.doi, data.title, body, filter_lines_count(data.abstract), date, data.sha, folder
