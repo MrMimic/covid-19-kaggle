@@ -257,7 +257,7 @@ def get_sentences(db_path: str) -> List[Any]:
     """
     connection = sqlite3.connect(db_path)
     cursor = connection.cursor()
-    command = "SELECT * FROM sentences"
+    command = "SELECT * FROM sentences WHERE vector IS NOT NULL"
     cursor.execute(command)
     data = cursor.fetchall()
     cursor.close()

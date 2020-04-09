@@ -125,10 +125,13 @@ def pre_process_batch_of_articles(args: List[Any]) -> None:
                             if pp_sentence[0] in words_to_filter:
                                 pp_sentence.pop(0)
                             if embedding_model is not None:
-                                vector = json.dumps((*map(
-                                    str,
-                                    embedding_model.compute_sentence_vector(
-                                        pp_sentence)), ))
+                                try:
+                                    vector = json.dumps((*map(
+                                        str,
+                                        embedding_model.compute_sentence_vector(
+                                            pp_sentence)), ))
+                                except TypeError:
+                                    vector = None
                             else:
                                 vector = None
                             row_to_insert = [
@@ -189,6 +192,7 @@ def pre_process_and_vectorize_texts(embedding_model: Any,
             f"{len(articles)} files to pre-process ({len(batches)} batches of {len(batches[0])} articles)."
         )
         del articles
+        del batches
 
         # Pre-process articles
         tic = time.time()
@@ -217,6 +221,8 @@ def pre_process_and_vectorize_texts(embedding_model: Any,
             inserted_sentences += len(article_sentences)
         toc = time.time()
         del batches_to_insert
+        time.sleep(0.5)
+
         print(
             f"Took {round((toc-tic) / 60, 2)} min to insert {inserted_sentences} sentences (SQLite DB: {db_path})."
         )
