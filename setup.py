@@ -17,7 +17,8 @@ requirements = [
     # "pyarrow>=0.16.0",  # Pyarrow is already installed on colab, shouldn't get two versions
     "gensim>=3.6.0",
     "dataclasses>=0.7",
-    "language-detector>=5.0.2"
+    "language-detector>=5.0.2",
+    "networkx"
 ]
 
 classifiers = [

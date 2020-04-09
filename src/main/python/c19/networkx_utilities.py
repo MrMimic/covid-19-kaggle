@@ -1,19 +1,6 @@
-import progressbar
-
-class MyProgressBar():
-    def __init__(self):
-        self.pbar = None
-
-    def __call__(self, block_num, block_size, total_size):
-        if not self.pbar:
-            self.pbar=progressbar.ProgressBar(maxval=total_size)
-            self.pbar.start()
-
-        downloaded = block_num * block_size
-        if downloaded < total_size:
-            self.pbar.update(downloaded)
-        else:
-            self.pbar.finish()
+import networkx as nx
+import pandas as pd
+import urllib.request
 
 def get_citations_graph(file_path: str =None , url = None) -> nx.DiGraph:
     """
@@ -25,7 +12,7 @@ def get_citations_graph(file_path: str =None , url = None) -> nx.DiGraph:
     print("loading citation graph... ")
     if url is None: url = "https://github.com/MrMimic/covid-19-kaggle/raw/master/resources/title_citation.zip"
     if file_path is None: file_path = "title_citation_df"
-    urllib.request.urlretrieve(url, file_path, MyProgressBar())
+    urllib.request.urlretrieve(url, file_path)
     dataframe = pd.read_csv(file_path, compression='zip')[['title', 'citation']]
     G = nx.from_pandas_edgelist(dataframe,source='title',target='citation',create_using=nx.DiGraph )
     print(f"Graph loaded is having {len(list(G.nodes))} nodes and {len(list(G.edges))} edges")
