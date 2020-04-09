@@ -78,7 +78,7 @@ def get_ramps(inp, incremental_remove=False):
 
     #find ramps (DIRTY!)
     ramps = []
-    tmp=deepcopy(inp)
+    tmp=inp#deepcopy(inp)
     used_list = []
     for i, n in enumerate(inp):
         if i in used_list:
@@ -190,7 +190,7 @@ def filter_lines_count(text_to_filter):
 
     #clean text
     if len(ramps_sum)>=2:
-        to_clean = deepcopy(ramps_sum)
+        to_clean = ramps_sum
         to_clean.sort(key=lambda x : x[1])
     else:
         to_clean = []
