@@ -2,20 +2,20 @@
 
 import json
 import time
-import pandas as pd
 from operator import itemgetter
 from typing import Any, List
 
 from dateutil import parser
 
 import numpy as np
+import pandas as pd
 import tqdm
 from c19.database_utilities import get_sentences
 from c19.embedding import Embedding
 from c19.text_preprocessing import preprocess_text
-from sklearn.metrics.pairwise import cosine_similarity
-from sklearn.metrics import pairwise_distances_argmin_min
 from sklearn.cluster import KMeans
+from sklearn.metrics import pairwise_distances_argmin_min
+from sklearn.metrics.pairwise import cosine_similarity
 
 
 def vectorize_query(embedding_model: Embedding, query: str) -> List[float]:
@@ -66,12 +66,13 @@ def get_sentences_data(
     return loaded_sentences
 
 
-def get_k_closest_sentences(query: str,
-                            all_sentences: List[Any],
-                            embedding_model: Embedding,
-                            number_threshold: int = 10,
-                            distance_threshold: float = 0.8,
-                            filtering_method: str = "distance") -> pd.DataFrame:
+def get_k_closest_sentences(
+        query: str,
+        all_sentences: List[Any],
+        embedding_model: Embedding,
+        number_threshold: int = 10,
+        distance_threshold: float = 0.8,
+        filtering_method: str = "distance") -> pd.DataFrame:
     """
     Compute the cosine distance between the query and all sentences found in the DB.
 
@@ -101,7 +102,11 @@ def get_k_closest_sentences(query: str,
     k_sentences = sorted(all_sentences, key=itemgetter(5), reverse=True)
 
     # Now, create a DF output
-    k_sentences_df = pd.DataFrame(k_sentences, columns = ["paper_doi", "section", "raw_sentence", "sentence", "vector", "distance"])
+    k_sentences_df = pd.DataFrame(k_sentences,
+                                  columns=[
+                                      "paper_doi", "section", "raw_sentence",
+                                      "sentence", "vector", "distance"
+                                  ])
     del k_sentences
 
     # Filter sentences
@@ -115,7 +120,9 @@ def get_k_closest_sentences(query: str,
         raise Exception(f"Unknown filtering method: {filtering_method}")
 
     toc = time.time()
-    print(f"Took {round((toc-tic) / 60, 2)} minutes to process the query.")
+    print(
+        f"Took {round((toc-tic) / 60, 2)} minutes to process the query ({k_sentences_df.shape[0]} sentences kept by {filtering_method} filtering)."
+    )
 
     return k_sentences_df
 
@@ -148,6 +155,8 @@ def clusterise_sentences(k_closest_sentences_df: pd.DataFrame,
     ]
 
     toc = time.time()
-    print(f"Took {round((toc-tic), 2)} seconds to clusterise closest sentences.")
+    print(
+        f"Took {round((toc-tic), 2)} seconds to clusterise {k_closest_sentences_df.shape[0]} closest sentences."
+    )
 
     return k_closest_sentences_df
