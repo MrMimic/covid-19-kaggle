@@ -157,9 +157,9 @@ def get_article_text(args: List[Tuple[int, pd.Series, str, str]]) -> None:
             abstract = filter_lines_count(data.abstract)
         else:
             abstract = data.abstract
-    except:
+    except Exception as e:
         abstract = data.abstract
-        print("error cleaning abstract")
+        print("error cleaning abstract", e)
     # Insert
     raw_data = [
         data.doi, data.title, body, abstract, date, data.sha, folder
