@@ -190,8 +190,8 @@ def filter_lines_count(text_to_filter):
     else:
         to_clean = []
 
-    print("Removing %s line numbers"%len(to_clean))
-    print()
+    # print("Removing %s line numbers"%len(to_clean))
+    # print()
         
     offset = 1
 
