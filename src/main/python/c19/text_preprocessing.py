@@ -212,9 +212,7 @@ def pre_process_and_vectorize_texts(embedding_model: Any,
         # And insert clean as batch as well data
         tic = time.time()
         inserted_sentences = 0
-        for article_sentences in tqdm.tqdm(batches_to_insert,
-                                           total=len(batches_to_insert),
-                                           desc="DB INSERTION: "):
+        for article_sentences in batches_to_insert:
             insert_rows(list_to_insert=article_sentences,
                         table_name="sentences",
                         db_path=db_path)
