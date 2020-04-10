@@ -7,21 +7,27 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.cluster import DBSCAN
 import numpy as np
 
-def cluster_sentences_dbscan(vectors: List[List], pca_dim: int = 10, eps: float = 3, min_samples: int = 5, metric: str = 'euclidean', remove_noise_label: bool = True) -> Dict[str, List[List]]:
+
+def cluster_sentences_dbscan(
+        vectors: List[List],
+        pca_dim: int = 10,
+        eps: float = 3,
+        min_samples: int = 5,
+        metric: str = 'euclidean',
+        remove_noise_label: bool = True) -> Dict[str, List[List]]:
     """
     Returns a clustering of the sentence embeddings
     Args:
-      vectors (List[List]): Sentence Embeddings.
-      pca_dim (int): Number of dimensions for the PCA.
-      eps (float) : Epsilon to use for the DBSCAN
-      min_samples (int) : Min number of samples to have before considering a core point (DBSCAN)
-      metric (str) : Metric to use for the DBSCAN (ex: 'cosine' or 'euclidean')
-      remove_noise_label (bool) : remove the -1 cluster of the dbscan which contains noisy data
+        vectors (List[List]): Sentence Embeddings.
+        pca_dim (int): Number of dimensions for the PCA.
+        eps (float) : Epsilon to use for the DBSCAN
+        min_samples (int) : Min number of samples to have before considering a core point (DBSCAN)
+        metric (str) : Metric to use for the DBSCAN (ex: 'cosine' or 'euclidean')
+        remove_noise_label (bool) : remove the -1 cluster of the dbscan which contains noisy data
     Returns:
-    clustering  : Dict wich contains for each cluster label the list of vectors
+        clustering  : Dict wich contains for each cluster label the list of vectors
     """
     scaled = StandardScaler().fit_transform(vectors)
-    pca_dim = pca_dim
     pca = PCA(n_components=pca_dim)
     pca.fit(scaled)
     # We take all "pca_dim" dimensions or less if cumulative explained variance > 0.9
@@ -73,7 +79,7 @@ def nearest_to_centroid(cluster: List[List], k: int) -> List[List]:
 
 
 def average_answers(clusters: Dict[str, List[List]],
-                   k: int) -> Dict[str, List[List]]:
+                    k: int) -> Dict[str, List[List]]:
     """
     Returns for each cluster the the k most nearest sentences from its centroid
 
