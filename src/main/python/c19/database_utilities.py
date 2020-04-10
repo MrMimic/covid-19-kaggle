@@ -186,7 +186,8 @@ def create_db_and_load_articles(db_path: str = "articles_database.sqlite",
                                     os.sep, "kaggle", "input",
                                     "CORD-19-research-challenge"),
                                 first_launch: bool = False,
-                                load_body: bool = False) -> None:
+                                load_body: bool = False,
+                                run_on_kaggle: bool = False) -> None:
     """
     Main function to create the DB at first launch.
     Load metadata.csv, try to get body texts and insert everything without pre-processing.
@@ -208,6 +209,12 @@ def create_db_and_load_articles(db_path: str = "articles_database.sqlite",
         metadata_df = pd.read_csv(os.path.join(kaggle_data_path, "metadata.csv"), low_memory=False)
         # The DOI isn't unique, then let's keep the last version of a duplicated paper
         metadata_df.drop_duplicates(subset=["doi"], keep="last", inplace=True)
+        # If on Kaggle, only keep latest articles to limit DB size
+        if run_on_kaggle is True:
+            metadata_df = metadata_df.dropna(axis=0, subset=['abstract'])
+            metadata_df['publish_time'] = pd.to_datetime(metadata_df['publish_time'])
+            metadata_df["to_keep"] = [True if date.year >= 2019 else False for date in metadata_df['publish_time'].to_list()]
+            metadata_df = metadata_df[metadata_df["to_keep"] == True]
         # For the moment, we only trained english embedding. See you on 04/16.
         metadata_df = update_languages(metadata_df)
         metadata_df = metadata_df[metadata_df.lang == "En"]

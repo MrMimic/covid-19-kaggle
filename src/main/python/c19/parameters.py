@@ -49,6 +49,11 @@ class Database:
     str: Local path of the kaggle data.
     """
 
+    run_on_kaggle: bool = False
+    """
+    bool: If True, will drop all article published before 2019 to get a light SQL DB.
+    """
+
 
 @dataclass
 class PreProcessing:
@@ -75,7 +80,7 @@ class PreProcessing:
 
     max_body_sentences: int = 10
     """
-    int: The number of close sentences to be tajen in account when computing clustering.
+    int: The number of close sentences to be tajen in account when computing clustering. 0 means all.
     """
 
 
