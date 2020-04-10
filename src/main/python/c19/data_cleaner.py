@@ -1,5 +1,5 @@
 import json
-from copy import deepcopy
+from copy import deepcopy, copy
 
 import numpy as np
 #from tqdm import tqdm
@@ -42,6 +42,8 @@ def filter_has_neighbors(inp):
 
     filtered_numbers = [v for v in inp if v[0] in fnb_set]
     filtered_numbers.sort(key=lambda x : x[1])
+
+    del fnb_set
 
     return filtered_numbers
 
@@ -112,6 +114,7 @@ def get_ramps(inp, incremental_remove=False):
 
     #filter by ramp length
     filtered_ramps = [r for r in ramps if len(r)>MIN_RAMP_LEN]
+    del ramps
 
     if len(filtered_ramps)>0 and incremental_remove:
         #incremental remove
@@ -138,6 +141,8 @@ def get_ramps(inp, incremental_remove=False):
     else:
         filtered_ramps_2 = filtered_ramps
     
+    del filtered_ramps
+
     return filtered_ramps_2
 
 
@@ -179,6 +184,7 @@ def filter_lines_count(text_to_filter):
         return text_to_filter
     #filter ramps
     ramps = get_ramps(filtered_numbers)
+    del filtered_numbers
 
     ramps_sum= []
     for r in ramps:
@@ -200,7 +206,7 @@ def filter_lines_count(text_to_filter):
     offset = 1
 
     rm_count = 0
-    clean_text = deepcopy(text_to_filter)
+    clean_text = copy(text_to_filter)
 
     for torm in to_clean:
         nlen = len(str(torm[0]))

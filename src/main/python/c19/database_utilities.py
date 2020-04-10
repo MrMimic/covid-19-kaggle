@@ -202,7 +202,7 @@ def create_db_and_load_articles(db_path: str = "articles_database.sqlite",
                                     "CORD-19-research-challenge"),
                                 first_launch: bool = False,
                                 load_body: bool = False,
-                                enable_data_cleaner:bool = True) -> None:
+                                enable_data_cleaner:bool = False) -> None:
     """
     Main function to create the DB at first launch.
     Load metadata.csv, try to get body texts and insert everything without pre-processing.
