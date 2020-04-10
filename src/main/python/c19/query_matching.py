@@ -118,7 +118,6 @@ def get_k_closest_sentences(
             by="distance", ascending=False)[0:number_threshold]
     else:
         raise Exception(f"Unknown filtering method: {filtering_method}")
-    k_sentences_df.drop_duplicates(keep=False, inplace=True)
 
     toc = time.time()
     print(
