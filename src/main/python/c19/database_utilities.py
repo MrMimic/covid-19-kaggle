@@ -156,13 +156,13 @@ def get_article_text(args: List[Tuple[int, pd.Series, str, bool]]) -> None:
     #Filter abstract text
     if enable_data_cleaner:
         try:
-            if isinstance(data.abstract, str):
+            if isinstance(data.abstract, str) and len(data.abstract)>10:
                 abstract = filter_lines_count(data.abstract)
             else:
                 abstract = data.abstract
         except Exception as e:
             abstract = data.abstract
-            #print("error cleaning abstract", e)
+            print("error cleaning abstract", e)
     else:
         abstract = data.abstract
     # Insert
