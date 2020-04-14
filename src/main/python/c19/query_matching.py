@@ -5,16 +5,13 @@ import time
 from operator import itemgetter
 from typing import Any, List
 
-from dateutil import parser
-
 import numpy as np
 import pandas as pd
-import tqdm
 from c19.database_utilities import get_sentences
 from c19.embedding import Embedding
 from c19.text_preprocessing import preprocess_text
-from sklearn.cluster import KMeans
-from sklearn.metrics import pairwise_distances_argmin_min
+
+
 from sklearn.metrics.pairwise import cosine_similarity
 
 
@@ -127,36 +124,4 @@ def get_k_closest_sentences(
     return k_sentences_df
 
 
-def clusterise_sentences(k_closest_sentences_df: pd.DataFrame,
-                         number_of_clusters: int) -> pd.DataFrame:
-    """
-    Add a columns "cluster" and "is_closest" to the sentence dataframe.
 
-    Args:
-        k_closest_sentences_df (pd.DataFrame): The DF to be updated.
-        number_of_clusters (int): Number of K in the Kmean.
-
-    Returns:
-        pd.DataFrame: Updated DF.
-    """
-    tic = time.time()
-
-    # Clusterise vectors
-    vectors = k_closest_sentences_df["vector"].tolist()
-    kmean_model = KMeans(n_clusters=number_of_clusters).fit(vectors)
-    # Label clusters
-    k_closest_sentences_df["cluster"] = kmean_model.labels_
-    # Compute closest from barycentres and store in a boolean column
-    closest, _ = pairwise_distances_argmin_min(kmean_model.cluster_centers_,
-                                               vectors)
-    k_closest_sentences_df["is_closest"] = [
-        True if vectors.index(vector) in closest else False
-        for vector in vectors
-    ]
-
-    toc = time.time()
-    print(
-        f"Took {round((toc-tic), 2)} seconds to clusterise {k_closest_sentences_df.shape[0]} closest sentences."
-    )
-
-    return k_closest_sentences_df

@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-
+"""
+This model was firstly designed for sentences classification, but was then not used.
+"""
 import os
 import time
 from typing import List

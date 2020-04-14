@@ -1,11 +1,50 @@
 #!/usr/bin/env python3
 
-from typing import List, Dict
+import time
 from math import sqrt
-from sklearn.decomposition import PCA
-from sklearn.preprocessing import StandardScaler
-from sklearn.cluster import DBSCAN
+from typing import Dict, List
+
 import numpy as np
+from sklearn.cluster import DBSCAN, KMeans
+from sklearn.decomposition import PCA
+from sklearn.metrics import pairwise_distances_argmin_min
+from sklearn.preprocessing import StandardScaler
+import pandas as pd
+
+
+def perform_kmean(k_closest_sentences_df: pd.DataFrame,
+                  number_of_clusters: int) -> pd.DataFrame:
+    """
+    Add a columns "cluster" and "is_closest" to the sentence dataframe.
+
+    Args:
+        k_closest_sentences_df (pd.DataFrame): The DF to be updated.
+        number_of_clusters (int): Number of K in the Kmean.
+
+    Returns:
+        pd.DataFrame: Updated DF.
+    """
+    tic = time.time()
+
+    # Clusterise vectors
+    vectors = k_closest_sentences_df["vector"].tolist()
+    kmean_model = KMeans(n_clusters=number_of_clusters).fit(vectors)
+    # Label clusters
+    k_closest_sentences_df["cluster"] = kmean_model.labels_
+    # Compute closest from barycentres and store in a boolean column
+    closest, _ = pairwise_distances_argmin_min(kmean_model.cluster_centers_,
+                                               vectors)
+    k_closest_sentences_df["is_closest"] = [
+        True if vectors.index(vector) in closest else False
+        for vector in vectors
+    ]
+
+    toc = time.time()
+    print(
+        f"Took {round((toc-tic), 2)} seconds to clusterise {k_closest_sentences_df.shape[0]} closest sentences."
+    )
+
+    return k_closest_sentences_df
 
 
 def cluster_sentences_dbscan(
