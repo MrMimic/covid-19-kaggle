@@ -41,8 +41,5 @@ def create_html_report(query: str,
                                                            ascending=False)
         display(HTML(f"<h3>Cluster {cluster} top {top_x} sentences ({sub_df.shape[0]} total):</h3>"))
         for index, row in sub_df.head(top_x).iterrows():
-            display(HTML(f"&emsp;{row.raw_sentence}"))
-            display(
-                HTML(
-                    f"<b>&emsp;&emsp;&emsp;Paper DOI: </b><a href=https://www.doi.org/{row.paper_doi} target='_blank'>{row.paper_doi}</a>"
-                ))
+            display(HTML(f"&emsp;{row.raw_sentence}<b>(<a href=https://www.doi.org/{row.paper_doi} target='_blank'>{row.paper_doi}</a>)"))
+

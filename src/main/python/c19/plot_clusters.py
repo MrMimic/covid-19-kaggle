@@ -101,7 +101,7 @@ def scatter_plot(closest_sentences_df: pd.DataFrame, query: str) -> None:
         section = trace.name.split(",")[1]
         trace_old_value = trace.name.split(",")[0]
         trace.name = f"C{traces[trace_old_value]}, {section}"
-        trace.hovertemplate = "<b>%{hovertext}</b><br><br><b>Section</b>=abstract<br><br><b>Sentence</b>=%{customdata[0]}<extra></extra>"
+        trace.hovertemplate = "<b>%{hovertext}</b><br><br><b>Section</b>: "+section+"<br><br><b>Sentence</b>: %{customdata[0]}<extra></extra>"
     # Final tweaks
     fig.update_traces(showlegend=True)
     fig.update_xaxes(visible=False)
