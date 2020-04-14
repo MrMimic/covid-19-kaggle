@@ -271,3 +271,23 @@ def get_sentences(db_path: str) -> List[Any]:
     connection.close()
 
     return data
+
+def get_article(db_path: str, paper_doi):
+    """
+    Retrieve a paper from the DB using it's DOI.
+
+    Args:
+        db_path (str): Path to the DB.
+
+    Returns:
+        List[Any]: List of sentences data.
+    """
+    connection = sqlite3.connect(db_path)
+    cursor = connection.cursor()
+    command = "SELECT * FROM articles WHERE paper_doi='%s'" % paper_doi
+    cursor.execute(command)
+    data = cursor.fetchall()
+    cursor.close()
+    connection.close()
+
+    return data
