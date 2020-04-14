@@ -9,7 +9,7 @@ def get_citations_graph(urls = None) -> nx.DiGraph:
     print("loading citation graph... ")
     file_path = "title_citation_df"
     all_files = []
-    if urls in None: urls = ["https://github.com/MrMimic/covid-19-kaggle/raw/master/resources/title_citation_part1.zip", "https://github.com/MrMimic/covid-19-kaggle/raw/master/resources/title_citation_part2.zip"]
+    if urls is None: urls = ["https://github.com/MrMimic/covid-19-kaggle/raw/master/resources/title_citation_part1.zip", "https://github.com/MrMimic/covid-19-kaggle/raw/master/resources/title_citation_part2.zip"]
     for i, url in enumerate(urls):
         filename = "title_citation_df_" + str(i)
         urllib.request.urlretrieve(url, filename)
