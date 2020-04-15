@@ -5,6 +5,7 @@ import os
 import sqlite3
 import time
 from typing import Any, List, Tuple
+import re
 
 import pandas as pd
 import tqdm
