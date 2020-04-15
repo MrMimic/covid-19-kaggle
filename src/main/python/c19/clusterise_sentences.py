@@ -1,34 +1,91 @@
 #!/usr/bin/env python3
 
+import math
 import time
 from math import sqrt
-from typing import Dict, List
+from typing import Dict, List, Union
 
 import numpy as np
+import pandas as pd
 from sklearn.cluster import DBSCAN, KMeans
 from sklearn.decomposition import PCA
-from sklearn.metrics import pairwise_distances_argmin_min
+from sklearn.metrics import pairwise_distances_argmin_min, silhouette_score
 from sklearn.preprocessing import StandardScaler
-import pandas as pd
+
+
+def compute_best_k_silhouette(closest_sentences_df: pd.DataFrame, k_min: int,
+                              k_max: int) -> int:
+    """
+    Utilities allowing to estimate the best K values for a KMean clustering.
+    It uses the Silhouette Coefficient. It relates to a model with better-defined clusters.
+    The Silhouette Coefficient is defined for each sample and is composed of two scores:
+        - The mean distance between a sample and all other points in the same class.
+        - The mean distance between a sample and all other points in the next nearest cluster.
+    Higher silhouette coefficient means well difined clusters.
+
+    Args:
+        closest_sentences_df (pd.DataFrame): The output of the top-k sentences extraction.
+        k_min (int): The minimal number of clusters.
+        k_max (int): The maximal number of clusters.
+
+    Returns:
+        int: The optimal number of clusters
+    """
+    # The vector are extracted to optimize K
+    data = closest_sentences_df.vector.to_list()
+    # Silhouette score is stored for each possible K
+    silhouette_score_k = {}
+    for n_cluster in range(k_min, k_max):
+        kmeans = KMeans(n_clusters=n_cluster, n_init=1, random_state=42).fit(data)
+        label = kmeans.labels_
+        sil_coeff = silhouette_score(data, label, metric='euclidean')
+        silhouette_score_k[sil_coeff] = n_cluster
+    # Let's split high coefficients and low coefficients
+    silhouette_coeffs = [[x] for x in list(silhouette_score_k.keys())]
+    silhouette_score_spliter = KMeans(n_clusters=2, n_init=1, random_state=42).fit(silhouette_coeffs)
+    # Which groups represent the "highest scores" ?
+    tmp_df = pd.DataFrame(zip(list(silhouette_score_k.keys()),
+                              silhouette_score_spliter.labels_),
+                          columns=["score", "label"])
+    average_score_per_group = pd.DataFrame(
+        tmp_df.groupby(['label'], as_index=False).mean())
+    highest_group_label = average_score_per_group[
+        average_score_per_group["score"] ==
+        average_score_per_group["score"].max()]["label"].values[0]
+    # Get all those labels scores and max score
+    max_scores = tmp_df[tmp_df["label"] ==
+                        highest_group_label]["score"].to_list()
+    # Which represent X clusters
+    possible_k_values = [silhouette_score_k[score] for score in max_scores]
+    # Let's round up possible k values leading to the highest scores
+    return math.ceil(np.mean(possible_k_values))
 
 
 def perform_kmean(k_closest_sentences_df: pd.DataFrame,
-                  number_of_clusters: int) -> pd.DataFrame:
+                  number_of_clusters: Union[int, str],
+                  k_min: int = None,
+                  k_max: int = None) -> pd.DataFrame:
     """
     Add a columns "cluster" and "is_closest" to the sentence dataframe.
 
     Args:
         k_closest_sentences_df (pd.DataFrame): The DF to be updated.
-        number_of_clusters (int): Number of K in the Kmean.
+        number_of_clusters (Union[int, str]): Number of K in the Kmean. If "auto",
+        perform silhouette score to determine the best K.
 
     Returns:
         pd.DataFrame: Updated DF.
     """
     tic = time.time()
+    if number_of_clusters == "auto":
+        number_of_clusters = compute_best_k_silhouette(
+            closest_sentences_df=k_closest_sentences_df,
+            k_min=k_min,
+            k_max=k_max)
 
     # Clusterise vectors
     vectors = k_closest_sentences_df["vector"].tolist()
-    kmean_model = KMeans(n_clusters=number_of_clusters).fit(vectors)
+    kmean_model = KMeans(n_clusters=number_of_clusters, n_init=1, random_state=42).fit(vectors)
     # Label clusters
     k_closest_sentences_df["cluster"] = kmean_model.labels_
     # Compute closest from barycentres and store in a boolean column
@@ -47,13 +104,12 @@ def perform_kmean(k_closest_sentences_df: pd.DataFrame,
     return k_closest_sentences_df
 
 
-def cluster_sentences_dbscan(
-        vectors: List[List],
-        pca_dim: int = 10,
-        eps: float = 3,
-        min_samples: int = 5,
-        metric: str = 'euclidean',
-        remove_noise_label: bool = True) -> Dict[str, List[List]]:
+def perform_dbscan(vectors: List[List],
+                   pca_dim: int = 10,
+                   eps: float = 3,
+                   min_samples: int = 5,
+                   metric: str = 'euclidean',
+                   remove_noise_label: bool = True) -> Dict[str, List[List]]:
     """
     Returns a clustering of the sentence embeddings
     Args:

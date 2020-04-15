@@ -14,7 +14,7 @@ from retry import retry
 from c19.file_processing import get_body, read_file
 from c19.language_detection import update_languages
 from c19.networkx_utilities import add_pagerank_to_dataframe
-
+from c19.data_cleaner import filter_lines_count
 
 def instanciate_sql_db(db_path: str = "articles_database.sqlite") -> None:
     """
@@ -111,7 +111,7 @@ def insert_rows(list_to_insert: List[Any],
     connection.close()
 
 
-def get_article_text(args: List[Tuple[int, pd.Series, str, str]]) -> None:
+def get_article_text(args: List[Tuple[int, pd.Series, str, bool]]) -> None:
     """
     Parse and insert a single article into the SQLite DB. Parallelised method.
     args = [(index, df_line), db_path, data_path]
@@ -122,6 +122,7 @@ def get_article_text(args: List[Tuple[int, pd.Series, str, str]]) -> None:
     data = args[0][1]
     kaggle_data_path = args[1]
     load_body = args[2]
+    enable_data_cleaner= args[3]
     # Get body
     if data.has_pdf_parse is True and load_body is True:
         json_file = os.path.join(kaggle_data_path, data.full_text_file,
@@ -151,7 +152,20 @@ def get_article_text(args: List[Tuple[int, pd.Series, str, str]]) -> None:
     try:
         date = parser.parse(data.publish_time)
     except Exception:  # Better to get no date than a string of whatever
-        date = None
+        date = None 
+
+    #Filter abstract text
+    if enable_data_cleaner:
+        try:
+            if isinstance(data.abstract, str) and len(data.abstract)>10:
+                abstract = filter_lines_count(data.abstract)
+            else:
+                abstract = data.abstract
+        except Exception as e:
+            abstract = data.abstract
+            #print("error cleaning abstract", e)
+    else:
+        abstract = data.abstract
     # Insert
     raw_data = [
         data.doi, data.title, body, data.abstract, date, data.sha, folder, data.pagerank
@@ -189,7 +203,8 @@ def create_db_and_load_articles(db_path: str = "articles_database.sqlite",
                                     "CORD-19-research-challenge"),
                                 first_launch: bool = False,
                                 load_body: bool = False,
-                                run_on_kaggle: bool = False) -> None:
+                                run_on_kaggle: bool = False,
+                                enable_data_cleaner:bool = False) -> None:
     """
     Main function to create the DB at first launch.
     Load metadata.csv, try to get body texts and insert everything without pre-processing.
@@ -224,7 +239,7 @@ def create_db_and_load_articles(db_path: str = "articles_database.sqlite",
         metadata_df = add_pagerank_to_dataframe(metadata_df)
         # Load usefull information to be stored: id, title, body, abstract, date, sha, folder, pagerank
         articles_to_be_inserted = [
-            (article, kaggle_data_path, load_body)
+            (article, kaggle_data_path, load_body, enable_data_cleaner)
             for article in get_articles_to_insert(metadata_df)
         ]
         print(f"{len(articles_to_be_inserted)} articles to be prepared.")
