@@ -3,13 +3,14 @@
 Parameters for the Kaggle Covid19 project.
 Default value can be erased as follow:
 
-    >>> param = parameters.Parameters(query=parameters.Query(min_cluster=3))
+    >>> param = parameters.Parameters(query=parameters.Query(k_min=3))
     >>> param.query
-    >>> Query(top_k_sentences=50, min_cluster=3, max_cluster=10)
+    >>> Query(top_k_sentences=50, k_min=3, k_max=10)
 """
 
 from dataclasses import dataclass
 import os
+from typing import Union
 
 
 @dataclass
@@ -102,19 +103,19 @@ class Query:
     str: The filter method to be used for clustering ('distance' or 'number').
     """
 
-    min_cluster: int = 1
+    k_min: int = 2
     """
-    int: The minimal number of clusters os sentence to design.
-    """
-
-    max_cluster: int = 10
-    """
-    int: The maximal number of clusters os sentence to design.
+    int: The minimal number of clusters of sentence to compute with Silhouette score.
     """
 
-    number_of_clusters: int = 3
+    k_max: int = 10
     """
-    int: The number of wanted clusters (ie, opinion). If 0, auto-estimation.
+    int: The maximal number of clusters of sentence to compute with Silhouette score.
+    """
+
+    number_of_clusters: Union[int, str] = "auto"
+    """
+    int: The number of wanted clusters (ie, opinion). If "auto", auto-estimation with Silhouette Score.
     """
 
 
@@ -159,8 +160,8 @@ class Parameters:
         ), f"An boolean is requiered to decide if numeric values should be removed or not: {self.preprocessing.remove_numeric}"
         # Query
         assert isinstance(
-            self.query.min_cluster, int
-        ), f"An interger is requiered to determine minimal number of sentences clusters: {self.query.min_cluster}"
+            self.query.k_min, int
+        ), f"An interger is requiered to determine minimal number of sentences clusters: {self.query.k_min}"
         assert isinstance(
-            self.query.max_cluster, int
-        ), f"An interger is requiered to determine maximal number of sentences clusters: {self.query.max_cluster}"
+            self.query.k_max, int
+        ), f"An interger is requiered to determine maximal number of sentences clusters: {self.query.k_max}"
