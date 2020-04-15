@@ -6,7 +6,7 @@ def get_citations_graph(urls = None) -> nx.DiGraph:
     """
     Return the dataset citations graph 
     """
-    print("loading citation graph... ")
+    print("Creating citation graph to generate pagerank... ")
     file_path = "title_citation_df"
     all_files = []
     if urls is None: urls = ["https://github.com/MrMimic/covid-19-kaggle/raw/master/resources/title_citation_part1.zip", "https://github.com/MrMimic/covid-19-kaggle/raw/master/resources/title_citation_part2.zip"]
