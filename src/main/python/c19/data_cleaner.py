@@ -225,9 +225,9 @@ def filter_lines_count(text_to_filter):
         for torm in to_clean[::-1]:
             nlen = len(str(torm[0]))
             plen = len(clean_text)
-            print(torm, nlen)
+            #print(torm, nlen)
             for i in range(nlen):
-                print(clean_text.pop(torm[1]+offset))
+                #print(clean_text.pop(torm[1]+offset))
             #clean_text = clean_text[:torm[1]-rm_count+offset] + clean_text[torm[1]-rm_count+nlen+offset:]
             rm_count+=nlen
             assert plen - len(clean_text) == nlen, "Assert on %s"%torm
