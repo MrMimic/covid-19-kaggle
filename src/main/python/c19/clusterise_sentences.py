@@ -36,13 +36,13 @@ def compute_best_k_silhouette(closest_sentences_df: pd.DataFrame, k_min: int,
     # Silhouette score is stored for each possible K
     silhouette_score_k = {}
     for n_cluster in range(k_min, k_max):
-        kmeans = KMeans(n_clusters=n_cluster).fit(data)
+        kmeans = KMeans(n_clusters=n_cluster, n_init=1, random_state=42).fit(data)
         label = kmeans.labels_
         sil_coeff = silhouette_score(data, label, metric='euclidean')
         silhouette_score_k[sil_coeff] = n_cluster
     # Let's split high coefficients and low coefficients
     silhouette_coeffs = [[x] for x in list(silhouette_score_k.keys())]
-    silhouette_score_spliter = KMeans(n_clusters=2).fit(silhouette_coeffs)
+    silhouette_score_spliter = KMeans(n_clusters=2, n_init=1, random_state=42).fit(silhouette_coeffs)
     # Which groups represent the "highest scores" ?
     tmp_df = pd.DataFrame(zip(list(silhouette_score_k.keys()),
                               silhouette_score_spliter.labels_),
@@ -85,7 +85,7 @@ def perform_kmean(k_closest_sentences_df: pd.DataFrame,
 
     # Clusterise vectors
     vectors = k_closest_sentences_df["vector"].tolist()
-    kmean_model = KMeans(n_clusters=number_of_clusters).fit(vectors)
+    kmean_model = KMeans(n_clusters=number_of_clusters, n_init=1, random_state=42).fit(vectors)
     # Label clusters
     k_closest_sentences_df["cluster"] = kmean_model.labels_
     # Compute closest from barycentres and store in a boolean column
