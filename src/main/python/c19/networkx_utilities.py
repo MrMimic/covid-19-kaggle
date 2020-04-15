@@ -35,7 +35,7 @@ def get_paper_cited_K_times_graph(G , M = 500) -> nx.DiGraph:
                 Gs.add_edge(adj_node,node)
     return Gs
 
-def add_pagerank_to_dataframe(dataframe) ->pd.Dataframe:
+def add_pagerank_to_dataframe(dataframe) -> pd.DataFrame:
     """
     Return the dataframe with an extra column containing the pagerank of all papers in the dataframe subjecent network 
     """
