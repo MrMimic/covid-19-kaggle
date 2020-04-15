@@ -96,7 +96,7 @@ def insert_rows(list_to_insert: List[Any],
         Exception: Unknown table.
     """
     if table_name == "articles":
-        command = "INSERT INTO articles(paper_doi, title, body, abstract, date, sha, folder, pagerank) VALUES (?, ?, ?, ?, ?, ?, ?)"
+        command = "INSERT INTO articles(paper_doi, title, body, abstract, date, sha, folder, pagerank) VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
     elif table_name == "sentences":
         command = "INSERT INTO sentences(paper_doi, section, raw_sentence, sentence, vector) VALUES (?, ?, ?, ?, ?)"
     else:
