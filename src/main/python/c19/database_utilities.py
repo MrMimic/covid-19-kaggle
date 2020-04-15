@@ -223,8 +223,8 @@ def create_db_and_load_articles(db_path: str = "articles_database.sqlite",
         tic = time.time()
 
         def select_articles_to_load(kaggle_data_path : str,
-                                    run_on_kaggle : bool = True,
-                                    only_covid : bool = True) -> pd.DataFrame:
+                                    run_on_kaggle : bool = False,
+                                    only_covid : bool = False) -> pd.DataFrame:
             """
             Select the articles to be inserted in the database
 
