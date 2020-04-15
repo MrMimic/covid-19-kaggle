@@ -21,7 +21,9 @@ def get_citations_graph(urls = None) -> nx.DiGraph:
     return G
 
 def get_paper_cited_K_times_graph(G , M = 500) -> nx.DiGraph:
-    # Create network of "is cited" papers only 
+     """
+    Return a network of paper cited at least M times
+    """
     Gs = nx.DiGraph()
     for node in G.nodes():
         if G.in_degree[node] > M : 
@@ -32,3 +34,32 @@ def get_paper_cited_K_times_graph(G , M = 500) -> nx.DiGraph:
                 Gs.add_node(node)
                 Gs.add_edge(adj_node,node)
     return Gs
+
+def add_pagerank_to_dataframe(dataframe) ->pd.dataframe:
+    """
+    Return the dataframe with an extra column containing the pagerank of all papers in the dataframe subjecent network 
+    """
+    assert('title' in dataframe.columns)
+    # copy original title before processing title lowercase
+    dataframe['original_title'] = dataframe['title'].copy()
+    dataframe['title'] = dataframe['title'].apply(lambda x : str(x).lower())
+    # create a subgraph on the nodes given in the dataframe (keeping themselves and their neighbors)
+    G = get_citations_graph()
+    node_sublist = list(dataframe['title'].apply(lambda x : str(x).lower()))
+    to_keep_nodes = []
+    for title in node_sublist:
+        to_keep_nodes.append(title)
+        if title in G:
+            for n in G.neighbors(title):
+                to_keep_nodes.append(n)
+    Gsub = G.subgraph(to_keep_nodes)
+    print(f"Graph loaded is having {len(list(Gsub.nodes))} nodes and {len(list(Gsub.edges))} edges")
+    # compute pagerank on network
+    pr = nx.pagerank(Gsub)
+    pagerank = pd.DataFrame(pr.items(), columns=["title", "pagerank"]).sort_values(by="pagerank", ascending=False)
+    merged_df = pd.merge(dataframe, pagerank, how='left', on=['title'])
+    assert(len(merged_df), len(dataframe))
+    # get the original title
+    merged_df = merged_df.drop(['title'],axis=1)
+    merged_df.rename(columns={"original_title": "title"}, inplace=True)
+    return merged_df

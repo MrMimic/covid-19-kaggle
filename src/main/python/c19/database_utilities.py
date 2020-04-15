@@ -13,6 +13,7 @@ from retry import retry
 
 from c19.file_processing import get_body, read_file
 from c19.language_detection import update_languages
+from c19.networkx_utilities import add_pagerank_to_dataframe
 
 
 def instanciate_sql_db(db_path: str = "articles_database.sqlite") -> None:
@@ -34,7 +35,8 @@ def instanciate_sql_db(db_path: str = "articles_database.sqlite") -> None:
         "abstract": "TEXT",
         "title": "TEXT",
         "sha": "TEXT",
-        "folder": "TEXT"
+        "folder": "TEXT",
+        "pagerank": "TEXT"
     }
     columns = [
         "{0} {1}".format(name, col_type)
@@ -94,7 +96,7 @@ def insert_rows(list_to_insert: List[Any],
         Exception: Unknown table.
     """
     if table_name == "articles":
-        command = "INSERT INTO articles(paper_doi, title, body, abstract, date, sha, folder) VALUES (?, ?, ?, ?, ?, ?, ?)"
+        command = "INSERT INTO articles(paper_doi, title, body, abstract, date, sha, folder, pagerank) VALUES (?, ?, ?, ?, ?, ?, ?)"
     elif table_name == "sentences":
         command = "INSERT INTO sentences(paper_doi, section, raw_sentence, sentence, vector) VALUES (?, ?, ?, ?, ?)"
     else:
@@ -152,7 +154,7 @@ def get_article_text(args: List[Tuple[int, pd.Series, str, str]]) -> None:
         date = None
     # Insert
     raw_data = [
-        data.doi, data.title, body, data.abstract, date, data.sha, folder
+        data.doi, data.title, body, data.abstract, date, data.sha, folder, data.pagerank
     ]
     return raw_data
 
@@ -218,7 +220,9 @@ def create_db_and_load_articles(db_path: str = "articles_database.sqlite",
         # For the moment, we only trained english embedding. See you on 04/16.
         metadata_df = update_languages(metadata_df)
         metadata_df = metadata_df[metadata_df.lang == "En"]
-        # Load usefull information to be stored: id, title, body, abstract, date, sha, folder
+        # getting pagerank
+        metadata_df = add_pagerank_to_dataframe(metadata_df)
+        # Load usefull information to be stored: id, title, body, abstract, date, sha, folder, pagerank
         articles_to_be_inserted = [
             (article, kaggle_data_path, load_body)
             for article in get_articles_to_insert(metadata_df)
