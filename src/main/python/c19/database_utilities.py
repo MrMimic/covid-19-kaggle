@@ -203,6 +203,7 @@ def create_db_and_load_articles(db_path: str = "articles_database.sqlite",
                                 first_launch: bool = False,
                                 load_body: bool = False,
                                 run_on_kaggle: bool = False,
+                                only_covid: bool = False,
                                 enable_data_cleaner:bool = False) -> None:
     """
     Main function to create the DB at first launch.
@@ -221,23 +222,58 @@ def create_db_and_load_articles(db_path: str = "articles_database.sqlite",
     else:
         tic = time.time()
 
-        # The metadata.csv file will be used to fetch available files
-        metadata_df = pd.read_csv(os.path.join(kaggle_data_path, "metadata.csv"), low_memory=False)
-        # The DOI isn't unique, then let's keep the last version of a duplicated paper
-        metadata_df.drop_duplicates(subset=["doi"], keep="last", inplace=True)
-        # If on Kaggle, only keep latest articles to limit DB size
-        if run_on_kaggle is True:
-            metadata_df = metadata_df.dropna(axis=0, subset=['abstract'])
-            metadata_df['publish_time'] = pd.to_datetime(metadata_df['publish_time'])
-            metadata_df["to_keep"] = [True if date.year >= 2019 else False for date in metadata_df['publish_time'].to_list()]
-            metadata_df = metadata_df[metadata_df["to_keep"] == True]
-        # For the moment, we only trained english embedding. See you on 04/16.
-        metadata_df = update_languages(metadata_df)
-        metadata_df = metadata_df[metadata_df.lang == "En"]
+        def select_articles_to_load(kaggle_data_path : str,
+                                    run_on_kaggle : bool = True,
+                                    only_covid : bool = True) -> pd.DataFrame:
+            """
+            Select the articles to be inserted in the database
+
+            Args:
+                kaggle_data_path (str): The path to the data.
+                run_on_kaggle (bool, optional): Determines if the notebook is running on Kaggle, so the DB is limited.
+                only_covid (bool, optional): Determines if only COVID-19 articles are to be loaded.
+
+            Returns:
+                pd.dataframe: A dataframe with the articles to be inserted.
+            """
+
+            # The metadata.csv file will be used to fetch available files
+            metadata_df = pd.read_csv(os.path.join(kaggle_data_path, "metadata.csv"), low_memory=False)
+            
+            # The DOI isn't unique, then let's keep the last version of a duplicated paper
+            metadata_df.drop_duplicates(subset=["doi"], keep="last", inplace=True)
+            
+            # If on Kaggle, only keep latest articles to limit DB size
+            if run_on_kaggle is True:
+                metadata_df = metadata_df.dropna(axis=0, subset=['abstract'])
+                metadata_df['publish_time'] = pd.to_datetime(metadata_df['publish_time'])
+                metadata_df["to_keep"] = [True if date.year >= 2019 else False for date in metadata_df['publish_time'].to_list()]
+                metadata_df = metadata_df[metadata_df["to_keep"] == True]
+            
+            # If only covid-19, only keep articles related to it
+            if only_covid is True:
+                metadata_df = metadata_df.dropna(axis=0, subset=['abstract'])
+                metadata_df['publish_time'] = pd.to_datetime(metadata_df['publish_time'])
+                metadata_df["to_keep"] = [True if date.year >= 2019 else False for date in metadata_df['publish_time'].to_list()]
+                metadata_df = metadata_df[metadata_df["to_keep"] == True]
+
+                abstracts = metadata_df['abstract'].to_list()
+                covid_synonyms = ['corona','covid','ncov','sars-cov-2']
+                metadata_df["to_keep"] = False
+                for synonym in covid_synonyms:
+                    metadata_df["to_keep"] += [True if re.search(synonym,abstract) else False for abstract in abstracts]
+                metadata_df = metadata_df[metadata_df["to_keep"] == True]            
+
+            # For the moment, we only trained english embedding. See you on 04/16.
+            metadata_df = update_languages(metadata_df)
+            metadata_df = metadata_df[metadata_df.lang == "En"]
+            return metadata_df
+
+
         # Load usefull information to be stored: id, title, body, abstract, date, sha, folder
         articles_to_be_inserted = [
             (article, kaggle_data_path, load_body, enable_data_cleaner)
-            for article in get_articles_to_insert(metadata_df)
+            for article in get_articles_to_insert(select_articles_to_load(kaggle_data_path,run_on_kaggle,only_covid))
         ]
         print(f"{len(articles_to_be_inserted)} articles to be prepared.")
 
