@@ -222,12 +222,14 @@ def create_db_and_load_articles(db_path: str = "articles_database.sqlite",
         metadata_df = metadata_df[metadata_df.lang == "En"]
         # getting pagerank
         metadata_df = add_pagerank_to_dataframe(metadata_df)
+        print(metadata_df.describe())
         # Load usefull information to be stored: id, title, body, abstract, date, sha, folder, pagerank
         articles_to_be_inserted = [
             (article, kaggle_data_path, load_body)
             for article in get_articles_to_insert(metadata_df)
         ]
         print(f"{len(articles_to_be_inserted)} articles to be prepared.")
+        print(f"{articles_to_be_inserted[0]} == articles_to_be_inserted[0].")
 
         # Create a new SQLite DB file
         instanciate_sql_db(db_path=db_path)
