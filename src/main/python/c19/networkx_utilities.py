@@ -21,7 +21,7 @@ def get_citations_graph(urls = None) -> nx.DiGraph:
     return G
 
 def get_paper_cited_K_times_graph(G , M = 500) -> nx.DiGraph:
-     """
+    """
     Return a network of paper cited at least M times
     """
     Gs = nx.DiGraph()
