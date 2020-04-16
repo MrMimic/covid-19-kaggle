@@ -15,7 +15,7 @@ from retry import retry
 from c19.data_cleaner import filter_lines_count
 from c19.file_processing import get_body, read_file
 from c19.language_detection import update_languages
-
+from c19.networkx_utilities import add_pagerank_to_dataframe
 
 def instanciate_sql_db(db_path: str = "articles_database.sqlite") -> None:
     """
@@ -36,7 +36,8 @@ def instanciate_sql_db(db_path: str = "articles_database.sqlite") -> None:
         "abstract": "TEXT",
         "title": "TEXT",
         "sha": "TEXT",
-        "folder": "TEXT"
+        "folder": "TEXT",
+        "pagerank": "TEXT"
     }
     columns = [
         "{0} {1}".format(name, col_type)
@@ -96,7 +97,7 @@ def insert_rows(list_to_insert: List[Any],
         Exception: Unknown table.
     """
     if table_name == "articles":
-        command = "INSERT INTO articles(paper_doi, title, body, abstract, date, sha, folder) VALUES (?, ?, ?, ?, ?, ?, ?)"
+        command = "INSERT INTO articles(paper_doi, title, body, abstract, date, sha, folder, pagerank) VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
     elif table_name == "sentences":
         command = "INSERT INTO sentences(paper_doi, section, raw_sentence, sentence, vector) VALUES (?, ?, ?, ?, ?)"
     else:
@@ -162,9 +163,10 @@ def get_article_text(args: List[Tuple[int, pd.Series, str, bool]]) -> None:
             abstract = data.abstract
     else:
         abstract = data.abstract
-    # Return data to be inserted
-    raw_data = [data.doi, data.title, body, abstract, date, data.sha, folder]
-
+    # Insert
+    raw_data = [
+        data.doi, data.title, body, data.abstract, date, data.sha, folder, data.pagerank
+    ]
     return raw_data
 
 
@@ -264,14 +266,13 @@ def create_db_and_load_articles(db_path: str = "articles_database.sqlite",
 
     else:
         tic = time.time()
-
-        # Load usefull information to be stored: id, title, body, abstract, date, sha, folder
+        # filtering
+        metadata_df = filter_metadata_df(kaggle_data_path=kaggle_data_path, only_newest=only_newest, only_covid=only_covid)
+        # pagerank generation
+        metadata_df = add_pagerank_to_dataframe(metadata_df)
         articles_to_be_inserted = [
             (article, kaggle_data_path, enable_data_cleaner)
-            for article in get_articles_to_insert(
-                filter_metadata_df(kaggle_data_path=kaggle_data_path,
-                                   only_newest=only_newest,
-                                   only_covid=only_covid))
+            for article in get_articles_to_insert(metadata_df)
         ]
         print(f"{len(articles_to_be_inserted)} articles to be prepared.")
 
