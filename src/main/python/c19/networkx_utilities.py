@@ -1,6 +1,7 @@
+import urllib.request
+
 import networkx as nx
 import pandas as pd
-import urllib.request
 
 
 def get_citations_graph(urls=None) -> nx.DiGraph:
