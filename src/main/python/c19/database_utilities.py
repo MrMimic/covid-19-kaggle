@@ -224,6 +224,17 @@ def filter_metadata_df(kaggle_data_path: str,
         abstracts = metadata_df['abstract'].to_list()
         covid_synonyms = ['corona', 'covid', 'ncov', 'sars-cov-2']
         metadata_df["to_keep"] = False
+        #### DEBUG KAGGLE
+        for synonym in covid_synonyms:
+            for abstract in abstracts:
+                try:
+                    re.search(synonym, abstract)
+                except Exception as E:
+                    print(E)
+                    print(abstract)
+                    print(synonym)
+                    continue
+        #### DEBUG KAGGLE
         for synonym in covid_synonyms:
             metadata_df["to_keep"] += [
                 True if re.search(synonym, abstract) else False
