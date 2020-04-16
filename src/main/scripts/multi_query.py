@@ -60,4 +60,4 @@ for task, subtasks in queries_data.items():
                     top_x=3,
                     task=task,
                     subtask=subtask,
-                    output_report_path="test_6.md")
+                    output_report_path="resources/executed_queries.md")
