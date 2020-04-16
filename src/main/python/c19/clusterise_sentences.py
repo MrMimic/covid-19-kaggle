@@ -2,6 +2,7 @@
 
 import math
 import time
+from collections import Counter
 from math import sqrt
 from typing import Dict, List, Union
 
@@ -58,20 +59,28 @@ def compute_best_k_silhouette(closest_sentences_df: pd.DataFrame, k_min: int,
     # Which represent X clusters
     possible_k_values = [silhouette_score_k[score] for score in max_scores]
     # Let's round up possible k values leading to the highest scores
-    return math.ceil(np.mean(possible_k_values))
+    best_k = math.ceil(np.mean(possible_k_values))
+    print(f"Best K estimation by Silhouette Score: {best_k}")
+    return best_k
 
 
 def perform_kmean(k_closest_sentences_df: pd.DataFrame,
                   number_of_clusters: Union[int, str],
                   k_min: int = None,
-                  k_max: int = None) -> pd.DataFrame:
+                  k_max: int = None,
+                  min_feature_per_cluster: int = None) -> pd.DataFrame:
     """
     Add a columns "cluster" and "is_closest" to the sentence dataframe.
 
     Args:
         k_closest_sentences_df (pd.DataFrame): The DF to be updated.
         number_of_clusters (Union[int, str]): Number of K in the Kmean. If "auto",
-        perform silhouette score to determine the best K.
+        perform silhouette score to determine the best K among range(k_min, k_max).
+        k_min (int): Minimal number of clusters.
+        k_max (int): Maximal number of clusters.
+        min_feature_per_cluster (int): The minimal number of sentences in a given cluster.
+        Will reduce the number of cluster until all cluster have sufficient amount of sentences
+        or it reach min_cluster.
 
     Returns:
         pd.DataFrame: Updated DF.
@@ -83,12 +92,30 @@ def perform_kmean(k_closest_sentences_df: pd.DataFrame,
             k_min=k_min,
             k_max=k_max)
 
-    # Clusterise vectors
+    # Clusterise vectors.
     vectors = k_closest_sentences_df["vector"].tolist()
-    kmean_model = KMeans(n_clusters=number_of_clusters, n_init=1, random_state=42).fit(vectors)
-    # Label clusters
+
+    # We do not want clusters with one or two sentences.
+    original_k = number_of_clusters
+    while True:
+        kmean_model = KMeans(n_clusters=number_of_clusters,
+                             n_init=1,
+                             random_state=42).fit(vectors)
+        # Check if all clusters are valid regarding their size.
+        valid_clusters = all([
+            item_per_cluster >= min_feature_per_cluster
+            for item_per_cluster in Counter(kmean_model.labels_).values()
+        ])
+        if valid_clusters is True or number_of_clusters < k_min:
+            break
+        else:
+            number_of_clusters -= 1
+    if number_of_clusters != original_k:
+        print(f"Value of K moved from {original_k} to {number_of_clusters} due to individual cluster minimal size.")
+
+    # Label clusters.
     k_closest_sentences_df["cluster"] = kmean_model.labels_
-    # Compute closest from barycentres and store in a boolean column
+    # Compute closest from barycentres and store in a boolean column.
     closest, _ = pairwise_distances_argmin_min(kmean_model.cluster_centers_,
                                                vectors)
     k_closest_sentences_df["is_closest"] = [

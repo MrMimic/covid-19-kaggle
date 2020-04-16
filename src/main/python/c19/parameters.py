@@ -118,6 +118,10 @@ class Query:
     int: The number of wanted clusters (ie, opinion). If "auto", auto-estimation with Silhouette Score.
     """
 
+    min_feature_per_cluster: int = 5
+    """
+    int: The minimal number of feature per individual cluster.
+    """
 
 @dataclass
 class Parameters:
