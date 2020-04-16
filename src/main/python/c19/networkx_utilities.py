@@ -10,6 +10,16 @@ def get_citations_graph(dest_folder: str,
                         urls: List[str] = None) -> nx.DiGraph:
     """
     Return the dataset citations graph.
+
+    Args:
+        dest_folder (str): Folder where artifacts will be stored.
+        urls (List[str], optional): A list of URLs for the files. Defaults to None.
+
+    Raises:
+        FileNotFoundError: The output folder does not exist.
+
+    Returns:
+        nx.DiGraph: The digraph citation object.
     """
     print("Creating citation graph to generate PageRank...")
     all_files = []
@@ -40,7 +50,14 @@ def get_citations_graph(dest_folder: str,
 
 def get_paper_cited_K_times_graph(G, M=500) -> nx.DiGraph:
     """
-    Return a network of paper cited at least M times
+    Return a network of paper cited at least M times.
+
+    Args:
+        G ([type]): The citation digraph.
+        M (int, optional): The max number of nodes. Defaults to 500.
+
+    Returns:
+        nx.DiGraph: The reduced graph.
     """
     Gs = nx.DiGraph()
     for node in G.nodes():
@@ -57,7 +74,14 @@ def get_paper_cited_K_times_graph(G, M=500) -> nx.DiGraph:
 def add_pagerank_to_metadata_df(dataframe: pd.DataFrame,
                                 dest_folder: str) -> pd.DataFrame:
     """
-    Return the dataframe with an extra column containing the pagerank of all papers in the dataframe subjecent network 
+    Return the dataframe with an extra column containing the pagerank of all papers in the dataframe subjecent network.
+
+    Args:
+        dataframe (pd.DataFrame): The DF to be updated.
+        dest_folder (str): The folder storing artifacts from GIT.
+
+    Returns:
+        pd.DataFrame: Updated DF.
     """
     assert ('title' in dataframe.columns)
     # copy original title before processing title lowercase

@@ -20,6 +20,7 @@ def read_file(file_path: str) -> Dict[str, Any]:
         json_data = json.loads(handler.read(), object_pairs_hook=OrderedDict)
     return json_data
 
+
 def read_parquet(file_path: str) -> pd.DataFrame:
     """
     Read a parquet file
@@ -31,6 +32,7 @@ def read_parquet(file_path: str) -> pd.DataFrame:
         pd.DataFrame: The loaded dataframe.
     """
     return pd.read_parquet(file_path)
+
 
 def get_body(json_data: Dict[str, Any]) -> str:
     """
