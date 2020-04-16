@@ -135,37 +135,3 @@ class Parameters:
     query: Query = Query()
 
     first_launch: bool = True
-
-    def __post_init__(self):
-        """
-        Parameters validation.
-        """
-        assert isinstance(
-            self.first_launch, bool
-        ), f"An boolean is requiered to decide if new things have to be trained or not: {self.first_launch}"
-        assert isinstance(
-            self.embedding.dimension, int
-        ), f"An interger is requiered for embedding dimension: {self.embedding.dimension}"
-        assert self.embedding.word_aggregation_method in [
-            "mowe", "sowe"
-        ], f"Word aggregation method should be either 'mowe' or 'sowe'"
-        assert isinstance(
-            self.embedding.weight_with_tfidf, bool
-        ), f"An boolean is requiered to decide if word should be weighted or not: {self.embedding.weight_with_tfidf}"
-        # Preprocessing
-        assert isinstance(
-            self.preprocessing.load_text_body, bool
-        ), f"An boolean is requiered to decide if text body should be loaded or not: {self.preprocessing.load_text_body}"
-        assert isinstance(
-            self.preprocessing.stem_words, bool
-        ), f"An boolean is requiered to decide if text should be stemmed or not: {self.preprocessing.stem_words}"
-        assert isinstance(
-            self.preprocessing.remove_numeric, bool
-        ), f"An boolean is requiered to decide if numeric values should be removed or not: {self.preprocessing.remove_numeric}"
-        # Query
-        assert isinstance(
-            self.query.k_min, int
-        ), f"An interger is requiered to determine minimal number of sentences clusters: {self.query.k_min}"
-        assert isinstance(
-            self.query.k_max, int
-        ), f"An interger is requiered to determine maximal number of sentences clusters: {self.query.k_max}"
