@@ -15,7 +15,7 @@ from retry import retry
 from c19.data_cleaner import filter_lines_count
 from c19.file_processing import get_body, read_file
 from c19.language_detection import update_languages
-from c19.networkx_utilities import add_pagerank_to_dataframe
+from c19.networkx_utilities import add_pagerank_to_metadata_df
 
 def instanciate_sql_db(db_path: str = "articles_database.sqlite") -> None:
     """
@@ -269,7 +269,7 @@ def create_db_and_load_articles(db_path: str = "articles_database.sqlite",
         # filtering
         metadata_df = filter_metadata_df(kaggle_data_path=kaggle_data_path, only_newest=only_newest, only_covid=only_covid)
         # pagerank generation
-        metadata_df = add_pagerank_to_dataframe(metadata_df)
+        metadata_df = add_pagerank_to_metadata_df(metadata_df)
         articles_to_be_inserted = [
             (article, kaggle_data_path, enable_data_cleaner)
             for article in get_articles_to_insert(metadata_df)
@@ -343,3 +343,14 @@ def get_article(db_path: str, paper_doi):
     connection.close()
 
     return data
+
+def get_pagerank(db_path: str, paper_doi):
+    article = get_article(db_path, paper_doi)
+    try:
+        return article[0][7]
+    except: # doi not found
+        return None
+
+def get_df_pagerank_by_doi(db_path: str, df: pd.DataFrame) -> pd.DataFrame:
+    df["pagerank"] = df["paper_doi"].apply(lambda x : get_pagerank(db_path, paper_doi=x))
+    return df
