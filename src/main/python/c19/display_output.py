@@ -46,7 +46,7 @@ def create_html_report(query: str,
                                                            ascending=False)
         display(
             HTML(
-                f"<h3>Cluster {cluster} ({sub_df.shape[0]} sentences) </h3><br><h4>Top {top_x} closest sentences to query:</h4>"
+                f"<h3>Cluster {cluster}</h3><br><h4>Top {top_x} closest sentences to query:</h4>"
             ))
 
         for index, row in sub_df.head(top_x).iterrows():
