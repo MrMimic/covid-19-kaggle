@@ -2,19 +2,19 @@
 
 import multiprocessing as mp
 import os
+import re
 import sqlite3
 import time
 from typing import Any, List, Tuple
-import re
 
 import pandas as pd
 import tqdm
 from dateutil import parser
 from retry import retry
 
+from c19.data_cleaner import filter_lines_count
 from c19.file_processing import get_body, read_file
 from c19.language_detection import update_languages
-from c19.data_cleaner import filter_lines_count
 
 
 def instanciate_sql_db(db_path: str = "articles_database.sqlite") -> None:
@@ -158,7 +158,7 @@ def get_article_text(args: List[Tuple[int, pd.Series, str, bool]]) -> None:
                                           str) and len(data.abstract) > 10:
         try:
             abstract = filter_lines_count(data.abstract)
-        except Exception as e:
+        except Exception:
             abstract = data.abstract
     else:
         abstract = data.abstract
@@ -230,7 +230,7 @@ def filter_metadata_df(kaggle_data_path: str,
             ]
         metadata_df = metadata_df[metadata_df["to_keep"] == True]
 
-    # For the moment, we only trained english embedding. See you on 04/16.
+    # For the moment, we only trained english embedding.
     metadata_df = update_languages(metadata_df)
     metadata_df = metadata_df[metadata_df.lang == "En"]
     return metadata_df
