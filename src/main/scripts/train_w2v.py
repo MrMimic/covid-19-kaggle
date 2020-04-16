@@ -3,7 +3,7 @@
 from c19 import word2vec_utilities, parameters, database_utilities, text_preprocessing
 import os
 """
-The trick is to train a DB of articles without sentence embedding.
+The trick is to generate a DB of articles without sentence embedding.
 It will insert Null instead of the vector.
 Then, all pre-processed sentences are used to train W2V.
 """
@@ -26,7 +26,7 @@ def main():
 
     # Pre-process all sentences (no embedding)
     text_preprocessing.pre_process_and_vectorize_texts(
-        embedding_model=embedding_model,
+        embedding_model=None,
         db_path=params.database.local_path,
         first_launch=params.first_launch,
         stem_words=params.preprocessing.stem_words,
