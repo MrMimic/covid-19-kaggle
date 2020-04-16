@@ -44,8 +44,7 @@ if __name__ == "__main__":
         query=query,
         all_sentences=all_db_sentences,
         embedding_model=embedding_model,
-        number_threshold=1000,
-        distance_threshold=0.8,
-        filtering_method="distance")
+        minimal_number_of_sentences=params.query.minimum_sentences_kept,
+        similarity_threshold=params.query.cosine_similarity_threshold)
 
     closest_sentences_df.to_csv("local_exec/output.csv")

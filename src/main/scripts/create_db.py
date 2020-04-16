@@ -18,12 +18,15 @@ def main():
     database_utilities.create_db_and_load_articles(
         db_path=params.database.local_path,
         kaggle_data_path=params.database.kaggle_data_path,
-        first_launch=params.first_launch)
+        first_launch=params.first_launch,
+        only_newest=params.database.only_newest,
+        only_covid=params.database.only_covid,
+        enable_data_cleaner=params.database.enable_data_cleaner)
 
     # Load pre-trained word vectors
     embedding_model = embedding.Embedding(
         parquet_embedding_path=params.embedding.local_path,
-        embeddings_dimension=params.embedding.dimensions,
+        embeddings_dimension=params.embedding.dimension,
         sentence_embedding_method=params.embedding.word_aggregation_method,
         weight_vectors=params.embedding.weight_with_tfidf)
 
@@ -33,7 +36,9 @@ def main():
         db_path=params.database.local_path,
         first_launch=params.first_launch,
         stem_words=params.preprocessing.stem_words,
-        remove_num=params.preprocessing.remove_numeric)
+        remove_num=params.preprocessing.remove_numeric,
+        batch_size=params.preprocessing.batch_size,
+        max_body_sentences=params.preprocessing.max_body_sentences)
 
 
 if __name__ == "__main__":

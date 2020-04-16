@@ -19,15 +19,20 @@ def main():
     database_utilities.create_db_and_load_articles(
         db_path=params.database.local_path,
         kaggle_data_path=params.database.kaggle_data_path,
-        first_launch=params.first_launch)
+        first_launch=params.first_launch,
+        only_newest=params.database.only_newest,
+        only_covid=params.database.only_covid,
+        enable_data_cleaner=params.database.enable_data_cleaner)
 
     # Pre-process all sentences (no embedding)
     text_preprocessing.pre_process_and_vectorize_texts(
-        embedding_model=None,
+        embedding_model=embedding_model,
         db_path=params.database.local_path,
         first_launch=params.first_launch,
         stem_words=params.preprocessing.stem_words,
-        remove_num=params.preprocessing.remove_numeric)
+        remove_num=params.preprocessing.remove_numeric,
+        batch_size=params.preprocessing.batch_size,
+        max_body_sentences=params.preprocessing.max_body_sentences)
 
     # Param have been set up with: https://www.aclweb.org/anthology/W16-2922.pdf
     w2v_params = {
