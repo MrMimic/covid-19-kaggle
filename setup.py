@@ -17,7 +17,7 @@ requirements = [
     "gensim>=3.6.0",
     "dataclasses>=0.7",
     "language-detector>=5.0.2",
-    "networkx"
+    "networkx>=2.4"
 ]
 
 classifiers = [
