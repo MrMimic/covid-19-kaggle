@@ -67,9 +67,8 @@ def get_k_closest_sentences(
         query: str,
         all_sentences: List[Any],
         embedding_model: Embedding,
-        number_threshold: int = 10,
-        distance_threshold: float = 0.8,
-        filtering_method: str = "distance") -> pd.DataFrame:
+        minimal_number_of_sentences: int = 100,
+        similarity_threshold: float = 0.8) -> pd.DataFrame:
     """
     Compute the cosine distance between the query and all sentences found in the DB.
 
@@ -77,6 +76,10 @@ def get_k_closest_sentences(
         query (str): The query as a sentence.
         sentences ([List[Any]): Pre-processed sentences data from the DB.
         embedding_model (Embedding): The embedding model to be used to vectorise the query.
+        minimal_number_of_sentences (int): The minimal number of sentence to keep when filtering by distance.
+        The similarity_threshold will be decreased gently if needed until the
+        sufficient amount of sentence is reached.
+        similarity_threshold (float): The minimal cosine similarity between sentence and query to be kept.
 
     Returns:
         Any: A list of tuples [(score, target_vector_1), (score, target_vector_2), ...]
@@ -95,10 +98,10 @@ def get_k_closest_sentences(
         sentence.append(distance)
     del distances
 
-    # Now, index 5 contains distance and instance Sentence objects
+    # Now, index 5 contains distance and instance Sentence objects.
     k_sentences = sorted(all_sentences, key=itemgetter(5), reverse=True)
 
-    # Now, create a DF output
+    # Now, create a DF output.
     k_sentences_df = pd.DataFrame(k_sentences,
                                   columns=[
                                       "paper_doi", "section", "raw_sentence",
@@ -106,22 +109,22 @@ def get_k_closest_sentences(
                                   ])
     del k_sentences
 
-    # Filter sentences
-    if filtering_method == "distance":
-        k_sentences_df = k_sentences_df[
-            k_sentences_df["distance"] > distance_threshold]
-    elif filtering_method == "number":
-        k_sentences_df = k_sentences_df.sort_values(
-            by="distance", ascending=False)[0:number_threshold]
-    else:
-        raise Exception(f"Unknown filtering method: {filtering_method}")
+    # Filter sentences, first, only if cosine_similarity > threshold.
+    base_similarity_threshold = similarity_threshold
+    while True:
+        k_sentences_df_filtered = k_sentences_df[k_sentences_df["distance"] > similarity_threshold]
+        # If the number of kept sentence is too low, we should be less restrictive.
+        if k_sentences_df_filtered.shape[0] >= minimal_number_of_sentences:
+            break
+        else:
+            # And lower the threshold to keep more sentences.
+            similarity_threshold -= 0.01
+    if base_similarity_threshold != similarity_threshold:
+        print(f"Similarity threshold lowered from {base_similarity_threshold} to {similarity_threshold} due to minimal number of sentence constraint.")
 
     toc = time.time()
     print(
-        f"Took {round((toc-tic) / 60, 2)} minutes to process the query ({k_sentences_df.shape[0]} sentences kept by {filtering_method} filtering)."
+        f"Took {round((toc-tic) / 60, 2)} minutes to process the query ({k_sentences_df_filtered.shape[0]} sentences kept by distance filtering)."
     )
 
-    return k_sentences_df
-
-
-
+    return k_sentences_df_filtered

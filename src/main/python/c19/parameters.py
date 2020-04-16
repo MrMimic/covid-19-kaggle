@@ -60,6 +60,11 @@ class Database:
     bool: If True, will drop all article with abstract wich do not contain a covid-19 synonym.
     """
 
+    enable_data_cleaner: bool = False
+    """
+    bool: If True, will try to clean the JSON data pre-formating errors (line numbers, etc).
+    """
+
 
 @dataclass
 class PreProcessing:
@@ -88,19 +93,14 @@ class PreProcessing:
 @dataclass
 class Query:
 
-    top_k_sentences_number: int = 500
+    cosine_similarity_threshold: float = 0.8
     """
-    int: The number of close sentences to be taken in account when computing clustering.
-    """
-
-    top_k_sentences_distance: float = 0.8
-    """
-    float: The score threshold to filter sentences having distance < arg.
+    float: The similarity threshold to filter sentences having distance < threshold.
     """
 
-    filtering_method: str = "distance"
+    minimum_sentences_kept: int = 500
     """
-    str: The filter method to be used for clustering ('distance' or 'number').
+    int: If the threshold returns too few sentences, it will decrease gnetly until X sentences are returned.
     """
 
     k_min: int = 2
