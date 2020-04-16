@@ -343,7 +343,6 @@ def get_article(db_path: str, paper_doi):
     connection.close()
 
     return data
-<<<<<<< HEAD
 
 def get_pagerank(db_path: str, paper_doi):
     article = get_article(db_path, paper_doi)
@@ -355,5 +354,3 @@ def get_pagerank(db_path: str, paper_doi):
 def get_df_pagerank_by_doi(db_path: str, df: pd.DataFrame) -> pd.DataFrame:
     df["pagerank"] = df["paper_doi"].apply(lambda x : get_pagerank(db_path, paper_doi=x))
     return df
-=======
->>>>>>> master
