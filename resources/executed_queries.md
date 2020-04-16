@@ -1,372 +1,3 @@
-**Query**: What is the covid-19 incubation period for humans and its variations across age and health status?
-
-**Number of sentences kept by distance filtering**: 13967
-
-**Number of unique papers found among these sentences**: 1454
-
-**Number of clusters automatically designed**: 3
-
-**Task**: What is known about transmission, incubation, and environmental stability?
-
-**Subtask**: Range of incubation periods for the disease in humans (and how this varies across age and health status) and how long individuals are contagious, even after recovery.
-
-**Cluster 0:**
-
-- The higher number of young people among cases, widespread testing and better management of the epidemic might explain the fewer numbers of reported fatalities. ([10.1101/2020.03.04.20031104](https://www.doi.org/10.1101/2020.03.04.20031104))
-
-- These differences could be explained due to: a) the percentage of the population at risk (individuals older than 60 years); b) a higher epidemiological exposure to viral respiratory infections associated with more frequent exposure to them, due to geographic and climatic conditions; c) less spread of the virus by location in the tropical zone; and d) earlier preventive measures to contain the spread of SARS-CoV-2 infection. ([10.1016/j.sapharm.2020.03.013](https://www.doi.org/10.1016/j.sapharm.2020.03.013))
-
-- These estimates differ markedly from those documented in countries such as Spain and Italy, in which COVID-19 case fatality rates exceed 8% (case of Italy) and from the percentage of patients who have required intensive care, which has ranged from 9% to 11% of patients in Mediterranean European countries. ([10.1016/j.sapharm.2020.03.013](https://www.doi.org/10.1016/j.sapharm.2020.03.013))
-
-
-**Cluster 1:**
-
-- The copyright holder for this preprint (which was not peer-reviewed) is the . ([10.1101/2020.03.24.20042382](https://www.doi.org/10.1101/2020.03.24.20042382))
-
-- Temperature was included in the model both as a linear and a quadratic term to account for the non-linearity of the association observed during initial data exploration. ([10.1101/2020.03.18.20036731](https://www.doi.org/10.1101/2020.03.18.20036731))
-
-- The copyright holder for this preprint Let and be the time (in days) of onset of symptoms and death, respectively, and let = − be the onset-to-death interval. ([10.1101/2020.03.09.20033357](https://www.doi.org/10.1101/2020.03.09.20033357))
-
-
-**Cluster 2:**
-
-- For example, All rights reserved. ([10.1101/2020.02.24.20027474](https://www.doi.org/10.1101/2020.02.24.20027474))
-
-- The death and recovery rates are defined in Eqs. ([10.1101/2020.03.26.20044693](https://www.doi.org/10.1101/2020.03.26.20044693))
-
-- We found that the higher the age, the higher the mental health score and the more psychological problems. ([10.1101/2020.03.04.20030973](https://www.doi.org/10.1101/2020.03.04.20030973))
-
-
---------------------
-
-**Query**: How long are individual with covid-19 contagious?
-
-**Number of sentences kept by distance filtering**: 635
-
-**Number of unique papers found among these sentences**: 384
-
-**Number of clusters automatically designed**: 2
-
-**Task**: What is known about transmission, incubation, and environmental stability?
-
-**Subtask**: Range of incubation periods for the disease in humans (and how this varies across age and health status) and how long individuals are contagious, even after recovery.
-
-**Cluster 0:**
-
-- The number of infected frontliners decreased but there is no significant effect on the number of infected public individuals (Fig. ([10.1101/2020.03.27.20045195](https://www.doi.org/10.1101/2020.03.27.20045195))
-
-- Quarantine of individuals with exposure to infectious pathogens has always been an effective approach for containing contagious diseases in the past. ([10.1101/2020.03.06.20032417](https://www.doi.org/10.1101/2020.03.06.20032417))
-
-- 22 If measures were not taken in time, the consequences would be unimaginable. ([10.1101/2020.03.07.20031393](https://www.doi.org/10.1101/2020.03.07.20031393))
-
-
-**Cluster 1:**
-
-- An infected person from out-of-country may return to its family, there it might infect one if her/his children, the child may take it to the school where it infects other children, they take it to their family, members of those other families may take it into public transport vehicles, to leisure activities, or to their workplace, etc. ([10.1101/2020.03.27.20045302](https://www.doi.org/10.1101/2020.03.27.20045302))
-
-- It can be found that with the isolation measures implemented at four time points, the Estatus user changes are not obvious. ([10.1101/2020.01.28.923169](https://www.doi.org/10.1101/2020.01.28.923169))
-
-- 2 gives the comparison between the current modeling methods in use for epidemic and mechanical systems. ([10.1101/2020.03.13.20034082](https://www.doi.org/10.1101/2020.03.13.20034082))
-
-
---------------------
-
-**Query**: Prevalence of asymptomatic shedding and transmission in children of covid-19
-
-**Number of sentences kept by distance filtering**: 1160
-
-**Number of unique papers found among these sentences**: 437
-
-**Number of clusters automatically designed**: 4
-
-**Task**: What is known about transmission, incubation, and environmental stability?
-
-**Subtask**: Prevalence of asymptomatic shedding and transmission (e.g., particularly children).
-
-**Cluster 0:**
-
-- On the contrary, the reports of protection of mice by passive transfer of neutralizing antibodies suggest that this might be overcome by optimizing timing and dose (Zhao et al. ([10.1089/vbz.2017.2191](https://www.doi.org/10.1089/vbz.2017.2191))
-
-- /2020 13 This is the first study to develop an age-specific SEIARW model to quantify the transmissibility of 233 COVID-19 among different age groups. ([10.1101/2020.03.05.20031849](https://www.doi.org/10.1101/2020.03.05.20031849))
-
-- The role of asymptomatic infection in respiratory virus transmission is still largely unknown and the rates of asymptomatic shedding are not well studied. ([10.1186/s12931-019-1086-y](https://www.doi.org/10.1186/s12931-019-1086-y))
-
-
-**Cluster 1:**
-
-- Asymptomatic viral shedding in the nasopharynx in asymptomatic populations and immunocompetent hosts is relatively common [11] [12] [13] . ([10.1186/s12931-019-1086-y](https://www.doi.org/10.1186/s12931-019-1086-y))
-
-- Children show a longer shedding time than adults. ([10.1016/j.jmii.2020.03.010](https://www.doi.org/10.1016/j.jmii.2020.03.010))
-
-- Do children need a longer time to shed SARS-CoV-2 in stool than adults? ([10.1016/j.jmii.2020.03.010](https://www.doi.org/10.1016/j.jmii.2020.03.010))
-
-
-**Cluster 2:**
-
-- Asymptomatic persons with laboratory-confirmed cases were observed as well (2) . ([10.3201/eid2503.171702](https://www.doi.org/10.3201/eid2503.171702))
-
-- Eighteen (36·0%) had chronic illnesses, of which cardiovascular and cerebrovascular diseases were the most common conditions (table 1). ([10.1101/2020.03.30.20045740](https://www.doi.org/10.1101/2020.03.30.20045740))
-
-- For estimating county-level wages, some counties with low populations had redacted wages to preserve anonymity. ([10.1101/2020.03.19.20039404](https://www.doi.org/10.1101/2020.03.19.20039404))
-
-
-**Cluster 3:**
-
-- ► At major sport events, healthcare providers should share information concerning detected respiratory virus infections to all teams to prevent an epidemics of respiratory viruses. ([10.1136/bjsports-2018-100487](https://www.doi.org/10.1136/bjsports-2018-100487))
-
-- Younger individuals are more likely to be asymptomatic and less infectious, ie, subclinical. ([10.1016/s2468-2667(20)30073-6](https://www.doi.org/10.1016/s2468-2667(20)30073-6))
-
-- If asymptomatic cases are important for transmission, they also have the potential to affect estimates of key parameters of disease spread such as the basic reproduction number R 0 (i.e., the expected number of secondary cases generated by an average primary case in a fully susceptible population [5] ). ([10.1101/2020.03.09.20033514](https://www.doi.org/10.1101/2020.03.09.20033514))
-
-
---------------------
-
-**Query**: What is the covid-19 incubation period for humans and its variations across age and health status?
-
-**Number of sentences kept by distance filtering**: 13967
-
-**Number of unique papers found among these sentences**: 1454
-
-**Number of clusters automatically designed**: 3
-
-**Task**: What is known about transmission, incubation, and environmental stability?
-
-**Subtask**: Range of incubation periods for the disease in humans (and how this varies across age and health status) and how long individuals are contagious, even after recovery.
-
-**Cluster 0:**
-
-- The higher number of young people among cases, widespread testing and better management of the epidemic might explain the fewer numbers of reported fatalities. ([10.1101/2020.03.04.20031104](https://www.doi.org/10.1101/2020.03.04.20031104))
-
-- These differences could be explained due to: a) the percentage of the population at risk (individuals older than 60 years); b) a higher epidemiological exposure to viral respiratory infections associated with more frequent exposure to them, due to geographic and climatic conditions; c) less spread of the virus by location in the tropical zone; and d) earlier preventive measures to contain the spread of SARS-CoV-2 infection. ([10.1016/j.sapharm.2020.03.013](https://www.doi.org/10.1016/j.sapharm.2020.03.013))
-
-- These estimates differ markedly from those documented in countries such as Spain and Italy, in which COVID-19 case fatality rates exceed 8% (case of Italy) and from the percentage of patients who have required intensive care, which has ranged from 9% to 11% of patients in Mediterranean European countries. ([10.1016/j.sapharm.2020.03.013](https://www.doi.org/10.1016/j.sapharm.2020.03.013))
-
-
-**Cluster 1:**
-
-- The copyright holder for this preprint (which was not peer-reviewed) is the . ([10.1101/2020.03.24.20042382](https://www.doi.org/10.1101/2020.03.24.20042382))
-
-- Temperature was included in the model both as a linear and a quadratic term to account for the non-linearity of the association observed during initial data exploration. ([10.1101/2020.03.18.20036731](https://www.doi.org/10.1101/2020.03.18.20036731))
-
-- The copyright holder for this preprint Let and be the time (in days) of onset of symptoms and death, respectively, and let = − be the onset-to-death interval. ([10.1101/2020.03.09.20033357](https://www.doi.org/10.1101/2020.03.09.20033357))
-
-
-**Cluster 2:**
-
-- For example, All rights reserved. ([10.1101/2020.02.24.20027474](https://www.doi.org/10.1101/2020.02.24.20027474))
-
-- The death and recovery rates are defined in Eqs. ([10.1101/2020.03.26.20044693](https://www.doi.org/10.1101/2020.03.26.20044693))
-
-- We found that the higher the age, the higher the mental health score and the more psychological problems. ([10.1101/2020.03.04.20030973](https://www.doi.org/10.1101/2020.03.04.20030973))
-
-
---------------------
-
-**Query**: How long are individual with covid-19 contagious?
-
-**Number of sentences kept by distance filtering**: 635
-
-**Number of unique papers found among these sentences**: 384
-
-**Number of clusters automatically designed**: 2
-
-**Task**: What is known about transmission, incubation, and environmental stability?
-
-**Subtask**: Range of incubation periods for the disease in humans (and how this varies across age and health status) and how long individuals are contagious, even after recovery.
-
-**Cluster 0:**
-
-- The number of infected frontliners decreased but there is no significant effect on the number of infected public individuals (Fig. ([10.1101/2020.03.27.20045195](https://www.doi.org/10.1101/2020.03.27.20045195))
-
-- Quarantine of individuals with exposure to infectious pathogens has always been an effective approach for containing contagious diseases in the past. ([10.1101/2020.03.06.20032417](https://www.doi.org/10.1101/2020.03.06.20032417))
-
-- 22 If measures were not taken in time, the consequences would be unimaginable. ([10.1101/2020.03.07.20031393](https://www.doi.org/10.1101/2020.03.07.20031393))
-
-
-**Cluster 1:**
-
-- An infected person from out-of-country may return to its family, there it might infect one if her/his children, the child may take it to the school where it infects other children, they take it to their family, members of those other families may take it into public transport vehicles, to leisure activities, or to their workplace, etc. ([10.1101/2020.03.27.20045302](https://www.doi.org/10.1101/2020.03.27.20045302))
-
-- It can be found that with the isolation measures implemented at four time points, the Estatus user changes are not obvious. ([10.1101/2020.01.28.923169](https://www.doi.org/10.1101/2020.01.28.923169))
-
-- 2 gives the comparison between the current modeling methods in use for epidemic and mechanical systems. ([10.1101/2020.03.13.20034082](https://www.doi.org/10.1101/2020.03.13.20034082))
-
-
---------------------
-
-**Query**: Prevalence of asymptomatic shedding and transmission in children of covid-19
-
-**Number of sentences kept by distance filtering**: 1160
-
-**Number of unique papers found among these sentences**: 437
-
-**Number of clusters automatically designed**: 4
-
-**Task**: What is known about transmission, incubation, and environmental stability?
-
-**Subtask**: Prevalence of asymptomatic shedding and transmission (e.g., particularly children).
-
-**Cluster 0:**
-
-- On the contrary, the reports of protection of mice by passive transfer of neutralizing antibodies suggest that this might be overcome by optimizing timing and dose (Zhao et al. ([10.1089/vbz.2017.2191](https://www.doi.org/10.1089/vbz.2017.2191))
-
-- /2020 13 This is the first study to develop an age-specific SEIARW model to quantify the transmissibility of 233 COVID-19 among different age groups. ([10.1101/2020.03.05.20031849](https://www.doi.org/10.1101/2020.03.05.20031849))
-
-- The role of asymptomatic infection in respiratory virus transmission is still largely unknown and the rates of asymptomatic shedding are not well studied. ([10.1186/s12931-019-1086-y](https://www.doi.org/10.1186/s12931-019-1086-y))
-
-
-**Cluster 1:**
-
-- Asymptomatic viral shedding in the nasopharynx in asymptomatic populations and immunocompetent hosts is relatively common [11] [12] [13] . ([10.1186/s12931-019-1086-y](https://www.doi.org/10.1186/s12931-019-1086-y))
-
-- Children show a longer shedding time than adults. ([10.1016/j.jmii.2020.03.010](https://www.doi.org/10.1016/j.jmii.2020.03.010))
-
-- Do children need a longer time to shed SARS-CoV-2 in stool than adults? ([10.1016/j.jmii.2020.03.010](https://www.doi.org/10.1016/j.jmii.2020.03.010))
-
-
-**Cluster 2:**
-
-- Asymptomatic persons with laboratory-confirmed cases were observed as well (2) . ([10.3201/eid2503.171702](https://www.doi.org/10.3201/eid2503.171702))
-
-- Eighteen (36·0%) had chronic illnesses, of which cardiovascular and cerebrovascular diseases were the most common conditions (table 1). ([10.1101/2020.03.30.20045740](https://www.doi.org/10.1101/2020.03.30.20045740))
-
-- For estimating county-level wages, some counties with low populations had redacted wages to preserve anonymity. ([10.1101/2020.03.19.20039404](https://www.doi.org/10.1101/2020.03.19.20039404))
-
-
-**Cluster 3:**
-
-- ► At major sport events, healthcare providers should share information concerning detected respiratory virus infections to all teams to prevent an epidemics of respiratory viruses. ([10.1136/bjsports-2018-100487](https://www.doi.org/10.1136/bjsports-2018-100487))
-
-- Younger individuals are more likely to be asymptomatic and less infectious, ie, subclinical. ([10.1016/s2468-2667(20)30073-6](https://www.doi.org/10.1016/s2468-2667(20)30073-6))
-
-- If asymptomatic cases are important for transmission, they also have the potential to affect estimates of key parameters of disease spread such as the basic reproduction number R 0 (i.e., the expected number of secondary cases generated by an average primary case in a fully susceptible population [5] ). ([10.1101/2020.03.09.20033514](https://www.doi.org/10.1101/2020.03.09.20033514))
-
-
---------------------
-
-**Query**: What is the covid-19 incubation period for humans and its variations across age and health status?
-
-**Number of sentences kept by distance filtering**: 13967
-
-**Number of unique papers found among these sentences**: 1454
-
-**Number of clusters automatically designed**: 3
-
-**Task**: What is known about transmission, incubation, and environmental stability?
-
-**Subtask**: Range of incubation periods for the disease in humans (and how this varies across age and health status) and how long individuals are contagious, even after recovery.
-
-**Cluster 0:**
-
-- The higher number of young people among cases, widespread testing and better management of the epidemic might explain the fewer numbers of reported fatalities. ([10.1101/2020.03.04.20031104](https://www.doi.org/10.1101/2020.03.04.20031104))
-
-- These differences could be explained due to: a) the percentage of the population at risk (individuals older than 60 years); b) a higher epidemiological exposure to viral respiratory infections associated with more frequent exposure to them, due to geographic and climatic conditions; c) less spread of the virus by location in the tropical zone; and d) earlier preventive measures to contain the spread of SARS-CoV-2 infection. ([10.1016/j.sapharm.2020.03.013](https://www.doi.org/10.1016/j.sapharm.2020.03.013))
-
-- These estimates differ markedly from those documented in countries such as Spain and Italy, in which COVID-19 case fatality rates exceed 8% (case of Italy) and from the percentage of patients who have required intensive care, which has ranged from 9% to 11% of patients in Mediterranean European countries. ([10.1016/j.sapharm.2020.03.013](https://www.doi.org/10.1016/j.sapharm.2020.03.013))
-
-
-**Cluster 1:**
-
-- The copyright holder for this preprint (which was not peer-reviewed) is the . ([10.1101/2020.03.24.20042382](https://www.doi.org/10.1101/2020.03.24.20042382))
-
-- Temperature was included in the model both as a linear and a quadratic term to account for the non-linearity of the association observed during initial data exploration. ([10.1101/2020.03.18.20036731](https://www.doi.org/10.1101/2020.03.18.20036731))
-
-- The copyright holder for this preprint Let and be the time (in days) of onset of symptoms and death, respectively, and let = − be the onset-to-death interval. ([10.1101/2020.03.09.20033357](https://www.doi.org/10.1101/2020.03.09.20033357))
-
-
-**Cluster 2:**
-
-- For example, All rights reserved. ([10.1101/2020.02.24.20027474](https://www.doi.org/10.1101/2020.02.24.20027474))
-
-- The death and recovery rates are defined in Eqs. ([10.1101/2020.03.26.20044693](https://www.doi.org/10.1101/2020.03.26.20044693))
-
-- We found that the higher the age, the higher the mental health score and the more psychological problems. ([10.1101/2020.03.04.20030973](https://www.doi.org/10.1101/2020.03.04.20030973))
-
-
---------------------
-
-**Query**: How long are individual with covid-19 contagious?
-
-**Number of sentences kept by distance filtering**: 635
-
-**Number of unique papers found among these sentences**: 384
-
-**Number of clusters automatically designed**: 2
-
-**Task**: What is known about transmission, incubation, and environmental stability?
-
-**Subtask**: Range of incubation periods for the disease in humans (and how this varies across age and health status) and how long individuals are contagious, even after recovery.
-
-**Cluster 0:**
-
-- The number of infected frontliners decreased but there is no significant effect on the number of infected public individuals (Fig. ([10.1101/2020.03.27.20045195](https://www.doi.org/10.1101/2020.03.27.20045195))
-
-- Quarantine of individuals with exposure to infectious pathogens has always been an effective approach for containing contagious diseases in the past. ([10.1101/2020.03.06.20032417](https://www.doi.org/10.1101/2020.03.06.20032417))
-
-- 22 If measures were not taken in time, the consequences would be unimaginable. ([10.1101/2020.03.07.20031393](https://www.doi.org/10.1101/2020.03.07.20031393))
-
-
-**Cluster 1:**
-
-- An infected person from out-of-country may return to its family, there it might infect one if her/his children, the child may take it to the school where it infects other children, they take it to their family, members of those other families may take it into public transport vehicles, to leisure activities, or to their workplace, etc. ([10.1101/2020.03.27.20045302](https://www.doi.org/10.1101/2020.03.27.20045302))
-
-- It can be found that with the isolation measures implemented at four time points, the Estatus user changes are not obvious. ([10.1101/2020.01.28.923169](https://www.doi.org/10.1101/2020.01.28.923169))
-
-- 2 gives the comparison between the current modeling methods in use for epidemic and mechanical systems. ([10.1101/2020.03.13.20034082](https://www.doi.org/10.1101/2020.03.13.20034082))
-
-
---------------------
-
-**Query**: Prevalence of asymptomatic shedding and transmission in children of covid-19
-
-**Number of sentences kept by distance filtering**: 1160
-
-**Number of unique papers found among these sentences**: 437
-
-**Number of clusters automatically designed**: 4
-
-**Task**: What is known about transmission, incubation, and environmental stability?
-
-**Subtask**: Prevalence of asymptomatic shedding and transmission (e.g., particularly children).
-
-**Cluster 0:**
-
-- On the contrary, the reports of protection of mice by passive transfer of neutralizing antibodies suggest that this might be overcome by optimizing timing and dose (Zhao et al. ([10.1089/vbz.2017.2191](https://www.doi.org/10.1089/vbz.2017.2191))
-
-- /2020 13 This is the first study to develop an age-specific SEIARW model to quantify the transmissibility of 233 COVID-19 among different age groups. ([10.1101/2020.03.05.20031849](https://www.doi.org/10.1101/2020.03.05.20031849))
-
-- The role of asymptomatic infection in respiratory virus transmission is still largely unknown and the rates of asymptomatic shedding are not well studied. ([10.1186/s12931-019-1086-y](https://www.doi.org/10.1186/s12931-019-1086-y))
-
-
-**Cluster 1:**
-
-- Asymptomatic viral shedding in the nasopharynx in asymptomatic populations and immunocompetent hosts is relatively common [11] [12] [13] . ([10.1186/s12931-019-1086-y](https://www.doi.org/10.1186/s12931-019-1086-y))
-
-- Children show a longer shedding time than adults. ([10.1016/j.jmii.2020.03.010](https://www.doi.org/10.1016/j.jmii.2020.03.010))
-
-- Do children need a longer time to shed SARS-CoV-2 in stool than adults? ([10.1016/j.jmii.2020.03.010](https://www.doi.org/10.1016/j.jmii.2020.03.010))
-
-
-**Cluster 2:**
-
-- Asymptomatic persons with laboratory-confirmed cases were observed as well (2) . ([10.3201/eid2503.171702](https://www.doi.org/10.3201/eid2503.171702))
-
-- Eighteen (36·0%) had chronic illnesses, of which cardiovascular and cerebrovascular diseases were the most common conditions (table 1). ([10.1101/2020.03.30.20045740](https://www.doi.org/10.1101/2020.03.30.20045740))
-
-- For estimating county-level wages, some counties with low populations had redacted wages to preserve anonymity. ([10.1101/2020.03.19.20039404](https://www.doi.org/10.1101/2020.03.19.20039404))
-
-
-**Cluster 3:**
-
-- ► At major sport events, healthcare providers should share information concerning detected respiratory virus infections to all teams to prevent an epidemics of respiratory viruses. ([10.1136/bjsports-2018-100487](https://www.doi.org/10.1136/bjsports-2018-100487))
-
-- Younger individuals are more likely to be asymptomatic and less infectious, ie, subclinical. ([10.1016/s2468-2667(20)30073-6](https://www.doi.org/10.1016/s2468-2667(20)30073-6))
-
-- If asymptomatic cases are important for transmission, they also have the potential to affect estimates of key parameters of disease spread such as the basic reproduction number R 0 (i.e., the expected number of secondary cases generated by an average primary case in a fully susceptible population [5] ). ([10.1101/2020.03.09.20033514](https://www.doi.org/10.1101/2020.03.09.20033514))
-
-
---------------------
-
 **Query**: How long are individual with covid-19 contagious?
 
 **Number of sentences kept by distance filtering**: 635
@@ -1138,6 +769,3410 @@
 - The study points out the key factors that affect the spread of the virus, such as the basic reproduction number, virus incubation period, and daily infection number. ([10.1016/j.idm.2020.03.002](https://www.doi.org/10.1016/j.idm.2020.03.002))
 
 - We used a stochastic transmission model in which every person generates novel infections according to a probability distribution that is affected by the incubation period distribution (time from infection to symptoms), distribution of the latent period (time from infection to a person becoming infectious), and overall transmissibility. ([10.1101/2020.03.10.20033738](https://www.doi.org/10.1101/2020.03.10.20033738))
+
+
+--------------------
+
+**Query**: How coronavirus is transmitted from human-to-human?
+
+**Number of sentences kept by distance filtering**: 651
+
+**Number of unique papers found among these sentences**: 387
+
+**Number of clusters automatically designed**: 4
+
+**Task**: What do we know about COVID-19 risk factors?
+
+**Subtask**: Transmission dynamics of the virus, including the basic reproductive number, incubation period, serial interval, modes of transmission and environmental factors
+
+**Cluster 0:**
+
+- The mutation of proteins determines two important characteristics of the SARS-CoV-2: A higher ability to infect and enhanced pathogenicity than the bat-like SARS-CoV, but a lower pathogenicity than SARS-CoV [43] . ([10.3390/v12020244](https://www.doi.org/10.3390/v12020244))
+
+- MERS-CoV is transmitted to humans through close contact with dromedaries, suggesting that MERS is a zoonotic disease (Azhar et al., 2014) . ([10.3389/fmicb.2019.01326](https://www.doi.org/10.3389/fmicb.2019.01326))
+
+- Middle East respiratory syndrome coronavirus (MERS-CoV) is a zoonotic disease transmitted from dromedary camels to people, which can result in outbreaks with human-to-human transmission. ([10.1017/s0950268819001663](https://www.doi.org/10.1017/s0950268819001663))
+
+
+**Cluster 1:**
+
+- A low passage, live, clinical cGMP grade RSV virus known as Memphis 37 (RSV M37) was generated for use in human challenge studies (Kim et al., 2014) . ([10.1016/j.antiviral.2019.04.006](https://www.doi.org/10.1016/j.antiviral.2019.04.006))
+
+- There are 6 previously known human coronaviruses that can be transmitted between humans. ([10.1093/clinchem/hvaa029](https://www.doi.org/10.1093/clinchem/hvaa029))
+
+- 34 The possibility that patients may be infectious prior to symptom onset further compounds the difficulty of containing the virus and effectively preventing transmission. ([10.5811/westjem.2020.1.46760](https://www.doi.org/10.5811/westjem.2020.1.46760))
+
+
+**Cluster 2:**
+
+- The novel coronavirus (SARS-CoV-2) was mainly transmitted via respiratory droplets and can be transmitted between humans 1-3 . ([10.1101/2020.02.11.20020735](https://www.doi.org/10.1101/2020.02.11.20020735))
+
+- Novel coronavirus can progress to a severe illness but never leads to death. ([10.1101/2020.02.26.20028308](https://www.doi.org/10.1101/2020.02.26.20028308))
+
+- Person-to-person spread is evident (7) ; however, how easily the virus is transmitted between persons is currently unclear. ([10.15585/mmwr.mm6905e1](https://www.doi.org/10.15585/mmwr.mm6905e1))
+
+
+**Cluster 3:**
+
+- While they thought to have master nature, the corona-virus occurs and has already killed many people in China, and has been discovered to other parts of the world including Europe and Africa. ([10.1016/j.aej.2020.02.033](https://www.doi.org/10.1016/j.aej.2020.02.033))
+
+- Pneumonia caused by the novel coronavirus (COVID-19) is a new infectious disease that is mainly transmitted by respiratory droplets and contact and is generally infectious to human beings 1 . ([10.1101/2020.03.18.20038026](https://www.doi.org/10.1101/2020.03.18.20038026))
+
+- For example, outbreak of severe acute respiratory syndrome (SARS) in 2002/ 2003, caused by SARS coronavirus (SARS-CoV) transmitted from wildlife animal reservoirs, was associated with 774 deaths in 8096 infected individuals [4] . ([10.1080/22221751.2019.1677446](https://www.doi.org/10.1080/22221751.2019.1677446))
+
+
+--------------------
+
+**Query**: risk of fatality among symptomatic hospitalized patients for covid-19
+
+**Number of sentences kept by distance filtering**: 6236
+
+**Number of unique papers found among these sentences**: 1154
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What do we know about COVID-19 risk factors?
+
+**Subtask**: Severity of disease, including risk of fatality among symptomatic hospitalized patients, and high-risk patient groups
+
+**Cluster 0:**
+
+- A retrospective clinical study indicated the risk of fatality among hospitalized cases at 4.3% in single-center case series of 138 hospitalized patients [8] , and the infection fatality risk could be below 1% or even below 0.1% in a large number of undetected relatively mild infections [9] . ([10.1016/j.phrs.2020.104761](https://www.doi.org/10.1016/j.phrs.2020.104761))
+
+- SARS-CoV-2 caused a much more severe pneumonia in the aged people than younger patients. ([10.1016/j.jinf.2020.03.019](https://www.doi.org/10.1016/j.jinf.2020.03.019))
+
+- The case fatality rate was 16% among HCWs compared with 34% among other patients (P = .001). ([10.1016/j.ajic.2019.04.007](https://www.doi.org/10.1016/j.ajic.2019.04.007))
+
+
+**Cluster 1:**
+
+- Some 13.9% (95%CI 6.2–21.5%) of hospitalized patients had fatal outcomes (case fatality rate, CFR). ([10.1016/j.tmaid.2020.101623](https://www.doi.org/10.1016/j.tmaid.2020.101623))
+
+- There were more case fatalities among COVID-19 patients without comorbidities than in the reference cohort. ([10.2807/1560-7917.es.2020.25.11.2000258](https://www.doi.org/10.2807/1560-7917.es.2020.25.11.2000258))
+
+- There were more case fatalities among COVID-19 patients without comorbidities than in the reference cohort. ([10.2807/1560-7917.es.2020.25.11.2000258](https://www.doi.org/10.2807/1560-7917.es.2020.25.11.2000258))
+
+
+--------------------
+
+**Query**: What is the severity of covid-19 induced by coronavirus?
+
+**Number of sentences kept by distance filtering**: 1873
+
+**Number of unique papers found among these sentences**: 766
+
+**Number of clusters automatically designed**: 3
+
+**Task**: What do we know about COVID-19 risk factors?
+
+**Subtask**: Severity of disease, including risk of fatality among symptomatic hospitalized patients, and high-risk patient groups
+
+**Cluster 0:**
+
+- Both coronavirus disease 2019 (COVID-19) and severe acute respiratory syndrome (SARS) are characterised by an overexuberant inflammatory response and, for SARS, viral load is not correlated with the worsening of symptoms. ([10.1016/s1473-3099(20)30132-8](https://www.doi.org/10.1016/s1473-3099(20)30132-8))
+
+- Both coronavirus disease 2019 (COVID-19) and severe acute respiratory syndrome (SARS) are characterised by an overexuberant inflammatory response and, for SARS, viral load is not correlated with the worsening of symptoms. ([10.1016/s1473-3099(20)30132-8](https://www.doi.org/10.1016/s1473-3099(20)30132-8))
+
+- Immune system dysregulation, such as lymphopenia and inflammatory cytokine storm, have been observed and are believed to be associated with the severity of pathogenic coronavirus infections, such as severe acute respiratory syndrome coronavirus (SARS-CoV) and Middle East respiratory syndrome coronavirus (MERS-CoV) infections [12, 13] . ([10.1101/2020.03.23.20039362](https://www.doi.org/10.1101/2020.03.23.20039362))
+
+
+**Cluster 1:**
+
+- In conclusion, we report three cytokines that closely associated with disease severity and outcome of COVID-19. ([10.1101/2020.03.02.20029975](https://www.doi.org/10.1101/2020.03.02.20029975))
+
+- These clusters also suggest that older age is associated with more-severe disease, with young adults and children having progressively less-severe disease9. ([10.1038/s41591-020-0796-5](https://www.doi.org/10.1038/s41591-020-0796-5))
+
+- Correlation between hypophosphatemia and the severity of Coronavirus Disease 2019 patients ([10.1101/2020.03.27.20040816](https://www.doi.org/10.1101/2020.03.27.20040816))
+
+
+**Cluster 2:**
+
+- CC-BY-NC-ND 4.0 International license It is made available under a is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. ([10.1101/2020.02.03.20020206](https://www.doi.org/10.1101/2020.02.03.20020206))
+
+- Unlike 229E and OC43, SARS-CoV infection causes lower respiratory tract infection, accompanied by a cytokine storm in patients with poor outcome. ([10.1080/22221751.2020.1736644](https://www.doi.org/10.1080/22221751.2020.1736644))
+
+- However, after adjusted by age, the significance became unobvious. ([10.1101/2020.03.26.20043943](https://www.doi.org/10.1101/2020.03.26.20043943))
+
+
+--------------------
+
+**Query**: Is there any high-risk patient groups regarding covid-19?
+
+**Number of sentences kept by distance filtering**: 5555
+
+**Number of unique papers found among these sentences**: 1085
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What do we know about COVID-19 risk factors?
+
+**Subtask**: Severity of disease, including risk of fatality among symptomatic hospitalized patients, and high-risk patient groups
+
+**Cluster 0:**
+
+- Written informed signed consent was obtained from adult participants (> 18 years) or from parents or legal guardians for minors (<18 years). ([10.1101/2020.03.16.20037135](https://www.doi.org/10.1101/2020.03.16.20037135))
+
+- Patients received information about their clinical status during care regardless of whether they participate in the study or not. ([10.1016/j.ijantimicag.2020.105949](https://www.doi.org/10.1016/j.ijantimicag.2020.105949))
+
+- This result is insofar important as it applies to a large portion of the population given the fact that many were affected by non-communicable diseases of affluence such as diabetes, obesity, heart diseases, etc. ([10.1016/j.jiph.2018.12.002](https://www.doi.org/10.1016/j.jiph.2018.12.002))
+
+
+**Cluster 1:**
+
+- The data contains information on patient demographics, clinical outcome, whether the patient was a healthcare worker (HCW), comorbidity status of the patient, and place of exposure to known risk factors. ([10.1016/j.jiph.2018.12.002](https://www.doi.org/10.1016/j.jiph.2018.12.002))
+
+- Recommendations stated that positive contacts are placed in quarantine (home or hospital isolation for asymptomatic or symptomatic secondary cases, respectively) until they test negative 41, [44] [45] [46] . ([10.1038/s41598-019-43586-9](https://www.doi.org/10.1038/s41598-019-43586-9))
+
+- Combined with the O2O model the patients were evaluated and treated. ([10.1101/2020.02.26.20028084](https://www.doi.org/10.1101/2020.02.26.20028084))
+
+
+--------------------
+
+**Query**: How susceptibility to coronavirus differ for different populations?
+
+**Number of sentences kept by distance filtering**: 1186
+
+**Number of unique papers found among these sentences**: 534
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What do we know about COVID-19 risk factors?
+
+**Subtask**: Susceptibility of populations
+
+**Cluster 0:**
+
+- With more cases being examined from different ethnic and genetic backgrounds worldwide, ACE2 expression variation can be better analysed and compared to establish whether it contributes to susceptibility to COVID-19 across the different subgroups. ([10.1016/s2213-2600(20)30117-x](https://www.doi.org/10.1016/s2213-2600(20)30117-x))
+
+- Without strong evidence of an association between smoking and prevalence or severity of COVID-19 in Asian men compared with other subgroups, no firm conclusions can be drawn. ([10.1016/s2213-2600(20)30117-x](https://www.doi.org/10.1016/s2213-2600(20)30117-x))
+
+- 1, 2 We believe that the susceptibility to the novel 2019-nCov is also different among population groups. ([10.1101/2020.02.05.20020107](https://www.doi.org/10.1101/2020.02.05.20020107))
+
+
+**Cluster 1:**
+
+- Fig. ([10.1101/2020.02.08.939553](https://www.doi.org/10.1101/2020.02.08.939553))
+
+- Four human coronaviruses have been identified so far, including two alphacoronaviruses HCoV-229E and HCoV-NL63, and two betacoronaviruses HCoV-OC43 and HCoV-HKU1. ([10.1016/b978-0-12-801238-3.95704-0](https://www.doi.org/10.1016/b978-0-12-801238-3.95704-0))
+
+- Sheep are also affected by common respiratory diseases. ([10.1016/b978-0-12-816406-8.00019-x](https://www.doi.org/10.1016/b978-0-12-816406-8.00019-x))
+
+
+--------------------
+
+**Query**: What public health mitigation measures could be effective for covid-19 control?
+
+**Number of sentences kept by distance filtering**: 9974
+
+**Number of unique papers found among these sentences**: 1473
+
+**Number of clusters automatically designed**: 3
+
+**Task**: What do we know about COVID-19 risk factors?
+
+**Subtask**: Public health mitigation measures that could be effective for control
+
+**Cluster 0:**
+
+- In the absence of effective treatments and vaccines, an early adoption of stringent public health measures is crucial in mitigating the scale and burden of an outbreak. ([10.1101/2020.03.09.20033464](https://www.doi.org/10.1101/2020.03.09.20033464))
+
+- Also, to evaluate the effect of each government policies in controlling the outbreak of COVID-19. ([10.1101/2020.03.15.20036418](https://www.doi.org/10.1101/2020.03.15.20036418))
+
+- This further indicated that timely public health policies might significantly prevent the rapid spread of the epidemic. ([10.1101/2020.03.10.20032995](https://www.doi.org/10.1101/2020.03.10.20032995))
+
+
+**Cluster 1:**
+
+- However, caution must be taken during clinical use of chloroquine as its overdose is highly fatal without known antidote [74] . ([10.7150/ijbs.45053](https://www.doi.org/10.7150/ijbs.45053))
+
+- Therefore, mitigation of its impact, rather than containment and control becomes a priority during pandemics. ([10.1016/j.tmaid.2020.101617](https://www.doi.org/10.1016/j.tmaid.2020.101617))
+
+- • Clear differences are emerging, such as in transmissibility and severity pyramids; COVID-19 has a higher transmissibility than SARS, and many more patients with COVID-19 rather than SARS have mild symptoms that contribute to spread because these patients are often missed and not isolated. ([10.1016/s1473-3099(20)30129-8](https://www.doi.org/10.1016/s1473-3099(20)30129-8))
+
+
+**Cluster 2:**
+
+- For governments, the situations of epidemics could be apperceived, and effective containment measures could be provided [6] . ([10.1016/j.physrep.2019.07.001](https://www.doi.org/10.1016/j.physrep.2019.07.001))
+
+- Therefore, measures of containment of the SARS-CoV-2 outbreaks are essential to not overstress the health care systems and to manage the pandemic. ([10.1101/2020.03.19.20039388](https://www.doi.org/10.1101/2020.03.19.20039388))
+
+- The turning point is approximately day 38 = February 7. ([10.1101/2020.03.11.20034314](https://www.doi.org/10.1101/2020.03.11.20034314))
+
+
+--------------------
+
+**Query**: Real-time tracking of whole genomes of coronaviruses
+
+**Number of sentences kept by distance filtering**: 798
+
+**Number of unique papers found among these sentences**: 293
+
+**Number of clusters automatically designed**: 3
+
+**Task**: What do we know about virus genetics, origin, and evolution?
+
+**Subtask**: Real-time tracking of whole genomes and a mechanism for coordinating the rapid dissemination of that information to inform the development of diagnostics and therapeutics and to track variations of the virus over time.
+
+**Cluster 0:**
+
+- Here we apply a comparative pangenomic approach of all Betacoronavirus genomes sequenced thus far (Table 1) , to detect the core and accessory gene cluster of this genus, and then annotate the functions, further assessed through structural analysis. ([10.1101/2020.02.17.952895](https://www.doi.org/10.1101/2020.02.17.952895))
+
+- Several full genomic sequences of this virus have been released for the study of its evolutionary origin and molecular characteristics2, 3, 4. ([10.1016/j.jinf.2020.02.027](https://www.doi.org/10.1016/j.jinf.2020.02.027))
+
+- We performed bioinformatics analysis on a virus genome from a patient with 2019-nCoV infection and compared it with other related coronavirus genomes. ([10.1080/22221751.2020.1719902](https://www.doi.org/10.1080/22221751.2020.1719902))
+
+
+**Cluster 1:**
+
+- Third, after infection of susceptible cells, pathogens may amplify at the site of deposition or are disseminated from the primary deposition site to peripheral tissues (secondary site), where additional amplification takes place. ([10.1016/j.jmii.2020.03.002](https://www.doi.org/10.1016/j.jmii.2020.03.002))
+
+- Second, when viruses are detected, the high genetic diversity of CoVs means that full-length genome sequencing is essential to fully characterize viruses. ([10.1128/msphere.00807-19](https://www.doi.org/10.1128/msphere.00807-19))
+
+- Our evolution clock analysis estimated that 2019-nCoV diverged from RaTG13 and human SARS-CoV at about 12 author/funder. ([10.1101/2020.02.29.971101](https://www.doi.org/10.1101/2020.02.29.971101))
+
+
+**Cluster 2:**
+
+- It also performs detailed analysis of the coding regions and proteins. ([10.1101/2020.01.31.928796](https://www.doi.org/10.1101/2020.01.31.928796))
+
+- Moreover, it can easily be updated to add new phylogenetic clusters if new outbreaks arise or if the classification nomenclature changes. ([10.1093/bioinformatics/btaa145](https://www.doi.org/10.1093/bioinformatics/btaa145))
+
+- These tools are used to analyze a large dataset of over 5000 unique viral genomic sequences, totalling 61.8 million bp. ([10.1101/2020.02.03.932350](https://www.doi.org/10.1101/2020.02.03.932350))
+
+
+--------------------
+
+**Query**: Mechanism for coordinating the rapid dissemination of that information to inform the development of diagnostics and therapeutics
+
+**Number of sentences kept by distance filtering**: 4496
+
+**Number of unique papers found among these sentences**: 1354
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What do we know about virus genetics, origin, and evolution?
+
+**Subtask**: Real-time tracking of whole genomes and a mechanism for coordinating the rapid dissemination of that information to inform the development of diagnostics and therapeutics and to track variations of the virus over time.
+
+**Cluster 0:**
+
+- Computational research related to the COVID-19 pandemic has been assigned increased priority which expedited the generation of these predictions. ([10.1101/2020.03.29.014381](https://www.doi.org/10.1101/2020.03.29.014381))
+
+- CC-BY-NC-ND 4.0 International license It is made available under a is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. ([10.1101/2020.03.26.20044164](https://www.doi.org/10.1101/2020.03.26.20044164))
+
+- ABSTRACTEffective countermeasures against the recent emergence and rapid expansion of the 2019-Novel Coronavirus (2019-nCoV) require the development of data and tools to understand and monitor viral spread and immune responses. ([10.1101/2020.02.12.946087](https://www.doi.org/10.1101/2020.02.12.946087))
+
+
+**Cluster 1:**
+
+- Current clinical trials about convalescent plasma transfusion were shown in Table. ([10.1016/j.ijantimicag.2020.105955](https://www.doi.org/10.1016/j.ijantimicag.2020.105955))
+
+- Majority of the vaccines that are being developed for coronaviruses targets the Spike glycoprotein or S protein (Graham et al. ([10.1080/01652176.2020.1727993](https://www.doi.org/10.1080/01652176.2020.1727993))
+
+- By highlighting such theme interactions within coronavirus research, we hope to inspire new collaborations among researchers, by sharing data, information, technologies and ideas. ([10.1101/2020.03.26.20044164](https://www.doi.org/10.1101/2020.03.26.20044164))
+
+
+--------------------
+
+**Query**: How to track variations of the corinaviruses over time? And for other viruses?
+
+**Number of sentences kept by distance filtering**: 915
+
+**Number of unique papers found among these sentences**: 400
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What do we know about virus genetics, origin, and evolution?
+
+**Subtask**: Real-time tracking of whole genomes and a mechanism for coordinating the rapid dissemination of that information to inform the development of diagnostics and therapeutics and to track variations of the virus over time.
+
+**Cluster 0:**
+
+- During the course of an outbreak, the measures CFR d (t, τ res ) and M 0 p (t) are subject to another confounding influence. ([10.1101/2020.03.26.20044693](https://www.doi.org/10.1101/2020.03.26.20044693))
+
+- Tracking case numbers over time allows us to determine speed of spread and the effectiveness of interventions. ([10.1101/2020.03.23.20041319](https://www.doi.org/10.1101/2020.03.23.20041319))
+
+- The available data is too small to identify seasonal patterns and make predictable variation in value, such as annual fluctuation in temperature relative to the season. ([10.1101/2020.03.24.20041095](https://www.doi.org/10.1101/2020.03.24.20041095))
+
+
+**Cluster 1:**
+
+- Also in 2009, Carneiro and Mylonakis [15] used large amounts of data to predict flu outbreaks a week earlier than prevention surveillance systems. ([10.1101/2020.03.17.995795](https://www.doi.org/10.1101/2020.03.17.995795))
+
+- It is clearly visible that within individual variations and data collection rule modifications, the China trajectory is tracked rather closely by the other countries. ([10.1101/2020.03.14.20035964](https://www.doi.org/10.1101/2020.03.14.20035964))
+
+- This result is particularly striking when multiple independent cases travel to a new location, either simultaneously or in sequence ( Figure 2 ). ([10.3390/jcm9020498](https://www.doi.org/10.3390/jcm9020498))
+
+
+--------------------
+
+**Query**: Which data can help to understand geographic distribution and genomic differences
+
+**Number of sentences kept by distance filtering**: 4776
+
+**Number of unique papers found among these sentences**: 1121
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What do we know about virus genetics, origin, and evolution?
+
+**Subtask**: Access to geographic and temporal diverse sample sets to understand geographic distribution and genomic differences, and determine whether there is more than one strain in circulation. Multi-lateral agreements such as the Nagoya Protocol could be leveraged.
+
+**Cluster 0:**
+
+- Spatiotemporal analyses, which integrate spatial and time-series analyses, can provide additional information on the persistence of patterns over time and illuminate any unusual patterns. ([10.1101/2020.03.23.20034058](https://www.doi.org/10.1101/2020.03.23.20034058))
+
+- CC-BY-NC-ND 4.0 International license It is made available under a author/funder, who has granted medRxiv a license to display the preprint in perpetuity. ([10.1101/2020.03.20.20040055](https://www.doi.org/10.1101/2020.03.20.20040055))
+
+- Cluster size was assumed random, with average size five people, and a high probability (88·8%) of small clusters (average 1 to 5 people) and a low probability (11·2%) of medium to large clusters (average 10 to 25 people). ([10.1101/2020.03.10.20033852](https://www.doi.org/10.1101/2020.03.10.20033852))
+
+
+**Cluster 1:**
+
+- Yet to be done is integration of viral genetic variation with R estimates but one study found that 120 there was no obvious relationship between R, severity of the epidemic and COVID-19 genome 121 diversity 20 . ([10.1101/2020.03.17.20037481](https://www.doi.org/10.1101/2020.03.17.20037481))
+
+- We also analyze the viral geographical structure that may improve our understanding of the evolution of bat SARSr-CoVs. ([10.1016/j.meegid.2019.02.001](https://www.doi.org/10.1016/j.meegid.2019.02.001))
+
+- The informativeness of genetic sequence data is also limited by complex evolutionary behavior. ([10.1371/journal.pcbi.1006930](https://www.doi.org/10.1371/journal.pcbi.1006930))
+
+
+--------------------
+
+**Query**: Is there more than one strain in circulation?
+
+**Number of sentences kept by distance filtering**: 623
+
+**Number of unique papers found among these sentences**: 216
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What do we know about virus genetics, origin, and evolution?
+
+**Subtask**: Access to geographic and temporal diverse sample sets to understand geographic distribution and genomic differences, and determine whether there is more than one strain in circulation. Multi-lateral agreements such as the Nagoya Protocol could be leveraged.
+
+**Cluster 0:**
+
+- The first QX strain circulating was reported from China in 1998 [4] , and QX-like IBV strains are now circulating in many other countries. ([10.1016/j.vaccine.2019.11.064](https://www.doi.org/10.1016/j.vaccine.2019.11.064))
+
+- Despite the cross-reactivity between PEDV and TGEV that can take place when commercial Ab ELISA tests are used [35, 36] , epidemiological evidence of a PEDV outbreak elaborated above [31] strongly suggest that the specificity of the Ab ELISA test used within the study frame was not an issue. ([10.1186/s12917-019-2002-x](https://www.doi.org/10.1186/s12917-019-2002-x))
+
+- In 2016, another BTV-3 strain closely related to TUN2016/Zarzis strain was detected in Egypt (38) . ([10.3389/fvets.2020.00112](https://www.doi.org/10.3389/fvets.2020.00112))
+
+
+**Cluster 1:**
+
+- In this study, we characterized three Alpha-CoVs and two Beta-CoVs demonstrating the circulation of bat strains in Italy. ([10.1093/ve/vez002.047](https://www.doi.org/10.1093/ve/vez002.047))
+
+- The more prevalent IBV genotype circulating in Europe is IBV-QX (GI-19) (2, 3), which has been reported to cause kidney disease in contrast to IBV-Mass (2) . ([10.1128/jvi.01363-19](https://www.doi.org/10.1128/jvi.01363-19))
+
+- The isotype control showed no background signal in our assay. ([10.3390/v11040381](https://www.doi.org/10.3390/v11040381))
+
+
+--------------------
+
+**Query**: How are Multi-lateral agreements such as the Nagoya Protocol effective?
+
+**Number of sentences kept by distance filtering**: 544
+
+**Number of unique papers found among these sentences**: 237
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What do we know about virus genetics, origin, and evolution?
+
+**Subtask**: Access to geographic and temporal diverse sample sets to understand geographic distribution and genomic differences, and determine whether there is more than one strain in circulation. Multi-lateral agreements such as the Nagoya Protocol could be leveraged.
+
+**Cluster 0:**
+
+- In addition to the significant morbidity and mortality that drives the development of vaccines against pathogens for which vaccines are currently not available, the WHO estimates that there are approximately 1.5 million deaths per year in children under 5 from vaccine preventable diseases [58, 59] . ([10.1016/j.vaccine.2016.10.090](https://www.doi.org/10.1016/j.vaccine.2016.10.090))
+
+- 36 Harmonisation of the testing process can be achieved by building consensus and capacity across international and incountry laboratories. ([10.1136/bmjgh-2018-001105](https://www.doi.org/10.1136/bmjgh-2018-001105))
+
+- They are not considered part of 66 the healthcare system as they practice follow different companies' regulations. ([10.1016/j.sapharm.2020.03.012](https://www.doi.org/10.1016/j.sapharm.2020.03.012))
+
+
+**Cluster 1:**
+
+- Fourth, national, regional, and international organisations need to cooperate and collaborate to optimise limited supplies, using a whole of government approach. ([10.1016/s0140-6736(20)30464-5](https://www.doi.org/10.1016/s0140-6736(20)30464-5))
+
+- In addition to pricing, another challenge lies in assessing the future demand for EID vaccines. ([10.1101/2020.03.20.20039966](https://www.doi.org/10.1101/2020.03.20.20039966))
+
+- WHO Prequalification is a service to UNICEF and other UN agencies that purchase vaccines once they have been licensed, to determine the acceptability, in principle, of vaccines from different sources for supply to these agencies. ([10.1016/j.vaccine.2016.10.090](https://www.doi.org/10.1016/j.vaccine.2016.10.090))
+
+
+--------------------
+
+**Query**: Detected livestock infected by coronavirus during field surveillance?
+
+**Number of sentences kept by distance filtering**: 3029
+
+**Number of unique papers found among these sentences**: 1037
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What do we know about virus genetics, origin, and evolution?
+
+**Subtask**: Evidence that livestock could be infected (e.g., field surveillance, genetic sequencing, receptor binding) and serve as a reservoir after the epidemic appears to be over.
+
+**Cluster 0:**
+
+- Our findings highlight the need for further field studies of domestic livestock, especially those that are in close contact with dromedary camels and also the need for experimental studies infecting livestock such as sheep using MERS-CoV isolates from Africa. ([10.1080/22221751.2018.1560235](https://www.doi.org/10.1080/22221751.2018.1560235))
+
+- The purpose of this study was to assess the potential of Ghanaian domestic livestock serving as intermediate hosts of clade 2c coronaviruses by serology and virologic detection with a relatively large number of livestock. ([10.3390/tropicalmed4010034](https://www.doi.org/10.3390/tropicalmed4010034))
+
+- Based on the results of the present study it may be concluded that cattle, sheep, goats, donkeys, and swine may not be intermediate hosts for HCoV-NL63. ([10.3390/v11010043](https://www.doi.org/10.3390/v11010043))
+
+
+**Cluster 1:**
+
+- As a result, this expanded and close human-animal interface in countries such as Kenya presents a threat for increased transmission of zoonotic pathogens between animals and humans along the livestock value chain, increasing the likelihood of novel zoonotic pathogens establishing themselves in human populations, the overall endemic burden of common zoonoses, and the threat of infectious disease outbreaks which can threaten global health security. ([10.1186/s12889-019-6772-7](https://www.doi.org/10.1186/s12889-019-6772-7))
+
+- Experimental infection of dromedary camels with MERS-CoV results in mild disease, shedding large quantities of the virus from the upper respiratory tract [33] . ([10.1080/22221751.2020.1736644](https://www.doi.org/10.1080/22221751.2020.1736644))
+
+- These molecular surveillance studies indicated that PDCoV was a common viral pathogen of pigs around the world. ([10.1016/j.vetmic.2018.12.012](https://www.doi.org/10.1016/j.vetmic.2018.12.012))
+
+
+--------------------
+
+**Query**: Evidence of whether farmers are infected by coronavirus
+
+**Number of sentences kept by distance filtering**: 501
+
+**Number of unique papers found among these sentences**: 232
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What do we know about virus genetics, origin, and evolution?
+
+**Subtask**: Evidence of whether farmers are infected, and whether farmers could have played a role in the origin.
+
+**Cluster 0:**
+
+- Human coronavirus 229E is in the same genus, but is only distantly related to those bat CoVs. ([10.1016/j.coviro.2018.12.007](https://www.doi.org/10.1016/j.coviro.2018.12.007))
+
+- Swine, goats and horses that were included in the field surveys in our review all tested negative for MERS-CoV RNA and antibodies [4, 17, 31, [48] [49] [50] [51] [52] . ([10.1017/s095026881800345x](https://www.doi.org/10.1017/s095026881800345x))
+
+- Before the closes of Huanan seafood market on January 1, 2020. people contracted the disease mainly through contact with host animals carrying the virus [24] , Subsequently, infected people spread the virus to their families, communities through human-to-human transmission and contact transmission. ([10.1101/2020.02.20.20025601](https://www.doi.org/10.1101/2020.02.20.20025601))
+
+
+**Cluster 1:**
+
+- Asthma status was not associated with bacterial diversity or composition. ([10.1007/s40572-019-00253-5](https://www.doi.org/10.1007/s40572-019-00253-5))
+
+- Pouchieu and colleagues evaluated the risk of PD among both livestock and crop farmers in France exposed to pesticides in the AGRICAN cohort [60] . ([10.1007/s40572-019-00253-5](https://www.doi.org/10.1007/s40572-019-00253-5))
+
+- MVA vaccine in dromedary camels led to significant reduction of MERS-CoV virus and viral RNA transcripts and detectable levels of both serum neutralizing MERS-CoV-specific antibody and MVA-vectored vaccine neutralizing antibodies [81] .Although camel vaccination manages to reduce viral shedding, this response was not seen across all vaccinated animals [81] . ([10.1016/j.tmaid.2019.101520](https://www.doi.org/10.1016/j.tmaid.2019.101520))
+
+
+--------------------
+
+**Query**: Surveillance of mixed wildlife livestock farms for SARS-CoV-2
+
+**Number of sentences kept by distance filtering**: 565
+
+**Number of unique papers found among these sentences**: 174
+
+**Number of clusters automatically designed**: 3
+
+**Task**: What do we know about virus genetics, origin, and evolution?
+
+**Subtask**: Surveillance of mixed wildlife- livestock farms for SARS-CoV-2 and other coronaviruses in Southeast Asia.
+
+**Cluster 0:**
+
+- However, camels can shed virus despite preexisting MERS-CoV antibodies, suggesting that repeat infections are possible (36, 37) . ([10.3201/eid2602.190697](https://www.doi.org/10.3201/eid2602.190697))
+
+- Unless the clade 2c coronaviruses adapt to livestock and persist after host switching, this is expected to be a rare occurrence, and the cohort of samples taken in the study could miss this as the sampling was done in the duration of a year and markers of infection are not permanent. ([10.3390/tropicalmed4010034](https://www.doi.org/10.3390/tropicalmed4010034))
+
+- Likely contact between livestock and bats was determined for 13 farms (41.9%) that reported confining their livestock and also observing bats in their homes. ([10.3390/tropicalmed4010034](https://www.doi.org/10.3390/tropicalmed4010034))
+
+
+**Cluster 1:**
+
+- Surveillance on interspecies transmission should be placed around wet markets, farms and abattoirs to safeguard human from novel zoonotic diseases. ([10.3390/v11020174](https://www.doi.org/10.3390/v11020174))
+
+- The segregation of camels from other livestock in farms and live animal markets may need to be considered. ([10.1080/22221751.2018.1560235](https://www.doi.org/10.1080/22221751.2018.1560235))
+
+- Interspecies transmission from zoonotic sources can occur by viral spillover events during direct or indirect contact between humans and reservoir hosts. ([10.1016/b978-0-12-801238-3.95704-0](https://www.doi.org/10.1016/b978-0-12-801238-3.95704-0))
+
+
+**Cluster 2:**
+
+- The average herd size was 77 camels, with no herds having more than 200 camels. ([10.1017/s0950268819001663](https://www.doi.org/10.1017/s0950268819001663))
+
+- Some examples of these are outlined below. ([10.1186/s12889-019-6772-7](https://www.doi.org/10.1186/s12889-019-6772-7))
+
+- About 60% of all cattle, sheep and goats is found in arid and semi-arid areas, where approximately 10 million Kenyans derive their livelihood from livestock. ([10.1186/s12889-019-6772-7](https://www.doi.org/10.1186/s12889-019-6772-7))
+
+
+--------------------
+
+**Query**: Experimental infections to test host range for coronavirus
+
+**Number of sentences kept by distance filtering**: 2693
+
+**Number of unique papers found among these sentences**: 910
+
+**Number of clusters automatically designed**: 3
+
+**Task**: What do we know about virus genetics, origin, and evolution?
+
+**Subtask**: Experimental infections to test host range for this pathogen.
+
+**Cluster 0:**
+
+- Of particular relevance is the definition of co-infection, as many studies compare those infected with a specific virus to infection with >1 virus [9] [10] [11] 15] . ([10.1093/ofid/ofz424](https://www.doi.org/10.1093/ofid/ofz424))
+
+- Testing of saliva could show viral shedding from both the salivary glands and the upper and lower respiratory tract. ([10.1016/s1473-3099(20)30196-1](https://www.doi.org/10.1016/s1473-3099(20)30196-1))
+
+- First, although the RT-PCR test is the current gold standard for the diagnosis of COVID-19, it might still present a certain false-negative rate after repetitions. ([10.1101/2020.03.22.20040782](https://www.doi.org/10.1101/2020.03.22.20040782))
+
+
+**Cluster 1:**
+
+- While the full spectrum of clinical manifestations associated with SARS-CoV-2 infections in humans remains to be determined, the independent zoonotic transmission of SARS-CoV and SARS-CoV-2 highlights the need for studying viruses at the species level to complement research focused on individual pathogenic viruses of immediate significance. ([10.1038/s41564-020-0695-z](https://www.doi.org/10.1038/s41564-020-0695-z))
+
+- Among the five novel CoV genome sequences, the nt identities reached up to 99.8% to 99.9%. ([10.1097/cm9.0000000000000722](https://www.doi.org/10.1097/cm9.0000000000000722))
+
+- This is similar to the transmission mechanism of other respiratory pathogens, including SARS-CoV. ([10.1101/2020.03.29.20047035](https://www.doi.org/10.1101/2020.03.29.20047035))
+
+
+**Cluster 2:**
+
+- As a result, such cultures are ideal for virus-host interaction studies with human respiratory viruses since they represent the primary entry point of these pathogens [7] [8] [9] [10] [11] [12] [13] . ([10.3390/v11080747](https://www.doi.org/10.3390/v11080747))
+
+- However, it is not suitable for the detection of infection in some clinical units and large-scale epidemiological screening. ([10.1016/j.bsheal.2019.12.006](https://www.doi.org/10.1016/j.bsheal.2019.12.006))
+
+- Besides field investigations, rodent CoV also has an important role as Murine hepatitis virus (MHV) (137) , and has been used for experimental infections, mostly for the identification of potential viruses showing interspecies transmission 119 . ([10.1590/0037-8682-0486-2019](https://www.doi.org/10.1590/0037-8682-0486-2019))
+
+
+--------------------
+
+**Query**: Animal hosts of coronavirus and any evidence of continued spill-over to humans
+
+**Number of sentences kept by distance filtering**: 3342
+
+**Number of unique papers found among these sentences**: 764
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What do we know about virus genetics, origin, and evolution?
+
+**Subtask**: Animal host(s) and any evidence of continued spill-over to humans
+
+**Cluster 0:**
+
+- [10] [11] [12] The ability of CoVs to obtain mutations which facilitate the transmission between animal to humans has made it a zoonotic pathogen of concern. ([10.1080/09273948.2020.1738501](https://www.doi.org/10.1080/09273948.2020.1738501))
+
+- A natural SDAV infection in rats undergoing tibial nerve transection was shown to severely impair axonal regeneration and functional recovery and negated the positive effects of FK506 treatment (Yu et al., 2011) . ([10.1016/b978-0-12-814338-4.00013-1](https://www.doi.org/10.1016/b978-0-12-814338-4.00013-1))
+
+- Laboratory results also indicated that SARS-CoV-2 is similar to some of the beta (β) coronaviruses genera identified in bats [12, 18, 40] , which is situated in a group of SARS/SARS-like CoV [12] . ([10.1186/s40249-020-00646-x](https://www.doi.org/10.1186/s40249-020-00646-x))
+
+
+**Cluster 1:**
+
+- IMPORTANCE Coronaviruses (CoVs) can emerge from an animal reservoir into a naive host species to cause pandemic respiratory or gastrointestinal diseases with significant mortality in humans or domestic animals. ([10.1128/jvi.02000-18](https://www.doi.org/10.1128/jvi.02000-18))
+
+- Bats are speculated to be reservoirs of several emerging viruses including coronaviruses (CoVs) that cause serious disease in humans and agricultural animals. ([10.3390/v11010041](https://www.doi.org/10.3390/v11010041))
+
+- Many of the viruses in bats can cause disease in humans and agriculturally important animal species. ([10.3390/v11010041](https://www.doi.org/10.3390/v11010041))
+
+
+--------------------
+
+**Query**: Socioeconomic and behavioral risk factors for this pandemy
+
+**Number of sentences kept by distance filtering**: 505
+
+**Number of unique papers found among these sentences**: 214
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What do we know about virus genetics, origin, and evolution?
+
+**Subtask**: Socioeconomic and behavioral risk factors for this spill-over
+
+**Cluster 0:**
+
+- 54% of the patients were of middle socioeconomic status, 45% had low socioeconomic status, while only one of them was of a high socioeconomic status. ([10.1155/2020/6212643](https://www.doi.org/10.1155/2020/6212643))
+
+- Who is most anxious about the circumstances right now? ([10.1101/2020.03.27.20042820](https://www.doi.org/10.1101/2020.03.27.20042820))
+
+- However, much less is known about effects on a smaller geographic scale, such as that of a region or a conurbation, exposed to contrasted environmental factors. ([10.1016/j.scitotenv.2020.136608](https://www.doi.org/10.1016/j.scitotenv.2020.136608))
+
+
+**Cluster 1:**
+
+- The selection of weather variables as instruments is discussed in detail in Section 3.2. ([10.1101/2020.03.13.20035238](https://www.doi.org/10.1101/2020.03.13.20035238))
+
+- Population density, behaviour and cultural habits strongly influence the spread of pathogens. ([10.1101/2020.03.28.20046094](https://www.doi.org/10.1101/2020.03.28.20046094))
+
+- The authors 292 believe that the current policy was appropriate at this complex situation. ([10.1101/2020.02.04.20020339](https://www.doi.org/10.1101/2020.02.04.20020339))
+
+
+--------------------
+
+**Query**: Sustainable infection by coronavirus risk reduction strategies
+
+**Number of sentences kept by distance filtering**: 7307
+
+**Number of unique papers found among these sentences**: 1563
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What do we know about virus genetics, origin, and evolution?
+
+**Subtask**: Sustainable risk reduction strategies
+
+**Cluster 0:**
+
+- This has led to improved outbreak response, and generated data (including discovery of new pathogens) that has informed disease control programs to reduce burden of and enhance preparedness for endemic and epidemic zoonotic diseases, thereby enhancing global health security. ([10.1186/s12889-019-6772-7](https://www.doi.org/10.1186/s12889-019-6772-7))
+
+- In this regard, patterns of disease transmission should be used to design specific public health strategies to enhance sustainable capacity while building activities to improve government responses to infectious diseases. ([10.1038/s41598-020-61133-9](https://www.doi.org/10.1038/s41598-020-61133-9))
+
+- In the absence of effective treatments and vaccines, an early adoption of stringent public health measures is crucial in mitigating the scale and burden of an outbreak. ([10.1101/2020.03.09.20033464](https://www.doi.org/10.1101/2020.03.09.20033464))
+
+
+**Cluster 1:**
+
+- There is a need to gain greater understanding of the highest risk populations for infection and serious disease from the SARS-CoV-2 virus to support the development and implementation of effective public health surveillance and mitigation efforts, and minimize the adverse effects of the current COVID-19 Pandemic in countries worldwide [1] . ([10.1101/2020.03.24.20042598](https://www.doi.org/10.1101/2020.03.24.20042598))
+
+- The implementation appears to be effective in reducing about 60% of new infections and deaths, and its effect also appears to be sustainable even after its removal. ([10.1101/2020.02.11.20022236](https://www.doi.org/10.1101/2020.02.11.20022236))
+
+- We present a timely evaluation of the impact of 'lockdown' on the 2019-nCov epidemic in Hubei province, China. ([10.1101/2020.02.11.20022236](https://www.doi.org/10.1101/2020.02.11.20022236))
+
+
+--------------------
+
+**Query**: What drugs are developed and tried to treat COVID-19?
+
+**Number of sentences kept by distance filtering**: 553
+
+**Number of unique papers found among these sentences**: 254
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What do we know about vaccines and therapeutics?
+
+**Subtask**: Effectiveness of drugs being developed and tried to treat COVID-19 patients.
+
+**Cluster 0:**
+
+- By contrast, SSa, CAPE, glycyrrhizin and DAP are undergoing in vitro and in vivo studies to reveal their ability to control viral infection. ([10.1016/j.drudis.2019.01.018](https://www.doi.org/10.1016/j.drudis.2019.01.018))
+
+- Similar to SARS-CoV, the 2019-nCoV may also engage the RBD to bind ACE2 in order to enter the human host cells, but since many residues 16 in S1 and S2 have been replaced in 2019-nCoV, the differences in the interactions with ACE2 on host cells exist 29, 33 . ([10.1016/j.ijantimicag.2020.105950](https://www.doi.org/10.1016/j.ijantimicag.2020.105950))
+
+- Convalescent therapies (plasma from recovered COVID-19 patients): This strategy had been used to support passive immunization. ([10.1097/jcma.0000000000000270](https://www.doi.org/10.1097/jcma.0000000000000270))
+
+
+**Cluster 1:**
+
+- There is no existing vaccine or proven drug for this disease, but various treatment options, for example utilizing medicines effective in other viral ailments, are being attempted. ([10.1101/2020.03.02.968388](https://www.doi.org/10.1101/2020.03.02.968388))
+
+- showed that SARS-CoV-2 uses ACE2 receptors to infect humans, bats, civets, monkeys, and swine, but not mice [106] . ([10.3390/v12020244](https://www.doi.org/10.3390/v12020244))
+
+- 7 In a mouse model, H1N1 causes acute lung injury in an IL-17-dependent manner. ([10.1016/j.jmii.2020.03.005](https://www.doi.org/10.1016/j.jmii.2020.03.005))
+
+
+--------------------
+
+**Query**: naproxen, clarithromycin, and minocyclinethat clinical trials
+
+**Number of sentences kept by distance filtering**: 523
+
+**Number of unique papers found among these sentences**: 203
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What do we know about vaccines and therapeutics?
+
+**Subtask**: Clinical and bench trials to investigate less common viral inhibitors against COVID-19 such as naproxen, clarithromycin, and minocyclinethat that may exert effects on viral replication.
+
+**Cluster 0:**
+
+- There were 11 patients who recieved two macrolides at different times during the study period, and one patient with missing data regarding the date of macrolide therapy. ([10.1016/j.ijid.2019.01.041](https://www.doi.org/10.1016/j.ijid.2019.01.041))
+
+- Chest computed tomographic scans showed bilateral patchy shadows or ground glass opacity in the lungs of all patients. ([10.1001/jama.2020.1585](https://www.doi.org/10.1001/jama.2020.1585))
+
+- 77 The presence of these extrapulmonary findings should raise the clinical suspicion for the disease compared to the more common bacterial pneumonias. ([10.1053/j.semdp.2019.04.006](https://www.doi.org/10.1053/j.semdp.2019.04.006))
+
+
+**Cluster 1:**
+
+- Similar results were obtained from secondary analysis of a multicenter RCT, in which use of the macrolides azithromycin, clarithromycin, or erythromycin was associated with improved outcomes, including mortality, in patients with acute lung injury (Walkey and Wiener, 2012) . ([10.1016/j.ijid.2019.01.041](https://www.doi.org/10.1016/j.ijid.2019.01.041))
+
+- Similarly, the Sigma2 receptor interacted with the vial protein orf9. ([10.1101/2020.03.22.002386](https://www.doi.org/10.1101/2020.03.22.002386))
+
+- Hydroxychloroquine and azithromycin as a treatment of COVID-19: results of an open-label non-randomized clinical trial ([10.1016/j.ijantimicag.2020.105949](https://www.doi.org/10.1016/j.ijantimicag.2020.105949))
+
+
+--------------------
+
+**Query**: Methods evaluating potential complication of Antibody-Dependent Enhancement (ADE) in vaccine recipients
+
+**Number of sentences kept by distance filtering**: 732
+
+**Number of unique papers found among these sentences**: 304
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What do we know about vaccines and therapeutics?
+
+**Subtask**: Methods evaluating potential complication of Antibody-Dependent Enhancement (ADE) in vaccine recipients.
+
+**Cluster 0:**
+
+- Targeting the entire S glycoprotein has the advantage of including non-RBD neutralizing epitopes, including those in the more conserved domains. ([10.3390/v11010074](https://www.doi.org/10.3390/v11010074))
+
+- A safety concern for passive immunization with antibodies is a possible antibody-dependent enhancement (ADE) of virus replication. ([10.1080/21645515.2020.1735227](https://www.doi.org/10.1080/21645515.2020.1735227))
+
+- Our understanding about MERS-CoV is relatively lesser compared to SARS-CoV, mainly due to the fact that the former was discovered less than 7 years, thus it is unsurprising that the ADE of MERS-CoV has yet to be reported (Du et al., 2016b) . ([10.3389/fmicb.2019.01781](https://www.doi.org/10.3389/fmicb.2019.01781))
+
+
+**Cluster 1:**
+
+- Seroprevalence studies have shown a very low level of SARS-CoV seroconversion in the population apart from workers with direct contact with animals such as traders [17] . ([10.1016/j.micinf.2020.02.006](https://www.doi.org/10.1016/j.micinf.2020.02.006))
+
+- This study showed CP therapy was welltolerated and could potentially improve the clinical outcomes through neutralizing viremia in severe COVID-19 cases. ([10.1101/2020.03.16.20036145](https://www.doi.org/10.1101/2020.03.16.20036145))
+
+- 14.5. ([10.1016/j.antiviral.2019.04.006](https://www.doi.org/10.1016/j.antiviral.2019.04.006))
+
+
+--------------------
+
+**Query**: What is the best animal model to study coronaviruses?
+
+**Number of sentences kept by distance filtering**: 1812
+
+**Number of unique papers found among these sentences**: 751
+
+**Number of clusters automatically designed**: 3
+
+**Task**: What do we know about vaccines and therapeutics?
+
+**Subtask**: Exploration of use of best animal models and their predictive value for a human vaccine.
+
+**Cluster 0:**
+
+- The single N501T mutation in SARS-CoV-2's Spike protein may have significantly enhanced its binding affinity for ACE2 [33] . ([10.1016/j.jare.2020.03.005](https://www.doi.org/10.1016/j.jare.2020.03.005))
+
+- The outbreaks of two previous coronaviruses, SARS-CoV and MERS-CoV in 2003 and 2012, respectively, have approved the transmission from animal to animal, and human to human [4] . ([10.3390/jcm9030674](https://www.doi.org/10.3390/jcm9030674))
+
+- proposed a virus host prediction method based on deep learning to detect what kind of host a virus can infect with DNA sequence as input. ([10.1101/2020.01.21.914044](https://www.doi.org/10.1101/2020.01.21.914044))
+
+
+**Cluster 1:**
+
+- MHV infection of the mouse is considered to be one of the best animal models for the study of virus-host interactions [5e7] . ([10.1016/j.bbrc.2019.02.105](https://www.doi.org/10.1016/j.bbrc.2019.02.105))
+
+- Our analyses showed that mammalian ACE2 genes are highly conserved across lineages and exhibit broad expression patterns. ([10.1101/2020.03.30.015644](https://www.doi.org/10.1101/2020.03.30.015644))
+
+- Larger non-human primate models, such as Rhesus macaques and common marmoset were determined susceptible. ([10.3855/jidc.12425](https://www.doi.org/10.3855/jidc.12425))
+
+
+**Cluster 2:**
+
+- We also searched the literature for the contribution made by each of the five viruses to the total viral community in people with ILI. ([10.1101/2020.02.04.20020404](https://www.doi.org/10.1101/2020.02.04.20020404))
+
+- Unknown infectious diseases have made it very difficult to adjust 72 and calibrate the parameters of various prediction models like the SEIR model, making East respiratory syndrome (MERS) are less suitable for use with COVID-19, even if 77 they have highly similar genome sequence identity (Lu et al., 2020; Qiao, 2020) . ([10.1101/2020.02.29.20029413](https://www.doi.org/10.1101/2020.02.29.20029413))
+
+- We then apply our approach to the early stages of the 2003 SARS outbreak in Singapore, integrating the available data on contact structures and genome sequences in a single statistical framework for the first time. ([10.1371/journal.pcbi.1006930](https://www.doi.org/10.1371/journal.pcbi.1006930))
+
+
+--------------------
+
+**Query**: Capabilities to discover a therapeutic (not vaccine) for the disease, and clinical effectiveness studies to discover therapeutics, to include antiviral agents.
+
+**Number of sentences kept by distance filtering**: 4222
+
+**Number of unique papers found among these sentences**: 1092
+
+**Number of clusters automatically designed**: 3
+
+**Task**: What do we know about vaccines and therapeutics?
+
+**Subtask**: Capabilities to discover a therapeutic (not vaccine) for the disease, and clinical effectiveness studies to discover therapeutics, to include antiviral agents.
+
+**Cluster 0:**
+
+- 3, 5, [9] [10] [11] [12] These valuable options can be exploited for their potency, efficacy, and safety along with expediting other ongoing research 2, 4, [13] [14] [15] so as to discover valuable modalities for tackling the emerging COVID-19, but as yet there is no effective vaccine or therapeutic, for which intense efforts are ongoing. ([10.1080/21645515.2020.1735227](https://www.doi.org/10.1080/21645515.2020.1735227))
+
+- Viral proteins responsible for SARS-CoV-2 entry into host cells and replication are structurally similar to those associated with SARS-CoV. ([10.1021/acscentsci.0c00272](https://www.doi.org/10.1021/acscentsci.0c00272))
+
+- At present, it is of utmost importance to understand the virus biology and to rapidly assess the potential of existing drugs and develop new active compounds. ([10.1101/2020.03.20.999029](https://www.doi.org/10.1101/2020.03.20.999029))
+
+
+**Cluster 1:**
+
+- Therefore, it is urgently necessary to identify effective antiviral agents to combat the disease and explore the clinical effect of antiviral drugs. ([10.1016/j.eng.2020.03.007](https://www.doi.org/10.1016/j.eng.2020.03.007))
+
+- This study will provide new lead compounds and targets for further in vitro and in vivo studies of SARS-CoV-2, new insights for those drugs currently ongoing clinical studies, and also possible new strategies for drug repositioning to treat SARS-CoV-2 infections. ([10.1016/j.apsb.2020.02.008](https://www.doi.org/10.1016/j.apsb.2020.02.008))
+
+- One efficient approach to discover effective drugs is to test whether the existing antiviral drugs are effective in treating other related viral infections. ([10.1016/j.eng.2020.03.007](https://www.doi.org/10.1016/j.eng.2020.03.007))
+
+
+**Cluster 2:**
+
+- The sensitivity of SARS-CoV N-based IgG ELISA (94.7%) is significantly higher than that of SARS-CoV S-based IgG ELISA (58.9%) [48] , but the sensitivity of SARS-CoV-2 IgG/IgM remains to be studied. ([10.1016/j.jpha.2020.03.001](https://www.doi.org/10.1016/j.jpha.2020.03.001))
+
+- These findings 131 may have been exacerbated with the original, higher dose, but that experiment was precluded 132 by the limited survival of Muc4 -/mice. ([10.1101/2020.02.19.957118](https://www.doi.org/10.1101/2020.02.19.957118))
+
+- In summary, this study offers powerful network-based methodologies for rapid identification of candidate repurposable drugs and potential drug combinations targeting 2019-nCoV/SARS-CoV-2. ([10.1038/s41421-020-0153-3](https://www.doi.org/10.1038/s41421-020-0153-3))
+
+
+--------------------
+
+**Query**: Alternative models to aid decision makers in determining how to prioritize and distribute scarce, newly proven therapeutics as production ramps up. This could include identifying approaches for expanding production capacity to ensure equitable and timely distribution to populations in need.
+
+**Number of sentences kept by distance filtering**: 9730
+
+**Number of unique papers found among these sentences**: 1730
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What do we know about vaccines and therapeutics?
+
+**Subtask**: Alternative models to aid decision makers in determining how to prioritize and distribute scarce, newly proven therapeutics as production ramps up. This could include identifying approaches for expanding production capacity to ensure equitable and timely distribution to populations in need.
+
+**Cluster 0:**
+
+- Thus, it is utmost necessary to develop models that are computationally efficient yet realistic enough to assist medical personals, policy makers and general public. ([10.1101/2020.03.13.20035386](https://www.doi.org/10.1101/2020.03.13.20035386))
+
+- However, there is a lack of epidemiological tools to guide effective public policy development. ([10.1101/2020.03.25.20043679](https://www.doi.org/10.1101/2020.03.25.20043679))
+
+- However, there is a lack of epidemiological tools to guide effective public policy development. ([10.1101/2020.03.25.20043679](https://www.doi.org/10.1101/2020.03.25.20043679))
+
+
+**Cluster 1:**
+
+- In contrast to the standard practice of watchful waiting and supportive care in non-CF infants with viral infections, the choice to use antibiotics in young children with CF with respiratory viral infections is more complicated. ([10.1016/j.jcf.2019.02.004](https://www.doi.org/10.1016/j.jcf.2019.02.004))
+
+- 195 However, if therapy is initiated after peak viral load (more than 2-3 days following 196 symptom onset), the effect on viral load AUC is limited. ([10.1101/2020.03.23.20040493](https://www.doi.org/10.1101/2020.03.23.20040493))
+
+- The generation of detailed, real-time, and robust data for emerging disease outbreaks is important and can help to generate robust evidence that will support and inform public health decision making. ([10.1038/s41597-020-0448-0](https://www.doi.org/10.1038/s41597-020-0448-0))
+
+
+--------------------
+
+**Query**: Efforts targeted at a universal coronavirus vaccine
+
+**Number of sentences kept by distance filtering**: 1411
+
+**Number of unique papers found among these sentences**: 557
+
+**Number of clusters automatically designed**: 3
+
+**Task**: What do we know about vaccines and therapeutics?
+
+**Subtask**: Efforts targeted at a universal coronavirus vaccine.
+
+**Cluster 0:**
+
+- Mortality in the OMVs-empty group reached 57% at 13 days p.i. ([10.3390/vaccines7020046](https://www.doi.org/10.3390/vaccines7020046))
+
+- and increased gradually to 85% at day 5 p.i., and 100% at 6 days p.i. ([10.3390/vaccines7020046](https://www.doi.org/10.3390/vaccines7020046))
+
+- Although a large number of SARS and MERS subunit vaccines have been developed with potent immunogenicity and/or protection in available animal models, virtually all remain in the preclinical stage. ([10.3389/fmicb.2020.00298](https://www.doi.org/10.3389/fmicb.2020.00298))
+
+
+**Cluster 1:**
+
+- A lower dose could extend the vaccine supply in an outbreak situation. ([10.1016/s1473-3099(19)30266-x](https://www.doi.org/10.1016/s1473-3099(19)30266-x))
+
+- Once a MERS-CoV vaccine becomes available, it will be important to implement effective vaccination strategies, such as targeting those groups that generate the most MERS and SARS cases [21] . ([10.1186/s12976-019-0112-6](https://www.doi.org/10.1186/s12976-019-0112-6))
+
+- Thus, this present study provides an initial platform of the rapid generation of an efficacious protective vaccine for combating COVID-19. ([10.1101/2020.03.26.009209](https://www.doi.org/10.1101/2020.03.26.009209))
+
+
+**Cluster 2:**
+
+- This comes with its own set of challenges, as hindsight is always 20/20. ([10.1016/j.jaut.2020.102434](https://www.doi.org/10.1016/j.jaut.2020.102434))
+
+- Planning to vaccinate all patients is similar to implementing a national vaccination campaign. ([10.1186/s12976-019-0112-6](https://www.doi.org/10.1186/s12976-019-0112-6))
+
+- R0 for MERS-CoV was estimated to be between 0·60 and 0·69, however these calculations were based on data obtained in June 2013 in advance of many of the important outbreaks and so may be underestimated (Breban et al., 2013) . ([10.1016/j.diagmicrobio.2018.10.011](https://www.doi.org/10.1016/j.diagmicrobio.2018.10.011))
+
+
+--------------------
+
+**Query**: Efforts to develop animal models and standardize challenge studies for covid-19
+
+**Number of sentences kept by distance filtering**: 5154
+
+**Number of unique papers found among these sentences**: 1412
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What do we know about vaccines and therapeutics?
+
+**Subtask**: Efforts to develop animal models and standardize challenge studies
+
+**Cluster 0:**
+
+- We then propose how research, both in clinical and experimental settings, could advance current infection control guidelines. ([10.3390/v11100940](https://www.doi.org/10.3390/v11100940))
+
+- Potential therapeutics for severe acute respiratory syndrome (SARS) and MERS. ([10.3390/v11010059](https://www.doi.org/10.3390/v11010059))
+
+- The status of Zika virus epidemiology and the understanding of its pathogenesis and associated sequelae are evolving so rapidly that publications on these issues are almost immediately out of date. ([10.1016/j.vaccine.2016.10.090](https://www.doi.org/10.1016/j.vaccine.2016.10.090))
+
+
+**Cluster 1:**
+
+- Experience from the early phase of SARS-CoV-2 pneumonia strongly highlighted that travel history, rather than chest radiography, is of paramount importance for early detection and isolation of SARS-CoV-2 pneumonia cases [41] . ([10.1016/j.ijantimicag.2020.105924](https://www.doi.org/10.1016/j.ijantimicag.2020.105924))
+
+- However, there is a lack of epidemiological tools to guide effective public policy development. ([10.1101/2020.03.25.20043679](https://www.doi.org/10.1101/2020.03.25.20043679))
+
+- However, there is a lack of epidemiological tools to guide effective public policy development. ([10.1101/2020.03.25.20043679](https://www.doi.org/10.1101/2020.03.25.20043679))
+
+
+--------------------
+
+**Query**: Efforts to develop prophylaxis clinical studies and prioritize in healthcare workers
+
+**Number of sentences kept by distance filtering**: 8196
+
+**Number of unique papers found among these sentences**: 1497
+
+**Number of clusters automatically designed**: 3
+
+**Task**: What do we know about vaccines and therapeutics?
+
+**Subtask**: Efforts to develop prophylaxis clinical studies and prioritize in healthcare workers
+
+**Cluster 0:**
+
+- Prioritizing and providing basic care for severe COVID-19 patients should be considered by healthcare providers in early stage. ([10.1101/2020.03.22.20041277](https://www.doi.org/10.1101/2020.03.22.20041277))
+
+- Understanding MERS-CoV infection in healthcare workers to date and the risk factors for adverse outcomes is important for preventing future infection of healthcare workers, for informing and updating infection prevention and control measures in healthcare facilities and for reducing secondary MERS-CoV transmission within healthcare settings. ([10.1016/j.jiph.2019.04.011](https://www.doi.org/10.1016/j.jiph.2019.04.011))
+
+- In this situation when the illness does not have any specific treatment, the prevention of disease and preparation in healthcare services is very important . ([10.1101/2020.03.13.20035345](https://www.doi.org/10.1101/2020.03.13.20035345))
+
+
+**Cluster 1:**
+
+- 1 Further spread has occurred to all populated continents of the World, with many anticipating that a pandemic is approaching. ([10.1101/2020.03.03.20029843](https://www.doi.org/10.1101/2020.03.03.20029843))
+
+- is the (which was not peer-reviewed) The copyright holder for this preprint . ([10.1101/2020.03.04.20031237](https://www.doi.org/10.1101/2020.03.04.20031237))
+
+- The findings may have important implications for modifying and developing urgently needed policy to better protect healthcare workers during this ongoing pandemic of SARS-CoV-2. ([10.1101/2020.03.11.20034546](https://www.doi.org/10.1101/2020.03.11.20034546))
+
+
+**Cluster 2:**
+
+- By coincidence, on the same day, we witnessed a sudden jump in the number of confirmed cases due to a relaxed diagnosis caliber, meaning more suspected cases will receive better medical care and have much lower chances to spread virus. ([10.1101/2020.02.16.20023465](https://www.doi.org/10.1101/2020.02.16.20023465))
+
+- It is imperative for public health practitioners and the One Health community to stay up to date on the most promising potential therapeutic options that are under investigation. ([10.1016/j.onehlt.2020.100128](https://www.doi.org/10.1016/j.onehlt.2020.100128))
+
+- In Saudi Arabia, the ministry for public health has designated communication channels to release updates on MERS-CoV on their websites, through scientific arenas, memorandums and helpdesks. ([10.1186/s12879-019-3898-2](https://www.doi.org/10.1186/s12879-019-3898-2))
+
+
+--------------------
+
+**Query**: Approaches to evaluate risk for enhanced covid-19 after vaccination against coronavirus
+
+**Number of sentences kept by distance filtering**: 7463
+
+**Number of unique papers found among these sentences**: 1718
+
+**Number of clusters automatically designed**: 3
+
+**Task**: What do we know about vaccines and therapeutics?
+
+**Subtask**: Approaches to evaluate risk for enhanced disease after vaccination
+
+**Cluster 0:**
+
+- It is therefore crucial to evaluate current infection control strategies against SARS-CoV-2. ([10.1101/2020.03.10.986711](https://www.doi.org/10.1101/2020.03.10.986711))
+
+- Notably, IFN and ubiquitination was significantly down regulated in those with severe vs. mild to moderate disease. ([10.1016/b978-0-12-801496-7.00009-5](https://www.doi.org/10.1016/b978-0-12-801496-7.00009-5))
+
+- This study demonstrates a promising vaccine for the control and/or prevention of MERS-CoV infection in humans. ([10.14202/vetworld.2019.1554-1562](https://www.doi.org/10.14202/vetworld.2019.1554-1562))
+
+
+**Cluster 1:**
+
+- Additionally, these epidemiological studies can help reveal the extent of virus spread in households, communities and specific settings; which could help guide control measures Serological assays are also needed for evaluation of the results of vaccine trials and development of therapeutic antibodies. ([10.1101/2020.03.18.20038059](https://www.doi.org/10.1101/2020.03.18.20038059))
+
+- 2 ). ([10.1038/s41598-019-43586-9](https://www.doi.org/10.1038/s41598-019-43586-9))
+
+- However, by including all adult patients in the two designated hospitals for COVID-19, we believe our study population is representative of cases diagnosed and treated in Wuhan. ([10.1016/s0140-6736(20)30566-3](https://www.doi.org/10.1016/s0140-6736(20)30566-3))
+
+
+**Cluster 2:**
+
+- The second meta-analysis is from 2011, 44 and also includes the only randomised clinical trial, but only seven more works, which are observational with control group, are introduced. ([10.1016/j.eimce.2018.05.018](https://www.doi.org/10.1016/j.eimce.2018.05.018))
+
+- Schulz et al. ([10.1016/j.jcpa.2020.02.005](https://www.doi.org/10.1016/j.jcpa.2020.02.005))
+
+- Reliable data for profiles of serial viral load and serum antibody responses are needed urgently to guide antiviral treatment, infection control, epidemiological measures, and vaccination. ([10.1016/s1473-3099(20)30196-1](https://www.doi.org/10.1016/s1473-3099(20)30196-1))
+
+
+--------------------
+
+**Query**: Assays to evaluate vaccine immune response and process development for vaccines, alongside suitable animal models [in conjunction with therapeutics]
+
+**Number of sentences kept by distance filtering**: 5950
+
+**Number of unique papers found among these sentences**: 1289
+
+**Number of clusters automatically designed**: 4
+
+**Task**: What do we know about vaccines and therapeutics?
+
+**Subtask**: Assays to evaluate vaccine immune response and process development for vaccines, alongside suitable animal models [in conjunction with therapeutics]
+
+**Cluster 0:**
+
+- This discovery not only provides more alternative vaccine development platforms for MERS-CoV vaccine development, but also provides a theoretical basis for our future selection of vaccine vector platforms for other specific pathogens. ([10.3390/v12010125](https://www.doi.org/10.3390/v12010125))
+
+- The absence of a commercial vaccine and the limited success of current therapeutic strategies against RSV make further research necessary. ([10.3390/ijms21051831](https://www.doi.org/10.3390/ijms21051831))
+
+- Thus, the described approach has significant promise in improving current approaches for PEDV immunization. ([10.3389/fvets.2019.00347](https://www.doi.org/10.3389/fvets.2019.00347))
+
+
+**Cluster 1:**
+
+- Together this suggests that deletion of E from coronaviruses may provide a safe-single replication live viral vaccine for use in inducing a mucosal immune response. ([10.3855/jidc.12425](https://www.doi.org/10.3855/jidc.12425))
+
+- It is critical to rapidly design and develop effective vaccines to prevent infection of this new coronavirus. ([10.3389/fmicb.2020.00298](https://www.doi.org/10.3389/fmicb.2020.00298))
+
+- This approach provides a basis for the future development of chimeric influenza-based vaccines against MERS-CoV and other viruses. ([10.3390/pathogens8040281](https://www.doi.org/10.3390/pathogens8040281))
+
+
+**Cluster 2:**
+
+- Methicillin-resistant S. aureus (MRSA) has been documented to be emerging at a rapid and increasing rate since the antibiotic was first introduced in 1959, and hospital-associated MRSA (HA-MRSA) clones are now recognized to be the leading cause of nosocomial infections both in the United States and around the world, in high income as well as LMICs. ([10.1016/j.vaccine.2016.10.090](https://www.doi.org/10.1016/j.vaccine.2016.10.090))
+
+- The existence of hydroxychloroquine failure in two patients (mother and son) is more suggestive of the last mechanism of resistance. ([10.1016/j.ijantimicag.2020.105949](https://www.doi.org/10.1016/j.ijantimicag.2020.105949))
+
+- Hence, effective small animal models are needed to investigate viral pathogenesis and evaluate MERS-CoV therapeutics and vaccines. ([10.1002/ame2.12088](https://www.doi.org/10.1002/ame2.12088))
+
+
+**Cluster 3:**
+
+- identify potential targets for immune responses to the 2019 novel coronavirus (SARS-CoV-2) by sequence homology with closely related SARS-CoV and by a priori epitope prediction using bioinformatics approaches. ([10.1016/j.chom.2020.03.002](https://www.doi.org/10.1016/j.chom.2020.03.002))
+
+- Suitable animal models for evaluating vaccines for SARS-and MERS-CoV are lacking or highly limited, making the process of vaccine development highly challenging. ([10.1080/21645515.2020.1735227](https://www.doi.org/10.1080/21645515.2020.1735227))
+
+- We also measured the -helicity of OC43-HR2P and HCoV-HR1Ps by circular dichroism and found that the peptides alone exhibited limited -helicity ranging from 11.3 to 42.3% ( fig. ([10.1126/sciadv.aav4580](https://www.doi.org/10.1126/sciadv.aav4580))
+
+
+--------------------
+
+**Query**: Resources to support skilled nursing facilities
+
+**Number of sentences kept by distance filtering**: 1404
+
+**Number of unique papers found among these sentences**: 356
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What has been published about medical care?
+
+**Subtask**: Resources to support skilled nursing facilities and long term care facilities.
+
+**Cluster 0:**
+
+- • Visiting GPs of residents. ([10.1101/2020.03.19.20039180](https://www.doi.org/10.1101/2020.03.19.20039180))
+
+- Conclusions : Most health professionals working in isolation units and hospitals do not receive any training for providing mental health care. ([10.1016/j.psychres.2020.112915](https://www.doi.org/10.1016/j.psychres.2020.112915))
+
+- Conclusions: : Most health professionals working in isolation units and hospitals do not receive any training for providing mental health care. ([10.1016/j.psychres.2020.112915](https://www.doi.org/10.1016/j.psychres.2020.112915))
+
+
+**Cluster 1:**
+
+- Due to the urban-rural disparities in healthcare, provision of critical care for severely ill patients was centralized by dispatching ICU staff and resources to designated hospitals. ([10.1101/2020.03.22.20041277](https://www.doi.org/10.1101/2020.03.22.20041277))
+
+- Radiology departments should contact their equipment vendors to find the safest disinfectant for each piece of equipment in use. ([10.1016/j.jacr.2020.02.008](https://www.doi.org/10.1016/j.jacr.2020.02.008))
+
+- Under current conditions, we expect this to occur within 2 to 4.5 months (58-139 days) of the first introduction of the virus, with cumulative hospitalizations reaching 84 to 18,931 in the first 3 months, depending upon the scenario; these numbers rise dramatically by 12 months. ([10.1101/2020.03.27.20045500](https://www.doi.org/10.1101/2020.03.27.20045500))
+
+
+--------------------
+
+**Query**: Mobilization of surge medical staff to address shortages in overwhelmed communities
+
+**Number of sentences kept by distance filtering**: 2126
+
+**Number of unique papers found among these sentences**: 526
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What has been published about medical care?
+
+**Subtask**: Mobilization of surge medical staff to address shortages in overwhelmed communities
+
+**Cluster 0:**
+
+- 5, 6 The large patient surge overwhelmed hospitals, despite continuous efforts to expand hospital capacity. ([10.1101/2020.03.11.20034546](https://www.doi.org/10.1101/2020.03.11.20034546))
+
+- Residents have been comparing the situation to "the end of the world," hospitals are "overwhelmed" and there are concerns about food shortages. ([10.1016/j.psychres.2020.112915](https://www.doi.org/10.1016/j.psychres.2020.112915))
+
+- CC-BY-NC-ND 4.0 International license It is made available under a is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. ([10.1101/2020.03.21.20040139](https://www.doi.org/10.1101/2020.03.21.20040139))
+
+
+**Cluster 1:**
+
+- Our study has stratified patients with 2019-nCoV ARD based on the severity on admission according to international guidelines [15] . ([10.1101/2020.02.06.20020974](https://www.doi.org/10.1101/2020.02.06.20020974))
+
+- • Visiting service providers, families of residents and other regular visitors. ([10.1101/2020.03.19.20039180](https://www.doi.org/10.1101/2020.03.19.20039180))
+
+- Principles of the crisis standard of care should be used in disaster response when health care needs overwhelm available resources. ([10.1016/j.jamcollsurg.2020.03.019](https://www.doi.org/10.1016/j.jamcollsurg.2020.03.019))
+
+
+--------------------
+
+**Query**: Age-adjusted mortality data for Acute Respiratory Distress Syndrome (ARDS) with/without other organ failure – particularly for viral etiologies
+
+**Number of sentences kept by distance filtering**: 3602
+
+**Number of unique papers found among these sentences**: 892
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What has been published about medical care?
+
+**Subtask**: Age-adjusted mortality data for Acute Respiratory Distress Syndrome (ARDS) with/without other organ failure – particularly for viral etiologies
+
+**Cluster 0:**
+
+- Conclusions Critical COVID-19 can cause fatal respiratory distress syndrome and multiple organ failure with high mortality rate. ([10.1101/2020.03.09.20033068](https://www.doi.org/10.1101/2020.03.09.20033068))
+
+- In contrast, some patients develop severe pneumonia, acute respiratory distress syndrome (ARDS) or multiple organ failure, with death rates ranging from between 4.3% to 15% according to different study reports [2, 4] . ([10.1101/2020.02.16.20023671](https://www.doi.org/10.1101/2020.02.16.20023671))
+
+- Table 1 details these results. ([10.1186/s40248-019-0174-7](https://www.doi.org/10.1186/s40248-019-0174-7))
+
+
+**Cluster 1:**
+
+- Some patients develop severe pneumonia, acute respiratory distress syndrome (ARDS), or multiple organ failure [5] [6] [7] . ([10.1101/2020.03.23.20039362](https://www.doi.org/10.1101/2020.03.23.20039362))
+
+- In contrast, some patients may develop severe pneumonia, acute respiratory distress syndrome (ARDS) or multiple organ failure [8] [9] [10] [11] . ([10.1101/2020.02.29.20029520](https://www.doi.org/10.1101/2020.02.29.20029520))
+
+- The disease is mild in most people; in some (usually the elderly and those with comorbidities), it may progress to pneumonia, acute respiratory distress syndrome (ARDS) and multi organ dysfunction. ([10.1007/s12098-020-03263-6](https://www.doi.org/10.1007/s12098-020-03263-6))
+
+
+--------------------
+
+**Query**: Extracorporeal membrane oxygenation (ECMO) outcomes data of COVID-19 patients
+
+**Number of sentences kept by distance filtering**: 514
+
+**Number of unique papers found among these sentences**: 196
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What has been published about medical care?
+
+**Subtask**: Extracorporeal membrane oxygenation (ECMO) outcomes data of COVID-19 patients
+
+**Cluster 0:**
+
+- Most patients demonstrated elevated levels of C-reactive protein, but elevated levels of alanine aminotransferase, aspartate aminotransferase, creatine kinase and D-dimer were less common. ([10.1101/2020.02.06.20020974](https://www.doi.org/10.1101/2020.02.06.20020974))
+
+- For the Korean outbreak in 2015, the independent risk factors for mortality were: age > 55 years, dyspnea, diabetes, chronic lung disease, systolic blood pressure at admission < 90 mmHg, hyperleukocytosis at admission (> 10,000/mm 3 ) and the use of mechanical ventilation [34] . ([10.1016/j.medmal.2019.10.004](https://www.doi.org/10.1016/j.medmal.2019.10.004))
+
+- Along with the sharp increase of confirmed cases novel coronavirus infection, more critically ill cases require extracorporeal membrane oxygenation (ECMO) support. ([10.3760/cma.j.issn.1001-0939.2020.0009](https://www.doi.org/10.3760/cma.j.issn.1001-0939.2020.0009))
+
+
+**Cluster 1:**
+
+- The antibiotics used were moxifloxacin, ceftriaxone, azithromycin, and tigecycline or linezolid against methicillin-resistant Staphylococcus aureus, as well as antifungal drugs. ([10.1101/2020.03.08.20031658](https://www.doi.org/10.1101/2020.03.08.20031658))
+
+- The authors conclude that for effective convalescent plasma infusion in patients with MERS, donor plasma with a neutralisation activity of a PRNT titre greater than or equal to 1/80 should be used. ([10.1016/s0140-6736(19)33221-0](https://www.doi.org/10.1016/s0140-6736(19)33221-0))
+
+- 64.2%, 29.1% and 24.3% All rights reserved. ([10.1101/2020.02.20.20025601](https://www.doi.org/10.1101/2020.02.20.20025601))
+
+
+--------------------
+
+**Query**: Outcomes data for COVID-19 after mechanical ventilation adjusted for age
+
+**Number of sentences kept by distance filtering**: 729
+
+**Number of unique papers found among these sentences**: 268
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What has been published about medical care?
+
+**Subtask**: Outcomes data for COVID-19 after mechanical ventilation adjusted for age.
+
+**Cluster 0:**
+
+- Lymphopenia was observed in 82.1% of patients. ([10.1101/2020.02.06.20020974](https://www.doi.org/10.1101/2020.02.06.20020974))
+
+- Sex differences in severity and composite endpoints (admission to intensive care unit (ICU), use of mechanical ventilation, or death) of COVID-19 patients were compared. ([10.1101/2020.03.26.20043943](https://www.doi.org/10.1101/2020.03.26.20043943))
+
+- Univariate and multivariate analyses were performed to assess the risk factors associated with severe events defined as a condition requiring admission to an intensive care unit, the use of mechanical ventilation, or death. ([10.1016/j.annonc.2020.03.296](https://www.doi.org/10.1016/j.annonc.2020.03.296))
+
+
+**Cluster 1:**
+
+- Mechanical ventilation was given to 50%-89% of patients, associated with a mortality rate of 36% [5] . ([10.1016/j.jiph.2020.02.033](https://www.doi.org/10.1016/j.jiph.2020.02.033))
+
+- We 88 considered that 5% of the cases needed ICU admission 21,23 and half of those in ICU needed 89 mechanical ventilation 20,21 for an average of 5 days. ([10.1101/2020.03.30.20047662](https://www.doi.org/10.1101/2020.03.30.20047662))
+
+- The first outcome measure used was severe (including both severe and critical cases) vs. non-severe disease. ([10.1101/2020.03.15.20035360](https://www.doi.org/10.1101/2020.03.15.20035360))
+
+
+--------------------
+
+**Query**: Knowledge of the frequency, manifestations, and course of extrapulmonary manifestations of COVID-19, including, but not limited to, possible cardiomyopathy and cardiac arrest.
+
+**Number of sentences kept by distance filtering**: 1067
+
+**Number of unique papers found among these sentences**: 391
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What has been published about medical care?
+
+**Subtask**: Knowledge of the frequency, manifestations, and course of extrapulmonary manifestations of COVID-19, including, but not limited to, possible cardiomyopathy and cardiac arrest.
+
+**Cluster 0:**
+
+- The epithelium was frequently ulcerated and hemorrhagic and submucosal glands were commonly inflammed. ([10.1053/j.semdp.2019.04.006](https://www.doi.org/10.1053/j.semdp.2019.04.006))
+
+- Text: Pneumonia appears to be the most manifestation of new COVID-19, but some extrapulmonary involvement such as gastrointestinal, cardiac and renal has been reported [1, 2, 3] . ([10.1016/j.nmni.2020.100669](https://www.doi.org/10.1016/j.nmni.2020.100669))
+
+- Abstract Pneumonia appears to be the most manifestation of COVID-19, but some extra-pulmonary involvement such as gastrointestinal, cardiac and renal has been reported. ([10.1016/j.nmni.2020.100669](https://www.doi.org/10.1016/j.nmni.2020.100669))
+
+
+**Cluster 1:**
+
+- Therefore, this cat represents the first published report that viruses other than parvovirus and FIV can cause myocarditis in cats. ([10.1177/2055116919879256](https://www.doi.org/10.1177/2055116919879256))
+
+- While myocardial damage evidenced by high cardiac markers such as hs-TnI has 91 been recognized 9 and fulminant myocarditis has been reported, 8 whether cardiovascular 92 complications include malignant arrhythmias is not yet known. ([10.1016/j.hrthm.2020.03.024](https://www.doi.org/10.1016/j.hrthm.2020.03.024))
+
+- Abstract: Pneumonia appears to be the most manifestation of COVID-19, but some extrapulmonary involvement such as gastrointestinal, cardiac and renal has been reported. ([10.1016/j.nmni.2020.100669](https://www.doi.org/10.1016/j.nmni.2020.100669))
+
+
+--------------------
+
+**Query**: Application of regulatory standards (e.g., EUA, CLIA) and ability to adapt care to crisis standards of care level.
+
+**Number of sentences kept by distance filtering**: 2752
+
+**Number of unique papers found among these sentences**: 689
+
+**Number of clusters automatically designed**: 3
+
+**Task**: What has been published about medical care?
+
+**Subtask**: Application of regulatory standards (e.g., EUA, CLIA) and ability to adapt care to crisis standards of care level.
+
+**Cluster 0:**
+
+- As essential members of antimicrobial stewardship programmes, ID pharmacists have the opportunity to support emerging pathogen-response and planning efforts. ([10.1016/j.sapharm.2020.03.018](https://www.doi.org/10.1016/j.sapharm.2020.03.018))
+
+- Ensuring staff safety must be a high institutional priority. ([10.1016/s2213-2600(20)30121-1](https://www.doi.org/10.1016/s2213-2600(20)30121-1))
+
+- Many commercially available respiratory panels include "coronavirus" in the results, but neither a positive nor a negative finding on these panels should be used to include or exclude a diagnosis of 2019-nCoV. ([10.5811/westjem.2020.1.46760](https://www.doi.org/10.5811/westjem.2020.1.46760))
+
+
+**Cluster 1:**
+
+- Hospitals should anticipate that normal staffing ratios and some standards of care are unlikely to be maintained; plans for contingency and crisis standards that lay out a legal and ethical framework for care decisions, including who will make decisions, how, and under what circumstances, must be readied. ([10.7326/m20-0907](https://www.doi.org/10.7326/m20-0907))
+
+- Such strategies are adopted as private corporations try to maximize their economic gains, since the digital solution market is a lucrative one and is expected to continue growing and expanding [6, 7] . ([10.3390/healthcare8010046](https://www.doi.org/10.3390/healthcare8010046))
+
+- Governments are tasked with three critical duties in the response to COVID-19: the coordination of services with access to COVID-19 testing kits, medical supplies and equipment, accurate and timely communication, and maintaining public trust in their government [5] . ([10.7759/cureus.7345](https://www.doi.org/10.7759/cureus.7345))
+
+
+**Cluster 2:**
+
+- Can the same COA be used across cultures and languages? ([10.1016/j.antiviral.2019.04.006](https://www.doi.org/10.1016/j.antiviral.2019.04.006))
+
+- author/funder, who has granted medRxiv a license to display the preprint in perpetuity. ([10.1101/2020.03.19.20038752](https://www.doi.org/10.1101/2020.03.19.20038752))
+
+- • What additional refrigerated storage space is available for a surge in deceased persons? ([10.1016/j.fsisyn.2020.03.007](https://www.doi.org/10.1016/j.fsisyn.2020.03.007))
+
+
+--------------------
+
+**Query**: Approaches for encouraging and facilitating the production of elastomeric respirators, which can save thousands of N95 masks
+
+**Number of sentences kept by distance filtering**: 551
+
+**Number of unique papers found among these sentences**: 174
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What has been published about medical care?
+
+**Subtask**: Approaches for encouraging and facilitating the production of elastomeric respirators, which can save thousands of N95 masks.
+
+**Cluster 0:**
+
+- The stations for personal protection devices must be strategically placed to enhance compliance. ([10.1016/s2213-2600(20)30121-1](https://www.doi.org/10.1016/s2213-2600(20)30121-1))
+
+- The aforementioned AGMPs include those that are both ubiquitous, such as CPR or manual ventilation, as well as those that are limited to advanced health-care settings, such as bronchoscopy. ([10.3390/v11100940](https://www.doi.org/10.3390/v11100940))
+
+- The relative performance of different types of respirators has not been widely considered in health care. ([10.1016/j.ajic.2019.06.023](https://www.doi.org/10.1016/j.ajic.2019.06.023))
+
+
+**Cluster 1:**
+
+- Given the ease of access to N95 masks during normal times, much remains unknown about the efficacy of various sterilization mechanisms on disposable masks since there is little impetus to reuse these masks outside of major disaster and pandemic events. ([10.1101/2020.03.28.20043471](https://www.doi.org/10.1101/2020.03.28.20043471))
+
+- This is crucial for maintaining the tight fit of the mask through repeated decontamination cycles. ([10.1101/2020.03.25.20043489](https://www.doi.org/10.1101/2020.03.25.20043489))
+
+- To alleviate this, many methods of N95 mask sterilization have been studied and proposed with the hope of being able to safely reuse masks. ([10.1101/2020.03.28.20043471](https://www.doi.org/10.1101/2020.03.28.20043471))
+
+
+--------------------
+
+**Query**: Best telemedicine practices, barriers and faciitators, and specific actions to remove/expand them within and across state boundaries.
+
+**Number of sentences kept by distance filtering**: 6143
+
+**Number of unique papers found among these sentences**: 1024
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What has been published about medical care?
+
+**Subtask**: Best telemedicine practices, barriers and faciitators, and specific actions to remove/expand them within and across state boundaries.
+
+**Cluster 0:**
+
+- There are some limitations that need to be addressed. ([10.7150/ijbs.45120](https://www.doi.org/10.7150/ijbs.45120))
+
+- Policy communities and issues networks are at either end of a continuum characterised by differing levels of internal cohesiveness, state support and access to, and ability to regulate, shared resources [26] . ([10.1186/s12961-019-0440-3](https://www.doi.org/10.1186/s12961-019-0440-3))
+
+- It is needed to maximize coordination among emergency services located in different parts of the County and within EU, it is crucial for the preparation of operational schemes, and pivotal to allow a proper prediction of the development of the pandemic. ([10.1101/2020.03.14.20036103](https://www.doi.org/10.1101/2020.03.14.20036103))
+
+
+**Cluster 1:**
+
+- As a result, the use of GIS faces difficulties in data acquisition and the integration of heterogeneous data, which requires governments, businesses, and academic institutions to jointly promote the formulation of relevant policies. ([10.1016/j.geosus.2020.03.005](https://www.doi.org/10.1016/j.geosus.2020.03.005))
+
+- Managers who support work-empowering environments are actually boosting the engagement of participations in terms of knowledge transfer [19] . ([10.1186/s12879-019-3898-2](https://www.doi.org/10.1186/s12879-019-3898-2))
+
+- As children are vulnerable to environmental risks and their physical health, mental health, and productivity in adult life is deeply rooted in early years, 14 close attention and great efforts are required to address these emergency issues effectively and avoid any longterm consequences in children. ([10.1016/s0140-6736(20)30547-x](https://www.doi.org/10.1016/s0140-6736(20)30547-x))
+
+
+--------------------
+
+**Query**: Guidance on the simple things people can do at home to take care of sick people and manage disease.
+
+**Number of sentences kept by distance filtering**: 6724
+
+**Number of unique papers found among these sentences**: 1070
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What has been published about medical care?
+
+**Subtask**: Guidance on the simple things people can do at home to take care of sick people and manage disease.
+
+**Cluster 0:**
+
+- Social support refers to the care and support that people feel they get from other people [9] . ([10.12659/msm.923549](https://www.doi.org/10.12659/msm.923549))
+
+- • To notify any late, influenza-related deaths to the PHU. ([10.1101/2020.03.19.20039180](https://www.doi.org/10.1101/2020.03.19.20039180))
+
+- Education materials and information are placed in patient care areas such as the nurses' stations and clinic rooms to educate and remind patients and staff on good personal hygiene, importance of hand washing and the correct way to wear masks. ([10.1016/j.radonc.2020.03.030](https://www.doi.org/10.1016/j.radonc.2020.03.030))
+
+
+**Cluster 1:**
+
+- Based on this situation many patients had to be quarantined at home due to objective reasons and could not receive effective medical guidance. ([10.1101/2020.02.26.20028084](https://www.doi.org/10.1101/2020.02.26.20028084))
+
+- Actually, the four equations are not independent and the fourth one can be derived from the total balance on the population: Despite very simple SIR (o SIRD) models are based on constant kinetics ( , , ) to describe the epidemic evolution until the depletion of the susceptible people, the measures taken by the governments have had huge impact on the epidemic and therefore on its evolution kinetics. ([10.1101/2020.03.19.20039388](https://www.doi.org/10.1101/2020.03.19.20039388))
+
+- Health outcomes included the number of confirmed cases, the number of deaths, the number of recoveries, and the number of active cases. ([10.1101/2020.03.22.20040642](https://www.doi.org/10.1101/2020.03.22.20040642))
+
+
+--------------------
+
+**Query**: Oral medications fo fight covid-19
+
+**Number of sentences kept by distance filtering**: 584
+
+**Number of unique papers found among these sentences**: 318
+
+**Number of clusters automatically designed**: 3
+
+**Task**: What has been published about medical care?
+
+**Subtask**: Oral medications that might potentially work.
+
+**Cluster 0:**
+
+- At present, there is no effective medication nor vaccine for the SARS-CoV-2 infection. ([10.1101/2020.03.02.20030452](https://www.doi.org/10.1101/2020.03.02.20030452))
+
+- Therefore, the small-scale clinical trials, including Phase II clinical trials, are currently given priority to, in which case, its effect, proper dosage, the medication and adverse reaction are initially verified. ([10.1080/22221751.2020.1741327](https://www.doi.org/10.1080/22221751.2020.1741327))
+
+- 8 Fifth, WHO has made it clear that there are currently no known effective treatments for COVID-19 and does not recommend the use of antiviral drugs, antibiotics, glucocorticoids, or traditional Chinese medicine. ([10.1016/s1473-3099(20)30152-3](https://www.doi.org/10.1016/s1473-3099(20)30152-3))
+
+
+**Cluster 1:**
+
+- Despite this, there have been reports of the use of oseltamivir, lopinavir/ritonavir, prednisone, antibiotics, and traditional Chinese medicine for the treatment of patients with COVID-19.9 Care should be taken to not give patients drugs of unknown efficacy, which might be detrimental to critically ill patients with COVID-19; clinical trials are urgently required in this context.10 Likewise, the development of a vaccine is an urgent public health priority. ([10.1016/s1473-3099(20)30152-3](https://www.doi.org/10.1016/s1473-3099(20)30152-3))
+
+- antihistamines, intranasal corticosteroids). ([10.1016/j.sapharm.2020.03.015](https://www.doi.org/10.1016/j.sapharm.2020.03.015))
+
+- As such, a retrospective review of the types and doses of clinical drugs, courses of treatment, and intervention times in patients cured of COVID-19 would be highly informative for treating patients with this disease worldwide. ([10.1101/2020.03.28.20045955](https://www.doi.org/10.1101/2020.03.28.20045955))
+
+
+**Cluster 2:**
+
+- Coagulation factor concentrates are preferred over blood products when possible to reduce potential transfusion related lung injuries. ([10.1053/j.jvca.2020.03.026](https://www.doi.org/10.1053/j.jvca.2020.03.026))
+
+- The median Ct values (range) for these opportunistic pathogens in BAL samples were Ct 31 (21- Retrospectively gathered clinical parameters were compared for patients with a positive versus a negative TAC result *Lung + kidney (n = 2), lung + heart (n = 4), kidney + heart (n = 1), kidney + liver (n = 1), lung + kidney + heart (n = 1) ( Table 3 ). ([10.1007/s10096-019-03579-y](https://www.doi.org/10.1007/s10096-019-03579-y))
+
+- For decades, chloroquine was a front-line drug for the treatment and prophylaxis of malaria and is one of the most prescribed drugs worldwide [4] . ([10.1016/j.ijantimicag.2020.105938](https://www.doi.org/10.1016/j.ijantimicag.2020.105938))
+
+
+--------------------
+
+**Query**: Use of AI in real-time health care delivery to evaluate interventions, risk factors, and outcomes in a way that could not be done manually.
+
+**Number of sentences kept by distance filtering**: 13583
+
+**Number of unique papers found among these sentences**: 1816
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What has been published about medical care?
+
+**Subtask**: Use of AI in real-time health care delivery to evaluate interventions, risk factors, and outcomes in a way that could not be done manually.
+
+**Cluster 0:**
+
+- As such, we developed this consensus recommendations on all those high-risk treatments, based on the current evidence as well as the resource limitation in some areas, with the aim to reduce the nosocomial transmission and optimize the treatment for the COVID-19 pneumonia patients. ([10.3760/cma.j.issn.1001-0939.2020.0020](https://www.doi.org/10.3760/cma.j.issn.1001-0939.2020.0020))
+
+- Understanding the length of active monitoring needed to limit the risk for missing SARS-CoV-2 infections is necessary for health ORIGINAL RESEARCH departments to effectively use limited resources. ([10.7326/m20-0504](https://www.doi.org/10.7326/m20-0504))
+
+- This study identified pathogen-specific risk factors that might be useful for the development of customized control and prevention and for the design of decision support tools to justify antimicrobial use by predicting the most likely pathogen before sampling results are available. ([10.3168/jds.2019-17486](https://www.doi.org/10.3168/jds.2019-17486))
+
+
+**Cluster 1:**
+
+- To aid clinical assessment, risk stratification, efficient resource allocation, and targeted public health interventions, future research must aim to further define those at high-risk of severe illness with COVID−19. ([10.1101/2020.03.15.20035360](https://www.doi.org/10.1101/2020.03.15.20035360))
+
+- With limited medical resources, it is a natural strategy, while adopted, to access the severity of patients then determine the treatment priority. ([10.1101/2020.03.20.20037325](https://www.doi.org/10.1101/2020.03.20.20037325))
+
+- The protective effect of HCP could be explained by the fact that HCP are more likely to be younger (<60 years old) and have fewer underlying medical conditions than hospitalized patients, but also that they are likely to be identified earlier or seek medical care soon following contact with a confirmed patient. ([10.1038/s41598-019-43586-9](https://www.doi.org/10.1038/s41598-019-43586-9))
+
+
+--------------------
+
+**Query**: Best practices and critical challenges and innovative solutions and technologies in hospital flow and organization, workforce protection, workforce allocation, community-based support resources, payment, and supply chain management to enhance capacity, efficiency, and outcomes.
+
+**Number of sentences kept by distance filtering**: 7967
+
+**Number of unique papers found among these sentences**: 1239
+
+**Number of clusters automatically designed**: 3
+
+**Task**: What has been published about medical care?
+
+**Subtask**: Best practices and critical challenges and innovative solutions and technologies in hospital flow and organization, workforce protection, workforce allocation, community-based support resources, payment, and supply chain management to enhance capacity, efficiency, and outcomes.
+
+**Cluster 0:**
+
+- We must reach individuals with poor social networks, poor technological literacy, and who lack access to technology. ([10.1016/j.jpainsymman.2020.03.019](https://www.doi.org/10.1016/j.jpainsymman.2020.03.019))
+
+- There are some limitations that need to be addressed. ([10.7150/ijbs.45120](https://www.doi.org/10.7150/ijbs.45120))
+
+- Conclusions Strategy planning for delivery of high-quality palliative care in the context of the COVID-19 pandemic represents an important area of need for our healthcare systems. ([10.1016/j.jpainsymman.2020.03.025](https://www.doi.org/10.1016/j.jpainsymman.2020.03.025))
+
+
+**Cluster 1:**
+
+- Many countries, especially those that are low resource, have insufficient access to essential health services. ([10.1016/s0140-6736(20)30553-5](https://www.doi.org/10.1016/s0140-6736(20)30553-5))
+
+- In addressing these challenges, future community mental health system reform is necessary to re-balance the system by re-distributing resources from hospital-centric services to community-based and primary care services. ([10.7150/ijbs.45072](https://www.doi.org/10.7150/ijbs.45072))
+
+- The focus is on building sustainable systems that ensure quality care for patients and their families and staff safety and wellbeing. ([10.1016/s2213-2600(20)30121-1](https://www.doi.org/10.1016/s2213-2600(20)30121-1))
+
+
+**Cluster 2:**
+
+- Methods UW Medicine developed a strategy to implement a palliative care response for a multi-hospital healthcare system that incorporates conventional capacity, contingency capacity, and crisis capacity. ([10.1016/j.jpainsymman.2020.03.025](https://www.doi.org/10.1016/j.jpainsymman.2020.03.025))
+
+- A country's response capacity depends on the strength of its emergency preparedness and the regular testing and updating of national plans and capacities. ([10.1016/s0140-6736(20)30553-5](https://www.doi.org/10.1016/s0140-6736(20)30553-5))
+
+- is the (which was not peer-reviewed) The copyright holder for this preprint . ([10.1101/2020.03.19.20039180](https://www.doi.org/10.1101/2020.03.19.20039180))
+
+
+--------------------
+
+**Query**: Efforts to develop a core clinical outcome set to maximize usability of data across a range of trials
+
+**Number of sentences kept by distance filtering**: 7518
+
+**Number of unique papers found among these sentences**: 1492
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What has been published about medical care?
+
+**Subtask**: Efforts to develop a core clinical outcome set to maximize usability of data across a range of trials
+
+**Cluster 0:**
+
+- Patients who need onsite treatment or hospitalization will be recommended to choose a specialist agency near their home. ([10.1016/j.psychres.2020.112903](https://www.doi.org/10.1016/j.psychres.2020.112903))
+
+- The copyright holder for this preprint (which was not peer-reviewed) is the . ([10.1101/2020.03.16.20034934](https://www.doi.org/10.1101/2020.03.16.20034934))
+
+- The poor correlation between a viral load and clinical symptoms, makes a clinical endpoint (rather than a virologic endpoint) more logical. ([10.1016/j.antiviral.2019.04.006](https://www.doi.org/10.1016/j.antiviral.2019.04.006))
+
+
+**Cluster 1:**
+
+- Powered by large labeled datasets [5] and modern GPUs, AI, especially deep learning technique [6] , has achieved excellent performance in several computer vision tasks such as image classification [7] and object detection [8] . ([10.1101/2020.03.20.20039834](https://www.doi.org/10.1101/2020.03.20.20039834))
+
+- Our results suggest that similar policies may have different impacts on different populations, but we obtain consistent evidence that the policy packages now deployed are achieving large and beneficial health outcomes. ([10.1101/2020.03.22.20040642](https://www.doi.org/10.1101/2020.03.22.20040642))
+
+- Prabha Viswanathan, FDA, Silver Spring, MD, USA. ([10.1016/j.antiviral.2019.04.006](https://www.doi.org/10.1016/j.antiviral.2019.04.006))
+
+
+--------------------
+
+**Query**: Efforts to determine adjunctive and supportive interventions that can improve the clinical outcomes of infected patients (e.g. steroids, high flow oxygen)
+
+**Number of sentences kept by distance filtering**: 3633
+
+**Number of unique papers found among these sentences**: 1013
+
+**Number of clusters automatically designed**: 3
+
+**Task**: What has been published about medical care?
+
+**Subtask**: Efforts to determine adjunctive and supportive interventions that can improve the clinical outcomes of infected patients (e.g. steroids, high flow oxygen)
+
+**Cluster 0:**
+
+- It was interesting to note that some virions in the surface of LH-treated cells presented spindle sharp which was in contrast to the typical spherical particles in the mock-treated cells (Fig. ([10.1016/j.phrs.2020.104761](https://www.doi.org/10.1016/j.phrs.2020.104761))
+
+- Predictive models that could identify patients at a higher risk of delirium before surgery can be an important tool to physicians who could then instigate more strict controls of systemic and cerebral hemodynamics, closer monitoring of anesthesia and surgical procedures and other non-pharmacological therapies such as, family stay, before delirium settles in. ([10.1016/j.clinph.2018.11.008](https://www.doi.org/10.1016/j.clinph.2018.11.008))
+
+- To mitigate the burden on the health care system, while also providing the best possible care for patients, efficient diagnosis and prognosis is needed. ([10.1101/2020.03.24.20041020](https://www.doi.org/10.1101/2020.03.24.20041020))
+
+
+**Cluster 1:**
+
+- Several strategies have been used for supportive treatment against this disease. ([10.1016/j.antiviral.2019.104697](https://www.doi.org/10.1016/j.antiviral.2019.104697))
+
+- Despite this, there have been reports of the use of oseltamivir, lopinavir/ritonavir, prednisone, antibiotics, and traditional Chinese medicine for the treatment of patients with COVID-19.9 Care should be taken to not give patients drugs of unknown efficacy, which might be detrimental to critically ill patients with COVID-19; clinical trials are urgently required in this context.10 Likewise, the development of a vaccine is an urgent public health priority. ([10.1016/s1473-3099(20)30152-3](https://www.doi.org/10.1016/s1473-3099(20)30152-3))
+
+- ESR is a simple laboratory test for evaluating the inflammatory or acute response state. ([10.1101/2020.03.20.20039818](https://www.doi.org/10.1101/2020.03.20.20039818))
+
+
+**Cluster 2:**
+
+- Rather, supportive care as well as adjunctive countermeasures may assist patients in surviving viral illness. ([10.7759/cureus.7343](https://www.doi.org/10.7759/cureus.7343))
+
+- Limited existing knowledge highlights the need for data regarding supportive care and adjunctive pharmacologic therapy that is specific for critically ill patients with severe RVI. ([10.1007/s00134-020-05943-5](https://www.doi.org/10.1007/s00134-020-05943-5))
+
+- Existing knowledge highlights the need for data regarding supportive care and adjunctive pharmacologic therapy that is specific for critically ill patients with severe RVI. ([10.1007/s00134-020-05943-5](https://www.doi.org/10.1007/s00134-020-05943-5))
+
+
+--------------------
+
+**Query**: Guidance on ways to scale up NPIs in a more coordinated way (e.g., establish funding, infrastructure and authorities to support real time, authoritative (qualified participants) collaboration with all states to gain consensus on consistent guidance and to mobilize resources to geographic areas where critical shortfalls are identified) to give us time to enhance our health care delivery system capacity to respond to an increase in cases.
+
+**Number of sentences kept by distance filtering**: 15339
+
+**Number of unique papers found among these sentences**: 1741
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What do we know about non-pharmaceutical interventions?
+
+**Subtask**: Guidance on ways to scale up NPIs in a more coordinated way (e.g., establish funding, infrastructure and authorities to support real time, authoritative (qualified participants) collaboration with all states to gain consensus on consistent guidance and to mobilize resources to geographic areas where critical shortfalls are identified) to give us time to enhance our health care delivery system capacity to respond to an increase in cases.
+
+**Cluster 0:**
+
+- In addition, setting up surveillance programs is resource intensive with few partners providing support. ([10.1186/s12889-019-6772-7](https://www.doi.org/10.1186/s12889-019-6772-7))
+
+- The COVID-19 outbreak requires a robust mechanism of collaboration and coordination at the global, national, and subnational levels to prevent, detect, and respond effectively. ([10.1016/s0140-6736(20)30553-5](https://www.doi.org/10.1016/s0140-6736(20)30553-5))
+
+- Half of all countries analysed have strong operational readiness capacities in place, which suggests that an effective response to potential health emergencies could be enabled, including to COVID-19. ([10.1016/s0140-6736(20)30553-5](https://www.doi.org/10.1016/s0140-6736(20)30553-5))
+
+
+**Cluster 1:**
+
+- These questions are also applicable in the assessment of the response in place by detention centres in case of sudden increase of number of deaths in custody related to the pandemic: • Does a Mass Fatality Response Plan or Annex related to death management exist to guide a multiagency response to an increase in deaths from COVID-19? ([10.1016/j.fsisyn.2020.03.007](https://www.doi.org/10.1016/j.fsisyn.2020.03.007))
+
+- Many countries, especially those that are low resource, have insufficient access to essential health services. ([10.1016/s0140-6736(20)30553-5](https://www.doi.org/10.1016/s0140-6736(20)30553-5))
+
+- Because of the insufficient quality of information that exists about the state of national and regional preparedness capacities, we used data and information from IHR State Party Annual Reporting tool to review existing levels of health security capacities to prevent, detect, respond, and establish enabling functions for an effective response, and operational readiness against public health risks and events, including infectious disease outbreaks. ([10.1016/s0140-6736(20)30553-5](https://www.doi.org/10.1016/s0140-6736(20)30553-5))
+
+
+--------------------
+
+**Query**: Rapid design and execution of experiments to examine and compare NPIs currently being implemented.
+
+**Number of sentences kept by distance filtering**: 3145
+
+**Number of unique papers found among these sentences**: 865
+
+**Number of clusters automatically designed**: 3
+
+**Task**: What do we know about non-pharmaceutical interventions?
+
+**Subtask**: Rapid design and execution of experiments to examine and compare NPIs currently being implemented. DHS Centers for Excellence could potentially be leveraged to conduct these experiments.
+
+**Cluster 0:**
+
+- https://doi.org/10.1101/2020.03. ([10.1101/2020.03.22.20039933](https://www.doi.org/10.1101/2020.03.22.20039933))
+
+- The lockdown of Wuhan might not have prevented the seeding of the virus from the city, as the travel ban was put in place at the latter stages of outbound travel prior to CNY's day ( Figure 3 ). ([10.1101/2020.03.03.20029843](https://www.doi.org/10.1101/2020.03.03.20029843))
+
+- According to our study, we found that these Chinese strategies for controlling the diffusion of COVID-19 are significantly effective and powerful. ([10.1101/2020.03.10.20032755](https://www.doi.org/10.1101/2020.03.10.20032755))
+
+
+**Cluster 1:**
+
+- [9] , which was also used by Zhang et al. ([10.1101/2020.03.28.20046136](https://www.doi.org/10.1101/2020.03.28.20046136))
+
+- In 285 general, current parameter estimates may also be affected by bias or censoring, particularly in 286 the early stages of an outbreak when most cases have been recently infected, and when data 287 are primarily available for relatively severe, hospitalized cases. ([10.1101/2020.01.28.20019224](https://www.doi.org/10.1101/2020.01.28.20019224))
+
+- The scattered cases had a longer time interval from the first medical visit to hospital admission than the clustered cases (1.0 vs 0 day, P<0.05; Table 1, Figure 3C ). ([10.1101/2020.03.22.20035246](https://www.doi.org/10.1101/2020.03.22.20035246))
+
+
+**Cluster 2:**
+
+- We show below that this strategy works to improve upon existing testing and evaluate the benefits across both simulated and real testing data. ([10.1101/2020.03.27.20043968](https://www.doi.org/10.1101/2020.03.27.20043968))
+
+- To simplify the presentation, all sub-populations are of equal size. ([10.1101/2020.03.02.20030007](https://www.doi.org/10.1101/2020.03.02.20030007))
+
+- Only 10% (CI 4-16%) of cases were averted in the MERS outbreak. ([10.1186/s12976-019-0112-6](https://www.doi.org/10.1186/s12976-019-0112-6))
+
+
+--------------------
+
+**Query**: DHS Centers for Excellence could potentially be leveraged to conduct these experiments
+
+**Number of sentences kept by distance filtering**: 2080
+
+**Number of unique papers found among these sentences**: 687
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What do we know about non-pharmaceutical interventions?
+
+**Subtask**: Rapid design and execution of experiments to examine and compare NPIs currently being implemented. DHS Centers for Excellence could potentially be leveraged to conduct these experiments.
+
+**Cluster 0:**
+
+- DGHP's One Health Program worked with other partners including the US Cooperative Biological Engagement Program of the Department of Defense and Biological Engagement Program of the Department of State, to continually advocate for and provide technical and financial assistance to the establishment of a formal collaborative framework between the public and animal health sectors. ([10.1186/s12889-019-6772-7](https://www.doi.org/10.1186/s12889-019-6772-7))
+
+- MATERIALS AND METHODS: The data on the global outbreak of "2019-nCoV, SARS-CoV, and MERS-CoV" were obtained from World Health Organization (WHO), Centers for Disease Control and Prevention (CDC), concerned ministries and research institutes. ([10.26355/eurrev_202002_20379](https://www.doi.org/10.26355/eurrev_202002_20379))
+
+- CC-BY-NC-ND 4.0 International license It is made available under a author/funder, who has granted medRxiv a license to display the preprint in perpetuity. ([10.1101/2020.03.01.20029884](https://www.doi.org/10.1101/2020.03.01.20029884))
+
+
+**Cluster 1:**
+
+- author/funder, who has granted medRxiv a license to display the preprint in perpetuity. ([10.1101/2020.03.19.20038752](https://www.doi.org/10.1101/2020.03.19.20038752))
+
+- CONCLUSION: The present study demonstrates the enormous response capacity achieved through coordination of academic and public laboratories in national and European research networks. ([10.2807/1560-7917.es.2020.25.3.2000045](https://www.doi.org/10.2807/1560-7917.es.2020.25.3.2000045))
+
+- The Chinese Center for Disease Control and 24 Prevention (CDC) promptly organized the relevant disease control agencies, medical units, and 25 research institutes to carry out investigations and treatment. ([10.1101/2020.03.02.20029306](https://www.doi.org/10.1101/2020.03.02.20029306))
+
+
+--------------------
+
+**Query**: Rapid assessment of the likely efficacy of school closures, travel bans
+
+**Number of sentences kept by distance filtering**: 1746
+
+**Number of unique papers found among these sentences**: 445
+
+**Number of clusters automatically designed**: 3
+
+**Task**: What do we know about non-pharmaceutical interventions?
+
+**Subtask**: Rapid assessment of the likely efficacy of school closures, travel bans, bans on mass gatherings of various sizes, and other social distancing approaches.
+
+**Cluster 0:**
+
+- 2 Many countries states and cities have instituted school, gathering, restaurant, and travel bans to mitigate its spread. ([10.1016/j.jamcollsurg.2020.03.019](https://www.doi.org/10.1016/j.jamcollsurg.2020.03.019))
+
+- Delaying the COVID-19 epidemic in Australia: Evaluating the effectiveness of international travel bans ([10.1101/2020.03.22.20041244](https://www.doi.org/10.1101/2020.03.22.20041244))
+
+- The response includes resolute action to reinforce the country's public health sectors and mitigate the socio-economic impact in the European Union. ([10.1016/j.pdisas.2020.100080](https://www.doi.org/10.1016/j.pdisas.2020.100080))
+
+
+**Cluster 1:**
+
+- First, countries facing potential spread of COVID-19, or a similar outbreak in the future, should consider outbreak control "holidays" or closure periods-ie, periods of recommended or mandatory closure of nonessential workplaces and public insti tutions-as a firstline social distancing measure to slow the rate of transmission. ([10.1016/s0140-6736(20)30421-9](https://www.doi.org/10.1016/s0140-6736(20)30421-9))
+
+- The social contact analysis presented here focuses only on adapting school and work contacts. ([10.1101/2020.03.03.20030627](https://www.doi.org/10.1101/2020.03.03.20030627))
+
+- Following China, many countries around the world have adopted social distancing measures largely based on quarantine and travel bans, as well as on isolation of infected patients and their close contacts (2) . ([10.1101/2020.03.30.20047860](https://www.doi.org/10.1101/2020.03.30.20047860))
+
+
+**Cluster 2:**
+
+- Using a networked dynamic meta-population model and Bayesian inference, Li et al. ([10.1101/2020.03.24.20042424](https://www.doi.org/10.1101/2020.03.24.20042424))
+
+- . ([10.1101/2020.03.22.20040642](https://www.doi.org/10.1101/2020.03.22.20040642))
+
+- 11 Enforcement of communitywide contain ment measures is far more complex than isolation or quarantine because of the larger number of people involved. ([10.1016/s1473-3099(20)30129-8](https://www.doi.org/10.1016/s1473-3099(20)30129-8))
+
+
+--------------------
+
+**Query**: Methods to control the spread in communities, barriers to compliance
+
+**Number of sentences kept by distance filtering**: 6678
+
+**Number of unique papers found among these sentences**: 1094
+
+**Number of clusters automatically designed**: 4
+
+**Task**: What do we know about non-pharmaceutical interventions?
+
+**Subtask**: Methods to control the spread in communities, barriers to compliance and how these vary among different populations..
+
+**Cluster 0:**
+
+- This is a very worst-case scenario for a number of reasons. ([10.1016/s0140-6736(20)30567-5](https://www.doi.org/10.1016/s0140-6736(20)30567-5))
+
+- This is a very worst-case scenario for a number of reasons. ([10.1016/s0140-6736(20)30567-5](https://www.doi.org/10.1016/s0140-6736(20)30567-5))
+
+- CC-BY-NC-ND 4.0 International license It is made available under a author/funder, who has granted medRxiv a license to display the preprint in perpetuity. ([10.1101/2020.03.20.20040055](https://www.doi.org/10.1101/2020.03.20.20040055))
+
+
+**Cluster 1:**
+
+- Current efforts to manage the MERS-CoV crisis are directed towards developing educational programs that target both the community and HCWs [25] . ([10.1186/s12879-019-3898-2](https://www.doi.org/10.1186/s12879-019-3898-2))
+
+- (d) show that till date reducing COVID-19 transmissibility remains to be an effective intervention approach. ([10.1101/2020.03.17.20037770](https://www.doi.org/10.1101/2020.03.17.20037770))
+
+- Last but not least, a number of key points can be noted: as well as their morale, to maintain a high-quality, safe and dedicated service for patients. ([10.1186/s12879-019-3898-2](https://www.doi.org/10.1186/s12879-019-3898-2))
+
+
+**Cluster 2:**
+
+- strategies depend on many factors, including the local spread of COVID-19, healthcare system resources, economical and political factors, public adherence and their perception of the situation. ([10.1101/2020.03.19.20038844](https://www.doi.org/10.1101/2020.03.19.20038844))
+
+- Though very limited in numbers, MERS-CoV cases amongst pilgrimage travelers returning from Saudi Arabia have been observed [106, 107] . ([10.1016/j.tmaid.2019.101520](https://www.doi.org/10.1016/j.tmaid.2019.101520))
+
+- estimated that the R0 of NCP was larger than 5.0 using national reported data from January 10 to January 24, 2020, under the scenario that the reporting rate was not changed during that period (12) . ([10.1101/2020.01.25.919787](https://www.doi.org/10.1101/2020.01.25.919787))
+
+
+**Cluster 3:**
+
+- 24 An effective way of managing airborne infections is applying evidence-based public health prevention strategies. ([10.1016/s0140-6736(20)30553-5](https://www.doi.org/10.1016/s0140-6736(20)30553-5))
+
+- The socio-political impacts of technological innovation and emerging risk uncertainty can quickly undermine public trust in governments and, by implication, the authority and perceived legitimacy of associated policy communitiesas events surrounding the introduction of mobile telephone masts and genetically modified crops attest [36, 37] . ([10.1186/s12961-019-0440-3](https://www.doi.org/10.1186/s12961-019-0440-3))
+
+- 38, 39 For example, a study involving a geographically representative sample of Hurricane Katrina survivors with chronic medical conditions found that one fifth of participants reported cutting back or terminating their medication intake following the disaster for a variety of reasons including limited access to physicians and medications, as well as financial/insurancerelated problems. ([10.1016/j.sapharm.2020.03.015](https://www.doi.org/10.1016/j.sapharm.2020.03.015))
+
+
+--------------------
+
+**Query**: Models of potential interventions to predict costs and benefits that take account of such factors as race, income, disability, age, geographic location, immigration status, housing status, employment status, and health insurance status.
+
+**Number of sentences kept by distance filtering**: 1961
+
+**Number of unique papers found among these sentences**: 538
+
+**Number of clusters automatically designed**: 3
+
+**Task**: What do we know about non-pharmaceutical interventions?
+
+**Subtask**: Models of potential interventions to predict costs and benefits that take account of such factors as race, income, disability, age, geographic location, immigration status, housing status, employment status, and health insurance status.
+
+**Cluster 0:**
+
+- Considering that educational attainment and occupation are often used as proxy measures of socioeconomic status [22] , strictly speaking, our findings can only be generalized to Chinese populations of a relatively high socioeconomic status, particularly women. ([10.7150/ijbs.45221](https://www.doi.org/10.7150/ijbs.45221))
+
+- However, much less is known about effects on a smaller geographic scale, such as that of a region or a conurbation, exposed to contrasted environmental factors. ([10.1016/j.scitotenv.2020.136608](https://www.doi.org/10.1016/j.scitotenv.2020.136608))
+
+- HCW = healthcare worker, SEIR = Susceptible-Exposed-Infectious-Recovered, ICU = Intensive Care Unit, GLM = generalized linear model. ([10.1101/2020.03.19.20039404](https://www.doi.org/10.1101/2020.03.19.20039404))
+
+
+**Cluster 1:**
+
+- Other individual factors may present special barriers, such as having to find appropriate childcare following school closings. ([10.1016/j.sapharm.2020.03.017](https://www.doi.org/10.1016/j.sapharm.2020.03.017))
+
+- Risks posed by COVID-19 are analyzed state-wise with respect to the parameters: urgency, local uninsured populations, liquid assets poverty rate, and age weighted mortality rate. ([10.1101/2020.03.17.20037770](https://www.doi.org/10.1101/2020.03.17.20037770))
+
+- . ([10.1101/2020.03.18.20037994](https://www.doi.org/10.1101/2020.03.18.20037994))
+
+
+**Cluster 2:**
+
+- Despite being uncommon in our study population, COPD was by far the strongest risk factor for COVID-19 severity, followed by CVD and hypertension. ([10.1101/2020.03.15.20035360](https://www.doi.org/10.1101/2020.03.15.20035360))
+
+- International efforts are required to harmonise definitions of underlying conditions, and the clinical syndrome and progression of COVID-19 infection, using clinically collected data in EHRs. ([10.1101/2020.03.22.20040287](https://www.doi.org/10.1101/2020.03.22.20040287))
+
+- 3 The refugees are at high risk for epidemics given the high population density, poor health status, and limited health services. ([10.1101/2020.03.27.20045500](https://www.doi.org/10.1101/2020.03.27.20045500))
+
+
+--------------------
+
+**Query**: Policy changes necessary to enable the compliance of individuals with limited resources and the underserved with NPIs.
+
+**Number of sentences kept by distance filtering**: 7389
+
+**Number of unique papers found among these sentences**: 1103
+
+**Number of clusters automatically designed**: 3
+
+**Task**: What do we know about non-pharmaceutical interventions?
+
+**Subtask**: Policy changes necessary to enable the compliance of individuals with limited resources and the underserved with NPIs.
+
+**Cluster 0:**
+
+- Note that the orange and yellow curves overlay the dark blue and grey curves at first, from week 11. ([10.1101/2020.03.20.20040055](https://www.doi.org/10.1101/2020.03.20.20040055))
+
+- 38, 39 For example, a study involving a geographically representative sample of Hurricane Katrina survivors with chronic medical conditions found that one fifth of participants reported cutting back or terminating their medication intake following the disaster for a variety of reasons including limited access to physicians and medications, as well as financial/insurancerelated problems. ([10.1016/j.sapharm.2020.03.015](https://www.doi.org/10.1016/j.sapharm.2020.03.015))
+
+- As with other health behaviours, 30 31 as perceptions of the benefit of quarantine increase, so too should adherence. ([10.1016/j.puhe.2020.03.007](https://www.doi.org/10.1016/j.puhe.2020.03.007))
+
+
+**Cluster 1:**
+
+- Some previous studies have preliminarily explored the lockdown of Wuhan, [25] [26] [27] travel restrictions, 28-30 airport screening, 31, 32 and the isolation of cases and contact tracing for containing virus transmission, respectively. ([10.1101/2020.03.03.20029843](https://www.doi.org/10.1101/2020.03.03.20029843))
+
+- 27.20045500 doi: medRxiv preprint Clear and detailed COVID-19 plans that explicitly state how existing programs will be adapted according to their context need to be developed and shared immediately. ([10.1101/2020.03.27.20045500](https://www.doi.org/10.1101/2020.03.27.20045500))
+
+- To improve this, public health officials should provide a timely, clear rationale for quarantine and information about protocols; emphasise social norms to encourage this altruistic behaviour; increase the perceived benefit that engaging in quarantine will have on public health; and ensure that sufficient supplies of food, medication and other essentials are provided. ([10.1101/2020.03.17.20037408](https://www.doi.org/10.1101/2020.03.17.20037408))
+
+
+**Cluster 2:**
+
+- The Canadian Pandemic Influenza Plan (CPIP) for the Health Sector (the backbone of which informs COVID-19 pandemic preparedness and response) identifies two main objectives for responding to a pandemic: (1) to minimize serious morbidity and mortality, and (2) to minimize societal disruption (11) . ([10.1101/2020.03.24.20042705](https://www.doi.org/10.1101/2020.03.24.20042705))
+
+- However, in the absence of effective medical interventions, these measures must be implemented and the success of these measures, despite their disruptive impact on social-economic activities, depends heavily on how these measures are adapted to the specific scenario, in terms not only of clinical and epidemiological variables but also of social aspects, including social habits, juridical provisions, and economic-financial resources. ([10.1101/2020.03.09.20033464](https://www.doi.org/10.1101/2020.03.09.20033464))
+
+- Recognising the extent to which disease outbreaks affect women and men differently is a fundamental step to understanding the primary and secondary effects of a health emergency on different individuals and communities, and for creating effective, equitable policies and interventions. ([10.1016/s0140-6736(20)30526-2](https://www.doi.org/10.1016/s0140-6736(20)30526-2))
+
+
+--------------------
+
+**Query**: Research on why people fail to comply with public health advice, even if they want to do so (e.g., social or financial costs may be too high).
+
+**Number of sentences kept by distance filtering**: 8976
+
+**Number of unique papers found among these sentences**: 1211
+
+**Number of clusters automatically designed**: 3
+
+**Task**: What do we know about non-pharmaceutical interventions?
+
+**Subtask**: Research on why people fail to comply with public health advice, even if they want to do so (e.g., social or financial costs may be too high).
+
+**Cluster 0:**
+
+- Beyond introducing sick pay for those who need to self-isolate or care for family members, joint government and industry emergency policy measures should seek to counter family economic crises by delaying rent and mortgage payments for example, particularly for vulnerable and precarious workers. ([10.1101/2020.03.15.20036293](https://www.doi.org/10.1101/2020.03.15.20036293))
+
+- (14) More generally, states with more limited economic resources are likely far less able to weather the deprivations caused by economic shutdowns, or to expand social insurance protections during mandated social distancing, and thus may be considerably more reluctant to take these steps. ([10.1101/2020.03.30.20046326](https://www.doi.org/10.1101/2020.03.30.20046326))
+
+- Are these skeptics -about health measure efficacy, the public, or the governmentdefecting from public health protocols? ([10.1101/2020.03.27.20042820](https://www.doi.org/10.1101/2020.03.27.20042820))
+
+
+**Cluster 1:**
+
+- Financial reimbursements should be provided where possible and programmes developed to provide financial support throughout the quarantine period. ([10.1016/s0140-6736(20)30460-8](https://www.doi.org/10.1016/s0140-6736(20)30460-8))
+
+- . ([10.1101/2020.03.15.20036293](https://www.doi.org/10.1101/2020.03.15.20036293))
+
+- As time permits, the community pharmacist may wish to explore the patient's perspective on benefits may come with spending more time at home. ([10.1016/j.sapharm.2020.03.017](https://www.doi.org/10.1016/j.sapharm.2020.03.017))
+
+
+**Cluster 2:**
+
+- 25 This observation is consistent with the conclusions of a review of 15 studies that found a median reduction of 23% (range 12-82) in the cumulative influenza A H1N1 attack rate with workplace distancing alone. ([10.1016/s1473-3099(20)30162-6](https://www.doi.org/10.1016/s1473-3099(20)30162-6))
+
+- (18) For governors already reluctant to impose draconian measures, this messaging both provided cover for inaction and may have reduced public support, particularly among Republican voters. ([10.1101/2020.03.30.20046326](https://www.doi.org/10.1101/2020.03.30.20046326))
+
+- Given the developing situation with coronavirus, policy makers urgently need evidence synthesis to pro duce guidance for the public. ([10.1016/s0140-6736(20)30460-8](https://www.doi.org/10.1016/s0140-6736(20)30460-8))
+
+
+--------------------
+
+**Query**: Research on the economic impact of this or any pandemic.
+
+**Number of sentences kept by distance filtering**: 3127
+
+**Number of unique papers found among these sentences**: 1056
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What do we know about non-pharmaceutical interventions?
+
+**Subtask**: Research on the economic impact of this or any pandemic. This would include identifying policy and programmatic alternatives that lessen/mitigate risks to critical government services, food distribution and supplies, access to critical household supplies, and access to health diagnoses, treatment, and needed care, regardless of ability to pay.
+
+**Cluster 0:**
+
+- The trade-offs between the economic costs of preventive interventions and the health impacts of COVD19 have generated political controversy. ([10.1101/2020.03.25.20041475](https://www.doi.org/10.1101/2020.03.25.20041475))
+
+- For economics, financial risks may be perceived at an early stage and thus global economic crises could be evaded to some extent [8] . ([10.1016/j.physrep.2019.07.001](https://www.doi.org/10.1016/j.physrep.2019.07.001))
+
+- The costs of the epidemic are not limited to medical aspects, as the virus has led to significant sociological, psychological and economic effects globally. ([10.1016/j.jaut.2020.102434](https://www.doi.org/10.1016/j.jaut.2020.102434))
+
+
+**Cluster 1:**
+
+- COVID-19 is having a great impact on public health, mortality and economy worldwide, in spite of the efforts to prevent its epidemy. ([10.1101/2020.03.05.20031872](https://www.doi.org/10.1101/2020.03.05.20031872))
+
+- Epidemics of infectious diseases have disastrous impacts on health, social and economic conditions in developing as well as developed countries. ([10.1101/2020.03.29.20047035](https://www.doi.org/10.1101/2020.03.29.20047035))
+
+- 11, 12 This outbreak was associated with substantial morbidity and mortality, as well as having substantial economic, social, and health security effects. ([10.1016/s0140-6736(19)33221-0](https://www.doi.org/10.1016/s0140-6736(19)33221-0))
+
+
+--------------------
+
+**Query**: How widespread current exposure is to be able to make immediate policy recommendations on mitigation measures. Denominators for testing and a mechanism for rapidly sharing that information, including demographics, to the extent possible. Sampling methods to determine asymptomatic disease (e.g., use of serosurveys (such as convalescent samples) and early detection of disease (e.g., use of screening of neutralizing antibodies such as ELISAs).
+
+**Number of sentences kept by distance filtering**: 16654
+
+**Number of unique papers found among these sentences**: 1824
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What do we know about diagnostics and surveillance?
+
+**Subtask**: How widespread current exposure is to be able to make immediate policy recommendations on mitigation measures. Denominators for testing and a mechanism for rapidly sharing that information, including demographics, to the extent possible. Sampling methods to determine asymptomatic disease (e.g., use of serosurveys (such as convalescent samples) and early detection of disease (e.g., use of screening of neutralizing antibodies such as ELISAs).
+
+**Cluster 0:**
+
+- Conclusion: To mitigate possible epidemics, additional efforts to improve the compliance of home-quarantine are warranted along with other containment policies. ([10.1101/2020.02.15.20023234](https://www.doi.org/10.1101/2020.02.15.20023234))
+
+- Note that the orange and yellow curves overlay the dark blue and grey curves at first, from week 11. ([10.1101/2020.03.20.20040055](https://www.doi.org/10.1101/2020.03.20.20040055))
+
+- Public health bodies and research institutions should continue to work together to continuously evaluate the situation, to address knowledge gaps and to assess the effectiveness of targeted interventions with new tests, treatments and vaccines as they are developed. ([10.2807/1560-7917.es.2020.25.9.2000202](https://www.doi.org/10.2807/1560-7917.es.2020.25.9.2000202))
+
+
+**Cluster 1:**
+
+- The results of this study provide policy makers in Singapore and other countries with evidence to begin the implementation of relatively standard outbreak control measures that could mitigate or reduce local transmission rates if deployed effectively and in a timely manner. ([10.1016/s1473-3099(20)30162-6](https://www.doi.org/10.1016/s1473-3099(20)30162-6))
+
+- The success of NPIs depended on the epidemiological characteristics of the disease as well as the effectiveness of the measures [4] . ([10.1101/2020.03.20.20039644](https://www.doi.org/10.1101/2020.03.20.20039644))
+
+- Given the lack of both specific effective drugs and an efficient preventive vaccine Health Authorities have focused on public health management measures for the restriction of the viral spread. ([10.1101/2020.03.19.20038158](https://www.doi.org/10.1101/2020.03.19.20038158))
+
+
+--------------------
+
+**Query**: Efforts to increase capacity on existing diagnostic platforms and tap into existing surveillance platforms.
+
+**Number of sentences kept by distance filtering**: 1980
+
+**Number of unique papers found among these sentences**: 687
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What do we know about diagnostics and surveillance?
+
+**Subtask**: Efforts to increase capacity on existing diagnostic platforms and tap into existing surveillance platforms.
+
+**Cluster 0:**
+
+- 1 Ability to produce NA quickly also increases the speed of development and deployment of new test kits to health systems, providing much needed diagnostic capabilities for the detection of novel pathogens (such as SARS-CoV-2). ([10.1101/2020.03.23.002931](https://www.doi.org/10.1101/2020.03.23.002931))
+
+- A protocol for performing this assay is provided in the Methods section and can be used for testing any of the other designs we have provided. ([10.1101/2020.02.26.967026](https://www.doi.org/10.1101/2020.02.26.967026))
+
+- is the (which was not peer-reviewed) The copyright holder for this preprint . ([10.1101/2020.02.26.20028373](https://www.doi.org/10.1101/2020.02.26.20028373))
+
+
+**Cluster 1:**
+
+- Expansion of test menu options for existing POC or near-POC NAAT platforms will strengthen incountry response capacity to endemic diseases and simultaneously ensure countries are prepared for future pandemics. ([10.1136/bmjgh-2018-001105](https://www.doi.org/10.1136/bmjgh-2018-001105))
+
+- Because surveillance relies on the collection, collation and interpretation of large amounts of data, technological innovation has the potential to enhance the efficiency and accuracy of population-based communicable disease research and surveillance systems. ([10.1186/s12961-019-0440-3](https://www.doi.org/10.1186/s12961-019-0440-3))
+
+- CC-BY 4.0 International license It is made available under a author/funder, who has granted medRxiv a license to display the preprint in perpetuity. ([10.1101/2020.02.26.20028373](https://www.doi.org/10.1101/2020.02.26.20028373))
+
+
+--------------------
+
+**Query**: Recruitment, support, and coordination of local expertise and capacity (public, private—commercial, and non-profit, including academic), including legal, ethical, communications, and operational issues.
+
+**Number of sentences kept by distance filtering**: 4119
+
+**Number of unique papers found among these sentences**: 866
+
+**Number of clusters automatically designed**: 3
+
+**Task**: What do we know about diagnostics and surveillance?
+
+**Subtask**: Recruitment, support, and coordination of local expertise and capacity (public, private—commercial, and non-profit, including academic), including legal, ethical, communications, and operational issues.
+
+**Cluster 0:**
+
+- For pharmacists to assume a role in the health emergency preparedness and response arrangements at community level, public private partnership and the application of real-world data have been shown to be vital. ([10.1016/j.sapharm.2020.02.003](https://www.doi.org/10.1016/j.sapharm.2020.02.003))
+
+- Governments are tasked with three critical duties in the response to COVID-19: the coordination of services with access to COVID-19 testing kits, medical supplies and equipment, accurate and timely communication, and maintaining public trust in their government [5] . ([10.7759/cureus.7345](https://www.doi.org/10.7759/cureus.7345))
+
+- Palliative care leaders will have unique perspectives and priorities which need to be communicated to hospital and health system leadership. ([10.1016/j.jpainsymman.2020.03.018](https://www.doi.org/10.1016/j.jpainsymman.2020.03.018))
+
+
+**Cluster 1:**
+
+- A proper One Health response to a zoonotic disease requires several elements, including political support, appreciable preparedness and response plans, a joint vision on epidemiologic surveillance for MERS-CoV and zoonotic diseases in general, joint use of laboratory diagnostic capabilities, funding, and means for crisis communication and health education. ([10.3201/eid2503.171702](https://www.doi.org/10.3201/eid2503.171702))
+
+- Because of the insufficient quality of information that exists about the state of national and regional preparedness capacities, we used data and information from IHR State Party Annual Reporting tool to review existing levels of health security capacities to prevent, detect, respond, and establish enabling functions for an effective response, and operational readiness against public health risks and events, including infectious disease outbreaks. ([10.1016/s0140-6736(20)30553-5](https://www.doi.org/10.1016/s0140-6736(20)30553-5))
+
+- The Senegalese government also provides some technical support. ([10.1016/j.tmaid.2019.04.010](https://www.doi.org/10.1016/j.tmaid.2019.04.010))
+
+
+**Cluster 2:**
+
+- Three GCC countries reported joint activities with the Netherlands, Hong Kong, Germany, CDC, and the UK reference laboratories to fulfill international diagnostic and research requirements. ([10.3201/eid2503.171702](https://www.doi.org/10.3201/eid2503.171702))
+
+- WHO's global COVID-19 strategic preparedness and response plan 13 therefore prioritises countries with weak health systems for technical and operational support from international partners. ([10.1016/s0140-6736(20)30069-6](https://www.doi.org/10.1016/s0140-6736(20)30069-6))
+
+- WHO's global COVID-19 strategic preparedness and response plan13 therefore prioritises countries with weak health systems for technical and operational support from international partners. ([10.1016/s0140-6736(20)30069-6](https://www.doi.org/10.1016/s0140-6736(20)30069-6))
+
+
+--------------------
+
+**Query**: National guidance and guidelines about best practices to states (e.g., how states might leverage universities and private laboratories for testing purposes, communications to public health officials and the public).
+
+**Number of sentences kept by distance filtering**: 7437
+
+**Number of unique papers found among these sentences**: 1306
+
+**Number of clusters automatically designed**: 3
+
+**Task**: What do we know about diagnostics and surveillance?
+
+**Subtask**: National guidance and guidelines about best practices to states (e.g., how states might leverage universities and private laboratories for testing purposes, communications to public health officials and the public).
+
+**Cluster 0:**
+
+- 4 (flu or influenza or "respiratory tract infection*" or "respiratory infection*" or bronchitis or "common cold" or laryngitis or pharyngitis or pneumonia or rhinitis or rhinoscleroma or sinusitis or supraglottitis or tracheitis or "whooping cough").tw,kf. ([10.1101/2020.03.19.20039180](https://www.doi.org/10.1101/2020.03.19.20039180))
+
+- To this effect forensic best practices should always be informed by the advice and latest recommendations from national health authorities and international health organizations, especially the World Health Organization (WHO) [4] , for health personnel handling COVID-19 cases. ([10.1016/j.fsisyn.2020.03.007](https://www.doi.org/10.1016/j.fsisyn.2020.03.007))
+
+- Overall, the highest SEYLL related to MERS-CoV infection was in the early four years of the onset of the infection (2012 to 2015) and then in mid-2015 the SEYLL in MERS cases declined rapidly and in the last four years of the MERS-CoV pandemic (216 to 2019), there has been a significant reduction in the burden of mortality related to MERS-CoV infection in morbid cases. ([10.1186/s12889-019-7899-2](https://www.doi.org/10.1186/s12889-019-7899-2))
+
+
+**Cluster 1:**
+
+- author/funder, who has granted medRxiv a license to display the preprint in perpetuity. ([10.1101/2020.03.19.20038752](https://www.doi.org/10.1101/2020.03.19.20038752))
+
+- CC-BY-NC-ND 4.0 International license It is made available under a author/funder, who has granted medRxiv a license to display the preprint in perpetuity. ([10.1101/2020.03.01.20029884](https://www.doi.org/10.1101/2020.03.01.20029884))
+
+- Our finding in sheep and goats, thus, provides update information of spillover of BCoV from cattle. ([10.1016/j.vetmic.2019.108544](https://www.doi.org/10.1016/j.vetmic.2019.108544))
+
+
+**Cluster 2:**
+
+- Finally, let's help each other, because we need each other. ([10.1016/j.chmed.2020.03.004](https://www.doi.org/10.1016/j.chmed.2020.03.004))
+
+- All health professionals should be involved in the development and implementation of recommendations for companies and their environments ([10.1016/s2468-2667(20)30051-7](https://www.doi.org/10.1016/s2468-2667(20)30051-7))
+
+- 6 Singapore health authorities provide daily information on mainstream media, the Ministry of Health has Telegram and WhatsApp groups set up with doctors in the public and private sectors where more detailed clinical and logistics information is shared, and authorities use websites to debunk circulating misinformation. ([10.1016/s0140-6736(20)30551-1](https://www.doi.org/10.1016/s0140-6736(20)30551-1))
+
+
+--------------------
+
+**Query**: Development of a radi covid-19 test
+
+**Number of sentences kept by distance filtering**: 635
+
+**Number of unique papers found among these sentences**: 338
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What do we know about diagnostics and surveillance?
+
+**Subtask**: Development of a point-of-care test (like a rapid influenza test) and rapid bed-side tests, recognizing the tradeoffs between speed, accessibility, and accuracy.
+
+**Cluster 0:**
+
+- Development and Clinical Application of A Rapid IgM-IgG Combined Antibody Test for SARS-CoV-2 Infection Diagnosis ([10.1002/jmv.25727](https://www.doi.org/10.1002/jmv.25727))
+
+- These properties warrant further development. ([10.3390/antib8030042](https://www.doi.org/10.3390/antib8030042))
+
+- The serology characteristics and complement diagnosis value of antibody test to RNA test needs to be demonstrated. ([10.1101/2020.03.23.20041707](https://www.doi.org/10.1101/2020.03.23.20041707))
+
+
+**Cluster 1:**
+
+- Two-sided tests with a significance level of 0.05 were applied. ([10.1101/2020.03.22.20041277](https://www.doi.org/10.1101/2020.03.22.20041277))
+
+- We assumed that the serial interval of MERS-CoV had a Gamma distribution with a mean of 6.8 days and a standard deviation of 4.1 days, as described elsewhere 40 . ([10.1038/s41598-019-43586-9](https://www.doi.org/10.1038/s41598-019-43586-9))
+
+- The differences of clinical and laboratory data and imaging features between the patient with and without severe/critical progression were compared using Chi-square test, Fisher's exact test, independent t test and paired t test. ([10.1101/2020.03.20.20037325](https://www.doi.org/10.1101/2020.03.20.20037325))
+
+
+--------------------
+
+**Query**: Rapid design and execution of targeted surveillance experiments calling for all potential testers using PCR in a defined area to start testing and report to a specific entity. These experiments could aid in collecting longitudinal samples, which are critical to understanding the impact of ad hoc local interventions (which also need to be recorded).
+
+**Number of sentences kept by distance filtering**: 9359
+
+**Number of unique papers found among these sentences**: 1586
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What do we know about diagnostics and surveillance?
+
+**Subtask**: Rapid design and execution of targeted surveillance experiments calling for all potential testers using PCR in a defined area to start testing and report to a specific entity. These experiments could aid in collecting longitudinal samples, which are critical to understanding the impact of ad hoc local interventions (which also need to be recorded).
+
+**Cluster 0:**
+
+- WHO's response system includes three virtual groups based on those developed for SARS to collate real time information to inform real time guidelines, and a first candidate vaccine is ready for laboratory testing within 4 weeks of the virus being identified. ([10.1017/s0950268820000254](https://www.doi.org/10.1017/s0950268820000254))
+
+- A defined set of Target Product Profiles for diagnostic technologies will be developed by WHO to address these gaps in MERS-CoV outbreak management. ([10.1136/bmjgh-2018-001105](https://www.doi.org/10.1136/bmjgh-2018-001105))
+
+- A defined set of Target Product Profiles for diagnostic technologies will be developed by WHO to address these gaps in MERS-CoV outbreak management. ([10.1136/bmjgh-2018-001105](https://www.doi.org/10.1136/bmjgh-2018-001105))
+
+
+**Cluster 1:**
+
+- We propose a general protocol, for setting timely active random surveillance of COVID-19, at the human community level, with systematic repeated detection efforts. ([10.1016/j.onehlt.2020.100129](https://www.doi.org/10.1016/j.onehlt.2020.100129))
+
+- This approach demonstrated a wide variety of viruses and significant variability from year to year. ([10.1016/j.jamda.2019.09.003](https://www.doi.org/10.1016/j.jamda.2019.09.003))
+
+- However, our findings indicate that both groups were uncertain about the public acceptability of routine collection and linkage of such data to enhance surveillance. ([10.1186/s12961-019-0440-3](https://www.doi.org/10.1186/s12961-019-0440-3))
+
+
+--------------------
+
+**Query**: Separation of assay development issues from instruments, and the role of the private sector to help quickly migrate assays onto those devices.
+
+**Number of sentences kept by distance filtering**: 1049
+
+**Number of unique papers found among these sentences**: 413
+
+**Number of clusters automatically designed**: 3
+
+**Task**: What do we know about diagnostics and surveillance?
+
+**Subtask**: Separation of assay development issues from instruments, and the role of the private sector to help quickly migrate assays onto those devices.
+
+**Cluster 0:**
+
+- In order to enable and sustain the capacity for a rapid outbreak response, laboratories must have access to high-quality reagents and instrumentation, along with technical support and cold-chain transport when necessary. ([10.1136/bmjgh-2018-001105](https://www.doi.org/10.1136/bmjgh-2018-001105))
+
+- FACS methods utilize an authentically folded protein on the cell surface; however, cytometers are relatively expensive and sophisticated instruments that require management by highlytrained specialists and on-going maintenance by service engineers. ([10.1016/j.jviromet.2018.11.009](https://www.doi.org/10.1016/j.jviromet.2018.11.009))
+
+- However, even in such cases, as underlined in the present manuscript, the need for anonymizing medical data is emphasized to ensure that the use of current technologies does not breach data privacy and security requirements, across different geographies. ([10.3390/healthcare8010046](https://www.doi.org/10.3390/healthcare8010046))
+
+
+**Cluster 1:**
+
+- [8] supports that data from various technological products can help enrich health databases, provide more accurate, efficient, comprehensive and real-time information on outbreaks and their dispersal, thus aiding in the provision of better urban fabric risk management decisions. ([10.3390/healthcare8010046](https://www.doi.org/10.3390/healthcare8010046))
+
+- This is valid as smart cities host a rich array of technological products [6, 7] that can assist in early detection of outbreaks; either through thermal cameras or Internet of Things (IoT) sensors, and early discussions could render efforts towards better management of similar situations in case of future potential outbreaks, and to improve the health fabric of cities generally. ([10.3390/healthcare8010046](https://www.doi.org/10.3390/healthcare8010046))
+
+- Leaders should also take initiatives to provide basic provisions during work hours, such as easy access to water, healthy snacks, chargers for phones and other devices, and toiletries. ([10.7326/m20-1033](https://www.doi.org/10.7326/m20-1033))
+
+
+**Cluster 2:**
+
+- First, communications are seen to be geography-restricted (restricted to a given location), such that they seldom expand or communicate with their like, installed beyond their restricted areas. ([10.3390/healthcare8010046](https://www.doi.org/10.3390/healthcare8010046))
+
+- Thus the relative proportion of newly infected vulnerable individuals (requiring hospitalization and possibility of death) per unit time is determined by the product µI(t). ([10.1101/2020.03.23.20041897](https://www.doi.org/10.1101/2020.03.23.20041897))
+
+- In assessing the contribution of GIS and spatial big data technology to the containment of the COVID-19 epidemic, it is clear that many challenges remain to be studied. ([10.1016/j.geosus.2020.03.005](https://www.doi.org/10.1016/j.geosus.2020.03.005))
+
+
+--------------------
+
+**Query**: Latency issues and when there is sufficient viral load to detect the pathogen, and understanding of what is needed in terms of biological and environmental sampling.
+
+**Number of sentences kept by distance filtering**: 9159
+
+**Number of unique papers found among these sentences**: 1710
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What do we know about diagnostics and surveillance?
+
+**Subtask**: Latency issues and when there is sufficient viral load to detect the pathogen, and understanding of what is needed in terms of biological and environmental sampling.
+
+**Cluster 0:**
+
+- Instead, the evaluation can be done through the patients' subjective initiative and active participation in self-monitoring of the disease, which maximizes the reasonable allocation of medical resources. ([10.1101/2020.02.26.20028084](https://www.doi.org/10.1101/2020.02.26.20028084))
+
+- One of the limitations is working at higher containment. ([10.1101/2020.03.05.20032011](https://www.doi.org/10.1101/2020.03.05.20032011))
+
+- Malaria with Dengue, Chikungunya, Filaria or Helminth) co-infections, to name a few. ([10.1016/j.cnsns.2020.105228](https://www.doi.org/10.1016/j.cnsns.2020.105228))
+
+
+**Cluster 1:**
+
+- We link gridded climate data to country-level COVID-19 cases by aggregating grid cell information over country boundaries. ([10.1101/2020.03.26.20044420](https://www.doi.org/10.1101/2020.03.26.20044420))
+
+- Therefore, identifying viruses and monitoring the severity of their effects will always remain a major scientific and clinical endeavor. ([10.1371/journal.pone.0228544](https://www.doi.org/10.1371/journal.pone.0228544))
+
+- 2a) , two domains less than previously used in the analyses conducted between 2009 and 2015 (refs. ([10.1038/s41564-020-0695-z](https://www.doi.org/10.1038/s41564-020-0695-z))
+
+
+--------------------
+
+**Query**: Use of diagnostics such as host response markers (e.g., cytokines) to detect early disease or predict severe disease progression, which would be important to understanding best clinical practice and efficacy of therapeutic interventions.
+
+**Number of sentences kept by distance filtering**: 16330
+
+**Number of unique papers found among these sentences**: 2198
+
+**Number of clusters automatically designed**: 3
+
+**Task**: What do we know about diagnostics and surveillance?
+
+**Subtask**: Use of diagnostics such as host response markers (e.g., cytokines) to detect early disease or predict severe disease progression, which would be important to understanding best clinical practice and efficacy of therapeutic interventions.
+
+**Cluster 0:**
+
+- https://doi.org/10.1101/2020.03.04.20029538 doi: medRxiv preprint enabled the detection of virus mutations; in particular, we detected a nucleotide mutation in SARS-243 CoV-2 that was undetected in the genomic data in the current GISAID database. ([10.1101/2020.03.04.20029538](https://www.doi.org/10.1101/2020.03.04.20029538))
+
+- Multinucleated giant cells with atypical enlarged pneumocytes featured by large nucleoli, prominent nucleoli, and amphophilic granular cytoplasm were showed in the intraalveolar spaces, suggesting viral cytopathic-like changes [55] . ([10.1016/j.ijantimicag.2020.105951](https://www.doi.org/10.1016/j.ijantimicag.2020.105951))
+
+- However, the basic reproductive number estimated during the H1N1 outbreak in Mexico in 2009 ranged from 1.3-1.7 11 . ([10.1016/j.chest.2020.03.032](https://www.doi.org/10.1016/j.chest.2020.03.032))
+
+
+**Cluster 1:**
+
+- The current approach is to develop better diagnostics to identify and treat sepsis early, and understand the immune profile (activation versus suppression) in this disease. ([10.1016/j.antiviral.2019.04.006](https://www.doi.org/10.1016/j.antiviral.2019.04.006))
+
+- Thus, the blood transcriptome may not be as informative as the nasal epithelial transcriptional response for asymptomatic HRV infection. ([10.1016/b978-0-12-801496-7.00009-5](https://www.doi.org/10.1016/b978-0-12-801496-7.00009-5))
+
+- In addition, it is possible to detect co-infections that may influence disease severity or therapeutic strategies [7] . ([10.3967/bes2019.058](https://www.doi.org/10.3967/bes2019.058))
+
+
+**Cluster 2:**
+
+- that could help inform disease progression, treatment options, and animal model development.ImportanceWith the ongoing outbreak of COVID-19 disease, differences between the SARS-CoV-2 and the original SARS-CoV could be leveraged to inform disease progression and eventual treatment options. ([10.1101/2020.03.07.982264](https://www.doi.org/10.1101/2020.03.07.982264))
+
+- CRRT was reported to have a positive effect on the treatment of adenovirus pneumonia 42 . ([10.1101/2020.03.16.20036780](https://www.doi.org/10.1101/2020.03.16.20036780))
+
+- Since its inception in 2014, PDVAC has reviewed the pipeline and vaccine development status of 33 different pathogens. ([10.1016/j.vaccine.2016.10.090](https://www.doi.org/10.1016/j.vaccine.2016.10.090))
+
+
+--------------------
+
+**Query**: Policies and protocols for screening and testing.
+
+**Number of sentences kept by distance filtering**: 1353
+
+**Number of unique papers found among these sentences**: 568
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What do we know about diagnostics and surveillance?
+
+**Subtask**: Policies and protocols for screening and testing.
+
+**Cluster 0:**
+
+- During the period from January 23 to February 11, although the epidemic prevention and control has achieved initial results, its development still shows an expanding trend and has not yet entered a period of decline. ([10.1101/2020.03.15.20036756](https://www.doi.org/10.1101/2020.03.15.20036756))
+
+- It's more urgent to implement strict and efficient infection control protocols. ([10.3760/cma.j.issn.1002-0098.2020.0001](https://www.doi.org/10.3760/cma.j.issn.1002-0098.2020.0001))
+
+- Many of these therapies have cardiovascular side effects, however, and caution must be used when applying them to patients with congenital heart disease. ([10.1016/j.ijcard.2020.03.063](https://www.doi.org/10.1016/j.ijcard.2020.03.063))
+
+
+**Cluster 1:**
+
+- Limited capabilities in testing result in difficult to guide policies and mitigate lack of preparation. ([10.1101/2020.03.14.20036178](https://www.doi.org/10.1101/2020.03.14.20036178))
+
+- needs. ([10.1101/2020.03.19.20039057](https://www.doi.org/10.1101/2020.03.19.20039057))
+
+- There is a need for international consensus and adoption of minimum standards for tests used in diagnosis, surveillance and research, following WHO's recommended algorithm for human cases 82 and OIE recommendation for animal health. ([10.1136/bmjgh-2018-001105](https://www.doi.org/10.1136/bmjgh-2018-001105))
+
+
+--------------------
+
+**Query**: Policies to mitigate the effects on supplies associated with mass testing, including swabs and reagents.
+
+**Number of sentences kept by distance filtering**: 6283
+
+**Number of unique papers found among these sentences**: 1236
+
+**Number of clusters automatically designed**: 3
+
+**Task**: What do we know about diagnostics and surveillance?
+
+**Subtask**: Policies to mitigate the effects on supplies associated with mass testing, including swabs and reagents.
+
+**Cluster 0:**
+
+- The map on 28 th Feb. showed that China was the largest epidemic center and had the most cases exported to other countries and territories ( Figure 3A ); but these cases were mainly reported before 6 th Feb. (Table S1 ). ([10.1101/2020.03.20.20039602](https://www.doi.org/10.1101/2020.03.20.20039602))
+
+- In China, local outbreak dynamics were highly correlated with travel between Wuhan and the outbreak dynamics therein during the early months of the epidemic . ([10.1101/2020.03.25.20043828](https://www.doi.org/10.1101/2020.03.25.20043828))
+
+- We report an innovative approach to home assessment that, in collaboration with public health, enables safe evaluation and specimen collection outside the healthcare setting, avoiding unnecessary exposures and resource utilization. ([10.1093/cid/ciaa256](https://www.doi.org/10.1093/cid/ciaa256))
+
+
+**Cluster 1:**
+
+- Overall, potential RT-PCR vulnerabilities include general preanalytical issues such as identification problems, inadequate procedures for collection, handling, transport and storage of the swabs, collection of inappropriate or inadequate material (for quality or volume), presence of interfering substances, manual errors, as well as specific aspects such as sample contamination and testing patients receiving antiretroviral therapy. ([10.1515/cclm-2020-0285](https://www.doi.org/10.1515/cclm-2020-0285))
+
+- The turnaround time to receive a test result can take days to weeks, depending on laboratory proximity, sample transport options and laboratory processing capacity, 72 75 and infrastructure requirements place most PCR systems in reference laboratories, which may not be ideal for diseases like MERS-CoV that recommend immediate isolation for infections detected across a variety of settings. ([10.1136/bmjgh-2018-001105](https://www.doi.org/10.1136/bmjgh-2018-001105))
+
+- In addition to being used in the clinic for infectious disease diagnostics in previous epidemics [14, 15] , pooling has been proven to work for RT-qPCR [16, 17] , a time-consuming step for which the reagents are expected to be in short supply [18] . ([10.1101/2020.03.26.20039438](https://www.doi.org/10.1101/2020.03.26.20039438))
+
+
+**Cluster 2:**
+
+- While the frequency of infection in these groups may be low, diagnosing even a single positive person typically requires quarantine of the entire group to prevent further spread in the community. ([10.1101/2020.03.26.20039438](https://www.doi.org/10.1101/2020.03.26.20039438))
+
+- Limited capabilities in testing result in difficult to guide policies and mitigate lack of preparation. ([10.1101/2020.03.14.20036178](https://www.doi.org/10.1101/2020.03.14.20036178))
+
+- One of the key issues for controlling COVID-19 is to set up a suitable quarantine period which could capture about 95% of the cases developing symptoms so that the practice of isolations will be more effective and save public health resources. ([10.1101/2020.03.15.20036533](https://www.doi.org/10.1101/2020.03.15.20036533))
+
+
+--------------------
+
+**Query**: Technology roadmap for diagnostics.
+
+**Number of sentences kept by distance filtering**: 548
+
+**Number of unique papers found among these sentences**: 246
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What do we know about diagnostics and surveillance?
+
+**Subtask**: Technology roadmap for diagnostics.
+
+**Cluster 0:**
+
+- An updated roadmap for MERS-CoV research and product development: focus on diagnostics ([10.1136/bmjgh-2018-001105](https://www.doi.org/10.1136/bmjgh-2018-001105))
+
+- BARDA plans to advance respiratory virus therapeutics by focusing on three topics: improving diagnostic testing, pursuing host-directed therapeutics, and improving the identification and treatment of sepsis. ([10.1016/j.antiviral.2019.04.006](https://www.doi.org/10.1016/j.antiviral.2019.04.006))
+
+- Recently, the WHO has published a Global Research Roadmap with immediate, mid-term and longer-term priorities to enable the implementation of priority research [8] . ([10.1101/2020.03.26.20044164](https://www.doi.org/10.1101/2020.03.26.20044164))
+
+
+**Cluster 1:**
+
+- 81, 82 Clinical specimens must be collected by trained staff using appropriate personal protective equipmenteg, when taking nasopharyngeal and oropharyngeal specimens, Dacron or rayon swabs specifically designed for collecting specimens for virology must be used. ([10.1016/s0140-6736(19)33221-0](https://www.doi.org/10.1016/s0140-6736(19)33221-0))
+
+- MERS-CoV is 1 of the 10 high-threat pathogens on the WHO Research and Development Blueprint (7) , a document that sets out a roadmap for research and development of diagnostics, preventive and therapeutic products for prevention, and early detection and response to these high-priority pathogens. ([10.3201/eid2510.190497](https://www.doi.org/10.3201/eid2510.190497))
+
+- The WHO roadmap for MERS-CoV lists several priority activities, including improved diagnostics and vaccines for humans and camels as well as basic and translational research (8) . ([10.3201/eid2510.190497](https://www.doi.org/10.3201/eid2510.190497))
+
+
+--------------------
+
+**Query**: Barriers to developing and scaling up new diagnostic tests (e.g., market forces), how future coalition and accelerator models (e.g., Coalition for Epidemic Preparedness Innovations) could provide critical funding for diagnostics, and opportunities for a streamlined regulatory environment.
+
+**Number of sentences kept by distance filtering**: 6414
+
+**Number of unique papers found among these sentences**: 1244
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What do we know about diagnostics and surveillance?
+
+**Subtask**: Barriers to developing and scaling up new diagnostic tests (e.g., market forces), how future coalition and accelerator models (e.g., Coalition for Epidemic Preparedness Innovations) could provide critical funding for diagnostics, and opportunities for a streamlined regulatory environment.
+
+**Cluster 0:**
+
+- 28 17 years later, we can draw upon the lessons learnt from SARS. ([10.1016/s1473-3099(20)30129-8](https://www.doi.org/10.1016/s1473-3099(20)30129-8))
+
+- To accelerate the process, the Coalition for Epidemic Preparedness Innovation has recently launched a call for proposals for the development of a human MERS-CoV vaccine in order to engage with developers interested in supporting these efforts. ([10.1136/bmjgh-2018-001105](https://www.doi.org/10.1136/bmjgh-2018-001105))
+
+- It is well accepted that the extraordinary rate of Ebola virus vaccine development was as a result of unprecedented collaboration and co-ordination of global vaccine R&D activities, and the availability of a number of candidate vaccines that could enter clinical phase evaluation [55] . ([10.1016/j.vaccine.2016.10.090](https://www.doi.org/10.1016/j.vaccine.2016.10.090))
+
+
+**Cluster 1:**
+
+- Learning from the effective measures used and problems encountered in the prevention and control of this epidemic, the government is likely to set up an emergency decision-making organization when responding to future public health emergencies. ([10.1016/j.micinf.2020.02.004](https://www.doi.org/10.1016/j.micinf.2020.02.004))
+
+- Zarei et al. ([10.1016/j.physrep.2019.07.001](https://www.doi.org/10.1016/j.physrep.2019.07.001))
+
+- It is suggested that the disease control institutions should strengthen the construction of these aspects in future. ([10.3760/cma.j.cn112150-20200220-00149](https://www.doi.org/10.3760/cma.j.cn112150-20200220-00149))
+
+
+--------------------
+
+**Query**: New platforms and technology (e.g., CRISPR) to improve response times and employ more holistic approaches to COVID-19 and future diseases.
+
+**Number of sentences kept by distance filtering**: 3023
+
+**Number of unique papers found among these sentences**: 916
+
+**Number of clusters automatically designed**: 3
+
+**Task**: What do we know about diagnostics and surveillance?
+
+**Subtask**: New platforms and technology (e.g., CRISPR) to improve response times and employ more holistic approaches to COVID-19 and future diseases.
+
+**Cluster 0:**
+
+- These key traits of the CRISPR method are critical for virus detection in regions that lack resources to use the currently available methods. ([10.1101/2020.02.29.971127](https://www.doi.org/10.1101/2020.02.29.971127))
+
+- Recently, studies have shown that peptides can be utilized as highly potent signal transduction agents for various viral infections. ([10.3389/fmicb.2019.00569](https://www.doi.org/10.3389/fmicb.2019.00569))
+
+- In a study by Zhao et al. ([10.3389/fmicb.2019.00569](https://www.doi.org/10.3389/fmicb.2019.00569))
+
+
+**Cluster 1:**
+
+- Thus, our current network models cannot predict repurposable drugs from the existing anti-virus drugs that target virus proteins only. ([10.1101/2020.02.03.20020263](https://www.doi.org/10.1101/2020.02.03.20020263))
+
+- 2) , our predictions are not 2019-nCoV/SARS-CoV-2 specific by lack of the known host proteins on 2019-nCoV/SARS-CoV-2. ([10.1038/s41421-020-0153-3](https://www.doi.org/10.1038/s41421-020-0153-3))
+
+- The currently known viruses of the species Severe acute respiratory syndrome-related coronavirus may be as (poorly) representative for this particular species as the few individuals that we selected to represent H. sapiens in Fig. ([10.1038/s41564-020-0695-z](https://www.doi.org/10.1038/s41564-020-0695-z))
+
+
+**Cluster 2:**
+
+- We exploited a network-based approach specifically tailored to emerging outbreak settings. ([10.1101/2020.03.22.20041145](https://www.doi.org/10.1101/2020.03.22.20041145))
+
+- These approaches can also be applied in other countries as new 115 strategies to provide PC and can potentially create new forms of pharmacy service in the future. ([10.1016/j.sapharm.2020.03.012](https://www.doi.org/10.1016/j.sapharm.2020.03.012))
+
+- We hope that this proof-of-concept will encourage others to develop mathematical and computational tools tailored for the pooling of SARS-CoV-2 tests. ([10.1101/2020.03.26.20039438](https://www.doi.org/10.1101/2020.03.26.20039438))
+
+
+--------------------
+
+**Query**: Coupling genomics and diagnostic testing on a large scale.
+
+**Number of sentences kept by distance filtering**: 566
+
+**Number of unique papers found among these sentences**: 256
+
+**Number of clusters automatically designed**: 3
+
+**Task**: What do we know about diagnostics and surveillance?
+
+**Subtask**: Coupling genomics and diagnostic testing on a large scale.
+
+**Cluster 0:**
+
+- Here, we describe a new simplified workflow for molecular detection of SARS-CoV-2, without NA extraction, which could serve as an alternative in diagnostic laboratories to overcome chemical based kit-shortage. ([10.1101/2020.03.27.20044495](https://www.doi.org/10.1101/2020.03.27.20044495))
+
+- The accuracy, simplicity and versatility of the new developed method suggests that iLACO assays can be conveniently applied with for 2019-nCoV threat control, even in those cases where specialized molecular biology equipment is not available. ([10.1101/2020.02.20.20025874](https://www.doi.org/10.1101/2020.02.20.20025874))
+
+- In theory, metagenomics techniques enable the identification and genomic characterization of all microorganisms present in a sample with a generic laboratory procedure [16] . ([10.3390/v11110979](https://www.doi.org/10.3390/v11110979))
+
+
+**Cluster 1:**
+
+- [36] proposed SPM. ([10.1016/j.knosys.2020.105812](https://www.doi.org/10.1016/j.knosys.2020.105812))
+
+- This method allows to efficiently detect binding sites but it unfortunately has the drawbacks of any other deep learning approach: it requires the definition and training of several parameters and the creation of a sufficiently large training and test database. ([10.1101/2020.03.24.006197](https://www.doi.org/10.1101/2020.03.24.006197))
+
+- Using standard systems biology methodologies a 14-compartment dynamic model was developed for the Coronavirus epidemic. ([10.1101/2020.03.29.20045039](https://www.doi.org/10.1101/2020.03.29.20045039))
+
+
+**Cluster 2:**
+
+- In the paired read scenario, the previously described method fails, and standard, alignment-based homology testing algorithm cannot find any matches in more than 10% of the cases, resulting in relatively low accuracy. ([10.1101/2020.01.29.925354](https://www.doi.org/10.1101/2020.01.29.925354))
+
+- The abundant RNA structures involved in the replication cycle of betacoronaviruses present ample opportunities for therapeutic development, but our analysis is not complete. ([10.1101/2020.03.27.012906](https://www.doi.org/10.1101/2020.03.27.012906))
+
+- Technological advances have improved the sensitivity, accessibility, and utility of viral diagnostic tools [16] . ([10.3390/ijerph17020564](https://www.doi.org/10.3390/ijerph17020564))
+
+
+--------------------
+
+**Query**: Enhance capabilities for rapid sequencing and bioinformatics to target regions of the genome that will allow specificity for a particular variant.
+
+**Number of sentences kept by distance filtering**: 3235
+
+**Number of unique papers found among these sentences**: 742
+
+**Number of clusters automatically designed**: 3
+
+**Task**: What do we know about diagnostics and surveillance?
+
+**Subtask**: Enhance capabilities for rapid sequencing and bioinformatics to target regions of the genome that will allow specificity for a particular variant.
+
+**Cluster 0:**
+
+- Notably, we were able to validate the same inversion in S gene for sample SRR10903402 as well (Figure 3-B) . ([10.1101/2020.03.27.009480](https://www.doi.org/10.1101/2020.03.27.009480))
+
+- Furthermore, providing nucleotide sequence information through next generation sequencing (NGS) will prove to be essential for the surveillance of SARS-CoV-2's evolution [35] [36] [37] [38] . ([10.1101/2020.03.12.988246](https://www.doi.org/10.1101/2020.03.12.988246))
+
+- The metagenomic method employed here produced Ͼ90% complete genomes for 17/27 samples with a C T value of Յ30 (Fig. ([10.1128/jcm.00963-19](https://www.doi.org/10.1128/jcm.00963-19))
+
+
+**Cluster 1:**
+
+- Finding a vaccine or specific antiviral treatment for such global pandemic of virus diseases requires rapid analysis, annotation and evaluation of metagenomic libraries to enable quick and efficient screening of nucleotide sequences. ([10.1101/2020.03.24.006007](https://www.doi.org/10.1101/2020.03.24.006007))
+
+- As the state-of-the art approach for the open-view detection of pathogens is genome sequencing (Lecuit & Eloit, 2014; Calistri & Palù, 2015) , it is crucial to develop automated pipelines for characterizing the infectious potential of currently unidentifiable sequences. ([10.1101/2020.01.29.925354](https://www.doi.org/10.1101/2020.01.29.925354))
+
+- AbstractFinding vaccine or specific antiviral treatment for global pandemic of virus diseases (such as the ongoing COVID-19) requires rapid analysis, annotation and evaluation of metagenomic libraries to enable a quick and efficient screening of nucleotide sequences. ([10.1101/2020.03.24.006007](https://www.doi.org/10.1101/2020.03.24.006007))
+
+
+**Cluster 2:**
+
+- This allowed confirmation of SARS-CoV-95 2 infection within a few minutes after sequencing by mapping the sequence reads to the SARS-96 CoV-2 genome and analysis of output sequence identity, coverage, and read number. ([10.1101/2020.03.04.20029538](https://www.doi.org/10.1101/2020.03.04.20029538))
+
+- We developed molecular detection tools based on viral spike genes. ([10.1080/22221751.2020.1729071](https://www.doi.org/10.1080/22221751.2020.1729071))
+
+- While virus titers trended higher in Muc4 -/-169 mice at day 2 and 4, there was no statistically significant change as compared to WT control 170 mice. ([10.1101/2020.02.19.957118](https://www.doi.org/10.1101/2020.02.19.957118))
+
+
+--------------------
+
+**Query**: Enhance capacity (people, technology, data) for sequencing with advanced analytics for unknown pathogens, and explore capabilities for distinguishing naturally-occurring pathogens from intentional.
+
+**Number of sentences kept by distance filtering**: 7949
+
+**Number of unique papers found among these sentences**: 1691
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What do we know about diagnostics and surveillance?
+
+**Subtask**: Enhance capacity (people, technology, data) for sequencing with advanced analytics for unknown pathogens, and explore capabilities for distinguishing naturally-occurring pathogens from intentional.
+
+**Cluster 0:**
+
+- Mechanistically, the elevated CHD risk might be due to the known adverse effects on intracellular and extracellular structures of an imbalance in the production and detoxification of reactive oxygen species. ([10.1016/j.scitotenv.2020.136608](https://www.doi.org/10.1016/j.scitotenv.2020.136608))
+
+- Our aim is to share this information in order to help develop a reliable and easy method to detect this viral RNA outside of sophisticated diagnostic laboratories and expand the toolbox of molecular tests used to combat and surveil this growing public health threat. ([10.1101/2020.02.26.20028373](https://www.doi.org/10.1101/2020.02.26.20028373))
+
+- Methods used in this enhanced surveillance could be improved if resources allowed for strengthening the networks, in particular the clinical network and regional laboratory network. ([10.1186/s12889-019-6774-5](https://www.doi.org/10.1186/s12889-019-6774-5))
+
+
+**Cluster 1:**
+
+- CC-BY 4.0 International license It is made available under a author/funder, who has granted medRxiv a license to display the preprint in perpetuity. ([10.1101/2020.02.26.20028373](https://www.doi.org/10.1101/2020.02.26.20028373))
+
+- While augmented intelligence (AI) in healthcare has been widely cited as an important approach to aid in the detection of disease and making clinical diagnosis, this recent outbreak emphasizes the need and opportunity to utilize AI to predict outbreaks. ([10.1007/s10916-020-1536-6](https://www.doi.org/10.1007/s10916-020-1536-6))
+
+- While studies reviewed here did not formally engage mixtures analytic approaches (such as weighted quantile sum regression or lagged kernel machine regression) Davidson and colleagues illustrated the value of combined metrics in exposure assessment studies for food animal workers. ([10.1007/s40572-019-00253-5](https://www.doi.org/10.1007/s40572-019-00253-5))
+
+
+--------------------
+
+**Query**: One Health surveillance of humans and potential sources of future spillover or ongoing exposure for this organism and future pathogens, including both evolutionary hosts (e.g., bats) and transmission hosts (e.g., heavily trafficked and farmed wildlife and domestic food and companion species), inclusive of environmental, demographic, and occupational risk factors.
+
+**Number of sentences kept by distance filtering**: 4028
+
+**Number of unique papers found among these sentences**: 954
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What do we know about diagnostics and surveillance?
+
+**Subtask**: One Health surveillance of humans and potential sources of future spillover or ongoing exposure for this organism and future pathogens, including both evolutionary hosts (e.g., bats) and transmission hosts (e.g., heavily trafficked and farmed wildlife and domestic food and companion species), inclusive of environmental, demographic, and occupational risk factors.
+
+**Cluster 0:**
+
+- In outbreaks of zoonotic pathogens, identification of the infection source is crucial, as this may allow health authorities to separate human populations from the wild-life or domestic-animal reservoirs posing the zoonotic risk (Stegeman et al., 2004; Yu et al., 2013) . ([10.1101/2020.03.30.015008](https://www.doi.org/10.1101/2020.03.30.015008))
+
+- To prevent the next pandemic related to these interfaces, we call for research and investment in three areas: 1) surveillance among wildlife to identify the high-risk pathogens they carry; 2) surveillance among people who have contact with wildlife to identify early spillover events; and 3) improvement of market biosecurity regarding the wildlife trade. ([10.1016/j.bsheal.2020.01.003](https://www.doi.org/10.1016/j.bsheal.2020.01.003))
+
+- Longitudinal biosurveillance studies can therefore identify high risk periods in the future. ([10.3390/tropicalmed4030099](https://www.doi.org/10.3390/tropicalmed4030099))
+
+
+**Cluster 1:**
+
+- As such, it is important to determine the diversity of viruses they carry and use this information to help understand the potential risks of spill-over to humans, domestic animals, and other wildlife. ([10.1101/2020.03.07.982207](https://www.doi.org/10.1101/2020.03.07.982207))
+
+- Conservation of wildlife and limits of the exposures of humans to wildlife will be important to minimize the spillover risks of coronaviruses from wild animals to humans. ([10.1101/2020.02.18.954628](https://www.doi.org/10.1101/2020.02.18.954628))
+
+- henipavirses and filoviruses) [38] [39] [40] [41] . ([10.1016/j.bsheal.2019.10.004](https://www.doi.org/10.1016/j.bsheal.2019.10.004))
+
+
+--------------------
+
+**Query**: Efforts to articulate and translate existing ethical principles and standards to salient issues in COVID-2019
+
+**Number of sentences kept by distance filtering**: 2595
+
+**Number of unique papers found among these sentences**: 683
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What has been published about ethical and social science considerations?
+
+**Subtask**: Efforts to articulate and translate existing ethical principles and standards to salient issues in COVID-2019
+
+**Cluster 0:**
+
+- Proper use and disposal of masks is important to avoid any increase in risk of transmission [56] . ([10.1186/s40249-020-00646-x](https://www.doi.org/10.1186/s40249-020-00646-x))
+
+- Noting that the boundary between the roles of policy-makers and expert advisors can be nebulous, we defined 'policy-makers' as individuals who participate in policy processes to create, order and maintain rules and structures of action, and 'experts' as individuals with knowledge and experience of the law and/or public health practices, relevant to infectious disease control and prevention, technological innovation, or both [29, 30] . ([10.1186/s12961-019-0440-3](https://www.doi.org/10.1186/s12961-019-0440-3))
+
+- In the current issue of Osong Public Health and Research Perspectives, 3 studies are presented dealing with COVID-19. ([10.24171/j.phrp.2020.11.1.01](https://www.doi.org/10.24171/j.phrp.2020.11.1.01))
+
+
+**Cluster 1:**
+
+- In sum, this study provided key insights into the first step of SARS-CoV-2 infection, viral entry into cells, and defined potential targets for antiviral intervention. ([10.1016/j.cell.2020.02.052](https://www.doi.org/10.1016/j.cell.2020.02.052))
+
+- The current circumstances justify prioritization of ethical review of study proposals above other, less pressing, research topics (i.e. ([10.1016/j.jcrc.2020.03.005](https://www.doi.org/10.1016/j.jcrc.2020.03.005))
+
+- This may present greater overall societal value in comparison to potentially only saving one life and allowing the other to pass. ([10.1101/2020.03.28.012617](https://www.doi.org/10.1101/2020.03.28.012617))
+
+
+--------------------
+
+**Query**: Efforts to embed ethics across all thematic areas, engage with novel ethical issues that arise and coordinate to minimize duplication of oversight
+
+**Number of sentences kept by distance filtering**: 3583
+
+**Number of unique papers found among these sentences**: 796
+
+**Number of clusters automatically designed**: 3
+
+**Task**: What has been published about ethical and social science considerations?
+
+**Subtask**: Efforts to embed ethics across all thematic areas, engage with novel ethical issues that arise and coordinate to minimize duplication of oversight
+
+**Cluster 0:**
+
+- However, the emphasis of reforms should be on enabling effective research and surveillance to be conducted, where common benefits are possible. ([10.1186/s12961-019-0440-3](https://www.doi.org/10.1186/s12961-019-0440-3))
+
+- For example, there was consistent disagreement, across all three survey rounds, about the relative importance of confidentiality and public health risk and prioritisation of reasonable alternative interventions; these differences need attention and resolution. ([10.1186/s12961-019-0440-3](https://www.doi.org/10.1186/s12961-019-0440-3))
+
+- Although in Qatar, MERS-CoV was addressed through a One Health approach from the start (24), much remains to be done nationally, particularly at policy-making level. ([10.3201/eid2503.171702](https://www.doi.org/10.3201/eid2503.171702))
+
+
+**Cluster 1:**
+
+- Accordingly, every effort must be made to provide clear and unambiguous information to patients and decision-makers, countering myths and false news which may generate panic or false optimism. ([10.1016/j.jacc.2020.03.031](https://www.doi.org/10.1016/j.jacc.2020.03.031))
+
+- Table 4 contains the per capital subscription fees as a percentage of the annual per capita healthcare expenditure of each G7 country and as expected, the cost is trivial for all countries, ranging from a high of 0.59% for Italy to a low of 0.15% for the US using a 5-year amortization period. ([10.1101/2020.03.20.20039966](https://www.doi.org/10.1101/2020.03.20.20039966))
+
+- Where potential conflict arises between existing cultural practices and additional safeguards to • prevent further exposure and propagation of the virus, the latter must take precedent and efforts should be made for ensuring that this is understood, accepted and supported by the concerned community or religious authorities and the next of kin. ([10.1016/j.fsisyn.2020.03.007](https://www.doi.org/10.1016/j.fsisyn.2020.03.007))
+
+
+**Cluster 2:**
+
+- Despite the WHO Executive Board recognising the need to include women in decision making for outbreak preparedness and response, 12 there is inadequate women's representation in national and global COVID-19 policy spaces, such as in the White House Coronavirus Task Force. ([10.1016/s0140-6736(20)30526-2](https://www.doi.org/10.1016/s0140-6736(20)30526-2))
+
+- Taken together, these results indicate that most experts agree that using social media as a source of data for routine population health surveillance does not raise significant ethical concerns. ([10.1186/s12961-019-0440-3](https://www.doi.org/10.1186/s12961-019-0440-3))
+
+- This may present greater overall societal value in comparison to potentially only saving one life and allowing the other to pass. ([10.1101/2020.03.28.012617](https://www.doi.org/10.1101/2020.03.28.012617))
+
+
+--------------------
+
+**Query**: Efforts to support sustained education, access, and capacity building in the area of ethics
+
+**Number of sentences kept by distance filtering**: 5459
+
+**Number of unique papers found among these sentences**: 1019
+
+**Number of clusters automatically designed**: 3
+
+**Task**: What has been published about ethical and social science considerations?
+
+**Subtask**: Efforts to support sustained education, access, and capacity building in the area of ethics
+
+**Cluster 0:**
+
+- These Series increased our understanding of how human development unfolds, why early childhood development is so important for health and wellbeing across the life course and into the next generation, and how the health sector can step up and lead efforts to give the youngest children everywhere a better chance to reach their individual potential. ([10.1016/s0140-6736(20)30421-9](https://www.doi.org/10.1016/s0140-6736(20)30421-9))
+
+- As the scope of community pharmacy practice varies considerably across countries, it is important to examine ways in which the profession can assist with the public health response to COVID-19 and maintaining the continuity of healthcare services. ([10.1016/j.sapharm.2020.03.015](https://www.doi.org/10.1016/j.sapharm.2020.03.015))
+
+- A designated communication team that is integrated into the work so they have a strong understanding of the clinical care being provided and the communication needs of the workforce, patients, and public is recommended. ([10.7326/m20-0907](https://www.doi.org/10.7326/m20-0907))
+
+
+**Cluster 1:**
+
+- Many countries, especially those that are low resource, have insufficient access to essential health services. ([10.1016/s0140-6736(20)30553-5](https://www.doi.org/10.1016/s0140-6736(20)30553-5))
+
+- 243 As the 2019-nCoV epidemic is still growing exponentially, continued strengthening of 244 institutional trust, and in particular, increasing the trust in the local authority, is essential 245 for emergency management. ([10.1101/2020.02.15.20023333](https://www.doi.org/10.1101/2020.02.15.20023333))
+
+- When considering the limited healthcare resources anticipated, the need for strengthening collaborative operational planning and research between institutions and across the public and private sectors is paramount. ([10.1101/2020.03.26.20044842](https://www.doi.org/10.1101/2020.03.26.20044842))
+
+
+**Cluster 2:**
+
+- Integrating scientific research resources, increasing research investment, strengthening direct cooperation between international and domestic scientists, and accelerating clinical applications of scientific research results enhances the ability to prevent spread of the epidemic or accelerate elimination of the virus. ([10.1016/j.micinf.2020.02.004](https://www.doi.org/10.1016/j.micinf.2020.02.004))
+
+- The copyright holder for this preprint (which was not peer-reviewed) is . ([10.1101/2020.03.27.20044958](https://www.doi.org/10.1101/2020.03.27.20044958))
+
+- Naylor et al. ([10.3390/ijerph17010305](https://www.doi.org/10.3390/ijerph17010305))
+
+
+--------------------
+
+**Query**: Efforts to establish a team at WHO that will be integrated within multidisciplinary research and operational platforms and that will connect with existing and expanded global networks of social sciences.
+
+**Number of sentences kept by distance filtering**: 3912
+
+**Number of unique papers found among these sentences**: 885
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What has been published about ethical and social science considerations?
+
+**Subtask**: Efforts to establish a team at WHO that will be integrated within multidisciplinary research and operational platforms and that will connect with existing and expanded global networks of social sciences.
+
+**Cluster 0:**
+
+- Consequently, the widespread use of this data for biomedical research is hampered, an issue which is particularly evident in the face of public health crises like the ongoing COVID-19 pandemic. ([10.1101/2020.03.24.005702](https://www.doi.org/10.1101/2020.03.24.005702))
+
+- Regarding data-driven knowledge acquisition, the uncertainty of social operations, especially with the high spatial heterogeneity of responses to epidemic development throughout the country, may lead to spatial deviations from the model simulation. ([10.1016/j.geosus.2020.03.005](https://www.doi.org/10.1016/j.geosus.2020.03.005))
+
+- CONCLUSION: The present study demonstrates the enormous response capacity achieved through coordination of academic and public laboratories in national and European research networks. ([10.2807/1560-7917.es.2020.25.3.2000045](https://www.doi.org/10.2807/1560-7917.es.2020.25.3.2000045))
+
+
+**Cluster 1:**
+
+- Therefore, a learning telemedicine system platform for coronavirus care was developed across connected hospitals, serving as the overarching authoritative source for diagnostic decision making and knowledge sharing for treatment. ([10.1101/2020.02.20.20025957](https://www.doi.org/10.1101/2020.02.20.20025957))
+
+- Here we show that community efforts in developing open analytical software tools over the past ten years, combined with national investments into scientific computational infrastructure, can overcome these deficiencies and provide an accessible platform for tackling global health emergencies in an open and transparent manner. ([10.1101/2020.02.21.959973](https://www.doi.org/10.1101/2020.02.21.959973))
+
+- Here we show that community efforts in developing open analytical software tools over the past ten years, combined with national investments into scientific computational infrastructure, can overcome these deficiencies and provide an accessible platform for tackling global health emergencies in an open and transparent manner. ([10.1101/2020.02.21.959973](https://www.doi.org/10.1101/2020.02.21.959973))
+
+
+--------------------
+
+**Query**: Efforts to develop qualitative assessment frameworks to systematically collect information related to local barriers and enablers for the uptake and adherence to public health measures for prevention and control. This includes the rapid identification of the secondary impacts of these measures. (e.g. use of surgical masks, modification of health seeking behaviors for SRH, school closures)
+
+**Number of sentences kept by distance filtering**: 12848
+
+**Number of unique papers found among these sentences**: 1646
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What has been published about ethical and social science considerations?
+
+**Subtask**: Efforts to develop qualitative assessment frameworks to systematically collect information related to local barriers and enablers for the uptake and adherence to public health measures for prevention and control. This includes the rapid identification of the secondary impacts of these measures. (e.g. use of surgical masks, modification of health seeking behaviors for SRH, school closures)
+
+**Cluster 0:**
+
+- We strongly encourage the use of robust science for decision-making to ensure evidence-based decisions and to minimise the impacts of the epidemic, and suggest that randomized surveys that generate representative community estimates could provide additional support for policy decisions, in addition to the current surveillance strategies. ([10.1016/j.onehlt.2020.100130](https://www.doi.org/10.1016/j.onehlt.2020.100130))
+
+- Today, much uncertainty remains around the ongoing epidemic and how it will unfold in the EU/EEA. ([10.2807/1560-7917.es.2020.25.9.2000202](https://www.doi.org/10.2807/1560-7917.es.2020.25.9.2000202))
+
+- For researchers to be able to contribute to control efforts by improving situation awareness via an explicit risk assessment, it is crucial that detailed epidemiological data are posted to a public domain in real-time. ([10.3390/jcm9020330](https://www.doi.org/10.3390/jcm9020330))
+
+
+**Cluster 1:**
+
+- ☐How the guideline development group linked and used the evidence to inform recommendations ☐Link between each recommendation and key evidence (text description and/or reference list) ☐Link between recommendations and evidence summaries and/or evidence tables in the results section of the guideline NR 13. ([10.1101/2020.03.19.20039180](https://www.doi.org/10.1101/2020.03.19.20039180))
+
+- ☐Additional materials to support the implementation of the guideline in practice. ([10.1101/2020.03.19.20039180](https://www.doi.org/10.1101/2020.03.19.20039180))
+
+- ☐How the guideline development group linked and used the evidence to inform recommendations ☐Link between each recommendation and key evidence (text description and/or reference list) ☐Link between recommendations and evidence summaries and/or evidence tables in the results section of the guideline 13. ([10.1101/2020.03.19.20039180](https://www.doi.org/10.1101/2020.03.19.20039180))
+
+
+--------------------
+
+**Query**: Efforts to identify how the burden of responding to the outbreak and implementing public health measures affects the physical and psychological health of those providing care for Covid-19 patients and identify the immediate needs that must be addressed.
+
+**Number of sentences kept by distance filtering**: 17341
+
+**Number of unique papers found among these sentences**: 1882
+
+**Number of clusters automatically designed**: 3
+
+**Task**: What has been published about ethical and social science considerations?
+
+**Subtask**: Efforts to identify how the burden of responding to the outbreak and implementing public health measures affects the physical and psychological health of those providing care for Covid-19 patients and identify the immediate needs that must be addressed.
+
+**Cluster 0:**
+
+- The observations of mental health consequences and measures taken during the 2003 SARS outbreak could help inform health authorities and the public to provide mental health interventions to those who are in need. ([10.1016/s2215-0366(20)30046-8](https://www.doi.org/10.1016/s2215-0366(20)30046-8))
+
+- The observations of mental health consequences and measures taken during the 2003 SARS outbreak could help inform health authorities and the public to provide mental health interventions to those who are in need. ([10.1016/s2215-0366(20)30046-8](https://www.doi.org/10.1016/s2215-0366(20)30046-8))
+
+- Based on experience from past serious novel pneumonia outbreaks globally and the psychosocial impact of viral epidemics, the development and implementation of mental health assessment, support, treatment, and services are crucial and pressing goals for the health response to the 2019-nCoV outbreak. ([10.1016/s2215-0366(20)30046-8](https://www.doi.org/10.1016/s2215-0366(20)30046-8))
+
+
+**Cluster 1:**
+
+- Second, in order to prevent potential COVID-19 infection, a web-based survey was conducted, and therefore the sampling of our study was voluntary, resulting in possible selection bias. ([10.1101/2020.03.13.20033290](https://www.doi.org/10.1101/2020.03.13.20033290))
+
+- Three major events during the COVID-19 epidemic may have caused public panic: (1) the official confirmation of human-to-human transmission of COVID-19 on 20 January; (2) the strict quarantine of Wuhan on 22 January and (3) WHO's announcement of PHEIC on 31 January. ([10.1136/gpsych-2020-100213](https://www.doi.org/10.1136/gpsych-2020-100213))
+
+- Conclusion: Our results highlight that government authorities should make early detection of the high risk of anxiety among medical staff a priority, and implement appropriate psychological intervention programs, to prevent medical staff from developing psychological disorders that could potentially exert an adverse effect on combating the COVID-19 epidemic. ([10.1101/2020.03.05.20032003](https://www.doi.org/10.1101/2020.03.05.20032003))
+
+
+**Cluster 2:**
+
+- Accurate data on the burden of respiratory virus infection is critical for patient management, infection control measures and public health policies. ([10.1016/j.cmi.2019.04.012](https://www.doi.org/10.1016/j.cmi.2019.04.012))
+
+- Therefore, this study aims to analyze the psychological state of medical personnel dealing with COVID-19 and its influencing factors in order to provide an objective basis for the prevention of further transmission, interventions, and countermeasures for COVID-19. ([10.1101/2020.03.04.20030973](https://www.doi.org/10.1101/2020.03.04.20030973))
+
+- Several studies 9, 11, [16] [17] [18] [19] including the current study (Table 3 , suggest that the male gender; health care worker; MERS patients above the age of 60 with an underlying medical conditions, such as hypertension, diabetes and renal failure; those who had exposure to camels and camel milk consumption; and close contact with MERS-CoV cases had a significantly higher risk of severe disease, including death. ([10.2147/ijgm.s215396](https://www.doi.org/10.2147/ijgm.s215396))
+
+
+--------------------
+
+**Query**: Efforts to identify the underlying drivers of fear, anxiety and stigma that fuel misinformation and rumor, particularly through social media.
+
+**Number of sentences kept by distance filtering**: 734
+
+**Number of unique papers found among these sentences**: 202
+
+**Number of clusters automatically designed**: 3
+
+**Task**: What has been published about ethical and social science considerations?
+
+**Subtask**: Efforts to identify the underlying drivers of fear, anxiety and stigma that fuel misinformation and rumor, particularly through social media.
+
+**Cluster 0:**
+
+- Future research should examine susceptibility of different sociodemographic groups to misinformation and understand the role of belief systems on the intention to spread misinformation. ([10.1016/j.socscimed.2019.112552](https://www.doi.org/10.1016/j.socscimed.2019.112552))
+
+- Researchers have employed increasingly sophisticated analytic techniques for empirical analysis, such as the use of social media data for sentiment analysis. ([10.1016/j.socscimed.2019.112552](https://www.doi.org/10.1016/j.socscimed.2019.112552))
+
+- Further co-citation analysis on all articles that investigated the phenomenon revealed that the disciplinary landscape concentrates around general science and vaccines/infectious disease, while psychology and communication studies have less cross-citation with the science and medicine literature. ([10.1016/j.socscimed.2019.112552](https://www.doi.org/10.1016/j.socscimed.2019.112552))
+
+
+**Cluster 1:**
+
+- The limited knowledge of the COVID-19 and the overwhelming news may lead to anxiety and fear in the public [12, 14] . ([10.7150/ijbs.45120](https://www.doi.org/10.7150/ijbs.45120))
+
+- Such outbreaks of infectious disease has significant potential for psychological contagion, and typically result in widespread fear, anxiety and a variety of psychological problems, and then incur stigmatization of patients with the disease and their relations, of care workers, even of all residents in hardest-hit areas (Mak et al., 2010; Perrin, McCabe, Everly, & Links, 2009 ). ([10.1016/j.psychres.2020.112921](https://www.doi.org/10.1016/j.psychres.2020.112921))
+
+- These misperceptions are still driving public anxiety. ([10.1017/s0950268820000254](https://www.doi.org/10.1017/s0950268820000254))
+
+
+**Cluster 2:**
+
+- The remaining articles from computational studies and clinical perspectives lack any theoretical underpinning and are purely empirical. ([10.1016/j.socscimed.2019.112552](https://www.doi.org/10.1016/j.socscimed.2019.112552))
+
+- washing hands and wearing a mask. ([10.12998/wjcc.v8.i4.652](https://www.doi.org/10.12998/wjcc.v8.i4.652))
+
+- In addition to the impact of the COVID-19 on people's emotions, people's coping strategies will also change as a result. ([10.1101/2020.03.05.20031898](https://www.doi.org/10.1101/2020.03.05.20031898))
+
+
+--------------------
+
+**Query**: Methods for coordinating data-gathering with standardized nomenclature.
+
+**Number of sentences kept by distance filtering**: 590
+
+**Number of unique papers found among these sentences**: 279
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What has been published about information sharing and inter-sectoral collaboration?
+
+**Subtask**: Methods for coordinating data-gathering with standardized nomenclature.
+
+**Cluster 0:**
+
+- A confirmed patient was considered to be critical if he/she experienced respiratory failure demanding invasive and/or non-invasive ventilation for respiratory support, septic shock, and/or with multiple organ dysfunction/failure demanding intensive care. ([10.1101/2020.03.09.20033241](https://www.doi.org/10.1101/2020.03.09.20033241))
+
+- 18 This novel tool for suspected 2019-nCoV patients ( Figure 1 ) provides frontline clinicians with a simple algorithm to manage an emerging disease. ([10.5811/westjem.2020.1.46760](https://www.doi.org/10.5811/westjem.2020.1.46760))
+
+- CC-BY-NC-ND 4.0 International license It is made available under a author/funder, who has granted medRxiv a license to display the preprint in perpetuity. ([10.1101/2020.03.09.20033530](https://www.doi.org/10.1101/2020.03.09.20033530))
+
+
+**Cluster 1:**
+
+- This needs to include an expansion of our current research focus on human pathogens and their adaptation to specific hosts to other viruses in this species. ([10.1038/s41564-020-0695-z](https://www.doi.org/10.1038/s41564-020-0695-z))
+
+- Although these concerns and suggestions are appreciated, we feel that the adoption of SARS-CoV-2 by the Coronavirus Study Group was appropriate. ([10.1016/s0140-6736(20)30557-2](https://www.doi.org/10.1016/s0140-6736(20)30557-2))
+
+- To facilitate good practice and scientific exchange, the International Committee on Taxonomy of Viruses has established standardised formats for classifying viruses. ([10.1016/s0140-6736(20)30557-2](https://www.doi.org/10.1016/s0140-6736(20)30557-2))
+
+
+--------------------
+
+**Query**: Sharing response information among planners, providers, and others.
+
+**Number of sentences kept by distance filtering**: 7001
+
+**Number of unique papers found among these sentences**: 1068
+
+**Number of clusters automatically designed**: 3
+
+**Task**: What has been published about information sharing and inter-sectoral collaboration?
+
+**Subtask**: Sharing response information among planners, providers, and others.
+
+**Cluster 0:**
+
+- Characterizing which occupational groups are least likely to be able to work from home can inform public health risk management and prioritize occupational sectors where additional workplace protections are necessary. ([10.1101/2020.03.21.20031336](https://www.doi.org/10.1101/2020.03.21.20031336))
+
+- Palliative care teams may consider expanding their communication training and skillsets to help families consider caring ways to communicate with their children and grandchildren about the coronavirus. ([10.1016/j.jpainsymman.2020.03.020](https://www.doi.org/10.1016/j.jpainsymman.2020.03.020))
+
+- 6 As healthcare professionals with a high public availability, community pharmacists are likely to be many patients' first option for health information. ([10.1016/j.sapharm.2020.03.017](https://www.doi.org/10.1016/j.sapharm.2020.03.017))
+
+
+**Cluster 1:**
+
+- (Figure 5d ). ([10.1101/2020.03.18.20038026](https://www.doi.org/10.1101/2020.03.18.20038026))
+
+- Hospitals and health systems must develop agile ways to transmit timely and critical information in times of crises. ([10.7326/m20-0907](https://www.doi.org/10.7326/m20-0907))
+
+- These measures were motivated by the need to provide effective treatment of patients, and involved consultation with three major groups in policy formulation—public health experts, the government, and the general public. ([10.1016/j.micinf.2020.02.004](https://www.doi.org/10.1016/j.micinf.2020.02.004))
+
+
+**Cluster 2:**
+
+- In addition, it is also meant for practitioners, managers and planners, including decision makers involved in the overall response to the COVID-19 pandemic. ([10.1016/j.fsisyn.2020.03.007](https://www.doi.org/10.1016/j.fsisyn.2020.03.007))
+
+- It should be noted that on January 6 2016, the newly implemented Infection Disease Prevention Act provided the KCDC with the power to release lists of medical facilities affected by infectious diseases automatically when outbreaks occur. ([10.3390/ijerph17010305](https://www.doi.org/10.3390/ijerph17010305))
+
+- Finally, Chinese researchers published papers on English-language international journals regarding the latest development of online mental health services. ([10.7150/ijbs.45120](https://www.doi.org/10.7150/ijbs.45120))
+
+
+--------------------
+
+**Query**: Understanding and mitigating barriers to information-sharing.
+
+**Number of sentences kept by distance filtering**: 1206
+
+**Number of unique papers found among these sentences**: 543
+
+**Number of clusters automatically designed**: 3
+
+**Task**: What has been published about information sharing and inter-sectoral collaboration?
+
+**Subtask**: Understanding and mitigating barriers to information-sharing.
+
+**Cluster 0:**
+
+- In this article, we aim to use existing scales of health, distress and life satisfaction to identify the health and wellbeing of people one month into the disruption caused by confinement measures to contain COVID-19 outbreak by their work status, chronic health conditions, and exercising hours. ([10.1101/2020.03.13.20034496](https://www.doi.org/10.1101/2020.03.13.20034496))
+
+- Our findings contribute to improved understanding of integrated NPI measures on COVID-19 containment and can help in tailoring control strategies across contexts. ([10.1101/2020.03.03.20029843](https://www.doi.org/10.1101/2020.03.03.20029843))
+
+- Consideration of population age structure also necessitates understanding the interlinkage of policy measures and how one policy might create a domino effect of unintended consequences. ([10.1101/2020.03.15.20036293](https://www.doi.org/10.1101/2020.03.15.20036293))
+
+
+**Cluster 1:**
+
+- On March 5, he created a Cabinet Committee on the federal response to the coronavirus disease . ([10.1016/j.pdisas.2020.100080](https://www.doi.org/10.1016/j.pdisas.2020.100080))
+
+- In this section, we put forward some recommendations on how current strategies for disaster resilience can contribute to responses to COVID-19. ([10.1016/j.pdisas.2020.100080](https://www.doi.org/10.1016/j.pdisas.2020.100080))
+
+- Policies and public health efforts have not addressed the gendered impacts of disease outbreaks. ([10.1016/s0140-6736(20)30526-2](https://www.doi.org/10.1016/s0140-6736(20)30526-2))
+
+
+**Cluster 2:**
+
+- Based on near-real time human movement and disease data, here we conducted an observational and modelling study to develop a travel network-based modelling framework. ([10.1101/2020.03.03.20029843](https://www.doi.org/10.1101/2020.03.03.20029843))
+
+- This will improve our understanding of virus–host interactions in an ever-changing environment and enhance our preparedness for future outbreaks. ([10.1038/s41564-020-0695-z](https://www.doi.org/10.1038/s41564-020-0695-z))
+
+- Given the need for ICU beds after cardiac surgery, medical management or percutaneous interventional approaches may need to be preferentially considered for urgent scenarios that cannot wait (e.g. ([10.1016/j.jacc.2020.03.031](https://www.doi.org/10.1016/j.jacc.2020.03.031))
+
+
+--------------------
+
+**Query**: How to recruit, support, and coordinate local (non-Federal) expertise and capacity relevant to public health emergency response (public, private, commercial and non-profit, including academic).
+
+**Number of sentences kept by distance filtering**: 4979
+
+**Number of unique papers found among these sentences**: 985
+
+**Number of clusters automatically designed**: 3
+
+**Task**: What has been published about information sharing and inter-sectoral collaboration?
+
+**Subtask**: How to recruit, support, and coordinate local (non-Federal) expertise and capacity relevant to public health emergency response (public, private, commercial and non-profit, including academic).
+
+**Cluster 0:**
+
+- Continued surveillance along with the robust response of government agencies, medical practitioners, and researchers, is highly essential for the effective management of this emerging pathogen. ([10.3390/pathogens9020148](https://www.doi.org/10.3390/pathogens9020148))
+
+- CONCLUSION: The present study demonstrates the enormous response capacity achieved through coordination of academic and public laboratories in national and European research networks. ([10.2807/1560-7917.es.2020.25.3.2000045](https://www.doi.org/10.2807/1560-7917.es.2020.25.3.2000045))
+
+- Naylor et al. ([10.3390/ijerph17010305](https://www.doi.org/10.3390/ijerph17010305))
+
+
+**Cluster 1:**
+
+- This consensus is appropriate for different specialists at all levels of hospitals and even managers at all levels of hospitals, local community development corporations, and public health centers. ([10.1016/j.ceh.2020.03.001](https://www.doi.org/10.1016/j.ceh.2020.03.001))
+
+- In response to these risks and emergency problems, we propose some corresponding solutions for public dissemination, including issues related to medical security, emergency research, professional assistance, positive communication, and hierarchical information-based teaching. ([10.3390/jrfm13020036](https://www.doi.org/10.3390/jrfm13020036))
+
+- The potential adaptation of influenza surveillance systems should be evaluated. ([10.2807/1560-7917.es.2020.25.9.2000202](https://www.doi.org/10.2807/1560-7917.es.2020.25.9.2000202))
+
+
+**Cluster 2:**
+
+- For pharmacists to assume a role in the health emergency preparedness and response arrangements at community level, public private partnership and the application of real-world data have been shown to be vital. ([10.1016/j.sapharm.2020.02.003](https://www.doi.org/10.1016/j.sapharm.2020.02.003))
+
+- CC-BY-NC-ND 4.0 International license It is made available under a author/funder, who has granted medRxiv a license to display the preprint in perpetuity. ([10.1101/2020.03.01.20029884](https://www.doi.org/10.1101/2020.03.01.20029884))
+
+- DGHP's One Health Program worked with other partners including the US Cooperative Biological Engagement Program of the Department of Defense and Biological Engagement Program of the Department of State, to continually advocate for and provide technical and financial assistance to the establishment of a formal collaborative framework between the public and animal health sectors. ([10.1186/s12889-019-6772-7](https://www.doi.org/10.1186/s12889-019-6772-7))
+
+
+--------------------
+
+**Query**: Integration of federal/state/local public health surveillance systems.
+
+**Number of sentences kept by distance filtering**: 3400
+
+**Number of unique papers found among these sentences**: 847
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What has been published about information sharing and inter-sectoral collaboration?
+
+**Subtask**: Integration of federal/state/local public health surveillance systems.
+
+**Cluster 0:**
+
+- Implementing an innovative electronic surveillance system called syndromic surveillance system is essential for global health security. ([10.2147/rmhp.s239984](https://www.doi.org/10.2147/rmhp.s239984))
+
+- among cases tagged as Index or unspecified. ([10.1038/s41597-019-0330-0](https://www.doi.org/10.1038/s41597-019-0330-0))
+
+- These contribute to, and amplify, epidemic intelligence and are being integrated with national and international surveillance systems. ([10.1017/s0950268820000254](https://www.doi.org/10.1017/s0950268820000254))
+
+
+**Cluster 1:**
+
+- Surveillance for animal diseases in most developing countries is designed to detect notifiable and trade sensitive diseases (e.g. ([10.1186/s12889-019-6772-7](https://www.doi.org/10.1186/s12889-019-6772-7))
+
+- Although not all components of the surveillance system will continue after 2015, the severe and fatal pneumonia case notification and investigation guidelines and the post-mortem percutaneous transthoracic needle biopsy guidelines remain useful tools that clinicians, laboratory personnel and epidemiologists can employ during future outbreaks of severe respiratory illness of unknown etiology. ([10.1186/s12889-019-6774-5](https://www.doi.org/10.1186/s12889-019-6774-5))
+
+- In the veterinary field, values of 95 or 99% are usually considered sufficient to substantiate freedom from disease at population level [8] [9] [10] . ([10.1016/j.onehlt.2020.100129](https://www.doi.org/10.1016/j.onehlt.2020.100129))
+
+
+--------------------
+
+**Query**: Value of investments in baseline public health response infrastructure preparedness
+
+**Number of sentences kept by distance filtering**: 4404
+
+**Number of unique papers found among these sentences**: 966
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What has been published about information sharing and inter-sectoral collaboration?
+
+**Subtask**: Value of investments in baseline public health response infrastructure preparedness
+
+**Cluster 0:**
+
+- Our findings show that many countries need support to achieve these capacities and increased support should be provided as a global priority action to strengthen health security. ([10.1016/s0140-6736(20)30553-5](https://www.doi.org/10.1016/s0140-6736(20)30553-5))
+
+- Capacity building and collaboration between countries are needed to strengthen global readiness for outbreak control. ([10.1016/s0140-6736(20)30553-5](https://www.doi.org/10.1016/s0140-6736(20)30553-5))
+
+- Our findings on operational readiness capacities and enabling function, which are low in many low-resource countries, underline the importance of increasing investments in scaling up IHR capacities, as described in the 2019 annual report of the Global Preparedness Monitoring Board. ([10.1016/s0140-6736(20)30553-5](https://www.doi.org/10.1016/s0140-6736(20)30553-5))
+
+
+**Cluster 1:**
+
+- This estimation gives a time period to implement and strengthen preventive measures aimed at the general population, as well as to strengthen hospital infrastructure and training of human resources in health. ([10.1101/2020.03.24.20042168](https://www.doi.org/10.1101/2020.03.24.20042168))
+
+- 46 (25%) of all countries had an operational readiness capacity at level 3. ([10.1016/s0140-6736(20)30553-5](https://www.doi.org/10.1016/s0140-6736(20)30553-5))
+
+- During the third stage, the epidemic spread widely throughout the country; Wuhan was the most seriously affected area, and the city was locked down. ([10.1101/2020.03.18.20038026](https://www.doi.org/10.1101/2020.03.18.20038026))
+
+
+--------------------
+
+**Query**: Modes of communicating with target high-risk populations (elderly, health care workers).
+
+**Number of sentences kept by distance filtering**: 7024
+
+**Number of unique papers found among these sentences**: 1167
+
+**Number of clusters automatically designed**: 3
+
+**Task**: What has been published about information sharing and inter-sectoral collaboration?
+
+**Subtask**: Modes of communicating with target high-risk populations (elderly, health care workers).
+
+**Cluster 0:**
+
+- Special attention and efforts to protect or reduce transmission should be applied in susceptible populations including children, health care providers, and elderly people. ([10.1016/j.jaut.2020.102433](https://www.doi.org/10.1016/j.jaut.2020.102433))
+
+- Along those lines, until more specific therapeutics become available, it is reasonable to consider more broad-spectrum antivirals that provide drug treatment options for COVID-19 infection include Lopinavir/Ritonavir, Neuraminidase inhibitors, peptide (EK1), RNA synthesis inhibitors. ([10.1016/j.jaut.2020.102433](https://www.doi.org/10.1016/j.jaut.2020.102433))
+
+- Special efforts are needed to protect vulnerable populations, including healthcare workers, elderly and children. ([10.1101/2020.03.03.20030593](https://www.doi.org/10.1101/2020.03.03.20030593))
+
+
+**Cluster 1:**
+
+- Healthcare professionals across all settings are now caring for and communicating with patients in a context of high uncertainty. ([10.1016/j.sapharm.2020.03.017](https://www.doi.org/10.1016/j.sapharm.2020.03.017))
+
+- • Finally, it is important to be patient. ([10.1016/j.jpainsymman.2020.03.019](https://www.doi.org/10.1016/j.jpainsymman.2020.03.019))
+
+- While we were unable to find an accurate recent estimate of the human resources currently available in the camps (e.g., number of doctors, nurses, midwives), it is very likely that they will be inadequate to face a large influx of patients.Given the limited availability of skilled health workers and hospital beds in Cox's Bazar, it is unlikely that additional health care professionals within Bangladesh would be available. ([10.1101/2020.03.27.20045500](https://www.doi.org/10.1101/2020.03.27.20045500))
+
+
+**Cluster 2:**
+
+- In Saudi Arabia, the ministry for public health has designated communication channels to release updates on MERS-CoV on their websites, through scientific arenas, memorandums and helpdesks. ([10.1186/s12879-019-3898-2](https://www.doi.org/10.1186/s12879-019-3898-2))
+
+- A serious public health emergency, it is particularly deadly in vulnerable populations and communities in which healthcare providers are insufficiently prepared to manage the infection. ([10.1016/j.ajog.2020.03.021](https://www.doi.org/10.1016/j.ajog.2020.03.021))
+
+- Three major events during the COVID-19 epidemic may have caused public panic: (1) the official confirmation of human-to-human transmission of COVID-19 on 20 January; (2) the strict quarantine of Wuhan on 22 January and (3) WHO's announcement of PHEIC on 31 January. ([10.1136/gpsych-2020-100213](https://www.doi.org/10.1136/gpsych-2020-100213))
+
+
+--------------------
+
+**Query**: Risk communication and guidelines that are easy to understand and follow (include targeting at risk populations’ families too).
+
+**Number of sentences kept by distance filtering**: 17694
+
+**Number of unique papers found among these sentences**: 1983
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What has been published about information sharing and inter-sectoral collaboration?
+
+**Subtask**: Risk communication and guidelines that are easy to understand and follow (include targeting at risk populations’ families too).
+
+**Cluster 0:**
+
+- As one panellist noted: DP #07 "…the main issue, is not whether strain typing is done, but how the results are handled. ([10.1186/s12961-019-0440-3](https://www.doi.org/10.1186/s12961-019-0440-3))
+
+- The observation that herds that vaccinated for M. haemolytica faced higher odds for H. somni is difficult to explain. ([10.3168/jds.2019-17486](https://www.doi.org/10.3168/jds.2019-17486))
+
+- CC-BY-NC-ND 4.0 International license It is made available under a author/funder, who has granted medRxiv a license to display the preprint in perpetuity. ([10.1101/2020.03.04.20031237](https://www.doi.org/10.1101/2020.03.04.20031237))
+
+
+**Cluster 1:**
+
+- Many kinds of guidelines have been developed, and useful information about risk factors and preventive measures are recommended to the public by various means [4] . ([10.1186/s41256-020-00135-6](https://www.doi.org/10.1186/s41256-020-00135-6))
+
+- c. The prophylactic doses are oseltamivir 75 mg PO once daily or zanamivir two inhalations once daily for adults. ([10.1101/2020.03.19.20039180](https://www.doi.org/10.1101/2020.03.19.20039180))
+
+- 6 A detailed understanding of the geographical distribution of case importation will help to guide resources to places with currently limited capacity to test, and provide support to perform control measures and support for clinical care. ([10.1101/2020.02.17.20024075](https://www.doi.org/10.1101/2020.02.17.20024075))
+
+
+--------------------
+
+**Query**: Communication that indicates potential risk of disease to all population groups.
+
+**Number of sentences kept by distance filtering**: 17009
+
+**Number of unique papers found among these sentences**: 1854
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What has been published about information sharing and inter-sectoral collaboration?
+
+**Subtask**: Communication that indicates potential risk of disease to all population groups.
+
+**Cluster 0:**
+
+- Conclusion: COVID-19 is a pressure source with great influence, both for individuals and for the social public groups. ([10.1101/2020.03.05.20031898](https://www.doi.org/10.1101/2020.03.05.20031898))
+
+- MERS-CoV causes respiratory infection in humans ranging from asymptomatic to severe pneumonia [3, 4] . ([10.3390/v11030280](https://www.doi.org/10.3390/v11030280))
+
+- If the initial infections in northern Italy were younger people commuting to cities and having plausibly international contacts, a crucial determinant of risk for the elderly is their network distance to these younger sources, i.e. ([10.1101/2020.03.15.20036293](https://www.doi.org/10.1101/2020.03.15.20036293))
+
+
+**Cluster 1:**
+
+- No reuse allowed without permission. ([10.1101/2020.03.15.20035360](https://www.doi.org/10.1101/2020.03.15.20035360))
+
+- The continuous occurrence of MERS-CoV cases after 8 years from the passes of the disease is critical to a global public health response. ([10.2147/ijgm.s215396](https://www.doi.org/10.2147/ijgm.s215396))
+
+- Assessing the risk of epidemics and transmission in different regions is of great significance for decision-making and the adjustment of prevention and control efforts. ([10.1016/j.geosus.2020.03.005](https://www.doi.org/10.1016/j.geosus.2020.03.005))
+
+
+--------------------
+
+**Query**: Misunderstanding around containment and mitigation.
+
+**Number of sentences kept by distance filtering**: 1610
+
+**Number of unique papers found among these sentences**: 555
+
+**Number of clusters automatically designed**: 3
+
+**Task**: What has been published about information sharing and inter-sectoral collaboration?
+
+**Subtask**: Misunderstanding around containment and mitigation.
+
+**Cluster 0:**
+
+- The implications of misunderstanding the real dynamic of the COVID-19 pandemic are extremely dangerous. ([10.1101/2020.03.16.20034470](https://www.doi.org/10.1101/2020.03.16.20034470))
+
+- The copyright holder for this preprint (which was not peer-reviewed) is . ([10.1101/2020.02.18.20024448](https://www.doi.org/10.1101/2020.02.18.20024448))
+
+- We believe that current molecular epidemiology data are not solid enough to provide a scientifically sound analysis of SARS-CoV-2 spread. ([10.1101/2020.03.16.20034470](https://www.doi.org/10.1101/2020.03.16.20034470))
+
+
+**Cluster 1:**
+
+- Therefore, mitigation of its impact, rather than containment and control becomes a priority during pandemics. ([10.1016/j.tmaid.2020.101617](https://www.doi.org/10.1016/j.tmaid.2020.101617))
+
+- After containment of the initial outbreak failed, attention turned to implementing large-scale social policies designed to slow contagion of the virus, 6 with the ultimate goal of slowing the rate at which life-threatening cases emerge so as to not exceed the capacity of existing medical systems. ([10.1101/2020.03.22.20040642](https://www.doi.org/10.1101/2020.03.22.20040642))
+
+- Where appropriate, employers might also wish to consider proactive approaches that allow employees to work from home if they wish to, both to avoid financial loss and to stave off boredom, while being mindful that staff in these situations might not be at their most productive and might benefit more from remote social support from their colleagues. ([10.1016/s0140-6736(20)30460-8](https://www.doi.org/10.1016/s0140-6736(20)30460-8))
+
+
+**Cluster 2:**
+
+- Other countries should be aware and reduce the spread of COVID-19. ([10.1016/s1473-3099(20)30129-8](https://www.doi.org/10.1016/s1473-3099(20)30129-8))
+
+- There is still a great deal of uncertainty as to how strong social distancing recommendations must be or how long they must last. ([10.1101/2020.03.22.20041004](https://www.doi.org/10.1101/2020.03.22.20041004))
+
+- Misinformation spreads panic among the general population and is not conducive to implementation of epidemic control measures. ([10.1016/s1473-3099(20)30152-3](https://www.doi.org/10.1016/s1473-3099(20)30152-3))
+
+
+--------------------
+
+**Query**: Action plan to mitigate gaps and problems of inequity in the Nation’s public health capability, capacity, and funding to ensure all citizens in need are supported and can access information, surveillance, and treatment.
+
+**Number of sentences kept by distance filtering**: 9165
+
+**Number of unique papers found among these sentences**: 1402
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What has been published about information sharing and inter-sectoral collaboration?
+
+**Subtask**: Action plan to mitigate gaps and problems of inequity in the Nation’s public health capability, capacity, and funding to ensure all citizens in need are supported and can access information, surveillance, and treatment.
+
+**Cluster 0:**
+
+- To accelerate our pace and meet the challenges of current and future health threats, we must advance our world-class data and analytics capabilities; maintain and expand our state-of-the-art public health laboratory capacity; continue building a workforce of trusted, expert, public health professionals; sustain our capacity to rapidly respond to outbreaks at their source; and assure a strong global and domestic preparedness capacity. ([10.2105/ajph.2020.305618](https://www.doi.org/10.2105/ajph.2020.305618))
+
+- When considering the limited healthcare resources anticipated, the need for strengthening collaborative operational planning and research between institutions and across the public and private sectors is paramount. ([10.1101/2020.03.26.20044842](https://www.doi.org/10.1101/2020.03.26.20044842))
+
+- Finally, let's help each other, because we need each other. ([10.1016/j.chmed.2020.03.004](https://www.doi.org/10.1016/j.chmed.2020.03.004))
+
+
+**Cluster 1:**
+
+- 30 An effec tive response to an outbreak depends not only on the availability of adequate human resources and financing, but also on the ability to manage emergency logistics (including the handling of supply chains for essential products that are required during an emergency). ([10.1016/s0140-6736(20)30553-5](https://www.doi.org/10.1016/s0140-6736(20)30553-5))
+
+- Enabling function index C1.3-financing mechanism and funds for timely response to public health emergencies Availability and accessibility of financing mechanisms is essential for prevention, detection, and control of infectious disease outbreaks. ([10.1016/s0140-6736(20)30553-5](https://www.doi.org/10.1016/s0140-6736(20)30553-5))
+
+- Integrating scientific research resources, increasing research investment, strengthening direct cooperation between international and domestic scientists, and accelerating clinical applications of scientific research results enhances the ability to prevent spread of the epidemic or accelerate elimination of the virus. ([10.1016/j.micinf.2020.02.004](https://www.doi.org/10.1016/j.micinf.2020.02.004))
+
+
+--------------------
+
+**Query**: Measures to reach marginalized and disadvantaged populations.
+
+**Number of sentences kept by distance filtering**: 707
+
+**Number of unique papers found among these sentences**: 257
+
+**Number of clusters automatically designed**: 3
+
+**Task**: What has been published about information sharing and inter-sectoral collaboration?
+
+**Subtask**: Measures to reach marginalized and disadvantaged populations.
+
+**Cluster 0:**
+
+- While much of the existing literature has examined social and political issues, we focus on misinformation related to health and wellbeing. ([10.1016/j.socscimed.2019.112552](https://www.doi.org/10.1016/j.socscimed.2019.112552))
+
+- In light of the epidemic threat identified here, these cities should consider implementing more aggressive prevention policies as necessary, while respecting human rights and the dignity of affected individuals and of those who might be disadvantaged by stricter quarantine and control mechanisms. ([10.1101/2020.02.18.20024315](https://www.doi.org/10.1101/2020.02.18.20024315))
+
+- Confirmed state-level caseload had only a small effect on social distancing timing. ([10.1101/2020.03.30.20046326](https://www.doi.org/10.1101/2020.03.30.20046326))
+
+
+**Cluster 1:**
+
+- Such a social safety net could be particularly useful for disadvantaged or single-parent families, 9 but action is needed to make it accessible to them. ([10.1016/s0140-6736(20)30547-x](https://www.doi.org/10.1016/s0140-6736(20)30547-x))
+
+- is the (which was not peer-reviewed) The copyright holder for this preprint . ([10.1101/2020.03.13.20034892](https://www.doi.org/10.1101/2020.03.13.20034892))
+
+- 5 This is, from a public health perspective, a fairly reasonable result: early implementation of social distancing is likely to be far more effective, so pro-active governors may have realized there was little sense in waiting for a certain threshold of cases to act, especially given delays and failures in testing. ([10.1101/2020.03.30.20046326](https://www.doi.org/10.1101/2020.03.30.20046326))
+
+
+**Cluster 2:**
+
+- For example, different methods of food and fuel distribution will need to be undertaken that address social distancing issues. ([10.1101/2020.03.27.20045500](https://www.doi.org/10.1101/2020.03.27.20045500))
+
+- Inequities in 102 supply and demand exist, and mirror regional inequalities commonly found in social and health 103 indicators. ([10.1101/2020.03.30.20047662](https://www.doi.org/10.1101/2020.03.30.20047662))
+
+- is the (which was not peer-reviewed) The copyright holder for this preprint rejection, making the value of the voucher to a firm more variable than it first appears (15) . ([10.1101/2020.03.20.20039966](https://www.doi.org/10.1101/2020.03.20.20039966))
+
+
+--------------------
+
+**Query**: Data systems and research priorities and agendas incorporate attention to the needs and circumstances of disadvantaged populations and underrepresented minorities.
+
+**Number of sentences kept by distance filtering**: 1510
+
+**Number of unique papers found among these sentences**: 453
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What has been published about information sharing and inter-sectoral collaboration?
+
+**Subtask**: Data systems and research priorities and agendas incorporate attention to the needs and circumstances of disadvantaged populations and underrepresented minorities.
+
+**Cluster 0:**
+
+- These challenges included lack of reliable and specialized diagnostic laboratories in the region, incapacity of the existing laboratories to yield MERS-CoV diagnostic services, and lack of skilled personnel tasked to investigate zoonotic cases. ([10.3201/eid2503.171702](https://www.doi.org/10.3201/eid2503.171702))
+
+- These differences are attributed to differences in cultural norms, mitigation efforts, and health infrastructure. ([10.1101/2020.03.24.20042937](https://www.doi.org/10.1101/2020.03.24.20042937))
+
+- Inequities in 102 supply and demand exist, and mirror regional inequalities commonly found in social and health 103 indicators. ([10.1101/2020.03.30.20047662](https://www.doi.org/10.1101/2020.03.30.20047662))
+
+
+**Cluster 1:**
+
+- Policy communities are stable, institutionally entrenched groups who share values and broad policy preferences, interact frequently and participate in relatively equal communications to produce lasting policy outcomes; conversely, issue networks include increasingly influential academic, industry and interest groups varying in levels of co-ordination and access to resources, who discuss, critique and generate ideas for policy initiatives in specific policy areas [27, 28] . ([10.1186/s12961-019-0440-3](https://www.doi.org/10.1186/s12961-019-0440-3))
+
+- However, while effective protocols in regard to the sharing of health data is emphasised, urban data, on the other hand, specifically relating to urban health and safe city concepts, is still viewed from a nationalist perspective as solely benefiting a nation’s economy and its economic and political influence. ([10.3390/healthcare8010046](https://www.doi.org/10.3390/healthcare8010046))
+
+- For example, different methods of food and fuel distribution will need to be undertaken that address social distancing issues. ([10.1101/2020.03.27.20045500](https://www.doi.org/10.1101/2020.03.27.20045500))
+
+
+--------------------
+
+**Query**: Mitigating threats to incarcerated people from COVID-19, assuring access to information, prevention, diagnosis, and treatment.
+
+**Number of sentences kept by distance filtering**: 10715
+
+**Number of unique papers found among these sentences**: 1618
+
+**Number of clusters automatically designed**: 3
+
+**Task**: What has been published about information sharing and inter-sectoral collaboration?
+
+**Subtask**: Mitigating threats to incarcerated people from COVID-19, assuring access to information, prevention, diagnosis, and treatment.
+
+**Cluster 0:**
+
+- Moreover, SDG 3 is devoted to "good health and well-being", with an emphasis on "early warning, risk reduction and management of national and global health risks" (UN, 2015) . ([10.1016/j.pdisas.2020.100080](https://www.doi.org/10.1016/j.pdisas.2020.100080))
+
+- Access to the essential health services are needed to prevent, detect, and control infectious disease outbreaks. ([10.1016/s0140-6736(20)30553-5](https://www.doi.org/10.1016/s0140-6736(20)30553-5))
+
+- It is very important to make all staff aware of the public health significance of the epidemic, and of potential challenges in achieving disease control. ([10.1007/s00134-020-05954-2](https://www.doi.org/10.1007/s00134-020-05954-2))
+
+
+**Cluster 1:**
+
+- These results also suggest that Korea health authorities should consult with experts and produce a crisis and risk communication guide to develop communication strategies such as informing the public and providing training for communicators who possess the necessary competence and expertise [6] . ([10.3390/ijerph17010305](https://www.doi.org/10.3390/ijerph17010305))
+
+- Specimens should be collected as soon as possible once a PUI is identified regardless of time since symptom onset. ([10.15585/mmwr.mm6905e1](https://www.doi.org/10.15585/mmwr.mm6905e1))
+
+- This approach is used to obtain timely access to public responses so that the government and the health department can better communicate with the public on health issues and take appropriate measures to prevent and control the epidemic 35, 39 . ([10.1101/2020.03.18.20038026](https://www.doi.org/10.1101/2020.03.18.20038026))
+
+
+**Cluster 2:**
+
+- We have to "keep calm and carry on" and continue to function as a cytology laboratory dedicated to provide the best service to our patients in this health care emergency, but in the same time maximize the safety of health care workers and prevent unnecessary risks, which could help the dissemination of the virus. ([10.1016/j.jasc.2020.03.001](https://www.doi.org/10.1016/j.jasc.2020.03.001))
+
+- Similarly, we restricted our analysis to those with known contact history to be able to differentiate the source of infection and construct the transmission network. ([10.1016/j.jiph.2018.12.002](https://www.doi.org/10.1016/j.jiph.2018.12.002))
+
+- Currently, there are data suggesting that there may be super-transmission events in COVID-19 transmission, and the entire range of interpersonal transmission capabilities of COVID-19 remains unknown [8] [9] . ([10.1101/2020.01.30.20019836](https://www.doi.org/10.1101/2020.01.30.20019836))
+
+
+--------------------
+
+**Query**: Understanding coverage policies (barriers and opportunities) related to testing, treatment, and care
+
+**Number of sentences kept by distance filtering**: 12861
+
+**Number of unique papers found among these sentences**: 1725
+
+**Number of clusters automatically designed**: 2
+
+**Task**: What has been published about information sharing and inter-sectoral collaboration?
+
+**Subtask**: Understanding coverage policies (barriers and opportunities) related to testing, treatment, and care
+
+**Cluster 0:**
+
+- Finally, the results of this study are based on a self-reported questionnaire. ([10.1016/j.bbih.2020.100064](https://www.doi.org/10.1016/j.bbih.2020.100064))
+
+- ☐How the guideline development group linked and used the evidence to inform recommendations ☐Link between each recommendation and key evidence (text description and/or reference list) ☐Link between recommendations and evidence summaries and/or evidence tables in the results section of the guideline NR 13. ([10.1101/2020.03.19.20039180](https://www.doi.org/10.1101/2020.03.19.20039180))
+
+- We must reach individuals with poor social networks, poor technological literacy, and who lack access to technology. ([10.1016/j.jpainsymman.2020.03.019](https://www.doi.org/10.1016/j.jpainsymman.2020.03.019))
+
+
+**Cluster 1:**
+
+- Here, we discuss the COVID-19 outbreak in a one health context, highlighting the need for the implementation of one health measures and practices to improve human health and reduce the emergence of pandemic viruses. ([10.1016/j.onehlt.2020.100124](https://www.doi.org/10.1016/j.onehlt.2020.100124))
+
+- The chlamydia vaccine community is seeking guidance and consensus building on clinical endpoints for clinical studies, including evaluating the potential role of biomarkers, radiologic, and other measures of upper tract ascension, infection, inflammation and damage. ([10.1016/j.vaccine.2016.10.090](https://www.doi.org/10.1016/j.vaccine.2016.10.090))
+
+- Continual interaction with these reservoirs of MERS-CoV is the primary cited reason for the frequency and duration of the Saudi Arabian outbreak, in comparison to the South Korean outbreak. ([10.3390/v11121119](https://www.doi.org/10.3390/v11121119))
 
 
 --------------------
