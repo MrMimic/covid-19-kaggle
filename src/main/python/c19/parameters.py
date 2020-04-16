@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Parameters for the Kaggle Covid19 project.
-Default value can be erased as follow:
+Default value (indicated here) can be erased as follow:
 
     >>> param = parameters.Parameters(query=parameters.Query(k_min=3))
     >>> param.query
