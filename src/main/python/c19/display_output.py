@@ -3,9 +3,12 @@
 import pandas as pd
 from IPython.core.display import HTML, display
 
+from c19 import database_utilities
+
 
 def create_html_report(query: str,
                        closest_sentences_df: pd.DataFrame,
+                       db_path: str,
                        top_x: int = 3) -> None:
     """
     Print an HTML output in a jupyter kernel.
@@ -14,6 +17,7 @@ def create_html_report(query: str,
         query (str): The user query.
         closest_sentences_df (pd.DataFrame): The output DF.
         top_x (int, optional): The number of sentences to display for each cluster.
+        db_path (str): Path to the SQLite database.
         Defaults to 3.
     """
     number_of_kept_sentences = closest_sentences_df.shape[0]
@@ -50,25 +54,26 @@ def create_html_report(query: str,
                 HTML(
                     f"&emsp;{row.raw_sentence} (<a href=https://www.doi.org/{row.paper_doi} target='_blank'>{row.paper_doi}</a>)"
                 ))
-        
+        # Ensure we do not have twice an article in a given cluster
+        closest_sentences_df.drop_duplicates(subset=["pagerank", "paper_doi"],
+                                             keep="first",
+                                             inplace=True)
         most_cited = closest_sentences_df[closest_sentences_df["cluster"] ==
-                                      cluster].sort_values(by="pagerank",
-                                                           ascending=False)
-        
+                                          cluster].sort_values(by="pagerank",
+                                                               ascending=False)
+
         display(
             HTML(
                 f"<h4>Link to most relevant papers (highest pagerank score):</h4>"
             ))
-            
-        html_str =""
+
         for index, row in most_cited.head(top_x).iterrows():
-            html_str += f"&nbsp;<a href=https://www.doi.org/{row.paper_doi} target='_blank'>{row.paper_doi}</a>&nbsp;\t"
-        
-        display(
-            HTML(
-                html_str
-            )
-        )
+            title = database_utilities.get_article(paper_doi=row.paper_doi,
+                                                   db_path=db_path)[0][4]
+            display(
+                HTML(
+                    f"&emsp;{title} (<a href=https://www.doi.org/{row.paper_doi} target='_blank'>{row.paper_doi}</a>)"
+                ))
 
 
 def create_md_report(query: str,
