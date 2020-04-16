@@ -154,6 +154,7 @@ def get_article_text(args: List[Tuple[int, pd.Series, str, bool]]) -> None:
         date = parser.parse(data.publish_time)
     except Exception:  # Better to get no date than a string of whatever
         date = None
+
     # Filter abstract text
     if enable_data_cleaner and isinstance(data.abstract,
                                           str) and len(data.abstract) > 10:
@@ -163,9 +164,20 @@ def get_article_text(args: List[Tuple[int, pd.Series, str, bool]]) -> None:
             abstract = data.abstract
     else:
         abstract = data.abstract
+
+    # Filter body text
+    if enable_data_cleaner and isinstance(body,
+                                          str) and len(body) > 10:
+        try:
+            body_datas = filter_lines_count(body)
+        except Exception:
+            body_datas = body
+    else:
+        body_datas = body
+        
     # Insert
     raw_data = [
-        data.doi, data.title, body, data.abstract, date, data.sha, folder, data.pagerank
+        data.doi, data.title, body_datas, data.abstract, date, data.sha, folder, data.pagerank
     ]
     return raw_data
 
