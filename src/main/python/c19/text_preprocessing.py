@@ -53,8 +53,10 @@ def preprocess_text(text: str,
 
     # Split paragraphs into sentences and keep them for nive output
     sentences_raw = sent_tokenize(text)
-    # Lower
-    sentences = [sentence.lower() for sentence in sentences_raw]
+    # Remove shortest sentences
+    sentences = [sentence for sentence in sentences_raw if len(sentence) > 20]
+    # Lower them
+    sentences = [sentence.lower() for sentence in sentences]
     # Split sentences into words and remove punctuation
     sentences = [word_tokenize(sentence) for sentence in sentences]
     # Remove stopwords
@@ -64,9 +66,12 @@ def preprocess_text(text: str,
         sentences = [do_stemming(sentence) for sentence in sentences]
     if remove_num is True:
         sentences = [remove_numeric_words(sentence) for sentence in sentences]
-    # Filter empty sentences and one-letters words
-    sentences = [[word for word in sentence if len(word) > 1]
+    # Filter empty sentences and one or two-letters words
+    sentences = [[word for word in sentence if len(word) > 2]
                  for sentence in sentences if sentence != []]
+    # Remove sentence with less than 4 words
+    sentences = [sentence for sentence in sentences if len(sentence) > 3]
+
     return sentences, sentences_raw
 
 
