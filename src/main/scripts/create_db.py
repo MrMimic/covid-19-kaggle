@@ -5,14 +5,27 @@ It will contain two tables 'articles' and 'sentences'.
 """
 
 # Load c19 custom library
-from c19 import (binary_classification, database_utilities, embedding,
+from c19 import (database_utilities, embedding,
                  parameters, text_preprocessing)
 
 
 def main():
 
-    # Get parameters
-    params = parameters.Parameters(first_launch=True)
+    params = parameters.Parameters(
+        first_launch=True,
+        database=parameters.Database(
+            local_path="local_exec/articles_database_v12_16042020.sqlite",
+            kaggle_data_path="local_exec/kaggle_data",
+            only_newest=True,
+            only_covid=True
+        ),
+        preprocessing=parameters.PreProcessing(
+            max_body_sentences=0,
+            stem_words=False
+        ),
+        embedding=parameters.Embedding(
+            local_path="resources/global_df_w2v_tfidf.parquet")
+    )
 
     # Load all articles (title, abstract and body) into the 'article' table.
     database_utilities.create_db_and_load_articles(

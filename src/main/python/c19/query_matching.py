@@ -30,7 +30,12 @@ def vectorize_query(embedding_model: Embedding, query: str) -> List[float]:
                                           stem_words=False,
                                           remove_num=True)
     del query_raw
-    query_vector = embedding_model.compute_sentence_vector(pp_query[0])
+    try:
+        query_vector = embedding_model.compute_sentence_vector(pp_query[0])
+    except IndexError:
+        raise Exception(
+            f"Please reformule the query '{query}', the pre-processed version is: {str(pp_query)} (not enough words)."
+        )
     return query_vector
 
 

@@ -69,8 +69,8 @@ def preprocess_text(text: str,
     # Filter empty sentences and one or two-letters words
     sentences = [[word for word in sentence if len(word) > 2]
                  for sentence in sentences if sentence != []]
-    # Remove sentence with less than 4 words
-    sentences = [sentence for sentence in sentences if len(sentence) > 3]
+    # Remove sentence with less than 3 words
+    sentences = [sentence for sentence in sentences if len(sentence) >= 3]
 
     return sentences, sentences_raw
 

@@ -15,7 +15,7 @@ with open(queries_path) as json_file:
 
 params = parameters.Parameters(
     database=parameters.Database(
-        local_path="local_exec/articles_database_v11_09042020_only_english.sqlite",
+        local_path="local_exec/articles_database_v12_16042020.sqlite",
         kaggle_data_path="local_exec/kaggle_data"),
     embedding=parameters.Embedding(
         local_path="resources/global_df_w2v_tfidf.parquet"))
@@ -36,6 +36,7 @@ for task, subtasks in queries_data.items():
     for subtask, queries in subtasks.items():
         for query in queries:
             if query != "":
+                print(query)
                 # Get K closest for each
                 closest_sentences_df = query_matching.get_k_closest_sentences(
                     query=query,
