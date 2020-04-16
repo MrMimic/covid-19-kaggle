@@ -2,7 +2,7 @@
 
 **This library provides tools aiming to find different opinions in the scientific litterature regarding the user query.**
 
-The Kaggle notebook can be find [here](https://www.kaggle.com/mrmimic/risk-factors-analysis-by-opinion-finding).
+The Kaggle notebook can be find [here](https://www.kaggle.com/mrmimic/opinions-extraction-tool-several-examples).
 
 **Birielfy**:
 
@@ -44,4 +44,4 @@ Please use [this one](https://github.com/MrMimic/covid-19-kaggle/blob/master/src
 
 All queries from the Kaggle challenge have been reformulated [here](https://github.com/MrMimic/covid-19-kaggle/blob/master/resources/queries.json). They have then been processed with the tool presented [here](https://github.com/MrMimic/covid-19-kaggle/blob/master/resources/executed_queries.md).
 
-Results are visible [on Kaggle](https://www.kaggle.com/mrmimic/opinions-extraction-tool-chloroquine-case-study).
+Results are visible [on Kaggle](https://www.kaggle.com/mrmimic/opinions-extraction-tool-several-examples).
