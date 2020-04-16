@@ -36,10 +36,10 @@ def create_html_report(query: str,
         ))
 
     for cluster in sorted(closest_sentences_df.cluster.unique().tolist()):
-        sub_df = closest_sentences_df[closest_sentences_df["cluster"] ==
-                                      cluster].sort_values(by="is_closest",
-                                                           ascending=False)
+
+        sub_df = closest_sentences_df[closest_sentences_df["cluster"] == cluster].sort_values(by="distance", ascending=False)
         display(HTML(f"<h3>Cluster {cluster} top {top_x} sentences ({sub_df.shape[0]} total):</h3>"))
+
         for index, row in sub_df.head(top_x).iterrows():
             display(HTML(f"&emsp;{row.raw_sentence} (<a href=https://www.doi.org/{row.paper_doi} target='_blank'>{row.paper_doi}</a>)"))
 
