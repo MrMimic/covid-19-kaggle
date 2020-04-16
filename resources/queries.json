@@ -59,11 +59,11 @@
         ],
         "Transmission dynamics of the virus, including the basic reproductive number, incubation period, serial interval, modes of transmission and environmental factors": [
             "Basic reproductive number, incubation period, serial interval, modes of transmission and environmental factors of the coronavirus",
-            "How coronavirus is transmitted?"
+            "How coronavirus is transmitted from human-to-human?"
         ],
         "Severity of disease, including risk of fatality among symptomatic hospitalized patients, and high-risk patient groups": [
             "risk of fatality among symptomatic hospitalized patients for covid-19",
-            "What is the severity of covid-19",
+            "What is the severity of covid-19 induced by coronavirus?",
             "Is there any high-risk patient groups regarding covid-19?"
         ],
         "Susceptibility of populations": [
@@ -85,39 +85,39 @@
             "How are Multi-lateral agreements such as the Nagoya Protocol effective?"
         ],
         "Evidence that livestock could be infected (e.g., field surveillance, genetic sequencing, receptor binding) and serve as a reservoir after the epidemic appears to be over.": [
-            ""
+            "Detected livestock infected by coronavirus during field surveillance?"
         ],
         "Evidence of whether farmers are infected, and whether farmers could have played a role in the origin.": [
-            ""
+            "Evidence of whether farmers are infected by coronavirus"
         ],
         "Surveillance of mixed wildlife- livestock farms for SARS-CoV-2 and other coronaviruses in Southeast Asia.": [
-            ""
+            "Surveillance of mixed wildlife livestock farms for SARS-CoV-2"
         ],
         "Experimental infections to test host range for this pathogen.": [
-            ""
+            "Experimental infections to test host range for coronavirus"
         ],
         "Animal host(s) and any evidence of continued spill-over to humans": [
-            ""
+            "Animal hosts of coronavirus and any evidence of continued spill-over to humans"
         ],
         "Socioeconomic and behavioral risk factors for this spill-over": [
-            ""
+            "Socioeconomic and behavioral risk factors for this pandemy"
         ],
         "Sustainable risk reduction strategies": [
-            ""
+            "Sustainable infection by coronavirus risk reduction strategies"
         ]
     },
     "What do we know about vaccines and therapeutics?": {
         "Effectiveness of drugs being developed and tried to treat COVID-19 patients.": [
-            ""
+            "What drugs are developed and tried to treat COVID-19?"
         ],
         "Clinical and bench trials to investigate less common viral inhibitors against COVID-19 such as naproxen, clarithromycin, and minocyclinethat that may exert effects on viral replication.": [
-            ""
+            "naproxen, clarithromycin, and minocyclinethat clinical trials"
         ],
         "Methods evaluating potential complication of Antibody-Dependent Enhancement (ADE) in vaccine recipients.": [
-            ""
+            "Methods evaluating potential complication of Antibody-Dependent Enhancement (ADE) in vaccine recipients"
         ],
         "Exploration of use of best animal models and their predictive value for a human vaccine.": [
-            ""
+            "What is the best animal model to study coronaviruses?"
         ],
         "Capabilities to discover a therapeutic (not vaccine) for the disease, and clinical effectiveness studies to discover therapeutics, to include antiviral agents.": [
             ""
@@ -126,16 +126,16 @@
             ""
         ],
         "Efforts targeted at a universal coronavirus vaccine.": [
-            ""
+            "Efforts targeted at a universal coronavirus vaccine"
         ],
         "Efforts to develop animal models and standardize challenge studies": [
-            ""
+            "Efforts to develop animal models and standardize challenge studies for covid-19"
         ],
         "Efforts to develop prophylaxis clinical studies and prioritize in healthcare workers": [
-            ""
+            "Efforts to develop prophylaxis clinical studies and prioritize in healthcare workers"
         ],
         "Approaches to evaluate risk for enhanced disease after vaccination": [
-            ""
+            "Approaches to evaluate risk for enhanced covid-19 after vaccination against coronavirus"
         ],
         "Assays to evaluate vaccine immune response and process development for vaccines, alongside suitable animal models [in conjunction with therapeutics]": [
             ""
@@ -143,7 +143,7 @@
     },
     "What has been published about medical care?": {
         "Resources to support skilled nursing facilities and long term care facilities.": [
-            ""
+            "Resources to support skilled nursing facilities"
         ],
         "Mobilization of surge medical staff to address shortages in overwhelmed communities": [
             ""
@@ -152,10 +152,10 @@
             ""
         ],
         "Extracorporeal membrane oxygenation (ECMO) outcomes data of COVID-19 patients": [
-            ""
+            "Extracorporeal membrane oxygenation (ECMO) outcomes data of COVID-19 patients"
         ],
         "Outcomes data for COVID-19 after mechanical ventilation adjusted for age.": [
-            ""
+            "Outcomes data for COVID-19 after mechanical ventilation adjusted for age"
         ],
         "Knowledge of the frequency, manifestations, and course of extrapulmonary manifestations of COVID-19, including, but not limited to, possible cardiomyopathy and cardiac arrest.": [
             ""
@@ -164,7 +164,7 @@
             ""
         ],
         "Approaches for encouraging and facilitating the production of elastomeric respirators, which can save thousands of N95 masks.": [
-            ""
+            "Approaches for encouraging and facilitating the production of elastomeric respirators, which can save thousands of N95 masks"
         ],
         "Best telemedicine practices, barriers and faciitators, and specific actions to remove/expand them within and across state boundaries.": [
             ""
@@ -173,7 +173,7 @@
             ""
         ],
         "Oral medications that might potentially work.": [
-            ""
+            "Oral medications fo fight covid-19"
         ],
         "Use of AI in real-time health care delivery to evaluate interventions, risk factors, and outcomes in a way that could not be done manually.": [
             ""
@@ -194,13 +194,14 @@
             ""
         ],
         "Rapid design and execution of experiments to examine and compare NPIs currently being implemented. DHS Centers for Excellence could potentially be leveraged to conduct these experiments.": [
-            ""
+            "Rapid design and execution of experiments to examine and compare NPIs currently being implemented.",
+            "DHS Centers for Excellence could potentially be leveraged to conduct these experiments"
         ],
         "Rapid assessment of the likely efficacy of school closures, travel bans, bans on mass gatherings of various sizes, and other social distancing approaches.": [
-            ""
+            "Rapid assessment of the likely efficacy of school closures, travel bans"
         ],
         "Methods to control the spread in communities, barriers to compliance and how these vary among different populations..": [
-            ""
+            "Methods to control the spread in communities, barriers to compliance"
         ],
         "Models of potential interventions to predict costs and benefits that take account of such factors as race, income, disability, age, geographic location, immigration status, housing status, employment status, and health insurance status.": [
             ""
@@ -212,7 +213,7 @@
             ""
         ],
         "Research on the economic impact of this or any pandemic. This would include identifying policy and programmatic alternatives that lessen/mitigate risks to critical government services, food distribution and supplies, access to critical household supplies, and access to health diagnoses, treatment, and needed care, regardless of ability to pay.": [
-            ""
+            "Research on the economic impact of this or any pandemic."
         ]
     },
     "What do we know about diagnostics and surveillance?": {
@@ -229,7 +230,7 @@
             ""
         ],
         "Development of a point-of-care test (like a rapid influenza test) and rapid bed-side tests, recognizing the tradeoffs between speed, accessibility, and accuracy.": [
-            ""
+            "Development of a radi covid-19 test"
         ],
         "Rapid design and execution of targeted surveillance experiments calling for all potential testers using PCR in a defined area to start testing and report to a specific entity. These experiments could aid in collecting longitudinal samples, which are critical to understanding the impact of ad hoc local interventions (which also need to be recorded).": [
             ""
