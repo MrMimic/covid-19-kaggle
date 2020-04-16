@@ -74,28 +74,31 @@ def create_md_report(query: str,
     number_of_clusters = closest_sentences_df.cluster.unique().size
 
     with open(output_report_path, "a") as handler:
-        handler.write(f"**Query**: {query}\n")
+        # Write generalities
+        handler.write(f"**Query**: {query}\n\n")
         handler.write(
-            f"**Number of sentences kept by distance filtering**: {number_of_kept_sentences}\n"
+            f"**Number of sentences kept by distance filtering**: {number_of_kept_sentences}\n\n"
         )
         handler.write(
-            f"**Number of unique papers found among these sentences**: {number_of_unique_papers}\n"
+            f"**Number of unique papers found among these sentences**: {number_of_unique_papers}\n\n"
         )
         handler.write(
-            f"**Number of clusters automatically designed**: {number_of_clusters}\n"
+            f"**Number of clusters automatically designed**: {number_of_clusters}\n\n"
         )
         if task:
-            handler.write(f"**Task**: {task}\n")
+            handler.write(f"**Task**: {task}\n\n")
         if subtask:
             handler.write(f"**Subtask**: {subtask}\n\n")
-
-
+        # Write top X sentences per cluster
         for cluster in sorted(closest_sentences_df.cluster.unique().tolist()):
-            handler.write(f"**Cluster {cluster}:**\n")
+            handler.write(f"**Cluster {cluster}:**\n\n")
             sub_df = closest_sentences_df[closest_sentences_df["cluster"] ==
                                           cluster].sort_values(by="distance",
                                                                ascending=False)
             for index, row in sub_df.head(top_x).iterrows():
-                handler.write(f"\t- {row.raw_sentence}\n")
+                # As a markdown list
+                handler.write(
+                    f"- {row.raw_sentence} ([{row.paper_doi}](https://www.doi.org/{row.paper_doi}))\n\n"
+                )
             handler.write("\n")
-        handler.write(f"{'-' * 100}\n\n")
+        handler.write(f"{'-' * 20}\n\n")

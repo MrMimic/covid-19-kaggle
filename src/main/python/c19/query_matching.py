@@ -2,17 +2,17 @@
 
 import json
 import time
+from copy import deepcopy
 from operator import itemgetter
 from typing import Any, List
 
 import numpy as np
 import pandas as pd
+from sklearn.metrics.pairwise import cosine_similarity
+
 from c19.database_utilities import get_sentences
 from c19.embedding import Embedding
 from c19.text_preprocessing import preprocess_text
-
-
-from sklearn.metrics.pairwise import cosine_similarity
 
 
 def vectorize_query(embedding_model: Embedding, query: str) -> List[float]:
@@ -63,18 +63,17 @@ def get_sentences_data(
     return loaded_sentences
 
 
-def get_k_closest_sentences(
-        query: str,
-        all_sentences: List[Any],
-        embedding_model: Embedding,
-        minimal_number_of_sentences: int = 100,
-        similarity_threshold: float = 0.8) -> pd.DataFrame:
+def get_k_closest_sentences(query: str,
+                            all_sentences: List[Any],
+                            embedding_model: Embedding,
+                            minimal_number_of_sentences: int = 100,
+                            similarity_threshold: float = 0.8) -> pd.DataFrame:
     """
     Compute the cosine distance between the query and all sentences found in the DB.
 
     Args:
         query (str): The query as a sentence.
-        sentences ([List[Any]): Pre-processed sentences data from the DB.
+        all_sentences ([List[Any]): Pre-processed sentences data from the DB.
         embedding_model (Embedding): The embedding model to be used to vectorise the query.
         minimal_number_of_sentences (int): The minimal number of sentence to keep when filtering by distance.
         The similarity_threshold will be decreased gently if needed until the
@@ -91,40 +90,46 @@ def get_k_closest_sentences(
     sentences_vectors = [sentence[4] for sentence in all_sentences]
 
     # Cosine sim of 1 means same vector, -1 opposite
-    distances = cosine_similarity([query_vector], sentences_vectors)[0]
+    similarities = cosine_similarity([query_vector], sentences_vectors)[0]
 
-    # Group sentences and vectors
-    for sentence, distance in zip(all_sentences, distances):
-        sentence.append(distance)
-    del distances
-
-    # Now, index 5 contains distance and instance Sentence objects.
-    k_sentences = sorted(all_sentences, key=itemgetter(5), reverse=True)
-
-    # Now, create a DF output.
-    k_sentences_df = pd.DataFrame(k_sentences,
-                                  columns=[
-                                      "paper_doi", "section", "raw_sentence",
-                                      "sentence", "vector", "distance"
-                                  ])
-    del k_sentences
-
-    # Filter sentences, first, only if cosine_similarity > threshold.
+    # Now, estimate the threshold to get enough sentences to keep.
     base_similarity_threshold = similarity_threshold
     while True:
-        k_sentences_df_filtered = k_sentences_df[k_sentences_df["distance"] > similarity_threshold]
-        # If the number of kept sentence is too low, we should be less restrictive.
-        if k_sentences_df_filtered.shape[0] >= minimal_number_of_sentences:
+        similarities_to_keep = [
+            sim for sim in similarities if sim >= similarity_threshold
+        ]
+        if len(similarities_to_keep) >= minimal_number_of_sentences:
             break
         else:
-            # And lower the threshold to keep more sentences.
             similarity_threshold -= 0.01
     if base_similarity_threshold != similarity_threshold:
-        print(f"Similarity threshold lowered from {base_similarity_threshold} to {similarity_threshold} due to minimal number of sentence constraint.")
+        print(
+            f"Similarity threshold lowered from {base_similarity_threshold} to {similarity_threshold} due to minimal number of sentence constraint."
+        )
+
+    # Then, create a list of sentences to keep (deepcopy only after filtering)
+    # So the original list of sentence remains untouched for further queries.
+    # Let's add for each sentence the cosine similarity with the query.
+    k_sentences = []
+    for sentence, similarity in zip(all_sentences, similarities):
+        if similarity >= similarity_threshold:
+            sentence_copied = deepcopy(sentence)
+            sentence_copied.append(similarity)
+            k_sentences.append(sentence_copied)
+
+    # Now, index 5 contains distance and instance Sentence objects.
+    k_sentences = sorted(k_sentences, key=itemgetter(5), reverse=True)
+
+    # Now, create a DF output.
+    k_sentences = pd.DataFrame(k_sentences,
+                               columns=[
+                                   "paper_doi", "section", "raw_sentence",
+                                   "sentence", "vector", "distance"
+                               ])
 
     toc = time.time()
     print(
-        f"Took {round((toc-tic) / 60, 2)} minutes to process the query ({k_sentences_df_filtered.shape[0]} sentences kept by distance filtering)."
+        f"Took {round((toc-tic) / 60, 2)} minutes to process the query ({k_sentences.shape[0]} sentences kept by distance filtering)."
     )
 
-    return k_sentences_df_filtered
+    return k_sentences

@@ -42,6 +42,6 @@ Please use [this one](https://github.com/MrMimic/covid-19-kaggle/blob/master/src
 
 ## Usage
 
-All queries from the Kaggle challenge have been reformulated [here](https://github.com/MrMimic/covid-19-kaggle/blob/master/resources/queries.json). They have then been processed with the tool presented here.
+All queries from the Kaggle challenge have been reformulated [here](https://github.com/MrMimic/covid-19-kaggle/blob/master/resources/queries.json). They have then been processed with the tool presented [here](https://github.com/MrMimic/covid-19-kaggle/blob/master/resources/executed_queries.md).
 
 Results are visible [on Kaggle](https://www.kaggle.com/mrmimic/opinions-extraction-tool-chloroquine-case-study).
