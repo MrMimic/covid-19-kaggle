@@ -24,13 +24,13 @@ Simply use:
 
 An then the library can be imported with:
 
-    from c19 import database_utilities, text_preprocessing, embedding, query_matching, parameters
+    from c19 import parameters, database_utilities, text_preprocessing, embedding, query_matching, clusterise_sentences, plot_clusters, display_output
 
 ## Usage
 
 ### Create the database
 
-Please use [this script](https://github.com/MrMimic/covid-19-kaggle/blob/master/src/main/scripts/query_db.py) to create the local database.
+Please use [this script](https://github.com/MrMimic/covid-19-kaggle/blob/master/src/main/scripts/create_db.py) to create the local database.
 
 ### Query the DB
 
@@ -44,4 +44,4 @@ Please use [this one](https://github.com/MrMimic/covid-19-kaggle/blob/master/src
 
 All queries from the Kaggle challenge have been reformulated [here](https://github.com/MrMimic/covid-19-kaggle/blob/master/resources/queries.json). They have then been processed with the tool presented here.
 
-Results are visible [here](https://github.com/MrMimic/covid-19-kaggle/blob/master/resources/output.md).
+Results are visible [on Kaggle](https://www.kaggle.com/mrmimic/opinions-extraction-tool-chloroquine-case-study).
