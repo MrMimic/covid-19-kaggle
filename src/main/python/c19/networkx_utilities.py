@@ -40,7 +40,7 @@ def get_paper_cited_K_times_graph(G , M = 500) -> nx.DiGraph:
                 Gs.add_edge(adj_node,node)
     return Gs
 
-def add_pagerank_to_dataframe(dataframe: pd.DataFrame) -> pd.DataFrame:
+def add_pagerank_to_metadata_df(dataframe: pd.DataFrame) -> pd.DataFrame:
     """
     Return the dataframe with an extra column containing the pagerank of all papers in the dataframe subjecent network 
     """
@@ -67,4 +67,5 @@ def add_pagerank_to_dataframe(dataframe: pd.DataFrame) -> pd.DataFrame:
     # get the original title
     merged_df = merged_df.drop(['title'],axis=1)
     merged_df.rename(columns={"original_title": "title"}, inplace=True)
+    print(f'Found {len(merged_df[merged_df["pagerank"].notna()])} pagerank for {len(merged_df)} articles')
     return merged_df
