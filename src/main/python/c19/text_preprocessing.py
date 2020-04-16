@@ -52,27 +52,28 @@ def preprocess_text(text: str,
         return [word for word in sentence if letter_pattern.match(word)]
 
     # Split paragraphs into sentences and keep them for nive output
-    sentences_raw = sent_tokenize(text)
-    # Remove shortest sentences
-    sentences = [sentence for sentence in sentences_raw if len(sentence) > 20]
-    # Lower them
-    sentences = [sentence.lower() for sentence in sentences]
-    # Split sentences into words and remove punctuation
-    sentences = [word_tokenize(sentence) for sentence in sentences]
-    # Remove stopwords
-    sentences = [filter_stopwords(sentence) for sentence in sentences]
-    if stem_words is True:
-        # Stem words
-        sentences = [do_stemming(sentence) for sentence in sentences]
-    if remove_num is True:
-        sentences = [remove_numeric_words(sentence) for sentence in sentences]
-    # Filter empty sentences and one or two-letters words
-    sentences = [[word for word in sentence if len(word) > 2]
-                 for sentence in sentences if sentence != []]
-    # Remove sentence with less than 3 words
-    sentences = [sentence for sentence in sentences if len(sentence) >= 3]
+    sentences_raw_all = sent_tokenize(text)
+    sentences_pp = []
+    sentences_raw = []
+    for sentence_raw in sentences_raw_all:
+        if len(sentence_raw) > 20:  # Remove shortest sentences
+            sentence = sentence_raw.lower()  # Lower them
+            sentence = word_tokenize(sentence)  # Split sentences into words and remove punctuation
+            sentence = filter_stopwords(sentence)  # Remove stopwords
+            if stem_words is True:
+                # Stem words
+                sentence = do_stemming(sentence)
+            if remove_num is True:
+                sentence = remove_numeric_words(sentence)
+            if sentence != []:
+                # Filter empty sentences and one or two-letters words
+                sentence = [word for word in sentence if len(word) > 2]
+                # Remove sentence with less than 3 words
+                if len(sentence) >= 3:
+                    sentences_pp.append(sentence)
+                    sentences_raw.append(sentence_raw)
 
-    return sentences, sentences_raw
+    return sentences_pp, sentences_raw
 
 
 @retry(sqlite3.OperationalError, tries=5, delay=2)
