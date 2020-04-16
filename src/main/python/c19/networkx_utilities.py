@@ -8,7 +8,7 @@ def get_citations_graph(urls=None) -> nx.DiGraph:
     """
     Return the dataset citations graph.
     """
-    print("Creating citation graph to generate pagerank... ")
+    print("Creating citation graph to generate PageRank...")
     file_path = "title_citation_df"
     all_files = []
     if urls is None:
@@ -23,7 +23,6 @@ def get_citations_graph(urls=None) -> nx.DiGraph:
     dataframe = pd.concat((pd.read_csv(f, compression='zip')[['title', 'citation']] for f in all_files))
     # dataframe = pd.read_csv(file_path, compression='zip')[['title', 'citation']]
     G = nx.from_pandas_edgelist(dataframe,source='title',target='citation',create_using=nx.DiGraph )
-    print(f"Full citation graph loaded is having {len(list(G.nodes))} nodes and {len(list(G.edges))} edges")
     return G
 
 def get_paper_cited_K_times_graph(G , M = 500) -> nx.DiGraph:
@@ -59,7 +58,7 @@ def add_pagerank_to_dataframe(dataframe: pd.DataFrame) -> pd.DataFrame:
             for n in G.neighbors(title):
                 to_keep_nodes.append(n)
     Gsub = G.subgraph(to_keep_nodes)
-    print(f"Reduce citation graph loaded is having {len(list(Gsub.nodes))} nodes and {len(list(Gsub.edges))} edges")
+    print(f"Reduced citation graph loaded is having {len(list(Gsub.nodes))} nodes and {len(list(Gsub.edges))} edges.")
     # compute pagerank on network
     pr = nx.pagerank(Gsub)
     pagerank = pd.DataFrame(pr.items(), columns=["title", "pagerank"]).sort_values(by="pagerank", ascending=False)
