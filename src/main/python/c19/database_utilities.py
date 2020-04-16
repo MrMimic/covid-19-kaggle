@@ -354,7 +354,17 @@ def get_article(db_path: str, paper_doi):
 
     return data
 
-def get_pagerank(db_path: str, paper_doi):
+def get_pagerank(db_path: str, paper_doi: str) -> str:
+    """
+    Return an article pagerank score.
+
+    Args:
+        db_path (str): Path to the SQLite DB.
+        paper_doi (str): DOI of the paper.
+
+    Returns:
+        List[str]: Score.
+    """
     article = get_article(db_path, paper_doi)
     try:
         return article[0][7]
@@ -362,5 +372,15 @@ def get_pagerank(db_path: str, paper_doi):
         return None
 
 def get_df_pagerank_by_doi(db_path: str, df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Update the etadata DF with pagerank score.
+
+    Args:
+        db_path (str): Path to the SQLite DB.
+        df (pd.DataFrame): The DF to be updated.
+
+    Returns:
+        pd.DataFrame: Updated DF.
+    """
     df["pagerank"] = df["paper_doi"].apply(lambda x : get_pagerank(db_path, paper_doi=x))
     return df
