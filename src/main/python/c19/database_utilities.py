@@ -260,6 +260,7 @@ def create_db_and_load_articles(db_path: str = "articles_database.sqlite",
         enable_data_cleaner (bool): Remove line numbers from the text.
     """
 
+
     if first_launch is False:
         assert os.path.isfile(db_path)
         print(f"DB {db_path} will be used instead.")
@@ -267,9 +268,18 @@ def create_db_and_load_articles(db_path: str = "articles_database.sqlite",
     else:
         tic = time.time()
         # filtering
-        metadata_df = filter_metadata_df(kaggle_data_path=kaggle_data_path, only_newest=only_newest, only_covid=only_covid)
-        # pagerank generation
-        metadata_df = add_pagerank_to_metadata_df(metadata_df)
+        metadata_df = filter_metadata_df(
+            kaggle_data_path=kaggle_data_path,
+            only_newest=only_newest,
+            only_covid=only_covid)
+
+        database_folder = os.path.dirname(db_path)
+
+        # PageRank generation
+        metadata_df = add_pagerank_to_metadata_df(dataframe=metadata_df,
+                                                  dest_folder=database_folder)
+
+        # Prepare list of arguments for multiprocessing
         articles_to_be_inserted = [
             (article, kaggle_data_path, enable_data_cleaner)
             for article in get_articles_to_insert(metadata_df)
