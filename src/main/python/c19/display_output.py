@@ -42,7 +42,7 @@ def create_html_report(query: str,
                                                            ascending=False)
         display(
             HTML(
-                f"<h3>Cluster {cluster} top {top_x} sentences ({sub_df.shape[0]} total):</h3>"
+                f"<h3>Cluster {cluster} ({sub_df.shape[0]} sentences) </h3><br><h4>Top {top_x} closest sentences to query:</h4>"
             ))
 
         for index, row in sub_df.head(top_x).iterrows():
@@ -50,6 +50,25 @@ def create_html_report(query: str,
                 HTML(
                     f"&emsp;{row.raw_sentence} (<a href=https://www.doi.org/{row.paper_doi} target='_blank'>{row.paper_doi}</a>)"
                 ))
+        
+        most_cited = closest_sentences_df[closest_sentences_df["cluster"] ==
+                                      cluster].sort_values(by="pagerank",
+                                                           ascending=False)
+        
+        display(
+            HTML(
+                f"<h4>Link to most relevant papers (highest pagerank score):</h4>"
+            ))
+            
+        html_str =""
+        for index, row in most_cited.head(top_x).iterrows():
+            html_str += f"&nbsp;<a href=https://www.doi.org/{row.paper_doi} target='_blank'>{row.paper_doi}</a>&nbsp;\t"
+        
+        display(
+            HTML(
+                html_str
+            )
+        )
 
 
 def create_md_report(query: str,
