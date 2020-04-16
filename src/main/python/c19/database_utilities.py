@@ -228,7 +228,7 @@ def filter_metadata_df(kaggle_data_path: str,
         metadata_df["to_keep"] = False
         for synonym in covid_synonyms:
             metadata_df["to_keep"] += [
-                True if re.search(synonym, abstract) else False
+                True if re.search(synonym, abstract, flags=re.IGNORECASE) else False
                 for abstract in abstracts
             ]
         metadata_df = metadata_df[metadata_df["to_keep"] == True]
