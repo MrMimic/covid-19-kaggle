@@ -18,8 +18,7 @@ def main():
     database_utilities.create_db_and_load_articles(
         db_path=params.database.local_path,
         kaggle_data_path=params.database.kaggle_data_path,
-        first_launch=params.first_launch,
-        load_body=params.preprocessing.load_text_body)
+        first_launch=params.first_launch)
 
     # Load pre-trained word vectors
     embedding_model = embedding.Embedding(

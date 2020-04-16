@@ -50,19 +50,19 @@ class Database:
     str: Local path of the kaggle data.
     """
 
-    run_on_kaggle: bool = False
+    only_newest: bool = False
     """
     bool: If True, will drop all article published before 2019 to get a light SQL DB.
+    """
+
+    only_covid: bool = False
+    """
+    bool: If True, will drop all article with abstract wich do not contain a covid-19 synonym.
     """
 
 
 @dataclass
 class PreProcessing:
-
-    load_text_body: bool = True
-    """
-    bool: Load the body text of article in addition to the abstract and title.
-    """
 
     stem_words: bool = False
     """
