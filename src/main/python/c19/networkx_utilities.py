@@ -1,15 +1,21 @@
-import networkx as nx
-import pandas as pd
 import urllib.request
 
-def get_citations_graph(urls = None) -> nx.DiGraph:
+import networkx as nx
+import pandas as pd
+
+
+def get_citations_graph(urls=None) -> nx.DiGraph:
     """
-    Return the dataset citations graph 
+    Return the dataset citations graph.
     """
     print("Creating citation graph to generate pagerank... ")
     file_path = "title_citation_df"
     all_files = []
-    if urls is None: urls = ["https://github.com/MrMimic/covid-19-kaggle/raw/master/resources/title_citation_part1.zip", "https://github.com/MrMimic/covid-19-kaggle/raw/master/resources/title_citation_part2.zip"]
+    if urls is None:
+        urls = [
+            "https://github.com/MrMimic/covid-19-kaggle/raw/master/resources/title_citation_part1.zip",
+            "https://github.com/MrMimic/covid-19-kaggle/raw/master/resources/title_citation_part2.zip"
+        ]
     for i, url in enumerate(urls):
         filename = "title_citation_df_" + str(i)
         urllib.request.urlretrieve(url, filename)
@@ -26,10 +32,10 @@ def get_paper_cited_K_times_graph(G , M = 500) -> nx.DiGraph:
     """
     Gs = nx.DiGraph()
     for node in G.nodes():
-        if G.in_degree[node] > M : 
-            print(node)
+        if G.in_degree[node] > M:
             # We look for adjacent nodes
-            for adj_node in G.in_edges(node): # create link for each paper point to current paper
+            for adj_node in G.in_edges(
+                    node):  # create link for each paper point to current paper
                 Gs.add_node(adj_node)
                 Gs.add_node(node)
                 Gs.add_edge(adj_node,node)

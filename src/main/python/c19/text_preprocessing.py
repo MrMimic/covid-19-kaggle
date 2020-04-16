@@ -6,11 +6,11 @@ import os
 import re
 import sqlite3
 import time
-from typing import Any, List, Tuple
 from random import shuffle
-from nltk import word_tokenize
+from typing import Any, List, Tuple
 
 import tqdm
+from nltk import word_tokenize
 from nltk.corpus import stopwords
 from nltk.stem.snowball import SnowballStemmer
 from nltk.tokenize import sent_tokenize

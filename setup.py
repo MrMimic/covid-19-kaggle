@@ -14,18 +14,17 @@ requirements = [
     "joblib>=0.14.1",
     "python-dateutil>=2.8.1",
     "scikit-learn>=0.22.2",
-    # "pyarrow>=0.16.0",  # Pyarrow is already installed on colab, shouldn't get two versions
     "gensim>=3.6.0",
     "dataclasses>=0.7",
     "language-detector>=5.0.2",
-    "networkx"
+    "networkx>=2.4"
 ]
 
 classifiers = [
     "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
     "Programming Language :: Python :: 3.6.9",
-    "Operating System :: OS Independent", "Topic :: Covid 19 :: NLP",
-    "Topic :: Utilities"
+    "Operating System :: OS Independent",
+    "Topic :: Covid 19 :: NLP :: Utilities"
 ]
 
 setup(name="c19",

@@ -19,8 +19,7 @@ def main():
     database_utilities.create_db_and_load_articles(
         db_path=params.database.local_path,
         kaggle_data_path=params.database.kaggle_data_path,
-        first_launch=params.first_launch,
-        load_body=params.preprocessing.load_text_body)
+        first_launch=params.first_launch)
 
     # Pre-process all sentences (no embedding)
     text_preprocessing.pre_process_and_vectorize_texts(

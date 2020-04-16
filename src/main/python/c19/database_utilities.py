@@ -2,6 +2,7 @@
 
 import multiprocessing as mp
 import os
+import re
 import sqlite3
 import time
 from typing import Any, List, Tuple
@@ -11,10 +12,10 @@ import tqdm
 from dateutil import parser
 from retry import retry
 
+from c19.data_cleaner import filter_lines_count
 from c19.file_processing import get_body, read_file
 from c19.language_detection import update_languages
 from c19.networkx_utilities import add_pagerank_to_dataframe
-from c19.data_cleaner import filter_lines_count
 
 def instanciate_sql_db(db_path: str = "articles_database.sqlite") -> None:
     """
@@ -121,12 +122,12 @@ def get_article_text(args: List[Tuple[int, pd.Series, str, bool]]) -> None:
     """
     data = args[0][1]
     kaggle_data_path = args[1]
-    load_body = args[2]
-    enable_data_cleaner= args[3]
+    enable_data_cleaner = args[2]
     # Get body
-    if data.has_pdf_parse is True and load_body is True:
+    if data.has_pdf_parse is True:
         json_file = os.path.join(kaggle_data_path, data.full_text_file,
-                                 data.full_text_file, "pdf_json", f"{data.sha}.json")
+                                 data.full_text_file, "pdf_json",
+                                 f"{data.sha}.json")
         try:
             json_data = read_file(json_file)
             body = get_body(json_data=json_data)
@@ -134,10 +135,10 @@ def get_article_text(args: List[Tuple[int, pd.Series, str, bool]]) -> None:
         except (FileNotFoundError, KeyError, IndexError):
             body = None
             folder = None
-    elif data.has_pmc_xml_parse is True and load_body is True:
+    elif data.has_pmc_xml_parse is True:
         json_file = os.path.join(kaggle_data_path, data.full_text_file,
-                                    data.full_text_file, "pmc_json",
-                                    f"{data.pmcid}.xml.json")
+                                 data.full_text_file, "pmc_json",
+                                 f"{data.pmcid}.xml.json")
         try:
             json_data = read_file(json_file)
             body = get_body(json_data=json_data)
@@ -152,18 +153,14 @@ def get_article_text(args: List[Tuple[int, pd.Series, str, bool]]) -> None:
     try:
         date = parser.parse(data.publish_time)
     except Exception:  # Better to get no date than a string of whatever
-        date = None 
-
-    #Filter abstract text
-    if enable_data_cleaner:
+        date = None
+    # Filter abstract text
+    if enable_data_cleaner and isinstance(data.abstract,
+                                          str) and len(data.abstract) > 10:
         try:
-            if isinstance(data.abstract, str) and len(data.abstract)>10:
-                abstract = filter_lines_count(data.abstract)
-            else:
-                abstract = data.abstract
-        except Exception as e:
+            abstract = filter_lines_count(data.abstract)
+        except Exception:
             abstract = data.abstract
-            #print("error cleaning abstract", e)
     else:
         abstract = data.abstract
     # Insert
@@ -191,10 +188,54 @@ def get_all_articles_data(
     cursor.close()
     connection.close()
 
-    # ids_cleaneds = [id_ for id_ in ids if len(id_) == 1 and id_[0] is not None]
-    ids_cleaneds = ids
+    return ids
 
-    return ids_cleaneds
+
+def filter_metadata_df(kaggle_data_path: str,
+                       only_newest: bool = False,
+                       only_covid: bool = False) -> pd.DataFrame:
+    """
+    Select the articles to be inserted in the database.
+    It filter the metadata DF before inserting remaining articles.
+
+    Args:
+        kaggle_data_path (str): The path to the Kaggle data.
+        only_newest (bool, optional): Determines if the notebook is running on Kaggle, so the DB is limited.
+        only_covid (bool, optional): Determines if only COVID-19 articles are to be loaded.
+
+    Returns:
+        pd.dataframe: A dataframe with the articles to be inserted.
+    """
+
+    # The metadata.csv file will be used to fetch available files
+    metadata_df = pd.read_csv(os.path.join(kaggle_data_path, "metadata.csv"), low_memory=False)
+
+    # The DOI isn't unique, then let's keep the last version of a duplicated paper
+    metadata_df.drop_duplicates(subset=["doi"], keep="last", inplace=True)
+
+    # If on Kaggle, only keep latest articles to limit DB size
+    if only_newest is True:
+        metadata_df = metadata_df.dropna(axis=0, subset=['abstract'])
+        metadata_df['publish_time'] = pd.to_datetime(metadata_df['publish_time'])
+        metadata_df["to_keep"] = [True if date.year >= 2019 else False for date in metadata_df['publish_time'].to_list()]
+        metadata_df = metadata_df[metadata_df["to_keep"] == True]
+
+    # If only covid-19, only keep articles related to it
+    if only_covid is True:
+        abstracts = metadata_df['abstract'].to_list()
+        covid_synonyms = ['corona', 'covid', 'ncov', 'sars-cov-2']
+        metadata_df["to_keep"] = False
+        for synonym in covid_synonyms:
+            metadata_df["to_keep"] += [
+                True if re.search(synonym, abstract) else False
+                for abstract in abstracts
+            ]
+        metadata_df = metadata_df[metadata_df["to_keep"] == True]
+
+    # For the moment, we only trained english embedding.
+    metadata_df = update_languages(metadata_df)
+    metadata_df = metadata_df[metadata_df.lang == "En"]
+    return metadata_df
 
 
 def create_db_and_load_articles(db_path: str = "articles_database.sqlite",
@@ -202,9 +243,9 @@ def create_db_and_load_articles(db_path: str = "articles_database.sqlite",
                                     os.sep, "kaggle", "input",
                                     "CORD-19-research-challenge"),
                                 first_launch: bool = False,
-                                load_body: bool = False,
-                                run_on_kaggle: bool = False,
-                                enable_data_cleaner:bool = False) -> None:
+                                only_newest: bool = False,
+                                only_covid: bool = False,
+                                enable_data_cleaner: bool = False) -> None:
     """
     Main function to create the DB at first launch.
     Load metadata.csv, try to get body texts and insert everything without pre-processing.
@@ -212,7 +253,10 @@ def create_db_and_load_articles(db_path: str = "articles_database.sqlite",
     Args:
         db_path (str, optional): Path to the SQLite file. Defaults to "articles_database.sqlite".
         kaggle_data_path (str, optional): Path to the folder containing Kaggle JSON files.
-        load_file (bool, optional): Debug option to prevent to create a new file. Defaults to True.
+        first_launch (bool): Create the database from scratch. If False, load it.
+        only_newest (bool): Only use articles published since 2019.
+        only_covid (bool): Filter articles based on keywords.
+        enable_data_cleaner (bool): Remove line numbers from the text.
     """
 
     if first_launch is False:
@@ -221,25 +265,12 @@ def create_db_and_load_articles(db_path: str = "articles_database.sqlite",
 
     else:
         tic = time.time()
-
-        # The metadata.csv file will be used to fetch available files
-        metadata_df = pd.read_csv(os.path.join(kaggle_data_path, "metadata.csv"), low_memory=False)
-        # The DOI isn't unique, then let's keep the last version of a duplicated paper
-        metadata_df.drop_duplicates(subset=["doi"], keep="last", inplace=True)
-        # If on Kaggle, only keep latest articles to limit DB size
-        if run_on_kaggle is True:
-            metadata_df = metadata_df.dropna(axis=0, subset=['abstract'])
-            metadata_df['publish_time'] = pd.to_datetime(metadata_df['publish_time'])
-            metadata_df["to_keep"] = [True if date.year >= 2019 else False for date in metadata_df['publish_time'].to_list()]
-            metadata_df = metadata_df[metadata_df["to_keep"] == True]
-        # For the moment, we only trained english embedding. See you on 04/16.
-        metadata_df = update_languages(metadata_df)
-        metadata_df = metadata_df[metadata_df.lang == "En"]
-        # getting pagerank
+        # filtering
+        metadata_df = filter_metadata_df(kaggle_data_path=kaggle_data_path, only_newest=only_newest, only_covid=only_covid)
+        # pagerank generation
         metadata_df = add_pagerank_to_dataframe(metadata_df)
-        # Load usefull information to be stored: id, title, body, abstract, date, sha, folder, pagerank
         articles_to_be_inserted = [
-            (article, kaggle_data_path, load_body, enable_data_cleaner)
+            (article, kaggle_data_path, enable_data_cleaner)
             for article in get_articles_to_insert(metadata_df)
         ]
         print(f"{len(articles_to_be_inserted)} articles to be prepared.")
@@ -290,6 +321,7 @@ def get_sentences(db_path: str) -> List[Any]:
     connection.close()
 
     return data
+
 
 def get_article(db_path: str, paper_doi):
     """
