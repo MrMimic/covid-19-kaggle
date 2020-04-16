@@ -55,6 +55,8 @@ def create_html_report(query: str,
 def create_md_report(query: str,
                      closest_sentences_df: pd.DataFrame,
                      output_report_path: str,
+                     task: str = None,
+                     subtask: str = None,
                      top_x: int = 3) -> None:
     """
     Generates a markdown report.
@@ -63,6 +65,8 @@ def create_md_report(query: str,
         query (str): The user query.
         closest_sentences_df (pd.DataFrame): Output DF of the clustering step.
         output_report_path (str): Markdown file path.
+        task (str): The task of the actual query.
+        subtask (str): The subtask of the actual query.
         top_x (int, optional): Top X sentences per cluster. Defaults to 3.
     """
     number_of_kept_sentences = closest_sentences_df.shape[0]
@@ -70,7 +74,7 @@ def create_md_report(query: str,
     number_of_clusters = closest_sentences_df.cluster.unique().size
 
     with open(output_report_path, "a") as handler:
-        handler.write(f"Query: {query}\n")
+        handler.write(f"**Query**: {query}\n")
         handler.write(
             f"**Number of sentences kept by distance filtering**: {number_of_kept_sentences}\n"
         )
@@ -78,8 +82,13 @@ def create_md_report(query: str,
             f"**Number of unique papers found among these sentences**: {number_of_unique_papers}\n"
         )
         handler.write(
-            f"**Number of clusters automatically designed**: {number_of_clusters}\n\n"
+            f"**Number of clusters automatically designed**: {number_of_clusters}\n"
         )
+        if task:
+            handler.write(f"**Task**: {task}\n")
+        if subtask:
+            handler.write(f"**Subtask**: {subtask}\n\n")
+
 
         for cluster in sorted(closest_sentences_df.cluster.unique().tolist()):
             handler.write(f"**Cluster {cluster}:**\n")

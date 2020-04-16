@@ -2,11 +2,14 @@
     "What is known about transmission, incubation, and environmental stability?": {
         "Range of incubation periods for the disease in humans (and how this varies across age and health status) and how long individuals are contagious, even after recovery.": [
             "What is the covid-19 incubation period for humans and its variations across age and health status?",
-            "How long are individual with covid-19 contagious?"],
+            "How long are individual with covid-19 contagious?"
+        ],
         "Prevalence of asymptomatic shedding and transmission (e.g., particularly children).": [
-            "Prevalence of asymptomatic shedding and transmission in children of covid-19"],
+            "Prevalence of asymptomatic shedding and transmission in children of covid-19"
+        ],
         "Seasonality of transmission.": [
-            "How seasonnal is the transmission of the covid-19?"],
+            "How seasonnal is the transmission of the covid-19?"
+        ],
         "Physical science of the coronavirus (e.g., charge distribution, adhesion to hydrophilic/phobic surfaces, environmental survival to inform decontamination efforts for affected areas and provide information about viral shedding).": [
             "Physical science of the coronavirus (charge distribution, adhesion to hydrophilic/phobic surfaces, environmental survival)"
         ],
@@ -340,4 +343,3 @@
         ]
     }
 }
-
