@@ -68,5 +68,5 @@ def add_pagerank_to_metadata_df(dataframe: pd.DataFrame) -> pd.DataFrame:
     # get the original title
     merged_df = merged_df.drop(['title'],axis=1)
     merged_df.rename(columns={"original_title": "title"}, inplace=True)
-    print(f'Found {len(merged_df[closest_sentences_df["pagerank"].notna()])} pagerank for {len(merged_df)} articles')
+    print(f'Found {len(merged_df[merged_df["pagerank"].notna()])} pagerank for {len(merged_df)} articles')
     return merged_df
