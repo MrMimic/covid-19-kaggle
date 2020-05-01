@@ -132,7 +132,7 @@ def get_article_text(args: List[Tuple[int, pd.Series, str, bool]]) -> None:
             json_data = read_file(json_file)
             body = get_body(json_data=json_data)
             folder = data.full_text_file
-        except (FileNotFoundError, KeyError, IndexError):
+        except (FileNotFoundError, KeyError, IndexError, OSError):
             body = None
             folder = None
     elif data.has_pmc_xml_parse is True:
