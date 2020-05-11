@@ -93,7 +93,7 @@ class PreProcessing:
 @dataclass
 class Query:
 
-    cosine_similarity_threshold: float = 0.8
+    cosine_similarity_threshold: float = 0.95
     """
     float: The similarity threshold to filter sentences having distance < threshold.
     """
