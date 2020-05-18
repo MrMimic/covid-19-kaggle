@@ -4,7 +4,7 @@ import json
 import time
 from copy import deepcopy
 from operator import itemgetter
-from typing import Any, List
+from typing import Any, List, Optional, Union
 
 import numpy as np
 import pandas as pd
@@ -72,7 +72,8 @@ def get_k_closest_sentences(query: str,
                             all_sentences: List[Any],
                             embedding_model: Embedding,
                             minimal_number_of_sentences: int = 100,
-                            similarity_threshold: float = 0.8) -> pd.DataFrame:
+                            similarity_threshold: float = 0.8,
+                            return_logs: bool = False) -> Union[pd.DataFrame, Optional[List[str]]]:
     """
     Compute the cosine distance between the query and all sentences found in the DB.
 
@@ -86,9 +87,11 @@ def get_k_closest_sentences(query: str,
         similarity_threshold (float): The minimal cosine similarity between sentence and query to be kept.
 
     Returns:
-        Any: A list of tuples [(score, target_vector_1), (score, target_vector_2), ...]
+        pd.DataFrame: Updated DF with new columns distance.
+        Optional[List[str]]: Logs from the query.
     """
     tic = time.time()
+    logs = []
 
     # Vectorize it and format as arguments to be mapped by mp.Pool
     query_vector = list(vectorize_query(embedding_model, query))
@@ -108,9 +111,9 @@ def get_k_closest_sentences(query: str,
         else:
             similarity_threshold -= 0.01
     if base_similarity_threshold != similarity_threshold:
-        print(
-            f"Similarity threshold lowered from {base_similarity_threshold} to {similarity_threshold} due to minimal number of sentence constraint."
-        )
+        log = f"Similarity threshold lowered from {base_similarity_threshold} to {similarity_threshold} due to minimal number of sentence constraint."
+        logs.append(log)
+        print(log)
 
     # Then, create a list of sentences to keep (deepcopy only after filtering)
     # So the original list of sentence remains untouched for further queries.
@@ -133,8 +136,11 @@ def get_k_closest_sentences(query: str,
                                ])
 
     toc = time.time()
-    print(
-        f"Took {round((toc-tic) / 60, 2)} minutes to process the query ({k_sentences.shape[0]} sentences kept by distance filtering)."
-    )
 
-    return k_sentences
+    log = f"Took {round((toc-tic) / 60, 2)} minutes to process the query ({k_sentences.shape[0]} sentences kept by distance filtering)."
+    logs.append(log)
+    print(log)
+    if return_logs is True:
+        return k_sentences, logs
+    else:
+        return k_sentences

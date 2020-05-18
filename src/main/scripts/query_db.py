@@ -7,7 +7,7 @@ It returns a list of Sentence() object.
 """
 
 # Load c19 custom library
-from c19 import embedding, query_matching, parameters
+from c19 import embedding, query_matching, parameters, clusterise_sentences
 
 
 def prepare_data(params):
@@ -30,11 +30,10 @@ if __name__ == "__main__":
 
     params = parameters.Parameters(
         database=parameters.Database(
-            local_path=
-            "local_exec/articles_database_v9_08042020_only_english.sqlite",
-            kaggle_data_path="local_exec/kaggle_data"),
+            local_path="/home/dynomante/projects/covid-19-kaggle/local_exec/articles_database_v14_02052020_test.sqlite",
+            kaggle_data_path="/home/dynomante/projects/covid-19-kaggle/local_exec/kaggle_data"),
         embedding=parameters.Embedding(
-            local_path="resources/global_df_w2v_tfidf.parquet"))
+            local_path="/home/dynomante/projects/covid-19-kaggle/w2v_parquet_file_new_version.parquet"))
 
     embedding_model, all_db_sentences = prepare_data(params)
 
@@ -46,5 +45,12 @@ if __name__ == "__main__":
         embedding_model=embedding_model,
         minimal_number_of_sentences=params.query.minimum_sentences_kept,
         similarity_threshold=params.query.cosine_similarity_threshold)
+
+    closest_sentences_df = clusterise_sentences.perform_kmean(
+        k_closest_sentences_df=closest_sentences_df,
+        number_of_clusters=params.query.number_of_clusters,
+        k_min=params.query.k_min,
+        k_max=params.query.k_max,
+        min_feature_per_cluster=params.query.min_feature_per_cluster)
 
     closest_sentences_df.to_csv("local_exec/output.csv")

@@ -4,7 +4,7 @@ import math
 import time
 from collections import Counter
 from math import sqrt
-from typing import Dict, List, Union
+from typing import Dict, List, Union, Optional
 
 import numpy as np
 import pandas as pd
@@ -15,7 +15,7 @@ from sklearn.preprocessing import StandardScaler
 
 
 def compute_best_k_silhouette(closest_sentences_df: pd.DataFrame, k_min: int,
-                              k_max: int) -> int:
+                              k_max: int, return_logs: bool = False) -> int:
     """
     Utilities allowing to estimate the best K values for a KMean clustering.
     It uses the Silhouette Coefficient. It relates to a model with better-defined clusters.
@@ -60,15 +60,21 @@ def compute_best_k_silhouette(closest_sentences_df: pd.DataFrame, k_min: int,
     possible_k_values = [silhouette_score_k[score] for score in max_scores]
     # Let's round up possible k values leading to the highest scores
     best_k = math.ceil(np.mean(possible_k_values))
-    print(f"Best K estimation by Silhouette Score: {best_k}")
-    return best_k
+    log = f"Best K estimation by Silhouette Score: {best_k}"
+    print(log)
+    if return_logs is True:
+        return best_k, [log]
+    else:
+        return best_k
 
 
-def perform_kmean(k_closest_sentences_df: pd.DataFrame,
-                  number_of_clusters: Union[int, str],
-                  k_min: int = None,
-                  k_max: int = None,
-                  min_feature_per_cluster: int = None) -> pd.DataFrame:
+def perform_kmean(
+        k_closest_sentences_df: pd.DataFrame,
+        number_of_clusters: Union[int, str],
+        k_min: int = None,
+        k_max: int = None,
+        min_feature_per_cluster: int = None,
+        return_logs: bool = False) -> Union[pd.DataFrame, Optional[List[str]]]:
     """
     Add a columns "cluster" and "is_closest" to the sentence dataframe.
 
@@ -86,11 +92,21 @@ def perform_kmean(k_closest_sentences_df: pd.DataFrame,
         pd.DataFrame: Updated DF.
     """
     tic = time.time()
+    logs = []
+
     if number_of_clusters == "auto":
-        number_of_clusters = compute_best_k_silhouette(
-            closest_sentences_df=k_closest_sentences_df,
-            k_min=k_min,
-            k_max=k_max)
+        if return_logs is True:
+            number_of_clusters, silhouette_logs = compute_best_k_silhouette(
+                closest_sentences_df=k_closest_sentences_df,
+                k_min=k_min,
+                k_max=k_max,
+                return_logs=return_logs)
+        else:
+            number_of_clusters = compute_best_k_silhouette(
+                closest_sentences_df=k_closest_sentences_df,
+                k_min=k_min,
+                k_max=k_max)
+
 
     # Clusterise vectors.
     vectors = k_closest_sentences_df["vector"].tolist()
@@ -111,7 +127,9 @@ def perform_kmean(k_closest_sentences_df: pd.DataFrame,
         else:
             number_of_clusters -= 1
     if number_of_clusters != original_k:
-        print(f"Value of K moved from {original_k} to {number_of_clusters} due to individual cluster minimal size.")
+        log = f"Value of K moved from {original_k} to {number_of_clusters} due to individual cluster minimal size."
+        logs.append(log)
+        print(log)
 
     # Label clusters.
     k_closest_sentences_df["cluster"] = kmean_model.labels_
@@ -124,11 +142,15 @@ def perform_kmean(k_closest_sentences_df: pd.DataFrame,
     ]
 
     toc = time.time()
-    print(
-        f"Took {round((toc-tic), 2)} seconds to clusterise {k_closest_sentences_df.shape[0]} closest sentences."
-    )
+    log = f"Took {round((toc-tic), 2)} seconds to clusterise {k_closest_sentences_df.shape[0]} closest sentences."
+    logs.append(log)
+    print(log)
 
-    return k_closest_sentences_df
+    if return_logs is True:
+        logs_to_return = silhouette_logs + logs
+        return k_closest_sentences_df, logs_to_return
+    else:
+        return k_closest_sentences_df
 
 
 def perform_dbscan(vectors: List[List],
