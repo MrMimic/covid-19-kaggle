@@ -147,7 +147,10 @@ def perform_kmean(
     print(log)
 
     if return_logs is True:
-        logs_to_return = silhouette_logs + logs
+        try:
+            logs_to_return = silhouette_logs + logs
+        except UnboundLocalError:
+            logs_to_return = logs
         return k_closest_sentences_df, logs_to_return
     else:
         return k_closest_sentences_df
