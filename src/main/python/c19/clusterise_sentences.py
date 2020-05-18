@@ -127,7 +127,7 @@ def perform_kmean(
         else:
             number_of_clusters -= 1
     if number_of_clusters != original_k:
-        log = f"Value of K moved from {original_k} to {round(number_of_clusters, 2)} due to individual cluster minimal size."
+        log = f"Value of K moved from {original_k} to {number_of_clusters} due to individual cluster minimal size."
         logs.append(log)
         print(log)
 

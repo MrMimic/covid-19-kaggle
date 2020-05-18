@@ -111,7 +111,7 @@ def get_k_closest_sentences(query: str,
         else:
             similarity_threshold -= 0.01
     if base_similarity_threshold != similarity_threshold:
-        log = f"Similarity threshold lowered from {base_similarity_threshold} to {similarity_threshold} due to minimal number of sentence constraint."
+        log = f"Similarity threshold lowered from {base_similarity_threshold} to {round(similarity_threshold, 2)} due to minimal number of sentence constraint."
         logs.append(log)
         print(log)
 
