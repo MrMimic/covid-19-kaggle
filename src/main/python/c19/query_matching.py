@@ -73,7 +73,7 @@ def get_k_closest_sentences(query: str,
                             embedding_model: Embedding,
                             minimal_number_of_sentences: int = 100,
                             similarity_threshold: float = 0.8,
-                            return_logs: bool = False) -> Union[pd.DataFrame, Optional[List[str]]]:
+                            return_logs_and_query_vector: bool = False) -> Union[pd.DataFrame, Optional[List[str]]]:
     """
     Compute the cosine distance between the query and all sentences found in the DB.
 
@@ -140,7 +140,7 @@ def get_k_closest_sentences(query: str,
     log = f"Took {round((toc-tic) / 60, 2)} minutes to process the query ({k_sentences.shape[0]} sentences kept by distance filtering)."
     logs.append(log)
     print(log)
-    if return_logs is True:
-        return k_sentences, logs
+    if return_logs_and_query_vector is True:
+        return k_sentences, logs, query_vector
     else:
         return k_sentences
